@@ -5,7 +5,7 @@ Run `dotnet build /t:GenerateCode` to generate code.
 ``` yaml
 
 azure-arm: true
-require: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/ProviderNameLowercase/resource-manager/readme.md
+require: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/ProviderNameMappingPrefixProviderNameMappingSuffix/resource-manager/readme.md
 tagPrefix SwaggerVersionTag
 
 ```

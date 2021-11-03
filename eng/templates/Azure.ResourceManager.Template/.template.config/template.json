@@ -75,6 +75,13 @@
       "replaces": "ProviderShortName",
       "fileRename": "ProviderShortName"
     },
+    "ProviderNameMappingPrefix": {
+      "type": "derived",
+      "datatype": "text",
+      "valueSource": "provider",
+      "valueTransform": "ProviderMappingPrefixForm",
+      "replaces": "ProviderNameMappingPrefix"
+    },
     "TemplateSafeName": {
       "type": "generated",
       "generator": "regex",
@@ -106,6 +113,29 @@
           }
         ]
       }
+    },
+    "ProviderNameMappingSuffix": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "ProviderNameMappingSuffix",
+      "parameters": {
+        "evaluator": "MSBUILD",
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "('provider' == 'Microsoft.AppService')",
+            "value": "web"
+          },
+          {
+            "condition": "('provider' == 'Microsoft.Identity')",
+            "value": "msi"
+          },
+          {
+            "condition": "('provider' == 'provider')",
+            "value": ""
+          }
+        ]
+      }
     }
   },
   "forms": {
@@ -114,11 +144,24 @@
       "pattern": "^[mM]icrosoft\\.",
       "replacement": ""
     },
+    "ProviderMappingForm": {
+      "identifier": "replace",
+      "pattern": "^(appservice|identity)$",
+      "replacement": ""
+    },
     "ProviderShortNameLowerForm": {
       "identifier": "chain",
       "steps": [
         "ProviderShortNameForm",
         "lowerCase"
+      ]
+    },
+    "ProviderMappingPrefixForm": {
+      "identifier": "chain",
+      "steps": [
+        "ProviderShortNameForm",
+        "lowerCase",
+        "ProviderMappingForm"
       ]
     }
   }
