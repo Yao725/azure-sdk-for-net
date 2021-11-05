@@ -27,7 +27,5 @@ extends:
     ServiceDirectory: attestation
     ArtifactName: packages
     Artifacts:
-    - name: Microsoft.Azure.Attestation
-      safeName: MicrosoftAzureAttestation
-    - name: Azure.Security.Attestation
-      safeName: AzureSecurityAttestation
+    - name: Azure.ResourceManager.Attestation
+      safeName: AzureResourceManagerAttestation
