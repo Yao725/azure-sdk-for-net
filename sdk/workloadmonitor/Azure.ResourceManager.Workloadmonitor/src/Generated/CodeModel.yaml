@@ -1,0 +1,2639 @@
+!CodeModel 
+info: !Info 
+  description: Workload Monitor API
+  contact:
+    email: wlmengg@microsoft.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Workload Monitor API
+schemas: !Schemas 
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_1
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationName
+          description: The name of the operation being performed on this particular object.
+      protocol: !Protocols {}
+    - !StringSchema &ref_2
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayProvider
+          description: Operation resource provider name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayResource
+          description: Resource on which the operation is performed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayOperation
+          description: Human-readable, friendly name for the operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayDescription
+          description: Operation description.
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationOrigin
+          description: The intended executor of the operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: OperationListNextLink
+          description: Link to next page if the list is too long.
+      protocol: !Protocols {}
+    - !StringSchema &ref_10
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseErrorCode
+          description: Service-defined error code. This code serves as a sub-status for the HTTP error code specified in the response.
+      protocol: !Protocols {}
+    - !StringSchema &ref_11
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseErrorMessage
+          description: Human-readable representation of the error.
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ErrorDetailsCode
+          description: Error code identifying the specific error.
+      protocol: !Protocols {}
+    - !StringSchema &ref_13
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ErrorDetailsMessage
+          description: A human-readable error message.
+      protocol: !Protocols {}
+    - !StringSchema &ref_48
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_29
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesMonitorName
+          description: Human-readable name of the monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_30
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesMonitorType
+          description: Type of the monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_31
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesMonitoredObject
+          description: Dynamic monitored object of the monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_32
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesParentMonitorName
+          description: Name of the parent monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_33
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesEvaluationTimestamp
+          description: Timestamp of the monitor's last health evaluation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_34
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesCurrentStateFirstObservedTimestamp
+          description: Timestamp of the monitor's last health state change.
+      protocol: !Protocols {}
+    - !StringSchema &ref_35
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorPropertiesLastReportedTimestamp
+          description: Timestamp of the monitor's last reported health state.
+      protocol: !Protocols {}
+    - !StringSchema &ref_26
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ResourceId
+          description: The resource Id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_27
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ResourceName
+          description: The resource name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_28
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: ResourceType
+          description: The resource type.
+      protocol: !Protocols {}
+    - !StringSchema &ref_36
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorListNextLink
+          description: Link to next page if the list is too long.
+      protocol: !Protocols {}
+    - !StringSchema &ref_18
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangePropertiesMonitorName
+          description: Human-readable name of the monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_19
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangePropertiesMonitorType
+          description: Type of the monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_20
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangePropertiesMonitoredObject
+          description: Dynamic monitored object of the monitor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangePropertiesEvaluationTimestamp
+          description: Timestamp of the monitor's last health evaluation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangePropertiesCurrentStateFirstObservedTimestamp
+          description: Timestamp of the monitor's last health state change.
+      protocol: !Protocols {}
+    - !StringSchema &ref_37
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangeListNextLink
+          description: Link to next page if the list is too long.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_23
+      choices:
+        - !ChoiceValue 
+          value: Healthy
+          language:
+            default:
+              name: Healthy
+              description: ''
+        - !ChoiceValue 
+          value: Critical
+          language:
+            default:
+              name: Critical
+              description: ''
+        - !ChoiceValue 
+          value: Warning
+          language:
+            default:
+              name: Warning
+              description: ''
+        - !ChoiceValue 
+          value: Unknown
+          language:
+            default:
+              name: Unknown
+              description: ''
+        - !ChoiceValue 
+          value: Disabled
+          language:
+            default:
+              name: Disabled
+              description: ''
+        - !ChoiceValue 
+          value: None
+          language:
+            default:
+              name: None
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      choiceType: *ref_0
+      summary: One of health states - healthy, critical, warning, unknown, none, disabled.
+      language: !Languages 
+        default:
+          name: HealthState
+          description: One of health states - healthy, critical, warning, unknown, none, disabled.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_42
+      type: constant
+      value: !ConstantValue 
+        value: 2020-01-13-preview
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20200113Preview
+          description: Api Version (2020-01-13-preview)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_45
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+  anyObjects:
+    - !AnyObjectSchema &ref_24
+      type: any-object
+      language: !Languages 
+        default:
+          name: AnyObject
+          description: Any object
+      protocol: !Protocols {}
+  dateTimes:
+    - !DateTimeSchema &ref_64
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      language: !Languages 
+        default:
+          name: DateTime
+          description: ''
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_46
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_38
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-01-13-preview
+            elementType: !ObjectSchema &ref_8
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2020-01-13-preview
+              properties:
+                - !Property 
+                  schema: *ref_1
+                  required: true
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: The name of the operation being performed on this particular object.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_9
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-01-13-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_2
+                        required: true
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: Operation resource provider name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_3
+                        required: true
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: Resource on which the operation is performed.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_4
+                        required: true
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: Human-readable, friendly name for the operation.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_5
+                        required: true
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: Operation description.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-internal-autorest-anonymous-schema:
+                        anonymous: true
+                    language: !Languages 
+                      default:
+                        name: OperationDisplay
+                        description: The localized display information for this particular operation or action.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  required: true
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: The localized display information for this particular operation or action.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_6
+                  required: true
+                  serializedName: origin
+                  language: !Languages 
+                    default:
+                      name: origin
+                      description: The intended executor of the operation.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              summary: Operation supported by the resource provider.
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: Operation
+                  description: Operation supported by the resource provider.
+                  namespace: ''
+                  summary: Operation supported by the resource provider.
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationListValue
+                description: Array of available REST API operations.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Array of available REST API operations.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_7
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Link to next page if the list is too long.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      summary: List of available REST API operations
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationList
+          description: List of available REST API operations
+          namespace: ''
+          summary: List of available REST API operations
+      protocol: !Protocols {}
+    - *ref_8
+    - *ref_9
+    - !ObjectSchema &ref_47
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_14
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-01-13-preview
+            properties:
+              - !Property 
+                schema: *ref_10
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: Service-defined error code. This code serves as a sub-status for the HTTP error code specified in the response.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_11
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: Human-readable representation of the error.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_39
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2020-01-13-preview
+                  elementType: !ObjectSchema &ref_15
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-01-13-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_12
+                        serializedName: code
+                        language: !Languages 
+                          default:
+                            name: code
+                            description: Error code identifying the specific error.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_13
+                        serializedName: message
+                        language: !Languages 
+                          default:
+                            name: message
+                            description: A human-readable error message.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    summary: Error details
+                    usage:
+                      - exception
+                    language: !Languages 
+                      default:
+                        name: ErrorDetails
+                        description: Error details
+                        namespace: ''
+                        summary: Error details
+                    protocol: !Protocols {}
+                  language: !Languages 
+                    default:
+                      name: ErrorResponseErrorDetails
+                      description: Error details.
+                  protocol: !Protocols {}
+                serializedName: details
+                language: !Languages 
+                  default:
+                    name: details
+                    description: Error details.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            extensions:
+              x-internal-autorest-anonymous-schema:
+                anonymous: true
+            language: !Languages 
+              default:
+                name: ErrorResponseError
+                description: Error info.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: Error info.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      summary: Error response
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ErrorResponse
+          description: Error response
+          namespace: ''
+          summary: Error response
+      protocol: !Protocols {}
+    - *ref_14
+    - *ref_15
+    - !ObjectSchema &ref_56
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_40
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-01-13-preview
+            elementType: !ObjectSchema &ref_16
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2020-01-13-preview
+              parents: !Relations 
+                all:
+                  - !ObjectSchema &ref_17
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-01-13-preview
+                    children: !Relations 
+                      all:
+                        - *ref_16
+                        - !ObjectSchema &ref_25
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2020-01-13-preview
+                          parents: !Relations 
+                            all:
+                              - *ref_17
+                            immediate:
+                              - *ref_17
+                          properties:
+                            - !Property 
+                              schema: *ref_18
+                              flattenedNames:
+                                - properties
+                                - monitorName
+                              serializedName: monitorName
+                              language: !Languages 
+                                default:
+                                  name: monitorName
+                                  description: Human-readable name of the monitor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_19
+                              flattenedNames:
+                                - properties
+                                - monitorType
+                              serializedName: monitorType
+                              language: !Languages 
+                                default:
+                                  name: monitorType
+                                  description: Type of the monitor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_20
+                              flattenedNames:
+                                - properties
+                                - monitoredObject
+                              serializedName: monitoredObject
+                              language: !Languages 
+                                default:
+                                  name: monitoredObject
+                                  description: Dynamic monitored object of the monitor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_21
+                              flattenedNames:
+                                - properties
+                                - evaluationTimestamp
+                              serializedName: evaluationTimestamp
+                              language: !Languages 
+                                default:
+                                  name: evaluationTimestamp
+                                  description: Timestamp of the monitor's last health evaluation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_22
+                              flattenedNames:
+                                - properties
+                                - currentStateFirstObservedTimestamp
+                              serializedName: currentStateFirstObservedTimestamp
+                              language: !Languages 
+                                default:
+                                  name: currentStateFirstObservedTimestamp
+                                  description: Timestamp of the monitor's last health state change.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_23
+                              flattenedNames:
+                                - properties
+                                - previousMonitorState
+                              readOnly: true
+                              serializedName: previousMonitorState
+                              language: !Languages 
+                                default:
+                                  name: previousMonitorState
+                                  description: Previous health state of the monitor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_23
+                              flattenedNames:
+                                - properties
+                                - currentMonitorState
+                              readOnly: true
+                              serializedName: currentMonitorState
+                              language: !Languages 
+                                default:
+                                  name: currentMonitorState
+                                  description: Current health state of the monitor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_24
+                              flattenedNames:
+                                - properties
+                                - evidence
+                              serializedName: evidence
+                              language: !Languages 
+                                default:
+                                  name: evidence
+                                  description: Evidence validating the monitor's current health state.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_24
+                              flattenedNames:
+                                - properties
+                                - monitorConfiguration
+                              serializedName: monitorConfiguration
+                              language: !Languages 
+                                default:
+                                  name: monitorConfiguration
+                                  description: The configuration settings at the time of the monitor's health evaluation.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          summary: Information about the monitor’s health state change at the provided timestamp.
+                          usage:
+                            - output
+                          language: !Languages 
+                            default:
+                              name: HealthMonitorStateChange
+                              description: Information about the monitor’s health state change at the provided timestamp.
+                              namespace: ''
+                              summary: Information about the monitor’s health state change at the provided timestamp.
+                          protocol: !Protocols {}
+                      immediate:
+                        - *ref_16
+                        - *ref_25
+                    properties:
+                      - !Property 
+                        schema: *ref_26
+                        readOnly: true
+                        serializedName: id
+                        language: !Languages 
+                          default:
+                            name: id
+                            description: The resource Id.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_27
+                        readOnly: true
+                        serializedName: name
+                        language: !Languages 
+                          default:
+                            name: name
+                            description: The resource name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_28
+                        readOnly: true
+                        serializedName: type
+                        language: !Languages 
+                          default:
+                            name: type
+                            description: The resource type.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-ms-azure-resource: true
+                    language: !Languages 
+                      default:
+                        name: Resource
+                        description: The resource model definition for the ARM proxy resource, 'microsoft.workloadmonitor/monitors'.
+                        namespace: ''
+                    protocol: !Protocols {}
+                immediate:
+                  - *ref_17
+              properties:
+                - !Property 
+                  schema: *ref_29
+                  flattenedNames:
+                    - properties
+                    - monitorName
+                  serializedName: monitorName
+                  language: !Languages 
+                    default:
+                      name: monitorName
+                      description: Human-readable name of the monitor.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_30
+                  flattenedNames:
+                    - properties
+                    - monitorType
+                  serializedName: monitorType
+                  language: !Languages 
+                    default:
+                      name: monitorType
+                      description: Type of the monitor.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_31
+                  flattenedNames:
+                    - properties
+                    - monitoredObject
+                  serializedName: monitoredObject
+                  language: !Languages 
+                    default:
+                      name: monitoredObject
+                      description: Dynamic monitored object of the monitor.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_32
+                  flattenedNames:
+                    - properties
+                    - parentMonitorName
+                  serializedName: parentMonitorName
+                  language: !Languages 
+                    default:
+                      name: parentMonitorName
+                      description: Name of the parent monitor.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_23
+                  flattenedNames:
+                    - properties
+                    - previousMonitorState
+                  readOnly: true
+                  serializedName: previousMonitorState
+                  language: !Languages 
+                    default:
+                      name: previousMonitorState
+                      description: Previous health state of the monitor.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_23
+                  flattenedNames:
+                    - properties
+                    - currentMonitorState
+                  readOnly: true
+                  serializedName: currentMonitorState
+                  language: !Languages 
+                    default:
+                      name: currentMonitorState
+                      description: Current health state of the monitor.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_33
+                  flattenedNames:
+                    - properties
+                    - evaluationTimestamp
+                  serializedName: evaluationTimestamp
+                  language: !Languages 
+                    default:
+                      name: evaluationTimestamp
+                      description: Timestamp of the monitor's last health evaluation.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_34
+                  flattenedNames:
+                    - properties
+                    - currentStateFirstObservedTimestamp
+                  serializedName: currentStateFirstObservedTimestamp
+                  language: !Languages 
+                    default:
+                      name: currentStateFirstObservedTimestamp
+                      description: Timestamp of the monitor's last health state change.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_35
+                  flattenedNames:
+                    - properties
+                    - lastReportedTimestamp
+                  serializedName: lastReportedTimestamp
+                  language: !Languages 
+                    default:
+                      name: lastReportedTimestamp
+                      description: Timestamp of the monitor's last reported health state.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_24
+                  flattenedNames:
+                    - properties
+                    - evidence
+                  serializedName: evidence
+                  language: !Languages 
+                    default:
+                      name: evidence
+                      description: Evidence validating the monitor's current health state.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_24
+                  flattenedNames:
+                    - properties
+                    - monitorConfiguration
+                  serializedName: monitorConfiguration
+                  language: !Languages 
+                    default:
+                      name: monitorConfiguration
+                      description: The configuration settings at the time of the monitor's health evaluation.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              summary: Information about the monitor’s current health status.
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: HealthMonitor
+                  description: Information about the monitor’s current health status.
+                  namespace: ''
+                  summary: Information about the monitor’s current health status.
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: HealthMonitorListValue
+                description: Array of health monitors of the virtual machine.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Array of health monitors of the virtual machine.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_36
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Link to next page if the list is too long.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      summary: Information about the current health statuses of the monitors.
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: HealthMonitorList
+          description: Information about the current health statuses of the monitors.
+          namespace: ''
+          summary: Information about the current health statuses of the monitors.
+      protocol: !Protocols {}
+    - *ref_16
+    - *ref_17
+    - !ObjectSchema &ref_75
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-01-13-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_41
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-01-13-preview
+            elementType: *ref_25
+            language: !Languages 
+              default:
+                name: HealthMonitorStateChangeListValue
+                description: Array of health state changes within the specified time window.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Array of health state changes within the specified time window.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_37
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Link to next page if the list is too long.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      summary: Information about the health state changes of the monitor within the provided time window.
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: HealthMonitorStateChangeList
+          description: Information about the health state changes of the monitor within the provided time window.
+          namespace: ''
+          summary: Information about the health state changes of the monitor within the provided time window.
+      protocol: !Protocols {}
+    - *ref_25
+  arrays:
+    - *ref_38
+    - *ref_39
+    - *ref_40
+    - *ref_41
+globalParameters:
+  - !Parameter &ref_43
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_44
+    schema: *ref_42
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-01-13-preview
+        parameters:
+          - *ref_43
+          - *ref_44
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_45
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.WorkloadMonitor/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_46
+            language: !Languages 
+              default:
+                name: ''
+                description: The list of available REST API operations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            OperationList_Get:
+              parameters:
+                api-version: 2020-01-13-preview
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: Microsoft.WorkloadMonitor/operations/read
+                        display:
+                          description: Gets a list of the supported operations
+                          operation: Get operations
+                          provider: Microsoft.WorkloadMonitor
+                          resource: Operations
+                        origin: user, system
+                      - name: Microsoft.WorkloadMonitor/monitors/read
+                        display:
+                          description: Gets monitors and their current health state
+                          operation: Get monitors
+                          provider: Microsoft.WorkloadMonitor
+                          resource: Monitors
+                        origin: user, system
+                      - name: Microsoft.WorkloadMonitor/monitors/history/read
+                        display:
+                          description: Gets the history of health changes of a specific monitor
+                          operation: Get monitor history
+                          provider: Microsoft.WorkloadMonitor
+                          resource: Monitors
+                        origin: user, system
+                      - name: Microsoft.WorkloadMonitor/register/action
+                        display:
+                          description: Registers subscription with Microsoft.WorkloadMonitor resource provider
+                          operation: Register Subscription for VMHealth
+                          provider: Microsoft.WorkloadMonitor
+                          resource: WorkloadMonitor Register Subscription
+                        origin: user, system
+                      - name: Microsoft.WorkloadMonitor/unregister/action
+                        display:
+                          description: Unregisters subscription with Microsoft.WorkloadMonitor resource provider
+                          operation: Unregister Subscription for VMHealth
+                          provider: Microsoft.WorkloadMonitor
+                          resource: WorkloadMonitor Register Subscription
+                        origin: user, system
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Get a list of all available REST API operations.
+            paging:
+              nextLinkName: nextLink
+            summary: Get a list of all available REST API operations.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: HealthMonitors
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-01-13-preview
+        parameters:
+          - *ref_43
+          - *ref_44
+          - !Parameter &ref_49
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: subscriptionId
+                description: The subscription Id of the virtual machine.
+                serializedName: subscriptionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_50
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group of the virtual machine.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_51
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: providerName
+                description: 'The provider name (ex: Microsoft.Compute for virtual machines).'
+                serializedName: providerName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_52
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceCollectionName
+                description: 'The resource collection name (ex: virtualMachines for virtual machines).'
+                serializedName: resourceCollectionName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_53
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceName
+                description: The name of the virtual machine.
+                serializedName: resourceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_54
+            schema: *ref_48
+            implementation: Method
+            language: !Languages 
+              default:
+                name: filter
+                description: 'Optionally filter by monitor name. Example: $filter=monitorName eq ''logical-disks|C:|disk-free-space-mb.'''
+                serializedName: $filter
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_55
+            schema: *ref_48
+            implementation: Method
+            language: !Languages 
+              default:
+                name: expand
+                description: 'Optionally expand the monitor’s evidence and/or configuration. Example: $expand=evidence,configuration.'
+                serializedName: $expand
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_45
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceCollectionName}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_49
+          - *ref_50
+          - *ref_51
+          - *ref_52
+          - *ref_53
+          - *ref_54
+          - *ref_55
+        responses:
+          - !SchemaResponse 
+            schema: *ref_56
+            language: !Languages 
+              default:
+                name: ''
+                description: The health monitors matching the specified criteria.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get monitor list with default values:
+              parameters:
+                api-version: 2020-01-13-preview
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: root
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/root
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: root
+                          monitorType: root
+                          monitoredObject: ''
+                          parentMonitorName: ''
+                          previousMonitorState: Critical
+                      - name: logical-disks
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: logical-disks
+                          monitorType: logical-disks
+                          monitoredObject: ''
+                          parentMonitorName: root
+                          previousMonitorState: Critical
+                      - name: logical-disks|C@3A
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: 'logical-disks|C:'
+                          monitorType: logical-disks|*
+                          monitoredObject: 'C:'
+                          parentMonitorName: logical-disks
+                          previousMonitorState: Critical
+                      - name: logical-disks|C@3A|free-space
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          parentMonitorName: 'logical-disks|C:'
+                          previousMonitorState: Critical
+                      - name: cpu-utilization
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/cpu-utilization
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: cpu-utilization
+                          monitorType: cpu-utilization
+                          monitoredObject: ''
+                          parentMonitorName: root
+                          previousMonitorState: Warning
+                      - name: memory
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/memory
+                        properties:
+                          currentMonitorState: Healthy
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: memory
+                          monitorType: memory
+                          monitoredObject: ''
+                          parentMonitorName: root
+                          previousMonitorState: Healthy
+                      - name: memory|available
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/memory|available
+                        properties:
+                          currentMonitorState: Healthy
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: memory|available
+                          monitorType: memory|available
+                          monitoredObject: ''
+                          parentMonitorName: memory
+                          previousMonitorState: Healthy
+            Get monitor list with expanded values:
+              parameters:
+                $expand: evidence,configuration
+                api-version: 2020-01-13-preview
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: root
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/root
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: '2020-09-15T17:01:46Z'
+                          evaluationTimestamp: '2020-10-20T16:05:12Z'
+                          evidence:
+                            memberMonitors:
+                              - monitorName: logical-disks
+                                state: critical
+                                timestamp: '2020-10-20T13:24:14.742Z'
+                              - monitorName: memory
+                                state: healthy
+                                timestamp: '2020-10-20T13:24:14.742Z'
+                              - monitorName: cpu-utilization
+                                state: warning
+                                timestamp: '2020-10-20T13:24:14.742Z'
+                            reason:
+                              Code: 1100
+                              Message: Aggregate monitor state evaluated to the worst state of its member monitors.
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                          monitorName: root
+                          monitorType: root
+                          monitoredObject: ''
+                          parentMonitorName: ''
+                          previousMonitorState: Critical
+                      - name: logical-disks
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: '2020-09-15T17:01:46Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            memberMonitors:
+                              - monitorName: 'logical-disks|C:'
+                                state: critical
+                                timestamp: '2020-10-20T13:24:14.742Z'
+                            reason:
+                              Code: 1100
+                              Message: Aggregate monitor state evaluated to the worst state of its member monitors.
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                          monitorName: logical-disks
+                          monitorType: logical-disks
+                          monitoredObject: ''
+                          parentMonitorName: root
+                          previousMonitorState: Critical
+                      - name: logical-disks|C@3A
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: '2020-09-07T21:28:44Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            memberMonitors:
+                              - monitorName: logical-disks|C:|free-space
+                                state: critical
+                                timestamp: '2020-10-20T13:24:14.742Z'
+                            reason:
+                              Code: 1100
+                              Message: Aggregate monitor state evaluated to the worst state of its member monitors.
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                          monitorName: 'logical-disks|C:'
+                          monitorType: logical-disks|*
+                          monitoredObject: 'C:'
+                          parentMonitorName: logical-disks
+                          previousMonitorState: Critical
+                      - name: logical-disks|C@3A|free-space
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: '2020-09-07T21:28:44Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            reason:
+                              Code: 2100
+                              Message: Collected samples met critical condition for this monitor.
+                            samples:
+                              - timestamp: '2020-10-20T13:23:25.823Z'
+                                value: 4
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                            monitorConfiguration:
+                              criticalCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 5
+                              evaluationFrequencySecs: 60
+                              evaluationType: Max
+                              lookbackSecs: 120
+                              maxSamples: 1
+                              minSamples: 1
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          parentMonitorName: 'logical-disks|C:'
+                          previousMonitorState: Critical
+                      - name: cpu-utilization
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/cpu-utilization
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: '2020-09-07T21:30:28Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            reason:
+                              Code: 2200
+                              Message: Collected samples met warning condition for this monitor.
+                            samples:
+                              - timestamp: '2020-10-20T13:21:25.819Z'
+                                value: 75
+                              - timestamp: '2020-10-20T13:22:25.822Z'
+                                value: 80
+                              - timestamp: '2020-10-20T13:23:25.82Z'
+                                value: 83
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                            monitorConfiguration:
+                              criticalCondition:
+                                isEnabled: true
+                                operator: '>'
+                                threshold: 90
+                              evaluationFrequencySecs: 60
+                              evaluationType: Min
+                              lookbackSecs: 240
+                              maxSamples: 3
+                              minSamples: 2
+                              warningCondition:
+                                isEnabled: true
+                                operator: '>'
+                                threshold: 70
+                          monitorName: cpu-utilization
+                          monitorType: cpu-utilization
+                          monitoredObject: ''
+                          parentMonitorName: root
+                          previousMonitorState: Warning
+                      - name: memory
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/memory
+                        properties:
+                          currentMonitorState: Healthy
+                          currentStateFirstObservedTimestamp: '2020-09-07T21:29:28Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            memberMonitors:
+                              - monitorName: memory|available
+                                state: healthy
+                                timestamp: '2020-10-20T13:24:14.742Z'
+                            reason:
+                              Code: 1100
+                              Message: Aggregate monitor state evaluated to the worst state of its member monitors.
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                          monitorName: memory
+                          monitorType: memory
+                          monitoredObject: ''
+                          parentMonitorName: root
+                          previousMonitorState: Healthy
+                      - name: memory|available
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/memory|available
+                        properties:
+                          currentMonitorState: Healthy
+                          currentStateFirstObservedTimestamp: '2020-09-07T21:29:28Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            reason:
+                              Code: 2300
+                              Message: Collected samples met healthy condition for this monitor.
+                            samples:
+                              - timestamp: '2020-10-20T13:21:25.82Z'
+                                value: 73.27
+                              - timestamp: '2020-10-20T13:22:25.822Z'
+                                value: 77.28
+                              - timestamp: '2020-10-20T13:23:25.821Z'
+                                value: 60.95
+                          lastReportedTimestamp: '2020-10-20T16:05:12Z'
+                          monitorConfiguration:
+                            isEnabled: true
+                            monitorConfiguration:
+                              criticalCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 100
+                              evaluationFrequencySecs: 60
+                              evaluationType: Max
+                              lookbackSecs: 240
+                              maxSamples: 3
+                              minSamples: 2
+                          monitorName: memory|available
+                          monitorType: memory|available
+                          monitoredObject: ''
+                          parentMonitorName: memory
+                          previousMonitorState: Healthy
+            Get monitor list with filtered values:
+              parameters:
+                $filter: monitorName eq 'root'
+                api-version: 2020-01-13-preview
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: root
+                        type: Microsoft.WorkloadMonitor/monitors
+                        id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/root
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                          evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                          monitorName: root
+                          monitorType: root
+                          monitoredObject: ''
+                          parentMonitorName: ''
+                          previousMonitorState: Critical
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: 'Get the current health status of all monitors of a virtual machine. Optional parameters: $expand (retrieve the monitor''s evidence and configuration) and $filter (filter by monitor name).'
+            paging:
+              nextLinkName: nextLink
+            summary: 'Get the current health status of all monitors of a virtual machine. Optional parameters: $expand (retrieve the monitor''s evidence and configuration) and $filter (filter by monitor name).'
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-01-13-preview
+        parameters:
+          - *ref_43
+          - *ref_44
+          - !Parameter &ref_57
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: subscriptionId
+                description: The subscription Id of the virtual machine.
+                serializedName: subscriptionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_58
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group of the virtual machine.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_59
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: providerName
+                description: 'The provider name (ex: Microsoft.Compute for virtual machines).'
+                serializedName: providerName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_60
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceCollectionName
+                description: 'The resource collection name (ex: virtualMachines for virtual machines).'
+                serializedName: resourceCollectionName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_61
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceName
+                description: The name of the virtual machine.
+                serializedName: resourceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_62
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: monitorId
+                description: The monitor Id of the virtual machine.
+                serializedName: monitorId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_63
+            schema: *ref_48
+            implementation: Method
+            language: !Languages 
+              default:
+                name: expand
+                description: 'Optionally expand the monitor’s evidence and/or configuration. Example: $expand=evidence,configuration.'
+                serializedName: $expand
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_45
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceCollectionName}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_57
+          - *ref_58
+          - *ref_59
+          - *ref_60
+          - *ref_61
+          - *ref_62
+          - *ref_63
+        responses:
+          - !SchemaResponse 
+            schema: *ref_16
+            language: !Languages 
+              default:
+                name: ''
+                description: The health monitor matching the specified criteria.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get monitor with default values:
+              parameters:
+                api-version: 2020-01-13-preview
+                monitorId: logical-disks|C@3A|free-space
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    name: logical-disks|C@3A|free-space
+                    type: Microsoft.WorkloadMonitor/monitors
+                    id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space
+                    properties:
+                      currentMonitorState: Warning
+                      currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                      evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                      lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                      monitorName: logical-disks|C:|free-space
+                      monitorType: logical-disks|*|free-space
+                      monitoredObject: 'C:'
+                      parentMonitorName: 'logical-disks|C:'
+                      previousMonitorState: Healthy
+            Get monitor with expanded values:
+              parameters:
+                $expand: evidence
+                api-version: 2020-01-13-preview
+                monitorId: logical-disks|C@3A|free-space
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    name: logical-disks|C@3A|free-space
+                    type: Microsoft.WorkloadMonitor/monitors
+                    id: /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space
+                    properties:
+                      currentMonitorState: Warning
+                      currentStateFirstObservedTimestamp: 2020-02-15T20:20:1.5765757Z
+                      evaluationTimestamp: '2020-02-15T20:20:18.5765757Z'
+                      evidence:
+                        reason:
+                          code: 2200
+                          message: Collected samples met warning condition for this monitor.
+                        samples:
+                          - timestamp: '2020-03-24T20:51:00.6058242Z'
+                            value: 7.019
+                          - timestamp: '2020-03-24T21:51:00.6058242Z'
+                            value: 6.019
+                      lastReportedTimestamp: '2020-02-15T20:20:18.5765757Z'
+                      monitorName: logical-disks|C:|free-space
+                      monitorType: logical-disks|*|free-space
+                      monitoredObject: 'C:'
+                      parentMonitorName: 'logical-disks|C:'
+                      previousMonitorState: Healthy
+        language: !Languages 
+          default:
+            name: Get
+            description: 'Get the current health status of a monitor of a virtual machine. Optional parameter: $expand (retrieve the monitor''s evidence and configuration).'
+            summary: 'Get the current health status of a monitor of a virtual machine. Optional parameter: $expand (retrieve the monitor''s evidence and configuration).'
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-01-13-preview
+        parameters:
+          - *ref_43
+          - *ref_44
+          - !Parameter &ref_65
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: subscriptionId
+                description: The subscription Id of the virtual machine.
+                serializedName: subscriptionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_66
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group of the virtual machine.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_67
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: providerName
+                description: 'The provider name (ex: Microsoft.Compute for virtual machines).'
+                serializedName: providerName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_68
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceCollectionName
+                description: 'The resource collection name (ex: virtualMachines for virtual machines).'
+                serializedName: resourceCollectionName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_69
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceName
+                description: The name of the virtual machine.
+                serializedName: resourceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_70
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: monitorId
+                description: The monitor Id of the virtual machine.
+                serializedName: monitorId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_71
+            schema: *ref_48
+            implementation: Method
+            language: !Languages 
+              default:
+                name: filter
+                description: 'Optionally filter by heartbeat condition. Example: $filter=isHeartbeat eq false.'
+                serializedName: $filter
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_72
+            schema: *ref_48
+            implementation: Method
+            language: !Languages 
+              default:
+                name: expand
+                description: 'Optionally expand the monitor’s evidence and/or configuration. Example: $expand=evidence,configuration.'
+                serializedName: $expand
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_73
+            schema: *ref_64
+            implementation: Method
+            language: !Languages 
+              default:
+                name: startTimestampUtc
+                description: The start of the time window.
+                serializedName: startTimestampUtc
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_74
+            schema: *ref_64
+            implementation: Method
+            language: !Languages 
+              default:
+                name: endTimestampUtc
+                description: The end of the time window.
+                serializedName: endTimestampUtc
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_45
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceCollectionName}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}/history
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_65
+          - *ref_66
+          - *ref_67
+          - *ref_68
+          - *ref_69
+          - *ref_70
+          - *ref_71
+          - *ref_72
+          - *ref_73
+          - *ref_74
+        responses:
+          - !SchemaResponse 
+            schema: *ref_75
+            language: !Languages 
+              default:
+                name: ''
+                description: The health monitor state changes matching the specified criteria.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get monitor state changes with default values:
+              parameters:
+                api-version: 2020-01-13-preview
+                endTimestampUtc: '2020-10-20T01:24:14Z'
+                monitorId: logical-disks|C@3A
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                startTimestampUtc: '2020-10-19T19:24:14Z'
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: '1578514818'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578514818
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: '2020-10-19T19:24:14Z'
+                          evaluationTimestamp: '2020-10-19T19:24:14Z'
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Healthy
+                      - name: '1578255618'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578255618
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: '2020-10-20T01:24:14Z'
+                          evaluationTimestamp: '2020-10-20T07:24:14Z'
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Warning
+                      - name: '1578255618'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578255618
+                        properties:
+                          currentMonitorState: Critical
+                          currentStateFirstObservedTimestamp: '2020-10-20T01:24:14Z'
+                          evaluationTimestamp: '2020-10-20T01:24:14Z'
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Warning
+            Get monitor state changes with expanded values:
+              parameters:
+                $expand: evidence,configuration
+                api-version: 2020-01-13-preview
+                endTimestampUtc: '2020-10-21T13:22:25.822Z'
+                monitorId: logical-disks|C@3A
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                startTimestampUtc: '2020-10-19T07:22:25.824Z'
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: '1578514818'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578514818
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: '2020-10-20T07:24:14Z'
+                          evaluationTimestamp: '2020-10-20T07:24:14Z'
+                          evidence:
+                            reason:
+                              code: 2200
+                              message: Collected samples met warning condition for this monitor.
+                            samples:
+                              - timestamp: '2020-10-20T07:21:25.823Z'
+                                value: 7.9
+                              - timestamp: '2020-10-20T07:22:25.824Z'
+                                value: 5.7
+                          monitorConfiguration:
+                            isEnabled: true
+                            monitorConfiguration:
+                              criticalCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 5
+                              evaluationFrequencySecs: 60
+                              evaluationType: Max
+                              lookbackSecs: 120
+                              maxSamples: 1
+                              minSamples: 1
+                              warningCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 8
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Critical
+                      - name: '1578255618'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578255618
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: '2020-10-19T19:24:14Z'
+                          evaluationTimestamp: '2020-10-20T13:24:14Z'
+                          evidence:
+                            reason:
+                              code: 2200
+                              message: Collected samples met warning condition for this monitor.
+                            samples:
+                              - timestamp: '2020-10-19T19:21:25.822Z'
+                                value: 6.7
+                              - timestamp: '2020-10-19T19:22:25.822Z'
+                                value: 7
+                          monitorConfiguration:
+                            isEnabled: true
+                            monitorConfiguration:
+                              criticalCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 5
+                              evaluationFrequencySecs: 60
+                              evaluationType: Max
+                              lookbackSecs: 120
+                              maxSamples: 1
+                              minSamples: 1
+                              warningCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 8
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Warning
+                      - name: '1578255618'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578255618
+                        properties:
+                          currentMonitorState: Healthy
+                          currentStateFirstObservedTimestamp: '2020-10-20T19:24:14Z'
+                          evaluationTimestamp: '2020-10-20T19:24:14Z'
+                          evidence:
+                            reason:
+                              code: 2300
+                              message: Collected samples met healthy condition for this monitor.
+                            samples:
+                              - timestamp: '2020-10-19T19:21:25.822Z'
+                                value: 9
+                              - timestamp: '2020-10-19T19:22:25.822Z'
+                                value: 10.6
+                          monitorConfiguration:
+                            isEnabled: true
+                            monitorConfiguration:
+                              criticalCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 5
+                              evaluationFrequencySecs: 60
+                              evaluationType: Max
+                              lookbackSecs: 120
+                              maxSamples: 1
+                              minSamples: 1
+                              warningCondition:
+                                isEnabled: true
+                                operator: <
+                                threshold: 8
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Warning
+            Get monitor state changes with filtered values:
+              parameters:
+                $filter: isHeartbeat eq false
+                api-version: 2020-01-13-preview
+                endTimestampUtc: '2020-01-09T20:20:18.5765757Z'
+                monitorId: logical-disks|C@3A|free-space
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                startTimestampUtc: '2020-01-04T20:20:18.5765757Z'
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+              responses:
+                '200':
+                  body:
+                    nextLink: null
+                    value:
+                      - name: '1578514818'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578514818
+                        properties:
+                          currentMonitorState: Warning
+                          currentStateFirstObservedTimestamp: '2020-10-20T07:24:14Z'
+                          evaluationTimestamp: '2020-10-20T07:24:14Z'
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Critical
+                      - name: '1578255618'
+                        type: Microsoft.WorkloadMonitor/monitors/history
+                        id: >-
+                          /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578255618
+                        properties:
+                          currentMonitorState: Healthy
+                          currentStateFirstObservedTimestamp: '2020-10-20T19:24:14Z'
+                          evaluationTimestamp: '2020-10-20T19:24:14Z'
+                          monitorName: logical-disks|C:|free-space
+                          monitorType: logical-disks|*|free-space
+                          monitoredObject: 'C:'
+                          previousMonitorState: Warning
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: ListStateChanges
+            description: >-
+              Get the health state changes of a monitor of a virtual machine within the provided time window (default is the last 24 hours). Optional parameters: $expand (retrieve the monitor's evidence and configuration) and $filter
+              (filter by heartbeat condition).
+            paging:
+              nextLinkName: nextLink
+            summary: >-
+              Get the health state changes of a monitor of a virtual machine within the provided time window (default is the last 24 hours). Optional parameters: $expand (retrieve the monitor's evidence and configuration) and $filter
+              (filter by heartbeat condition).
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-01-13-preview
+        parameters:
+          - *ref_43
+          - *ref_44
+          - !Parameter &ref_76
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: subscriptionId
+                description: The subscription Id of the virtual machine.
+                serializedName: subscriptionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_77
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group of the virtual machine.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_78
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: providerName
+                description: 'The provider name (ex: Microsoft.Compute for virtual machines).'
+                serializedName: providerName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_79
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceCollectionName
+                description: 'The resource collection name (ex: virtualMachines for virtual machines).'
+                serializedName: resourceCollectionName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_80
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceName
+                description: The name of the virtual machine.
+                serializedName: resourceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_81
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: monitorId
+                description: The monitor Id of the virtual machine.
+                serializedName: monitorId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_82
+            schema: *ref_48
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: timestampUnix
+                description: The timestamp of the state change (unix format).
+                serializedName: timestampUnix
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_83
+            schema: *ref_48
+            implementation: Method
+            language: !Languages 
+              default:
+                name: expand
+                description: 'Optionally expand the monitor’s evidence and/or configuration. Example: $expand=evidence,configuration.'
+                serializedName: $expand
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_45
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceCollectionName}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}/history/{timestampUnix}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_76
+          - *ref_77
+          - *ref_78
+          - *ref_79
+          - *ref_80
+          - *ref_81
+          - *ref_82
+          - *ref_83
+        responses:
+          - !SchemaResponse 
+            schema: *ref_25
+            language: !Languages 
+              default:
+                name: ''
+                description: The health monitor state change matching the specified criteria.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get monitor state change with default values:
+              parameters:
+                api-version: 2020-01-13-preview
+                monitorId: logical-disks|C@3A
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+                timestampUnix: '1584316800'
+              responses:
+                '200':
+                  body:
+                    name: '1578514818'
+                    type: Microsoft.WorkloadMonitor/monitors/history
+                    id: >-
+                      /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578514818
+                    properties:
+                      currentMonitorState: Critical
+                      currentStateFirstObservedTimestamp: '2020-01-07T20:20:18.5765757Z'
+                      evaluationTimestamp: '2020-01-07T20:20:18.5765757Z'
+                      monitorName: logical-disks|C:|free-space
+                      monitorType: logical-disks|*|free-space
+                      monitoredObject: 'C:'
+                      previousMonitorState: Warning
+            Get monitor state change with expanded values:
+              parameters:
+                $expand: evidence
+                api-version: 2020-01-13-preview
+                monitorId: logical-disks|C@3A
+                providerName: Microsoft.Compute
+                resourceCollectionName: virtualMachines
+                resourceGroupName: tugamidiAlerts
+                resourceName: linuxEUS
+                subscriptionId: bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21
+                timestampUnix: '1584316800'
+              responses:
+                '200':
+                  body:
+                    name: '1578514818'
+                    type: Microsoft.WorkloadMonitor/monitors/history
+                    id: >-
+                      /subscriptions/bc27da3b-3ba2-4e00-a6ec-1fde64aa1e21/resourceGroups/tugamidiAlerts/providers/Microsoft.Compute/virtualMachines/linuxEUS/providers/Microsoft.WorkloadMonitor/monitors/logical-disks|C@3A|free-space/history/1578514818
+                    properties:
+                      currentMonitorState: Warning
+                      currentStateFirstObservedTimestamp: '2020-01-07T20:20:18.5765757Z'
+                      evaluationTimestamp: '2020-01-07T20:20:18.5765757Z'
+                      evidence:
+                        reason:
+                          Code: 2200
+                          Message: Collected samples met warning condition for this monitor.
+                        samples:
+                          - timestamp: '2020-10-20T13:23:25.823Z'
+                            value: 87.1828
+                      monitorName: logical-disks|C:|free-space
+                      monitorType: logical-disks|*|free-space
+                      monitoredObject: 'C:'
+                      previousMonitorState: Critical
+        language: !Languages 
+          default:
+            name: GetStateChange
+            description: 'Get the health state change of a monitor of a virtual machine at the provided timestamp. Optional parameter: $expand (retrieve the monitor''s evidence and configuration).'
+            summary: 'Get the health state change of a monitor of a virtual machine at the provided timestamp. Optional parameter: $expand (retrieve the monitor''s evidence and configuration).'
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: HealthMonitors
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: WorkloadMonitorAPI
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
