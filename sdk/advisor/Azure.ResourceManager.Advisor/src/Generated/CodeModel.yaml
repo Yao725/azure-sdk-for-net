@@ -1,0 +1,3946 @@
+!CodeModel 
+info: !Info 
+  description: REST APIs for Azure Advisor
+  title: AdvisorManagementClient
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_51
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: 'Exclude the resource from Advisor evaluations. Valid values: False (default) or True.'
+      protocol: !Protocols {}
+  numbers:
+    - !NumberSchema &ref_55
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      precision: 32
+      language: !Languages 
+        default:
+          name: DigestConfigFrequency
+          description: Frequency that digest will be triggered, in days. Value must be between 7 and 30 days inclusive.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_105
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      precision: 32
+      language: !Languages 
+        default:
+          name: Integer
+          description: ''
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_84
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+          header: Location
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataEntityId
+          description: The resource Id of the metadata entity.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataEntityType
+          description: The type of the metadata entity.
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataEntityName
+          description: The name of the metadata entity.
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataEntityPropertiesDisplayName
+          description: The display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataEntityPropertiesDependsOnItem
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_9
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataSupportedValueDetailId
+          description: The id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_10
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataSupportedValueDetailDisplayName
+          description: The display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ARMErrorResponseBodyMessage
+          description: Gets or sets the string that describes the error in detail and provides debugging information.
+      protocol: !Protocols {}
+    - !StringSchema &ref_13
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ARMErrorResponseBodyCode
+          description: Gets or sets the string that can be used to programmatically identify the error.
+      protocol: !Protocols {}
+    - !StringSchema &ref_16
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: MetadataEntityListResultNextLink
+          description: The link used to get the next page of metadata.
+      protocol: !Protocols {}
+    - !StringSchema &ref_53
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: DigestConfigName
+          description: Name of digest configuration. Value is case-insensitive and must be unique within a subscription.
+      protocol: !Protocols {}
+    - !StringSchema &ref_54
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: DigestConfigActionGroupResourceId
+          description: Action group resource id used by digest.
+      protocol: !Protocols {}
+    - !StringSchema &ref_56
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: DigestConfigLanguage
+          description: Language for digest content body. Value must be ISO 639-1 code for one of Azure portal supported languages. Otherwise, it will be converted into one. Default value is English (en).
+      protocol: !Protocols {}
+    - !StringSchema &ref_48
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceId
+          description: The resource ID.
+      protocol: !Protocols {}
+    - !StringSchema &ref_49
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceName
+          description: The name of the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_50
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceType
+          description: The type of the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_58
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ConfigurationListResultNextLink
+          description: The link used to get the next page of configurations.
+      protocol: !Protocols {}
+    - !StringSchema &ref_102
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+          header: Retry-After
+      protocol: !Protocols {}
+    - !StringSchema &ref_1
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_60
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceRecommendationBaseListResultNextLink
+          description: The link used to get the next page of recommendations.
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesImpactedField
+          description: The resource type identified by Advisor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesImpactedValue
+          description: The resource identified by Advisor.
+      protocol: !Protocols {}
+    - !StringSchema &ref_25
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesRecommendationTypeId
+          description: The recommendation-type GUID.
+      protocol: !Protocols {}
+    - !StringSchema &ref_27
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ShortDescriptionProblem
+          description: The issue or opportunity identified by the recommendation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_28
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ShortDescriptionSolution
+          description: The remediation action suggested by the recommendation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_31
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceMetadataResourceId
+          description: Azure resource Id of the assessed resource
+      protocol: !Protocols {}
+    - !StringSchema &ref_32
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceMetadataSource
+          description: Source from which recommendation is generated
+      protocol: !Protocols {}
+    - !StringSchema &ref_34
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceMetadataSingular
+          description: 'The singular user friendly name of resource type. eg: virtual machine'
+      protocol: !Protocols {}
+    - !StringSchema &ref_35
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: ResourceMetadataPlural
+          description: 'The plural user friendly name of resource type. eg: virtual machines'
+      protocol: !Protocols {}
+    - !StringSchema &ref_36
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesDescription
+          description: The detailed description of recommendation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_37
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesLabel
+          description: The label of recommendation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_38
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesLearnMoreLink
+          description: The link to learn more about recommendation and generation logic.
+      protocol: !Protocols {}
+    - !StringSchema &ref_39
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesPotentialBenefits
+          description: The potential benefit of implementing recommendation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_63
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: OperationEntityListResultNextLink
+          description: The link used to get the next page of operations.
+      protocol: !Protocols {}
+    - !StringSchema &ref_64
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: OperationEntityName
+          description: 'Operation name: {provider}/{resource}/{operation}.'
+      protocol: !Protocols {}
+    - !StringSchema &ref_65
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayInfoDescription
+          description: The description of the operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_66
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayInfoOperation
+          description: The action that users can perform, based on their permission level.
+      protocol: !Protocols {}
+    - !StringSchema &ref_67
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayInfoProvider
+          description: 'Service provider: Microsoft Advisor.'
+      protocol: !Protocols {}
+    - !StringSchema &ref_68
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayInfoResource
+          description: Resource on which the operation is performed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_43
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: SuppressionPropertiesSuppressionId
+          description: The GUID of the suppression.
+      protocol: !Protocols {}
+    - !StringSchema &ref_44
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: SuppressionPropertiesTtl
+          description: The duration for which the suppression is valid.
+      protocol: !Protocols {}
+    - !StringSchema &ref_71
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: SuppressionContractListResultNextLink
+          description: The link used to get the next page of suppressions.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_8
+      choices:
+        - !ChoiceValue 
+          value: Alerts
+          language:
+            default:
+              name: Alerts
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Scenario
+          description: ''
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_52
+      choices:
+        - !ChoiceValue 
+          value: '5'
+          language:
+            default:
+              name: Five
+              description: ''
+        - !ChoiceValue 
+          value: '10'
+          language:
+            default:
+              name: Ten
+              description: ''
+        - !ChoiceValue 
+          value: '15'
+          language:
+            default:
+              name: Fifteen
+              description: ''
+        - !ChoiceValue 
+          value: '20'
+          language:
+            default:
+              name: Twenty
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: CpuThreshold
+          description: 'Minimum percentage threshold for Advisor low CPU utilization evaluation. Valid only for subscriptions. Valid values: 5 (default), 10, 15 or 20.'
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_19
+      choices:
+        - !ChoiceValue 
+          value: HighAvailability
+          language:
+            default:
+              name: HighAvailability
+              description: ''
+        - !ChoiceValue 
+          value: Security
+          language:
+            default:
+              name: Security
+              description: ''
+        - !ChoiceValue 
+          value: Performance
+          language:
+            default:
+              name: Performance
+              description: ''
+        - !ChoiceValue 
+          value: Cost
+          language:
+            default:
+              name: Cost
+              description: ''
+        - !ChoiceValue 
+          value: OperationalExcellence
+          language:
+            default:
+              name: OperationalExcellence
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Category
+          description: ''
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_57
+      choices:
+        - !ChoiceValue 
+          value: Active
+          language:
+            default:
+              name: Active
+              description: ''
+        - !ChoiceValue 
+          value: Disabled
+          language:
+            default:
+              name: Disabled
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: DigestConfigState
+          description: State of digest configuration.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_94
+      choices:
+        - !ChoiceValue 
+          value: default
+          language:
+            default:
+              name: Default
+              description: ''
+      type: choice
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ConfigurationName
+          description: ''
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_20
+      choices:
+        - !ChoiceValue 
+          value: High
+          language:
+            default:
+              name: High
+              description: ''
+        - !ChoiceValue 
+          value: Medium
+          language:
+            default:
+              name: Medium
+              description: ''
+        - !ChoiceValue 
+          value: Low
+          language:
+            default:
+              name: Low
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Impact
+          description: The business impact of the recommendation.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_26
+      choices:
+        - !ChoiceValue 
+          value: Error
+          language:
+            default:
+              name: Error
+              description: ''
+        - !ChoiceValue 
+          value: Warning
+          language:
+            default:
+              name: Warning
+              description: ''
+        - !ChoiceValue 
+          value: None
+          language:
+            default:
+              name: None
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Risk
+          description: The potential risk of not implementing the recommendation.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_85
+      type: constant
+      value: !ConstantValue 
+        value: '2020-01-01'
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion202001
+          description: Api Version (2020-01-01)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_88
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_95
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApplicationJson
+          description: Content Type 'application/json'
+      protocol: !Protocols {}
+  dictionaries:
+    - !DictionarySchema &ref_24
+      type: dictionary
+      elementType: !AnyObjectSchema &ref_2
+        type: any-object
+        language: !Languages 
+          default:
+            name: AnyObject
+            description: Any object
+        protocol: !Protocols {}
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesMetadata
+          description: The recommendation metadata.
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_30
+      type: dictionary
+      elementType: *ref_1
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesExtendedProperties
+          description: Extended properties
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_33
+      type: dictionary
+      elementType: *ref_2
+      language: !Languages 
+        default:
+          name: ResourceMetadataAction
+          description: The action to view resource.
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_40
+      type: dictionary
+      elementType: *ref_2
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesActionsItem
+          description: Dictionary of <AnyObject>
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_41
+      type: dictionary
+      elementType: *ref_2
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesRemediation
+          description: The automated way to apply recommendation.
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_42
+      type: dictionary
+      elementType: *ref_2
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesExposedMetadataProperties
+          description: The recommendation metadata properties exposed to customer to provide additional information.
+      protocol: !Protocols {}
+  anyObjects:
+    - *ref_2
+  dateTimes:
+    - !DateTimeSchema &ref_23
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesLastUpdated
+          description: The most recent time that Advisor checked the validity of the recommendation.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_45
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: SuppressionPropertiesExpirationTimeStamp
+          description: Gets or sets the expiration time stamp.
+      protocol: !Protocols {}
+  uuids:
+    - !UuidSchema &ref_103
+      type: uuid
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: Uuid
+          description: ''
+      protocol: !Protocols {}
+    - !UuidSchema &ref_29
+      type: uuid
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      language: !Languages 
+        default:
+          name: RecommendationPropertiesSuppressionIdsItem
+          description: ''
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_15
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: *ref_3
+          serializedName: id
+          language: !Languages 
+            default:
+              name: id
+              description: The resource Id of the metadata entity.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_4
+          serializedName: type
+          language: !Languages 
+            default:
+              name: type
+              description: The type of the metadata entity.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_5
+          serializedName: name
+          language: !Languages 
+            default:
+              name: name
+              description: The name of the metadata entity.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_6
+          flattenedNames:
+            - properties
+            - displayName
+          serializedName: displayName
+          language: !Languages 
+            default:
+              name: displayName
+              description: The display name.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_72
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: *ref_7
+            language: !Languages 
+              default:
+                name: MetadataEntityPropertiesDependsOn
+                description: The list of keys on which this entity depends on.
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - dependsOn
+          serializedName: dependsOn
+          language: !Languages 
+            default:
+              name: dependsOn
+              description: The list of keys on which this entity depends on.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_73
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: *ref_8
+            language: !Languages 
+              default:
+                name: MetadataEntityPropertiesApplicableScenarios
+                description: The list of scenarios applicable to this metadata entity.
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - applicableScenarios
+          serializedName: applicableScenarios
+          language: !Languages 
+            default:
+              name: applicableScenarios
+              description: The list of scenarios applicable to this metadata entity.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_74
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: !ObjectSchema &ref_11
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2020-01-01'
+              properties:
+                - !Property 
+                  schema: *ref_9
+                  serializedName: id
+                  language: !Languages 
+                    default:
+                      name: id
+                      description: The id.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_10
+                  serializedName: displayName
+                  language: !Languages 
+                    default:
+                      name: displayName
+                      description: The display name.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: MetadataSupportedValueDetail
+                  description: The metadata supported value detail.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: MetadataEntityPropertiesSupportedValues
+                description: The list of supported values.
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - supportedValues
+          serializedName: supportedValues
+          language: !Languages 
+            default:
+              name: supportedValues
+              description: The list of supported values.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: MetadataEntity
+          description: The metadata entity contract.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_11
+    - !ObjectSchema &ref_14
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: *ref_12
+          serializedName: message
+          language: !Languages 
+            default:
+              name: message
+              description: Gets or sets the string that describes the error in detail and provides debugging information.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_13
+          serializedName: code
+          language: !Languages 
+            default:
+              name: code
+              description: Gets or sets the string that can be used to programmatically identify the error.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ARMErrorResponseBody
+          description: ARM error response body.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_90
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: *ref_14
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: ARM error response body.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ArmErrorResponse
+          description: ''
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_91
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_75
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: *ref_15
+            language: !Languages 
+              default:
+                name: MetadataEntityListResultValue
+                description: The list of metadata entities.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of metadata entities.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_16
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link used to get the next page of metadata.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: MetadataEntityListResult
+          description: The list of metadata entities
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_93
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_78
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: !ObjectSchema &ref_17
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2020-01-01'
+              parents: !Relations 
+                all:
+                  - !ObjectSchema &ref_18
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2020-01-01'
+                    children: !Relations 
+                      all:
+                        - *ref_17
+                        - !ObjectSchema &ref_46
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: '2020-01-01'
+                          parents: !Relations 
+                            all:
+                              - *ref_18
+                            immediate:
+                              - *ref_18
+                          properties:
+                            - !Property 
+                              schema: *ref_19
+                              flattenedNames:
+                                - properties
+                                - category
+                              serializedName: category
+                              language: !Languages 
+                                default:
+                                  name: category
+                                  description: The category of the recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_20
+                              flattenedNames:
+                                - properties
+                                - impact
+                              serializedName: impact
+                              language: !Languages 
+                                default:
+                                  name: impact
+                                  description: The business impact of the recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_21
+                              flattenedNames:
+                                - properties
+                                - impactedField
+                              serializedName: impactedField
+                              language: !Languages 
+                                default:
+                                  name: impactedField
+                                  description: The resource type identified by Advisor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_22
+                              flattenedNames:
+                                - properties
+                                - impactedValue
+                              serializedName: impactedValue
+                              language: !Languages 
+                                default:
+                                  name: impactedValue
+                                  description: The resource identified by Advisor.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_23
+                              flattenedNames:
+                                - properties
+                                - lastUpdated
+                              serializedName: lastUpdated
+                              language: !Languages 
+                                default:
+                                  name: lastUpdated
+                                  description: The most recent time that Advisor checked the validity of the recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_24
+                              flattenedNames:
+                                - properties
+                                - metadata
+                              serializedName: metadata
+                              language: !Languages 
+                                default:
+                                  name: metadata
+                                  description: The recommendation metadata.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_25
+                              flattenedNames:
+                                - properties
+                                - recommendationTypeId
+                              serializedName: recommendationTypeId
+                              language: !Languages 
+                                default:
+                                  name: recommendationTypeId
+                                  description: The recommendation-type GUID.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_26
+                              flattenedNames:
+                                - properties
+                                - risk
+                              serializedName: risk
+                              language: !Languages 
+                                default:
+                                  name: risk
+                                  description: The potential risk of not implementing the recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ObjectSchema &ref_61
+                                type: object
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: '2020-01-01'
+                                properties:
+                                  - !Property 
+                                    schema: *ref_27
+                                    serializedName: problem
+                                    language: !Languages 
+                                      default:
+                                        name: problem
+                                        description: The issue or opportunity identified by the recommendation.
+                                    protocol: !Protocols {}
+                                  - !Property 
+                                    schema: *ref_28
+                                    serializedName: solution
+                                    language: !Languages 
+                                      default:
+                                        name: solution
+                                        description: The remediation action suggested by the recommendation.
+                                    protocol: !Protocols {}
+                                serializationFormats:
+                                  - json
+                                usage:
+                                  - output
+                                  - input
+                                language: !Languages 
+                                  default:
+                                    name: ShortDescription
+                                    description: A summary of the recommendation.
+                                    namespace: ''
+                                protocol: !Protocols {}
+                              flattenedNames:
+                                - properties
+                                - shortDescription
+                              serializedName: shortDescription
+                              language: !Languages 
+                                default:
+                                  name: shortDescription
+                                  description: A summary of the recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ArraySchema &ref_79
+                                type: array
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: '2020-01-01'
+                                elementType: *ref_29
+                                language: !Languages 
+                                  default:
+                                    name: RecommendationPropertiesSuppressionIds
+                                    description: The list of snoozed and dismissed rules for the recommendation.
+                                protocol: !Protocols {}
+                              flattenedNames:
+                                - properties
+                                - suppressionIds
+                              serializedName: suppressionIds
+                              language: !Languages 
+                                default:
+                                  name: suppressionIds
+                                  description: The list of snoozed and dismissed rules for the recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_30
+                              flattenedNames:
+                                - properties
+                                - extendedProperties
+                              serializedName: extendedProperties
+                              language: !Languages 
+                                default:
+                                  name: extendedProperties
+                                  description: Extended properties
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ObjectSchema &ref_62
+                                type: object
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: '2020-01-01'
+                                properties:
+                                  - !Property 
+                                    schema: *ref_31
+                                    serializedName: resourceId
+                                    language: !Languages 
+                                      default:
+                                        name: resourceId
+                                        description: Azure resource Id of the assessed resource
+                                    protocol: !Protocols {}
+                                  - !Property 
+                                    schema: *ref_32
+                                    serializedName: source
+                                    language: !Languages 
+                                      default:
+                                        name: source
+                                        description: Source from which recommendation is generated
+                                    protocol: !Protocols {}
+                                  - !Property 
+                                    schema: *ref_33
+                                    serializedName: action
+                                    language: !Languages 
+                                      default:
+                                        name: action
+                                        description: The action to view resource.
+                                    protocol: !Protocols {}
+                                  - !Property 
+                                    schema: *ref_34
+                                    serializedName: singular
+                                    language: !Languages 
+                                      default:
+                                        name: singular
+                                        description: 'The singular user friendly name of resource type. eg: virtual machine'
+                                    protocol: !Protocols {}
+                                  - !Property 
+                                    schema: *ref_35
+                                    serializedName: plural
+                                    language: !Languages 
+                                      default:
+                                        name: plural
+                                        description: 'The plural user friendly name of resource type. eg: virtual machines'
+                                    protocol: !Protocols {}
+                                serializationFormats:
+                                  - json
+                                usage:
+                                  - output
+                                  - input
+                                language: !Languages 
+                                  default:
+                                    name: ResourceMetadata
+                                    description: Recommendation resource metadata
+                                    namespace: ''
+                                protocol: !Protocols {}
+                              flattenedNames:
+                                - properties
+                                - resourceMetadata
+                              serializedName: resourceMetadata
+                              language: !Languages 
+                                default:
+                                  name: resourceMetadata
+                                  description: Metadata of resource that was assessed
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_36
+                              flattenedNames:
+                                - properties
+                                - description
+                              serializedName: description
+                              language: !Languages 
+                                default:
+                                  name: description
+                                  description: The detailed description of recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_37
+                              flattenedNames:
+                                - properties
+                                - label
+                              serializedName: label
+                              language: !Languages 
+                                default:
+                                  name: label
+                                  description: The label of recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_38
+                              flattenedNames:
+                                - properties
+                                - learnMoreLink
+                              serializedName: learnMoreLink
+                              language: !Languages 
+                                default:
+                                  name: learnMoreLink
+                                  description: The link to learn more about recommendation and generation logic.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_39
+                              flattenedNames:
+                                - properties
+                                - potentialBenefits
+                              serializedName: potentialBenefits
+                              language: !Languages 
+                                default:
+                                  name: potentialBenefits
+                                  description: The potential benefit of implementing recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ArraySchema &ref_80
+                                type: array
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: '2020-01-01'
+                                elementType: *ref_40
+                                language: !Languages 
+                                  default:
+                                    name: RecommendationPropertiesActions
+                                    description: The list of recommended actions to implement recommendation.
+                                protocol: !Protocols {}
+                              flattenedNames:
+                                - properties
+                                - actions
+                              serializedName: actions
+                              language: !Languages 
+                                default:
+                                  name: actions
+                                  description: The list of recommended actions to implement recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_41
+                              flattenedNames:
+                                - properties
+                                - remediation
+                              serializedName: remediation
+                              language: !Languages 
+                                default:
+                                  name: remediation
+                                  description: The automated way to apply recommendation.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_42
+                              flattenedNames:
+                                - properties
+                                - exposedMetadataProperties
+                              serializedName: exposedMetadataProperties
+                              language: !Languages 
+                                default:
+                                  name: exposedMetadataProperties
+                                  description: The recommendation metadata properties exposed to customer to provide additional information.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - output
+                            - input
+                          language: !Languages 
+                            default:
+                              name: ResourceRecommendationBase
+                              description: Advisor Recommendation.
+                              namespace: ''
+                          protocol: !Protocols {}
+                        - !ObjectSchema &ref_47
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: '2020-01-01'
+                          parents: !Relations 
+                            all:
+                              - *ref_18
+                            immediate:
+                              - *ref_18
+                          properties:
+                            - !Property 
+                              schema: *ref_43
+                              flattenedNames:
+                                - properties
+                                - suppressionId
+                              serializedName: suppressionId
+                              language: !Languages 
+                                default:
+                                  name: suppressionId
+                                  description: The GUID of the suppression.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_44
+                              flattenedNames:
+                                - properties
+                                - ttl
+                              serializedName: ttl
+                              language: !Languages 
+                                default:
+                                  name: ttl
+                                  description: The duration for which the suppression is valid.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_45
+                              flattenedNames:
+                                - properties
+                                - expirationTimeStamp
+                              readOnly: true
+                              serializedName: expirationTimeStamp
+                              language: !Languages 
+                                default:
+                                  name: expirationTimeStamp
+                                  description: Gets or sets the expiration time stamp.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - output
+                            - input
+                          language: !Languages 
+                            default:
+                              name: SuppressionContract
+                              description: The details of the snoozed or dismissed rule; for example, the duration, name, and GUID associated with the rule.
+                              namespace: ''
+                          protocol: !Protocols {}
+                      immediate:
+                        - *ref_17
+                        - *ref_46
+                        - *ref_47
+                    properties:
+                      - !Property 
+                        schema: *ref_48
+                        readOnly: true
+                        serializedName: id
+                        language: !Languages 
+                          default:
+                            name: id
+                            description: The resource ID.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_49
+                        readOnly: true
+                        serializedName: name
+                        language: !Languages 
+                          default:
+                            name: name
+                            description: The name of the resource.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_50
+                        readOnly: true
+                        serializedName: type
+                        language: !Languages 
+                          default:
+                            name: type
+                            description: The type of the resource.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                      - input
+                    extensions:
+                      x-ms-azure-resource: true
+                    language: !Languages 
+                      default:
+                        name: Resource
+                        description: An Azure resource.
+                        namespace: ''
+                    protocol: !Protocols {}
+                immediate:
+                  - *ref_18
+              properties:
+                - !Property 
+                  schema: *ref_51
+                  flattenedNames:
+                    - properties
+                    - exclude
+                  serializedName: exclude
+                  language: !Languages 
+                    default:
+                      name: exclude
+                      description: 'Exclude the resource from Advisor evaluations. Valid values: False (default) or True.'
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_52
+                  flattenedNames:
+                    - properties
+                    - lowCpuThreshold
+                  serializedName: lowCpuThreshold
+                  language: !Languages 
+                    default:
+                      name: lowCpuThreshold
+                      description: 'Minimum percentage threshold for Advisor low CPU utilization evaluation. Valid only for subscriptions. Valid values: 5 (default), 10, 15 or 20.'
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ArraySchema &ref_77
+                    type: array
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2020-01-01'
+                    elementType: !ObjectSchema &ref_59
+                      type: object
+                      apiVersions:
+                        - !ApiVersion 
+                          version: '2020-01-01'
+                      properties:
+                        - !Property 
+                          schema: *ref_53
+                          serializedName: name
+                          language: !Languages 
+                            default:
+                              name: name
+                              description: Name of digest configuration. Value is case-insensitive and must be unique within a subscription.
+                          protocol: !Protocols {}
+                        - !Property 
+                          schema: *ref_54
+                          serializedName: actionGroupResourceId
+                          language: !Languages 
+                            default:
+                              name: actionGroupResourceId
+                              description: Action group resource id used by digest.
+                          protocol: !Protocols {}
+                        - !Property 
+                          schema: *ref_55
+                          serializedName: frequency
+                          language: !Languages 
+                            default:
+                              name: frequency
+                              description: Frequency that digest will be triggered, in days. Value must be between 7 and 30 days inclusive.
+                          protocol: !Protocols {}
+                        - !Property 
+                          schema: !ArraySchema &ref_76
+                            type: array
+                            apiVersions:
+                              - !ApiVersion 
+                                version: '2020-01-01'
+                            elementType: *ref_19
+                            language: !Languages 
+                              default:
+                                name: DigestConfigCategories
+                                description: Categories to send digest for. If categories are not provided, then digest will be sent for all categories.
+                            protocol: !Protocols {}
+                          serializedName: categories
+                          language: !Languages 
+                            default:
+                              name: categories
+                              description: Categories to send digest for. If categories are not provided, then digest will be sent for all categories.
+                          protocol: !Protocols {}
+                        - !Property 
+                          schema: *ref_56
+                          serializedName: language
+                          language: !Languages 
+                            default:
+                              name: language
+                              description: Language for digest content body. Value must be ISO 639-1 code for one of Azure portal supported languages. Otherwise, it will be converted into one. Default value is English (en).
+                          protocol: !Protocols {}
+                        - !Property 
+                          schema: *ref_57
+                          serializedName: state
+                          language: !Languages 
+                            default:
+                              name: state
+                              description: State of digest configuration.
+                          protocol: !Protocols {}
+                      serializationFormats:
+                        - json
+                      usage:
+                        - output
+                        - input
+                      language: !Languages 
+                        default:
+                          name: DigestConfig
+                          description: Advisor Digest configuration entity
+                          namespace: ''
+                      protocol: !Protocols {}
+                    language: !Languages 
+                      default:
+                        name: ConfigDataPropertiesDigests
+                        description: Advisor digest configuration. Valid only for subscriptions
+                    protocol: !Protocols {}
+                  flattenedNames:
+                    - properties
+                    - digests
+                  serializedName: digests
+                  language: !Languages 
+                    default:
+                      name: digests
+                      description: Advisor digest configuration. Valid only for subscriptions
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - input
+                - output
+              language: !Languages 
+                default:
+                  name: ConfigData
+                  description: The Advisor configuration data structure.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: ConfigurationListResultValue
+                description: The list of configurations.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of configurations.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_58
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link used to get the next page of configurations.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: ConfigurationListResult
+          description: The list of Advisor configurations.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_17
+    - *ref_59
+    - *ref_18
+    - !ObjectSchema &ref_109
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: *ref_60
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link used to get the next page of recommendations.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_81
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: *ref_46
+            language: !Languages 
+              default:
+                name: ResourceRecommendationBaseListResultValue
+                description: The list of recommendations.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of recommendations.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: ResourceRecommendationBaseListResult
+          description: The list of Advisor recommendations.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_46
+    - *ref_61
+    - *ref_62
+    - !ObjectSchema &ref_112
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: *ref_63
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link used to get the next page of operations.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_82
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: !ObjectSchema &ref_69
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2020-01-01'
+              properties:
+                - !Property 
+                  schema: *ref_64
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: 'Operation name: {provider}/{resource}/{operation}.'
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_70
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2020-01-01'
+                    properties:
+                      - !Property 
+                        schema: *ref_65
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: The description of the operation.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_66
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: The action that users can perform, based on their permission level.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_67
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: 'Service provider: Microsoft Advisor.'
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_68
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: Resource on which the operation is performed.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    language: !Languages 
+                      default:
+                        name: OperationDisplayInfo
+                        description: The operation supported by Advisor.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: The operation supported by Advisor.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: OperationEntity
+                  description: The operation supported by Advisor.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationEntityListResultValue
+                description: The list of operations.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of operations.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationEntityListResult
+          description: The list of Advisor operations.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_69
+    - *ref_70
+    - *ref_47
+    - !ObjectSchema &ref_125
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-01-01'
+      properties:
+        - !Property 
+          schema: *ref_71
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link used to get the next page of suppressions.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_83
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-01-01'
+            elementType: *ref_47
+            language: !Languages 
+              default:
+                name: SuppressionContractListResultValue
+                description: The list of suppressions.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of suppressions.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: SuppressionContractListResult
+          description: The list of Advisor suppressions.
+          namespace: ''
+      protocol: !Protocols {}
+  arrays:
+    - *ref_72
+    - *ref_73
+    - *ref_74
+    - *ref_75
+    - *ref_76
+    - *ref_77
+    - *ref_78
+    - *ref_79
+    - *ref_80
+    - *ref_81
+    - *ref_82
+    - *ref_83
+globalParameters:
+  - !Parameter &ref_92
+    schema: *ref_84
+    implementation: Client
+    required: true
+    extensions:
+      x-ms-priority: 0
+    language: !Languages 
+      default:
+        name: SubscriptionId
+        description: The Azure subscription ID.
+        serializedName: subscriptionId
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: path
+  - !Parameter &ref_86
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_87
+    schema: *ref_85
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: RecommendationMetadata
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - !Parameter &ref_89
+            schema: *ref_84
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: name
+                description: Name of metadata entity.
+                serializedName: name
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.Advisor/metadata/{name}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_89
+        responses:
+          - !SchemaResponse 
+            schema: *ref_15
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully retrieved metadata entities
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_14
+            extensions:
+              x-ms-error-response: true
+            language: !Languages 
+              default:
+                name: ''
+                description: Client sent unknown metadata name
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '404'
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetMetadata:
+              parameters:
+                name: types
+                api-version: '2020-01-01'
+              responses:
+                '200':
+                  body:
+                    name: recommendationType
+                    type: Microsoft.Advisor/metadata
+                    id: providers/Microsoft.Advisor/metadata/recommendationType
+                    properties:
+                      applicableScenarios:
+                        - Alerts
+                      dependsOn:
+                        - category
+                        - impact
+                      displayName: Recommendation Type
+                      supportedValues:
+                        - displayName: Upgrade your SKU or add more instances to ensure fault tolerance
+                          id: 6a2b1e70-bd4c-4163-86de-5243d7ac05ee
+                        - displayName: Delete ExpressRoute circuits in the provider status of Not Provisioned
+                          id: da6630fb-4286-4996-92a3-a43f5f26dd34
+                '404':
+                  body:
+                    code: NotFound
+                    message: Unknown metadata name
+        language: !Languages 
+          default:
+            name: Get
+            description: Gets the metadata entity.
+            summary: Gets the metadata entity.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.Advisor/metadata
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_91
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully retrieved metadata entities
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetMetadata:
+              parameters:
+                api-version: '2020-01-01'
+              responses:
+                '200':
+                  body:
+                    nextLink: string
+                    value:
+                      - name: recommendationType
+                        type: Microsoft.Advisor/metadata
+                        id: providers/Microsoft.Advisor/metadata/recommendationType
+                        properties:
+                          applicableScenarios:
+                            - Alerts
+                          dependsOn:
+                            - category
+                            - impact
+                          displayName: Recommendation Type
+                          supportedValues:
+                            - displayName: Upgrade your SKU or add more instances to ensure fault tolerance
+                              id: 6a2b1e70-bd4c-4163-86de-5243d7ac05ee
+                            - displayName: Delete ExpressRoute circuits in the provider status of Not Provisioned
+                              id: da6630fb-4286-4996-92a3-a43f5f26dd34
+                      - name: recommendationCategory
+                        type: Microsoft.Advisor/metadata
+                        id: providers/Microsoft.Advisor/metadata/recommendationCategory
+                        properties:
+                          applicableScenarios:
+                            - Alerts
+                          dependsOn: null
+                          displayName: Category
+                          supportedValues:
+                            - displayName: Cost
+                              id: Cost
+                            - displayName: Performance
+                              id: Performance
+                      - name: recommendationImpact
+                        type: Microsoft.Advisor/metadata
+                        id: providers/Microsoft.Advisor/metadata/recommendationImpact
+                        properties:
+                          applicableScenarios: null
+                          dependsOn: null
+                          displayName: Impact
+                          supportedValues:
+                            - displayName: High
+                              id: High
+                            - displayName: Medium
+                              id: Medium
+                            - displayName: Low
+                              id: Low
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Gets the list of metadata entities.
+            paging:
+              nextLinkName: nextLink
+            summary: Gets the list of metadata entities.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: RecommendationMetadata
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Configurations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_87
+          - *ref_92
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_93
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully retrieved zero or more configurations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetConfigurations:
+              parameters:
+                api-version: '2020-01-01'
+                resourceGroup: resourceGroup
+                subscriptionId: subscriptionId
+              responses:
+                '200':
+                  body:
+                    nextLink: string
+                    value:
+                      - name: default
+                        type: Microsoft.Advisor/configurations
+                        id: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Advisor/configurations/default
+                        properties:
+                          digests:
+                            - name: digestConfigName
+                              actionGroupResourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/microsoft.insights/actionGroups/actionGroupName
+                              categories:
+                                - HighAvailability
+                                - Security
+                                - Performance
+                                - Cost
+                                - OperationalExcellence
+                              frequency: 30
+                              state: Active
+                              language: en
+                          exclude: false
+                          lowCpuThreshold: '5'
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: ListBySubscription
+            description: Retrieve Azure Advisor configurations and also retrieve configurations of contained resource groups.
+            paging:
+              nextLinkName: nextLink
+            summary: Retrieve Azure Advisor configurations.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_87
+          - *ref_92
+          - !Parameter &ref_97
+            schema: *ref_94
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: configurationName
+                description: Advisor configuration name. Value must be 'default'
+                serializedName: configurationName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_95
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_96
+                schema: *ref_17
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: configContract
+                    description: The Azure Advisor configuration data structure.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_96
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/configurations/{configurationName}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_97
+        responses:
+          - !SchemaResponse 
+            schema: *ref_17
+            language: !Languages 
+              default:
+                name: ''
+                description: Successfully created/overwrote configuration.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            PutConfigurations:
+              parameters:
+                api-version: '2020-01-01'
+                configContract:
+                  properties:
+                    digests:
+                      - name: digestConfigName
+                        actionGroupResourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/microsoft.insights/actionGroups/actionGroupName
+                        categories:
+                          - HighAvailability
+                          - Security
+                          - Performance
+                          - Cost
+                          - OperationalExcellence
+                        frequency: 30
+                        state: Active
+                        language: en
+                    exclude: true
+                    lowCpuThreshold: '5'
+                configurationName: default
+                resourceGroup: resourceGroup
+                subscriptionId: subscriptionId
+              responses:
+                '200':
+                  body:
+                    name: default
+                    type: Microsoft.Advisor/configurations
+                    id: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Advisor/configurations/default
+                    properties:
+                      digests:
+                        - name: digestConfigName
+                          actionGroupResourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/microsoft.insights/actionGroups/actionGroupName
+                          categories:
+                            - HighAvailability
+                            - Security
+                            - Performance
+                            - Cost
+                            - OperationalExcellence
+                          frequency: 30
+                          state: Active
+                          language: en
+                      exclude: true
+                      lowCpuThreshold: '5'
+        language: !Languages 
+          default:
+            name: CreateInSubscription
+            description: Create/Overwrite Azure Advisor configuration and also delete all configurations of contained resource groups.
+            summary: Create/Overwrite Azure Advisor configuration.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_87
+          - *ref_92
+          - !Parameter &ref_98
+            schema: *ref_84
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroup
+                description: The name of the Azure resource group.
+                serializedName: resourceGroup
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Advisor/configurations
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_98
+        responses:
+          - !SchemaResponse 
+            schema: *ref_93
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully retrieved zero or more configurations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetConfigurations:
+              parameters:
+                api-version: '2020-01-01'
+                resourceGroup: resourceGroup
+                subscriptionId: subscriptionId
+              responses:
+                '200':
+                  body:
+                    nextLink: string
+                    value:
+                      - name: default
+                        type: Microsoft.Advisor/configurations
+                        id: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Advisor/configurations/default
+                        properties:
+                          digests:
+                            - name: digestConfigName
+                              actionGroupResourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/microsoft.insights/actionGroups/actionGroupName
+                              categories:
+                                - HighAvailability
+                                - Security
+                                - Performance
+                                - Cost
+                                - OperationalExcellence
+                              frequency: 30
+                              state: Active
+                              language: en
+                          exclude: false
+                          lowCpuThreshold: '5'
+          x-ms-pageable:
+            nextLinkName: null
+        language: !Languages 
+          default:
+            name: ListByResourceGroup
+            description: Retrieve Azure Advisor configurations.
+            paging:
+              nextLinkName: null
+            summary: Retrieve Azure Advisor configurations.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_87
+          - *ref_92
+          - !Parameter &ref_100
+            schema: *ref_94
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: configurationName
+                description: Advisor configuration name. Value must be 'default'
+                serializedName: configurationName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_101
+            schema: *ref_84
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroup
+                description: The name of the Azure resource group.
+                serializedName: resourceGroup
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_95
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_99
+                schema: *ref_17
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: configContract
+                    description: The Azure Advisor configuration data structure.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_99
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Advisor/configurations/{configurationName}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_100
+          - *ref_101
+        responses:
+          - !SchemaResponse 
+            schema: *ref_17
+            language: !Languages 
+              default:
+                name: ''
+                description: Successfully created/overwrote configuration.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            PutConfigurations:
+              parameters:
+                api-version: '2020-01-01'
+                configContract:
+                  properties:
+                    digests:
+                      - name: digestConfigName
+                        actionGroupResourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/microsoft.insights/actionGroups/actionGroupName
+                        categories:
+                          - HighAvailability
+                          - Security
+                          - Performance
+                          - Cost
+                          - OperationalExcellence
+                        frequency: 30
+                        state: Active
+                        language: en
+                    exclude: true
+                    lowCpuThreshold: '5'
+                configurationName: default
+                resourceGroup: resourceGroup
+                subscriptionId: subscriptionId
+              responses:
+                '200':
+                  body:
+                    name: default
+                    type: Microsoft.Advisor/configurations
+                    id: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Advisor/configurations/default
+                    properties:
+                      digests:
+                        - name: digestConfigName
+                          actionGroupResourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/microsoft.insights/actionGroups/actionGroupName
+                          categories:
+                            - HighAvailability
+                            - Security
+                            - Performance
+                            - Cost
+                            - OperationalExcellence
+                          frequency: 30
+                          state: Active
+                          language: en
+                      exclude: true
+                      lowCpuThreshold: '5'
+        language: !Languages 
+          default:
+            name: CreateInResourceGroup
+            description: Create/Overwrite Azure Advisor configuration.
+            summary: Create/Overwrite Azure Advisor configuration.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Configurations
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Recommendations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_92
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations
+                method: post
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: Accepted. Recommendation generation has been accepted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                headers:
+                  - !HttpHeader 
+                    schema: *ref_84
+                    header: Location
+                    language:
+                      default:
+                        name: Location
+                        description: The URL where the status of the asynchronous operation can be checked.
+                  - !HttpHeader 
+                    schema: *ref_102
+                    header: Retry-After
+                    language:
+                      default:
+                        name: RetryAfter
+                        description: The amount of delay to use while the status of the operation is checked. The value is expressed in seconds.
+                statusCodes:
+                  - '202'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GenerateRecommendations:
+              parameters:
+                api-version: '2020-01-01'
+                subscriptionId: subscriptionId
+              responses:
+                '202':
+                  headers:
+                    Location: https://management.azure.com/subscriptions/subscriptionId/providers/Microsoft.Microsoft.Advisor/generateRecommendations/recGUID?api-version=2020-01-01
+                    Retry-After: '60'
+        language: !Languages 
+          default:
+            name: Generate
+            description: Initiates the recommendation generation or computation process for a subscription. This operation is asynchronous. The generated recommendations are stored in a cache in the Advisor service.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_92
+          - !Parameter &ref_104
+            schema: *ref_103
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: operationId
+                description: The operation ID, which can be found from the Location field in the generate recommendation response header.
+                serializedName: operationId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/generateRecommendations/{operationId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_104
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: Accepted. Recommendation generation is in progress.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '202'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: NoContent. Recommendation generation has been completed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetGenerateStatus:
+              parameters:
+                operationId: operationGUID
+                api-version: '2020-01-01'
+                subscriptionId: subscriptionId
+              responses:
+                '202': {}
+                '204': {}
+        language: !Languages 
+          default:
+            name: GetGenerateStatus
+            description: Retrieves the status of the recommendation computation or generation process. Invoke this API after calling the generation recommendation. The URI of this API is returned in the Location field of the response header.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_92
+          - *ref_87
+          - !Parameter &ref_106
+            schema: *ref_1
+            implementation: Method
+            language: !Languages 
+              default:
+                name: filter
+                description: >-
+                  The filter to apply to the recommendations.<br>Filter can be applied to properties ['ResourceId', 'ResourceGroup', 'RecommendationTypeGuid', '[Category](#category)'] with operators ['eq', 'and', 'or'].<br>Example:<br>-
+                  $filter=Category eq 'Cost' and ResourceGroup eq 'MyResourceGroup'
+                serializedName: $filter
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_107
+            schema: *ref_105
+            implementation: Method
+            language: !Languages 
+              default:
+                name: top
+                description: The number of recommendations per page if a paged version of this API is being used.
+                serializedName: $top
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_108
+            schema: *ref_1
+            implementation: Method
+            language: !Languages 
+              default:
+                name: skipToken
+                description: The page-continuation token to use with a paged version of this API.
+                serializedName: $skipToken
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/recommendations
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_106
+          - *ref_107
+          - *ref_108
+        responses:
+          - !SchemaResponse 
+            schema: *ref_109
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully obtained cached recommendations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            ListRecommendations:
+              parameters:
+                $top: 10
+                api-version: '2020-01-01'
+                subscriptionId: subscriptionId
+              responses:
+                '200':
+                  body:
+                    nextLink: https://management.azure.com/subscriptions/subscriptionId/providers/Microsoft.Advisor/recommendations?api-version=2020-01-01&$top=10&$skiptoken=skiptoken
+                    value:
+                      - name: recGUID1
+                        type: Microsoft.Advisor/recommendations
+                        id: /resourceUri/providers/Microsoft.Advisor/recommendations/recGUID1
+                        properties:
+                          description: >-
+                            After enabling Soft Delete, deleted data transitions to a soft deleted state instead of being permanently deleted. When data is overwritten, a soft deleted snapshot is generated to save the state of the
+                            overwritten data. You can configure the amount of time soft deleted data is recoverable before it permanently expires.
+                          actions:
+                            - description: Enable Soft Delete to protect blob data
+                              actionType: Document
+                              caption: Enable Soft Delete to protect blob data
+                              link: https://link1
+                              metadata:
+                                id: /subscriptions/subscriptionId
+                          category: HighAvailability
+                          impact: Medium
+                          impactedField: Microsoft.Compute/availabilitySets
+                          impactedValue: armavset
+                          label: Enable Soft Delete
+                          lastUpdated: '2017-02-24T22:24:43.3216408Z'
+                          learnMoreLink: https://link2
+                          potentialBenefits: Save and recover your data when blobs or blob snapshots are accidentally overwritten or deleted
+                          remediation:
+                            httpMethod: POST
+                            uri: uri
+                            details: link to document
+                          resourceMetadata:
+                            action:
+                              description: Enable Soft Delete to protect blob data
+                              actionType: Document
+                              caption: Enable Soft Delete to protect blob data
+                              link: https://link3
+                              metadata:
+                                id: /subscriptions/subscriptionId
+                            plural: Availability sets
+                            resourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Compute/availabilitysets/abc
+                            singular: Availability set
+                          risk: Warning
+                          shortDescription:
+                            problem: This availability set is not configured for fault tolerance
+                            solution: To ensure high availability add one or more virtual machines to this availability set
+                      - name: recGUID2
+                        type: Microsoft.Advisor/recommendations
+                        id: /resourceUri/providers/Microsoft.Advisor/recommendations/recGUID2
+                        properties:
+                          description: Monitoring agent should be installed on your machines.
+                          actions:
+                            - description: Enable Soft Delete to protect blob data
+                              actionType: Document
+                              caption: Enable Soft Delete to protect blob data
+                              link: https://link1
+                              metadata:
+                                id: /subscriptions/subscriptionId
+                          category: Security
+                          impact: Medium
+                          impactedField: Microsoft.Compute/virtualMachines
+                          impactedValue: armavset
+                          label: Enable monitoring agent
+                          lastUpdated: '2017-02-24T22:24:43.3216408Z'
+                          learnMoreLink: https://link2
+                          potentialBenefits: Protect and monitor machine
+                          resourceMetadata:
+                            action:
+                              description: Enable Soft Delete to protect blob data
+                              actionType: Document
+                              caption: Enable Soft Delete to protect blob data
+                              link: https://link3
+                              metadata:
+                                id: /subscriptions/subscriptionId
+                            plural: Virtual machines
+                            resourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Compute/virtualMachines/xyz
+                            singular: Virtual machine
+                            source: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Compute/virtualMachines/xyz/providers/Microsoft.Security/assessments/assessmentGuid
+                          risk: Warning
+                          shortDescription:
+                            problem: Monitoring agent is not installed on your machines
+                            solution: Monitoring agent should be installed on your machines
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Obtains cached recommendations for a subscription. The recommendations are generated or computed by invoking generateRecommendations.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - !Parameter &ref_110
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceUri
+                description: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+                serializedName: resourceUri
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_111
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: recommendationId
+                description: The recommendation ID.
+                serializedName: recommendationId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{resourceUri}/providers/Microsoft.Advisor/recommendations/{recommendationId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_110
+          - *ref_111
+        responses:
+          - !SchemaResponse 
+            schema: *ref_46
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully got recommendation detail.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetRecommendationDetail:
+              parameters:
+                api-version: '2020-01-01'
+                recommendationId: recommendationId
+                resourceUri: resourceUri
+              responses:
+                '200':
+                  body:
+                    name: recommendationId
+                    type: Microsoft.Advisor/recommendations
+                    id: /resourceUri/providers/Microsoft.Advisor/recommendations/recommendationId
+                    properties:
+                      description: >-
+                        After enabling Soft Delete, deleted data transitions to a soft deleted state instead of being permanently deleted. When data is overwritten, a soft deleted snapshot is generated to save the state of the overwritten
+                        data. You can configure the amount of time soft deleted data is recoverable before it permanently expires.
+                      actions:
+                        - description: Enable Soft Delete to protect blob data
+                          actionType: Document
+                          caption: Enable Soft Delete to protect blob data
+                          link: https://link1
+                          metadata:
+                            id: /subscriptions/subscriptionId
+                      category: Security
+                      impact: Medium
+                      impactedField: Microsoft.Compute/virtualMachines
+                      impactedValue: armavset
+                      label: Enable Soft Delete
+                      lastUpdated: '2017-02-24T22:24:43.3216408Z'
+                      learnMoreLink: https://link2
+                      potentialBenefits: Save and recover your data when blobs or blob snapshots are accidentally overwritten or deleted
+                      remediation:
+                        httpMethod: POST
+                        uri: uri
+                        details: link to document
+                      resourceMetadata:
+                        action:
+                          description: Enable Soft Delete to protect blob data
+                          actionType: Document
+                          caption: Enable Soft Delete to protect blob data
+                          link: https://link3
+                          metadata:
+                            id: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Compute/virtualMachines/xyz
+                        plural: Virtual machines
+                        resourceId: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Compute/virtualMachines/xyz
+                        singular: Virtual machine
+                        source: /subscriptions/subscriptionId/resourceGroups/resourceGroup/providers/Microsoft.Compute/virtualMachines/xyz/providers/Microsoft.Security/assessments/assessmentGuid
+                      risk: Warning
+                      shortDescription:
+                        problem: Monitoring agent is not installed on your machines
+                        solution: Monitoring agent should be installed on your machines
+        language: !Languages 
+          default:
+            name: Get
+            description: Obtains details of a cached recommendation.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Recommendations
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.Advisor/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_112
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully retrieved operation list.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Lists all the available Advisor REST API operations.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Suppressions
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - !Parameter &ref_113
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceUri
+                description: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+                serializedName: resourceUri
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_114
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: recommendationId
+                description: The recommendation ID.
+                serializedName: recommendationId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_115
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: name
+                description: The name of the suppression.
+                serializedName: name
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{resourceUri}/providers/Microsoft.Advisor/recommendations/{recommendationId}/suppressions/{name}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_113
+          - *ref_114
+          - *ref_115
+        responses:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully got suppression detail.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            extensions:
+              x-ms-error-response: true
+            language: !Languages 
+              default:
+                name: ''
+                description: Suppression name is not specified or Suppression Id not found.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '404'
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetSuppressionDetail:
+              parameters:
+                name: suppressionName1
+                api-version: '2020-01-01'
+                recommendationId: recommendationId
+                resourceUri: resourceUri
+              responses:
+                '200':
+                  body:
+                    name: suppressionName1
+                    type: Microsoft.Advisor/suppressions
+                    id: /resourceUri/providers/Microsoft.Advisor/recommendations/recommendationId/suppressions/suppressionName1
+                    properties:
+                      expirationTimeStamp: '2020-10-25T22:24:43.3216408Z'
+                      suppressionId: suppressionId1
+                      ttl: 7.00:00:00
+                '404':
+                  body:
+                    error:
+                      code: NotFound
+                      message: Suppression name is not specified or Suppression Id not found
+        language: !Languages 
+          default:
+            name: Get
+            description: Obtains the details of a suppression.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - !Parameter &ref_117
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceUri
+                description: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+                serializedName: resourceUri
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_118
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: recommendationId
+                description: The recommendation ID.
+                serializedName: recommendationId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_119
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: name
+                description: The name of the suppression.
+                serializedName: name
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_95
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_116
+                schema: *ref_47
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: suppressionContract
+                    description: The snoozed or dismissed attribute; for example, the snooze duration.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_116
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /{resourceUri}/providers/Microsoft.Advisor/recommendations/{recommendationId}/suppressions/{name}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_117
+          - *ref_118
+          - *ref_119
+        responses:
+          - !SchemaResponse 
+            schema: *ref_47
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully created suppression.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            extensions:
+              x-ms-error-response: true
+            language: !Languages 
+              default:
+                name: ''
+                description: Recommendation to be suppressed is not found.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '404'
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            CreateSuppression:
+              parameters:
+                name: suppressionName1
+                api-version: '2020-01-01'
+                recommendationId: recommendationId
+                resourceUri: resourceUri
+                suppressionContract:
+                  properties:
+                    ttl: '07:00:00:00'
+              responses:
+                '200':
+                  body:
+                    name: suppressionName1
+                    type: Microsoft.Advisor/suppressions
+                    id: /resourceUri/providers/Microsoft.Advisor/recommendations/recommendationId/suppressions/suppressionName1
+                    properties:
+                      suppressionId: suppressionId
+                      ttl: '07:00:00:00'
+                '404':
+                  body:
+                    error:
+                      code: NotFound
+                      message: Recommendation to be suppressed is not found. Subscription Id:{0} Recommendation Id:{1}
+        language: !Languages 
+          default:
+            name: Create
+            description: Enables the snoozed or dismissed attribute of a recommendation. The snoozed or dismissed attribute is referred to as a suppression. Use this API to create or update the snoozed or dismissed status of a recommendation.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - !Parameter &ref_120
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceUri
+                description: The fully qualified Azure Resource Manager identifier of the resource to which the recommendation applies.
+                serializedName: resourceUri
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_121
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: recommendationId
+                description: The recommendation ID.
+                serializedName: recommendationId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_122
+            schema: *ref_1
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: name
+                description: The name of the suppression.
+                serializedName: name
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_87
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{resourceUri}/providers/Microsoft.Advisor/recommendations/{recommendationId}/suppressions/{name}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_120
+          - *ref_121
+          - *ref_122
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: NoContent. The recommendation has been activated.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            DeleteSuppression:
+              parameters:
+                name: suppressionName1
+                api-version: '2020-01-01'
+                recommendationId: recommendationId
+                resourceUri: resourceUri
+              responses:
+                '204': {}
+        language: !Languages 
+          default:
+            name: Delete
+            description: Enables the activation of a snoozed or dismissed recommendation. The snoozed or dismissed attribute of a recommendation is referred to as a suppression.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-01-01'
+        parameters:
+          - *ref_86
+          - *ref_92
+          - *ref_87
+          - !Parameter &ref_123
+            schema: *ref_105
+            implementation: Method
+            language: !Languages 
+              default:
+                name: top
+                description: The number of suppressions per page if a paged version of this API is being used.
+                serializedName: $top
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - !Parameter &ref_124
+            schema: *ref_1
+            implementation: Method
+            language: !Languages 
+              default:
+                name: skipToken
+                description: The page-continuation token to use with a paged version of this API.
+                serializedName: $skipToken
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_88
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Advisor/suppressions
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_123
+          - *ref_124
+        responses:
+          - !SchemaResponse 
+            schema: *ref_125
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. Successfully got all suppressions in a subscription.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_90
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            ListSuppressions:
+              parameters:
+                api-version: '2020-01-01'
+                subscriptionId: subscriptionId1
+              responses:
+                '200':
+                  body:
+                    nextLink: https://management.azure.com/subscriptions/3f75fdf7-977e-44ad-990d-99f14f0f299f/providers/microsoft.Advisor/suppressions?api-version=2020-01-01&$top=3&$skiptoken=skiptoken
+                    value:
+                      - name: suppressionName1
+                        type: Microsoft.Advisor/suppressions
+                        id: /resourceUri/providers/Microsoft.Advisor/recommendations/recommendationId/suppressions/suppressionName1
+                        properties:
+                          expirationTimeStamp: '2020-10-24T22:24:43.3216408Z'
+                          suppressionId: suppressionId1
+                          ttl: 7.00:00:00
+                      - name: suppressionName2
+                        type: Microsoft.Advisor/suppressions
+                        id: /resourceUri/providers/Microsoft.Advisor/recommendations/recommendationId/suppressions/suppressionName2
+                        properties:
+                          expirationTimeStamp: '2020-10-25T22:24:43.3216408Z'
+                          suppressionId: suppressionId2
+                          ttl: 7.00:00:00
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Retrieves the list of snoozed or dismissed suppressions for a subscription. The snoozed or dismissed attribute of a recommendation is referred to as a suppression.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Suppressions
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: AdvisorManagementClient
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
