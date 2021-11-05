@@ -1,0 +1,3793 @@
+!CodeModel 
+info: !Info 
+  description: The specification for ManagedServices.
+  title: ManagedServicesClient
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_101
+      type: boolean
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: Boolean
+          description: ''
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_87
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_1
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionPropertiesDescription
+          description: The description of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_2
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: AuthorizationPrincipalId
+          description: The identifier of the Azure Active Directory principal.
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: AuthorizationPrincipalIdDisplayName
+          description: The display name of the Azure Active Directory principal.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: AuthorizationRoleDefinitionId
+          description: The identifier of the Azure built-in role that defines the permissions that the Azure Active Directory principal will have on the projected scope.
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: EligibleAuthorizationPrincipalId
+          description: The identifier of the Azure Active Directory principal.
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: EligibleAuthorizationPrincipalIdDisplayName
+          description: The display name of the Azure Active Directory principal.
+      protocol: !Protocols {}
+    - !StringSchema &ref_8
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: EligibleAuthorizationRoleDefinitionId
+          description: The identifier of the Azure built-in role that defines the permissions that the Azure Active Directory principal will have on the projected scope.
+      protocol: !Protocols {}
+    - !StringSchema &ref_11
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: EligibleApproverPrincipalId
+          description: The identifier of the Azure Active Directory principal.
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: EligibleApproverPrincipalIdDisplayName
+          description: The display name of the Azure Active Directory principal.
+      protocol: !Protocols {}
+    - !StringSchema &ref_13
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionPropertiesRegistrationDefinitionName
+          description: The name of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_14
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionPropertiesManagedByTenantId
+          description: The identifier of the managedBy tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_16
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionPropertiesManageeTenantId
+          description: The identifier of the managed tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_17
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionPropertiesManageeTenantName
+          description: The name of the managed tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_18
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionPropertiesManagedByTenantName
+          description: The name of the managedBy tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_19
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: PlanName
+          description: Azure Marketplace plan name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_20
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: PlanPublisher
+          description: Azure Marketplace publisher ID.
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: PlanProduct
+          description: Azure Marketplace product code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: PlanVersion
+          description: Azure Marketplace plan's version.
+      protocol: !Protocols {}
+    - !StringSchema &ref_23
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionId
+          description: The fully qualified path of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_24
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionType
+          description: The type of the Azure resource (Microsoft.ManagedServices/registrationDefinitions).
+      protocol: !Protocols {}
+    - !StringSchema &ref_25
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionName
+          description: The name of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_32
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: ErrorDefinitionCode
+          description: The error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_33
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: ErrorDefinitionMessage
+          description: The error message indicating why the operation failed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_35
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionId
+          description: The fully qualified path of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_36
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesDescription
+          description: The description of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_37
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesRegistrationDefinitionName
+          description: The name of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_38
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesManageeTenantId
+          description: The identifier of the managed tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_39
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesManageeTenantName
+          description: The name of the managed tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_40
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesManagedByTenantId
+          description: The identifier of the managedBy tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_41
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesManagedByTenantName
+          description: The name of the managedBy tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_42
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionId
+          description: The fully qualified path of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_43
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionType
+          description: The type of the Azure resource (Microsoft.ManagedServices/registrationDefinitions).
+      protocol: !Protocols {}
+    - !StringSchema &ref_44
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentPropertiesRegistrationDefinitionName
+          description: The name of the registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_45
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentId
+          description: The fully qualified path of the registration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_46
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentType
+          description: The type of the Azure resource (Microsoft.ManagedServices/registrationAssignments).
+      protocol: !Protocols {}
+    - !StringSchema &ref_47
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentName
+          description: The name of the registration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_52
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionListNextLink
+          description: The link to the next page of registration definitions.
+      protocol: !Protocols {}
+    - !StringSchema &ref_54
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentListNextLink
+          description: The link to the next page of registration assignments.
+      protocol: !Protocols {}
+    - !StringSchema &ref_55
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionPropertiesManagedByTenantId
+          description: The identifier of the managedBy tenant.
+      protocol: !Protocols {}
+    - !StringSchema &ref_56
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionPropertiesOfferDisplayName
+          description: The marketplace offer display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_57
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionPropertiesPublisherDisplayName
+          description: The marketplace publisher display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_58
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionPropertiesPlanDisplayName
+          description: The marketplace plan display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_59
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionId
+          description: The fully qualified path of the marketplace registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_60
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionType
+          description: The type of the Azure resource (Microsoft.ManagedServices/marketplaceRegistrationDefinitions).
+      protocol: !Protocols {}
+    - !StringSchema &ref_61
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionName
+          description: The name of the marketplace registration definition.
+      protocol: !Protocols {}
+    - !StringSchema &ref_62
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionListNextLink
+          description: The link to the next page of marketplace registration definitions.
+      protocol: !Protocols {}
+    - !StringSchema &ref_65
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: OperationName
+          description: 'The operation name with the format: {provider}/{resource}/{operation}'
+      protocol: !Protocols {}
+    - !StringSchema &ref_66
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayProvider
+          description: The service provider.
+      protocol: !Protocols {}
+    - !StringSchema &ref_67
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayResource
+          description: The resource on which the operation is performed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_68
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayOperation
+          description: The operation type.
+      protocol: !Protocols {}
+    - !StringSchema &ref_69
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayDescription
+          description: The description of the operation.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_9
+      choices:
+        - !ChoiceValue 
+          value: Azure
+          language:
+            default:
+              name: Azure
+              description: ''
+        - !ChoiceValue 
+          value: None
+          language:
+            default:
+              name: None
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      choiceType: *ref_0
+      defaultValue: None
+      language: !Languages 
+        default:
+          name: MultiFactorAuthProvider
+          description: The multi-factor authorization provider to be used for just-in-time access requests.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_15
+      choices:
+        - !ChoiceValue 
+          value: NotSpecified
+          language:
+            default:
+              name: NotSpecified
+              description: ''
+        - !ChoiceValue 
+          value: Accepted
+          language:
+            default:
+              name: Accepted
+              description: ''
+        - !ChoiceValue 
+          value: Running
+          language:
+            default:
+              name: Running
+              description: ''
+        - !ChoiceValue 
+          value: Ready
+          language:
+            default:
+              name: Ready
+              description: ''
+        - !ChoiceValue 
+          value: Creating
+          language:
+            default:
+              name: Creating
+              description: ''
+        - !ChoiceValue 
+          value: Created
+          language:
+            default:
+              name: Created
+              description: ''
+        - !ChoiceValue 
+          value: Deleting
+          language:
+            default:
+              name: Deleting
+              description: ''
+        - !ChoiceValue 
+          value: Deleted
+          language:
+            default:
+              name: Deleted
+              description: ''
+        - !ChoiceValue 
+          value: Canceled
+          language:
+            default:
+              name: Canceled
+              description: ''
+        - !ChoiceValue 
+          value: Failed
+          language:
+            default:
+              name: Failed
+              description: ''
+        - !ChoiceValue 
+          value: Succeeded
+          language:
+            default:
+              name: Succeeded
+              description: ''
+        - !ChoiceValue 
+          value: Updating
+          language:
+            default:
+              name: Updating
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ProvisioningState
+          description: The current provisioning state of the registration definition.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_85
+      type: constant
+      value: !ConstantValue 
+        value: 2020-02-01-preview
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20200201Preview
+          description: Api Version (2020-02-01-preview)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_89
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_95
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApplicationJson
+          description: Content Type 'application/json'
+      protocol: !Protocols {}
+  durations:
+    - !DurationSchema &ref_10
+      type: duration
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      defaultValue: PT8H
+      language: !Languages 
+        default:
+          name: JustInTimeAccessPolicyMaximumActivationDuration
+          description: The maximum access duration in ISO 8601 format for just-in-time access requests.
+      protocol: !Protocols {}
+  uuids:
+    - !UuidSchema &ref_5
+      type: uuid
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      language: !Languages 
+        default:
+          name: AuthorizationDelegatedRoleDefinitionIdsItem
+          description: ''
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_51
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_26
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            properties:
+              - !Property 
+                schema: *ref_1
+                required: false
+                serializedName: description
+                language: !Languages 
+                  default:
+                    name: description
+                    description: The description of the registration definition.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_73
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2020-02-01-preview
+                  elementType: !ObjectSchema &ref_27
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-02-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_2
+                        required: true
+                        serializedName: principalId
+                        language: !Languages 
+                          default:
+                            name: principalId
+                            description: The identifier of the Azure Active Directory principal.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_3
+                        required: false
+                        serializedName: principalIdDisplayName
+                        language: !Languages 
+                          default:
+                            name: principalIdDisplayName
+                            description: The display name of the Azure Active Directory principal.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_4
+                        required: true
+                        serializedName: roleDefinitionId
+                        language: !Languages 
+                          default:
+                            name: roleDefinitionId
+                            description: The identifier of the Azure built-in role that defines the permissions that the Azure Active Directory principal will have on the projected scope.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_72
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2020-02-01-preview
+                          elementType: *ref_5
+                          language: !Languages 
+                            default:
+                              name: AuthorizationDelegatedRoleDefinitionIds
+                              description: >-
+                                The delegatedRoleDefinitionIds field is required when the roleDefinitionId refers to the User Access Administrator Role. It is the list of role definition ids which define all the permissions that the user in
+                                the authorization can assign to other principals.
+                          protocol: !Protocols {}
+                        required: false
+                        serializedName: delegatedRoleDefinitionIds
+                        language: !Languages 
+                          default:
+                            name: delegatedRoleDefinitionIds
+                            description: >-
+                              The delegatedRoleDefinitionIds field is required when the roleDefinitionId refers to the User Access Administrator Role. It is the list of role definition ids which define all the permissions that the user in
+                              the authorization can assign to other principals.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                      - input
+                    language: !Languages 
+                      default:
+                        name: Authorization
+                        description: The Azure Active Directory principal identifier and Azure built-in role that describes the access the principal will receive on the delegated resource in the managed tenant.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  language: !Languages 
+                    default:
+                      name: RegistrationDefinitionPropertiesAuthorizations
+                      description: The collection of authorization objects describing the access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                  protocol: !Protocols {}
+                required: true
+                serializedName: authorizations
+                language: !Languages 
+                  default:
+                    name: authorizations
+                    description: The collection of authorization objects describing the access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_75
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2020-02-01-preview
+                  elementType: !ObjectSchema &ref_28
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-02-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_6
+                        required: true
+                        serializedName: principalId
+                        language: !Languages 
+                          default:
+                            name: principalId
+                            description: The identifier of the Azure Active Directory principal.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_7
+                        required: false
+                        serializedName: principalIdDisplayName
+                        language: !Languages 
+                          default:
+                            name: principalIdDisplayName
+                            description: The display name of the Azure Active Directory principal.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_8
+                        required: true
+                        serializedName: roleDefinitionId
+                        language: !Languages 
+                          default:
+                            name: roleDefinitionId
+                            description: The identifier of the Azure built-in role that defines the permissions that the Azure Active Directory principal will have on the projected scope.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ObjectSchema &ref_29
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2020-02-01-preview
+                          properties:
+                            - !Property 
+                              schema: *ref_9
+                              required: true
+                              serializedName: multiFactorAuthProvider
+                              language: !Languages 
+                                default:
+                                  name: multiFactorAuthProvider
+                                  description: The multi-factor authorization provider to be used for just-in-time access requests.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_10
+                              required: false
+                              serializedName: maximumActivationDuration
+                              language: !Languages 
+                                default:
+                                  name: maximumActivationDuration
+                                  description: The maximum access duration in ISO 8601 format for just-in-time access requests.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ArraySchema &ref_74
+                                type: array
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: 2020-02-01-preview
+                                elementType: !ObjectSchema &ref_30
+                                  type: object
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: 2020-02-01-preview
+                                  properties:
+                                    - !Property 
+                                      schema: *ref_11
+                                      required: true
+                                      serializedName: principalId
+                                      language: !Languages 
+                                        default:
+                                          name: principalId
+                                          description: The identifier of the Azure Active Directory principal.
+                                      protocol: !Protocols {}
+                                    - !Property 
+                                      schema: *ref_12
+                                      required: false
+                                      serializedName: principalIdDisplayName
+                                      language: !Languages 
+                                        default:
+                                          name: principalIdDisplayName
+                                          description: The display name of the Azure Active Directory principal.
+                                      protocol: !Protocols {}
+                                  serializationFormats:
+                                    - json
+                                  usage:
+                                    - output
+                                    - input
+                                  language: !Languages 
+                                    default:
+                                      name: EligibleApprover
+                                      description: Defines the Azure Active Directory principal that can approve any just-in-time access requests by the principal defined in the EligibleAuthorization.
+                                      namespace: ''
+                                  protocol: !Protocols {}
+                                language: !Languages 
+                                  default:
+                                    name: JustInTimeAccessPolicyManagedByTenantApprovers
+                                    description: The list of managedByTenant approvers for the eligible authorization.
+                                protocol: !Protocols {}
+                              required: false
+                              serializedName: managedByTenantApprovers
+                              language: !Languages 
+                                default:
+                                  name: managedByTenantApprovers
+                                  description: The list of managedByTenant approvers for the eligible authorization.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - output
+                            - input
+                          language: !Languages 
+                            default:
+                              name: JustInTimeAccessPolicy
+                              description: Just-in-time access policy setting.
+                              namespace: ''
+                          protocol: !Protocols {}
+                        required: false
+                        serializedName: justInTimeAccessPolicy
+                        language: !Languages 
+                          default:
+                            name: justInTimeAccessPolicy
+                            description: The just-in-time access policy setting.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                      - input
+                    language: !Languages 
+                      default:
+                        name: EligibleAuthorization
+                        description: >-
+                          The Azure Active Directory principal identifier, Azure built-in role, and just-in-time access policy that describes the just-in-time access the principal will receive on the delegated resource in the managed
+                          tenant.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  language: !Languages 
+                    default:
+                      name: RegistrationDefinitionPropertiesEligibleAuthorizations
+                      description: The collection of eligible authorization objects describing the just-in-time access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                  protocol: !Protocols {}
+                required: false
+                serializedName: eligibleAuthorizations
+                language: !Languages 
+                  default:
+                    name: eligibleAuthorizations
+                    description: The collection of eligible authorization objects describing the just-in-time access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_13
+                required: false
+                serializedName: registrationDefinitionName
+                language: !Languages 
+                  default:
+                    name: registrationDefinitionName
+                    description: The name of the registration definition.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_14
+                required: true
+                serializedName: managedByTenantId
+                language: !Languages 
+                  default:
+                    name: managedByTenantId
+                    description: The identifier of the managedBy tenant.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_15
+                readOnly: true
+                required: false
+                serializedName: provisioningState
+                language: !Languages 
+                  default:
+                    name: provisioningState
+                    description: The current provisioning state of the registration definition.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_16
+                readOnly: true
+                required: false
+                serializedName: manageeTenantId
+                language: !Languages 
+                  default:
+                    name: manageeTenantId
+                    description: The identifier of the managed tenant.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_17
+                readOnly: true
+                required: false
+                serializedName: manageeTenantName
+                language: !Languages 
+                  default:
+                    name: manageeTenantName
+                    description: The name of the managed tenant.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_18
+                readOnly: true
+                required: false
+                serializedName: managedByTenantName
+                language: !Languages 
+                  default:
+                    name: managedByTenantName
+                    description: The name of the managedBy tenant.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            language: !Languages 
+              default:
+                name: RegistrationDefinitionProperties
+                description: The properties of a registration definition.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: properties
+          language: !Languages 
+            default:
+              name: properties
+              description: The properties of a registration definition.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_31
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            properties:
+              - !Property 
+                schema: *ref_19
+                required: true
+                serializedName: name
+                language: !Languages 
+                  default:
+                    name: name
+                    description: Azure Marketplace plan name.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_20
+                required: true
+                serializedName: publisher
+                language: !Languages 
+                  default:
+                    name: publisher
+                    description: Azure Marketplace publisher ID.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_21
+                required: true
+                serializedName: product
+                language: !Languages 
+                  default:
+                    name: product
+                    description: Azure Marketplace product code.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_22
+                required: true
+                serializedName: version
+                language: !Languages 
+                  default:
+                    name: version
+                    description: Azure Marketplace plan's version.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            language: !Languages 
+              default:
+                name: Plan
+                description: The details for the Managed Services offer’s plan in Azure Marketplace.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: plan
+          language: !Languages 
+            default:
+              name: plan
+              description: The details for the Managed Services offer’s plan in Azure Marketplace.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_23
+          readOnly: true
+          serializedName: id
+          language: !Languages 
+            default:
+              name: id
+              description: The fully qualified path of the registration definition.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_24
+          readOnly: true
+          serializedName: type
+          language: !Languages 
+            default:
+              name: type
+              description: The type of the Azure resource (Microsoft.ManagedServices/registrationDefinitions).
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_25
+          readOnly: true
+          serializedName: name
+          language: !Languages 
+            default:
+              name: name
+              description: The name of the registration definition.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+        - input
+      extensions:
+        x-ms-azure-resource: true
+      language: !Languages 
+        default:
+          name: RegistrationDefinition
+          description: The registration definition.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_26
+    - *ref_27
+    - *ref_28
+    - *ref_29
+    - *ref_30
+    - *ref_31
+    - !ObjectSchema &ref_92
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_34
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            properties:
+              - !Property 
+                schema: *ref_32
+                required: true
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: The error code.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_33
+                required: true
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: The error message indicating why the operation failed.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_76
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2020-02-01-preview
+                  elementType: *ref_34
+                  language: !Languages 
+                    default:
+                      name: ErrorDefinitionDetails
+                      description: The internal error details.
+                  protocol: !Protocols {}
+                required: false
+                serializedName: details
+                language: !Languages 
+                  default:
+                    name: details
+                    description: The internal error details.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            language: !Languages 
+              default:
+                name: ErrorDefinition
+                description: The error response indicating why the incoming request wasn’t able to be processed
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: The error details.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ErrorResponse
+          description: Error response.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_34
+    - !ObjectSchema &ref_53
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_48
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            properties:
+              - !Property 
+                schema: *ref_35
+                required: true
+                serializedName: registrationDefinitionId
+                language: !Languages 
+                  default:
+                    name: registrationDefinitionId
+                    description: The fully qualified path of the registration definition.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_15
+                readOnly: true
+                required: false
+                serializedName: provisioningState
+                language: !Languages 
+                  default:
+                    name: provisioningState
+                    description: The current provisioning state of the registration assignment.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_49
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2020-02-01-preview
+                  properties:
+                    - !Property 
+                      schema: !ObjectSchema &ref_50
+                        type: object
+                        apiVersions:
+                          - !ApiVersion 
+                            version: 2020-02-01-preview
+                        properties:
+                          - !Property 
+                            schema: *ref_36
+                            serializedName: description
+                            language: !Languages 
+                              default:
+                                name: description
+                                description: The description of the registration definition.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: !ArraySchema &ref_77
+                              type: array
+                              apiVersions:
+                                - !ApiVersion 
+                                  version: 2020-02-01-preview
+                              elementType: *ref_27
+                              language: !Languages 
+                                default:
+                                  name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesAuthorizations
+                                  description: The collection of authorization objects describing the access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                              protocol: !Protocols {}
+                            serializedName: authorizations
+                            language: !Languages 
+                              default:
+                                name: authorizations
+                                description: The collection of authorization objects describing the access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: !ArraySchema &ref_78
+                              type: array
+                              apiVersions:
+                                - !ApiVersion 
+                                  version: 2020-02-01-preview
+                              elementType: *ref_28
+                              language: !Languages 
+                                default:
+                                  name: RegistrationAssignmentPropertiesRegistrationDefinitionPropertiesEligibleAuthorizations
+                                  description: The collection of eligible authorization objects describing the just-in-time access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                              protocol: !Protocols {}
+                            serializedName: eligibleAuthorizations
+                            language: !Languages 
+                              default:
+                                name: eligibleAuthorizations
+                                description: The collection of eligible authorization objects describing the just-in-time access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_37
+                            serializedName: registrationDefinitionName
+                            language: !Languages 
+                              default:
+                                name: registrationDefinitionName
+                                description: The name of the registration definition.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_15
+                            serializedName: provisioningState
+                            language: !Languages 
+                              default:
+                                name: provisioningState
+                                description: The current provisioning state of the registration definition.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_38
+                            serializedName: manageeTenantId
+                            language: !Languages 
+                              default:
+                                name: manageeTenantId
+                                description: The identifier of the managed tenant.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_39
+                            serializedName: manageeTenantName
+                            language: !Languages 
+                              default:
+                                name: manageeTenantName
+                                description: The name of the managed tenant.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_40
+                            serializedName: managedByTenantId
+                            language: !Languages 
+                              default:
+                                name: managedByTenantId
+                                description: The identifier of the managedBy tenant.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_41
+                            serializedName: managedByTenantName
+                            language: !Languages 
+                              default:
+                                name: managedByTenantName
+                                description: The name of the managedBy tenant.
+                            protocol: !Protocols {}
+                        serializationFormats:
+                          - json
+                        usage:
+                          - output
+                          - input
+                        extensions:
+                          x-internal-autorest-anonymous-schema:
+                            anonymous: true
+                        language: !Languages 
+                          default:
+                            name: RegistrationAssignmentPropertiesRegistrationDefinitionProperties
+                            description: The properties of the registration definition associated with the registration assignment.
+                            namespace: ''
+                        protocol: !Protocols {}
+                      serializedName: properties
+                      language: !Languages 
+                        default:
+                          name: properties
+                          description: The properties of the registration definition associated with the registration assignment.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_31
+                      serializedName: plan
+                      language: !Languages 
+                        default:
+                          name: plan
+                          description: The details for the Managed Services offer’s plan in Azure Marketplace.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_42
+                      readOnly: true
+                      serializedName: id
+                      language: !Languages 
+                        default:
+                          name: id
+                          description: The fully qualified path of the registration definition.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_43
+                      readOnly: true
+                      serializedName: type
+                      language: !Languages 
+                        default:
+                          name: type
+                          description: The type of the Azure resource (Microsoft.ManagedServices/registrationDefinitions).
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_44
+                      readOnly: true
+                      serializedName: name
+                      language: !Languages 
+                        default:
+                          name: name
+                          description: The name of the registration definition.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - output
+                    - input
+                  extensions:
+                    x-internal-autorest-anonymous-schema:
+                      anonymous: true
+                  language: !Languages 
+                    default:
+                      name: RegistrationAssignmentPropertiesRegistrationDefinition
+                      description: The registration definition associated with the registration assignment.
+                      namespace: ''
+                  protocol: !Protocols {}
+                readOnly: true
+                required: false
+                serializedName: registrationDefinition
+                language: !Languages 
+                  default:
+                    name: registrationDefinition
+                    description: The registration definition associated with the registration assignment.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            language: !Languages 
+              default:
+                name: RegistrationAssignmentProperties
+                description: The properties of the registration assignment.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: properties
+          language: !Languages 
+            default:
+              name: properties
+              description: The properties of a registration assignment.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_45
+          readOnly: true
+          serializedName: id
+          language: !Languages 
+            default:
+              name: id
+              description: The fully qualified path of the registration assignment.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_46
+          readOnly: true
+          serializedName: type
+          language: !Languages 
+            default:
+              name: type
+              description: The type of the Azure resource (Microsoft.ManagedServices/registrationAssignments).
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_47
+          readOnly: true
+          serializedName: name
+          language: !Languages 
+            default:
+              name: name
+              description: The name of the registration assignment.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+        - input
+      extensions:
+        x-ms-azure-resource: true
+      language: !Languages 
+        default:
+          name: RegistrationAssignment
+          description: The registration assignment.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_48
+    - *ref_49
+    - *ref_50
+    - !ObjectSchema &ref_100
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_79
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            elementType: *ref_51
+            language: !Languages 
+              default:
+                name: RegistrationDefinitionListValue
+                description: The list of registration definitions.
+            protocol: !Protocols {}
+          readOnly: true
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of registration definitions.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_52
+          readOnly: true
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link to the next page of registration definitions.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: RegistrationDefinitionList
+          description: The list of registration definitions.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_112
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_80
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            elementType: *ref_53
+            language: !Languages 
+              default:
+                name: RegistrationAssignmentListValue
+                description: The list of registration assignments.
+            protocol: !Protocols {}
+          readOnly: true
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of registration assignments.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_54
+          readOnly: true
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link to the next page of registration assignments.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: RegistrationAssignmentList
+          description: The list of registration assignments.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_115
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_83
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            elementType: !ObjectSchema &ref_63
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2020-02-01-preview
+              properties:
+                - !Property 
+                  schema: !ObjectSchema &ref_64
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-02-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_55
+                        required: true
+                        serializedName: managedByTenantId
+                        language: !Languages 
+                          default:
+                            name: managedByTenantId
+                            description: The identifier of the managedBy tenant.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_81
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2020-02-01-preview
+                          elementType: *ref_27
+                          language: !Languages 
+                            default:
+                              name: MarketplaceRegistrationDefinitionPropertiesAuthorizations
+                              description: The collection of authorization objects describing the access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                          protocol: !Protocols {}
+                        required: true
+                        serializedName: authorizations
+                        language: !Languages 
+                          default:
+                            name: authorizations
+                            description: The collection of authorization objects describing the access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_82
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2020-02-01-preview
+                          elementType: *ref_28
+                          language: !Languages 
+                            default:
+                              name: MarketplaceRegistrationDefinitionPropertiesEligibleAuthorizations
+                              description: The collection of eligible authorization objects describing the just-in-time access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                          protocol: !Protocols {}
+                        required: false
+                        serializedName: eligibleAuthorizations
+                        language: !Languages 
+                          default:
+                            name: eligibleAuthorizations
+                            description: The collection of eligible authorization objects describing the just-in-time access Azure Active Directory principals in the managedBy tenant will receive on the delegated resource in the managed tenant.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_56
+                        required: false
+                        serializedName: offerDisplayName
+                        language: !Languages 
+                          default:
+                            name: offerDisplayName
+                            description: The marketplace offer display name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_57
+                        required: false
+                        serializedName: publisherDisplayName
+                        language: !Languages 
+                          default:
+                            name: publisherDisplayName
+                            description: The marketplace publisher display name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_58
+                        required: false
+                        serializedName: planDisplayName
+                        language: !Languages 
+                          default:
+                            name: planDisplayName
+                            description: The marketplace plan display name.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    language: !Languages 
+                      default:
+                        name: MarketplaceRegistrationDefinitionProperties
+                        description: The properties of the marketplace registration definition.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: properties
+                  language: !Languages 
+                    default:
+                      name: properties
+                      description: The properties of the marketplace registration definition.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_31
+                  serializedName: plan
+                  language: !Languages 
+                    default:
+                      name: plan
+                      description: The details for the Managed Services offer’s plan in Azure Marketplace.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_59
+                  readOnly: true
+                  serializedName: id
+                  language: !Languages 
+                    default:
+                      name: id
+                      description: The fully qualified path of the marketplace registration definition.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_60
+                  readOnly: true
+                  serializedName: type
+                  language: !Languages 
+                    default:
+                      name: type
+                      description: The type of the Azure resource (Microsoft.ManagedServices/marketplaceRegistrationDefinitions).
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_61
+                  readOnly: true
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: The name of the marketplace registration definition.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              extensions:
+                x-ms-azure-resource: true
+              language: !Languages 
+                default:
+                  name: MarketplaceRegistrationDefinition
+                  description: ''
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: MarketplaceRegistrationDefinitionListValue
+                description: The list of marketplace registration definitions.
+            protocol: !Protocols {}
+          readOnly: true
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of marketplace registration definitions.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_62
+          readOnly: true
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: The link to the next page of marketplace registration definitions.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: MarketplaceRegistrationDefinitionList
+          description: The list of marketplace registration definitions.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_63
+    - *ref_64
+    - !ObjectSchema &ref_120
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-02-01-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_84
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-02-01-preview
+            elementType: !ObjectSchema &ref_70
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2020-02-01-preview
+              properties:
+                - !Property 
+                  schema: *ref_65
+                  readOnly: true
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: 'The operation name with the format: {provider}/{resource}/{operation}'
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_71
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2020-02-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_66
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: The service provider.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_67
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: The resource on which the operation is performed.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_68
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: The operation type.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_69
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: The description of the operation.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-internal-autorest-anonymous-schema:
+                        anonymous: true
+                    language: !Languages 
+                      default:
+                        name: OperationDisplay
+                        description: The object that represents the operation.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  readOnly: true
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: The object that represents the operation.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: Operation
+                  description: The object that describes a single Microsoft.ManagedServices operation.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationListValue
+                description: The list of Microsoft.ManagedServices operations.
+            protocol: !Protocols {}
+          readOnly: true
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: The list of Microsoft.ManagedServices operations.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationList
+          description: The list of the operations.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_70
+    - *ref_71
+  arrays:
+    - *ref_72
+    - *ref_73
+    - *ref_74
+    - *ref_75
+    - *ref_76
+    - *ref_77
+    - *ref_78
+    - *ref_79
+    - *ref_80
+    - *ref_81
+    - *ref_82
+    - *ref_83
+    - *ref_84
+globalParameters:
+  - !Parameter &ref_86
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_88
+    schema: *ref_85
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: RegistrationDefinitions
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_90
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_91
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: registrationDefinitionId
+                description: The GUID of the registration definition.
+                serializedName: registrationDefinitionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationDefinitions/{registrationDefinitionId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_90
+          - *ref_91
+        responses:
+          - !SchemaResponse 
+            schema: *ref_51
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns the complete registration definition with plan details.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Definition:
+              parameters:
+                api-version: 2020-02-01-preview
+                registrationDefinitionId: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    name: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                    type: Microsoft.ManagedServices/registrationDefinitions
+                    id: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-6e081c90ada2
+                    plan:
+                      name: addesai-plan
+                      product: test
+                      publisher: marketplace-test
+                      version: 1.0.0
+                    properties:
+                      description: Test
+                      authorizations:
+                        - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                        - delegatedRoleDefinitionIds:
+                            - b24988ac-6180-42a0-ab88-20f7382dd24c
+                          principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: User Access Administrator
+                          roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                      eligibleAuthorizations:
+                        - justInTimeAccessPolicy:
+                            managedByTenantApprovers:
+                              - principalId: d9b22cd6-6407-43cc-8c60-07c56df0b51a
+                                principalIdDisplayName: Approver Group
+                            maximumActivationDuration: PT8H
+                            multiFactorAuthProvider: Azure
+                          principalId: 3e0ed8c6-e902-4fc5-863c-e3ddbb2ae2a2
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: ae349356-3a1b-4a5e-921d-050484c6347e
+                      managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                      managedByTenantName: Test Tenant
+                      manageeTenantId: 0e06d6a3-55ae-40a3-ac29-350808980808
+                      manageeTenantName: Test customer
+                      provisioningState: Succeeded
+                      registrationDefinitionName: DefinitionName
+        language: !Languages 
+          default:
+            name: Get
+            description: Gets the registration definition details.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_93
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: registrationDefinitionId
+                description: The GUID of the registration definition.
+                serializedName: registrationDefinitionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+          - !Parameter &ref_94
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationDefinitions/{registrationDefinitionId}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_93
+          - *ref_94
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - The registration definition is deleted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '200'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: No Content - The registration definition does not exist.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Delete Registration Definition:
+              parameters:
+                api-version: 2020-02-01-preview
+                registrationDefinitionId: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200': {}
+                '204': {}
+        language: !Languages 
+          default:
+            name: Delete
+            description: Deletes the registration definition.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_97
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: registrationDefinitionId
+                description: The GUID of the registration definition.
+                serializedName: registrationDefinitionId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+          - !Parameter &ref_98
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_95
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_96
+                schema: *ref_51
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: requestBody
+                    description: The parameters required to create a new registration definition.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_96
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationDefinitions/{registrationDefinitionId}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_97
+          - *ref_98
+        responses:
+          - !SchemaResponse 
+            schema: *ref_51
+            language: !Languages 
+              default:
+                name: ''
+                description: Ok - Returns information about the updated registration definition.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !SchemaResponse 
+            schema: *ref_51
+            language: !Languages 
+              default:
+                name: ''
+                description: Created - Returns information about the created registration definition.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '201'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Put Registration Definition:
+              parameters:
+                api-version: 2020-02-01-preview
+                registrationDefinitionId: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                requestBody:
+                  plan:
+                    name: addesai-plan
+                    product: test
+                    publisher: marketplace-test
+                    version: 1.0.0
+                  properties:
+                    description: Tes1t
+                    authorizations:
+                      - principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                        principalIdDisplayName: Support User
+                        roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                      - delegatedRoleDefinitionIds:
+                          - b24988ac-6180-42a0-ab88-20f7382dd24c
+                        principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                        principalIdDisplayName: User Access Administrator
+                        roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                    eligibleAuthorizations:
+                      - justInTimeAccessPolicy:
+                          managedByTenantApprovers:
+                            - principalId: d9b22cd6-6407-43cc-8c60-07c56df0b51a
+                              principalIdDisplayName: Approver Group
+                          maximumActivationDuration: PT8H
+                          multiFactorAuthProvider: Azure
+                        principalId: 3e0ed8c6-e902-4fc5-863c-e3ddbb2ae2a2
+                        principalIdDisplayName: Support User
+                        roleDefinitionId: ae349356-3a1b-4a5e-921d-050484c6347e
+                    managedByTenantId: 83abe5cd-bcc3-441a-bd86-e6a75360cecc
+                    registrationDefinitionName: DefinitionName
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    name: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                    type: Microsoft.ManagedServices/registrationDefinitions
+                    id: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-6e081c90ada2
+                    plan:
+                      name: addesai-plan
+                      product: test
+                      publisher: marketplace-test
+                      version: 1.0.0
+                    properties:
+                      description: Test
+                      authorizations:
+                        - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                        - delegatedRoleDefinitionIds:
+                            - b24988ac-6180-42a0-ab88-20f7382dd24c
+                          principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: User Access Administrator
+                          roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                      eligibleAuthorizations:
+                        - justInTimeAccessPolicy:
+                            managedByTenantApprovers:
+                              - principalId: d9b22cd6-6407-43cc-8c60-07c56df0b51a
+                                principalIdDisplayName: Approver Group
+                            maximumActivationDuration: PT8H
+                            multiFactorAuthProvider: Azure
+                          principalId: 3e0ed8c6-e902-4fc5-863c-e3ddbb2ae2a2
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: ae349356-3a1b-4a5e-921d-050484c6347e
+                      managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                      managedByTenantName: Test Tenant
+                      provisioningState: Succeeded
+                      registrationDefinitionName: DefinitionName
+                '201':
+                  body:
+                    name: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                    type: Microsoft.ManagedServices/registrationDefinitions
+                    id: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-6e081c90ada2
+                    plan:
+                      name: addesai-plan
+                      product: test
+                      publisher: marketplace-test
+                      version: 1.0.0
+                    properties:
+                      description: Test
+                      authorizations:
+                        - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                        - delegatedRoleDefinitionIds:
+                            - b24988ac-6180-42a0-ab88-20f7382dd24c
+                          principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: User Access Administrator
+                          roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                      eligibleAuthorizations:
+                        - justInTimeAccessPolicy:
+                            managedByTenantApprovers:
+                              - principalId: d9b22cd6-6407-43cc-8c60-07c56df0b51a
+                                principalIdDisplayName: Approver Group
+                            maximumActivationDuration: PT8H
+                            multiFactorAuthProvider: Azure
+                          principalId: 3e0ed8c6-e902-4fc5-863c-e3ddbb2ae2a2
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: ae349356-3a1b-4a5e-921d-050484c6347e
+                      managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                      managedByTenantName: Test Tenant
+                      provisioningState: Succeeded
+                      registrationDefinitionName: DefinitionName
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: CreateOrUpdate
+            description: Creates or updates a registration definition.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_99
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationDefinitions
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_99
+        responses:
+          - !SchemaResponse 
+            schema: *ref_100
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns a list of the registration definitions.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Definitions:
+              parameters:
+                api-version: 2020-02-01-preview
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                        type: Microsoft.ManagedServices/registrationDefinitions
+                        id: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-6e081c90ada2
+                        plan:
+                          name: addesai-plan
+                          product: test
+                          publisher: marketplace-test
+                          version: 1.0.0
+                        properties:
+                          description: Test
+                          authorizations:
+                            - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: Support User
+                              roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                            - delegatedRoleDefinitionIds:
+                                - b24988ac-6180-42a0-ab88-20f7382dd24c
+                              principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: User Access Administrator
+                              roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                          eligibleAuthorizations:
+                            - justInTimeAccessPolicy:
+                                managedByTenantApprovers:
+                                  - principalId: d9b22cd6-6407-43cc-8c60-07c56df0b51a
+                                    principalIdDisplayName: Approver Group
+                                maximumActivationDuration: PT8H
+                                multiFactorAuthProvider: Azure
+                              principalId: 3e0ed8c6-e902-4fc5-863c-e3ddbb2ae2a2
+                              principalIdDisplayName: Support User
+                              roleDefinitionId: ae349356-3a1b-4a5e-921d-050484c6347e
+                          managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                          managedByTenantName: Test Tenant
+                          manageeTenantId: 0e06d6a3-55ae-40a3-ac29-350808980808
+                          manageeTenantName: Test customer
+                          provisioningState: Succeeded
+                          registrationDefinitionName: DefinitionName
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Gets a list of the registration definitions.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: RegistrationDefinitions
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: RegistrationAssignments
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_102
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_103
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: registrationAssignmentId
+                description: The GUID of the registration assignment.
+                serializedName: registrationAssignmentId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_104
+            schema: *ref_101
+            implementation: Method
+            language: !Languages 
+              default:
+                name: expandRegistrationDefinition
+                description: The flag indicating whether to return the registration definition details along with the registration assignment details.
+                serializedName: $expandRegistrationDefinition
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationAssignments/{registrationAssignmentId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_102
+          - *ref_103
+          - *ref_104
+        responses:
+          - !SchemaResponse 
+            schema: *ref_53
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns the registration assignment.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Assignment:
+              parameters:
+                api-version: 2020-02-01-preview
+                registrationAssignmentId: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    name: 484a7d5f-9729-4b87-bc9b-26610985a013
+                    type: Microsoft.ManagedServices/registrationAssignments
+                    id: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationAssignments/484a7d5f-9729-4b87-bc9b-26610985a013
+                    properties:
+                      provisioningState: Succeeded
+                      registrationDefinition:
+                        name: 26c128c2-fefa-4340-9bb1-8e081c90ada2
+                        type: Microsoft.ManagedServices/registrationDefinitions
+                        id: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-8e081c90ada2
+                        plan:
+                          name: addesai-plan
+                          product: test
+                          publisher: marketplace-test
+                          version: 1.0.0
+                        properties:
+                          description: Test
+                          authorizations:
+                            - principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: Support User
+                              roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                            - delegatedRoleDefinitionIds:
+                                - b24988ac-6180-42a0-ab88-20f7382dd24c
+                              principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: User Access Administrator
+                              roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                          eligibleAuthorizations:
+                            - justInTimeAccessPolicy:
+                                maximumActivationDuration: PT8H
+                                multiFactorAuthProvider: Azure
+                              principalId: 3e0ed8c6-e902-4fc5-863c-e3ddbb2ae2a2
+                              principalIdDisplayName: Support User
+                              roleDefinitionId: ae349356-3a1b-4a5e-921d-050484c6347e
+                          managedByTenantId: 83abe5cd-bcc3-441a-bd86-e6a75360cecc
+                          managedByTenantName: Contoso Corp.
+                          manageeTenantId: 01c0bcd5-4f47-4e4b-b492-418b7e2a8854
+                          manageeTenantName: test_test_aad_SbtFhyGiLHPFm
+                          provisioningState: Succeeded
+                          registrationDefinitionName: DefinitionName
+                      registrationDefinitionId: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-8e081c90ada2
+                  headers: {}
+        language: !Languages 
+          default:
+            name: Get
+            description: Gets the details of the specified registration assignment.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_105
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_106
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: registrationAssignmentId
+                description: The GUID of the registration assignment.
+                serializedName: registrationAssignmentId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationAssignments/{registrationAssignmentId}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_105
+          - *ref_106
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - The registration assignment is deleted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '200'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: Accepted - The registration assignment deletion operation is accepted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '202'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: No Content - The registration assignment does not exist.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Delete Registration Assignment:
+              parameters:
+                api-version: 2020-02-01-preview
+                registrationAssignmentId: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200': {}
+                '202': {}
+                '204': {}
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: Delete
+            description: Deletes the specified registration assignment.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_108
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_109
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: registrationAssignmentId
+                description: The GUID of the registration assignment.
+                serializedName: registrationAssignmentId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_95
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_107
+                schema: *ref_53
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: requestBody
+                    description: The parameters required to create new registration assignment.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_107
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationAssignments/{registrationAssignmentId}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_108
+          - *ref_109
+        responses:
+          - !SchemaResponse 
+            schema: *ref_53
+            language: !Languages 
+              default:
+                name: ''
+                description: Ok - Returns information about the updated registration assignment.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !SchemaResponse 
+            schema: *ref_53
+            language: !Languages 
+              default:
+                name: ''
+                description: Created - Returns information about the created registration assignment.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '201'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Put Registration Assignment:
+              parameters:
+                api-version: 2020-02-01-preview
+                registrationAssignmentId: 26c128c2-fefa-4340-9bb1-6e081c90ada2
+                requestBody:
+                  properties:
+                    registrationDefinitionId: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-6e081c90ada2
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    name: 484a7d5f-9729-4b87-bc9b-26610985a013
+                    type: Microsoft.ManagedServices/registrationAssignments
+                    id: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationAssignments/484a7d5f-9729-4b87-bc9b-26610985a013
+                    properties:
+                      provisioningState: Succeeded
+                      registrationDefinitionId: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-8e081c90ada2
+                '201':
+                  body:
+                    name: 484a7d5f-9729-4b87-bc9b-26610985a013
+                    type: Microsoft.ManagedServices/registrationAssignments
+                    id: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationAssignments/484a7d5f-9729-4b87-bc9b-26610985a013
+                    properties:
+                      provisioningState: Succeeded
+                      registrationDefinitionId: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-8e081c90ada2
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: CreateOrUpdate
+            description: Creates or updates a registration assignment.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_110
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_111
+            schema: *ref_101
+            implementation: Method
+            language: !Languages 
+              default:
+                name: expandRegistrationDefinition
+                description: The flag indicating whether to return the registration definition details along with the registration assignment details.
+                serializedName: $expandRegistrationDefinition
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/registrationAssignments
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_110
+          - *ref_111
+        responses:
+          - !SchemaResponse 
+            schema: *ref_112
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns a list of the registration assignments.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Assignments:
+              parameters:
+                api-version: 2020-02-01-preview
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: 484a7d5f-9729-4b87-bc9b-26610985a013
+                        type: Microsoft.ManagedServices/registrationAssignments
+                        id: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationAssignments/484a7d5f-9729-4b87-bc9b-26610985a013
+                        properties:
+                          provisioningState: Succeeded
+                          registrationDefinition:
+                            name: 26c128c2-fefa-4340-9bb1-8e081c90ada2
+                            type: Microsoft.ManagedServices/registrationDefinitions
+                            id: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-8e081c90ada2
+                            plan:
+                              name: addesai-plan
+                              product: test
+                              publisher: marketplace-test
+                              version: 1.0.0
+                            properties:
+                              description: Test
+                              authorizations:
+                                - principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                                  principalIdDisplayName: Support User
+                                  roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                                - delegatedRoleDefinitionIds:
+                                    - b24988ac-6180-42a0-ab88-20f7382dd24c
+                                  principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                                  principalIdDisplayName: User Access Administrator
+                                  roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                              eligibleAuthorizations:
+                                - justInTimeAccessPolicy:
+                                    maximumActivationDuration: PT8H
+                                    multiFactorAuthProvider: Azure
+                                  principalId: 700bddf4-2c3b-4cd1-bb02-6a2c622524f4
+                                  roleDefinitionId: 8e3af657-a8ff-443c-a75c-2fe8c4bcb635
+                              managedByTenantId: 83abe5cd-bcc3-441a-bd86-e6a75360cecc
+                              managedByTenantName: Contoso Corp.
+                              manageeTenantId: 01c0bcd5-4f47-4e4b-b492-418b7e2a8854
+                              manageeTenantName: test_test_aad_SbtFhyGiLHPFm
+                              provisioningState: Succeeded
+                              registrationDefinitionName: DefinitionName
+                          registrationDefinitionId: /subscriptions/0afefe50-734e-4610-8c82-a144aff49dea/providers/Microsoft.ManagedServices/registrationDefinitions/26c128c2-fefa-4340-9bb1-8e081c90ada2
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Gets a list of the registration assignments.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: RegistrationAssignments
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: MarketplaceRegistrationDefinitions
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_113
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_114
+            schema: *ref_87
+            implementation: Method
+            language: !Languages 
+              default:
+                name: filter
+                description: The filter query parameter to filter marketplace registration definitions by plan identifier, publisher, version etc.
+                serializedName: $filter
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_113
+          - *ref_114
+        responses:
+          - !SchemaResponse 
+            schema: *ref_115
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns a list of the marketplace registration definitions.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Definitions:
+              parameters:
+                $filter: planIdentifier eq 'publisher.offerIdentifier.planName.version'
+                api-version: 2020-02-01-preview
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: marketplace-test.test.test-plan.1.0.0
+                        type: Microsoft.ManagedServices/marketplaceRegistrationDefinitions
+                        id: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/marketplace-test.test.test-plan.1.0.0
+                        plan:
+                          name: test-plan
+                          product: test
+                          publisher: marketplace-test
+                          version: 1.0.0
+                        properties:
+                          authorizations:
+                            - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: Support User
+                              roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                            - delegatedRoleDefinitionIds:
+                                - b24988ac-6180-42a0-ab88-20f7382dd24c
+                              principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: User Access Administrator
+                              roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                          managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                          offerDisplayName: Marketplace Test Offer
+                          planDisplayName: Test Plan
+                          publisherDisplayName: Marketplace Test Publisher
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Gets a list of the marketplace registration definitions for the marketplace identifier.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_116
+            schema: *ref_87
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: scope
+                description: The scope of the resource.
+                serializedName: scope
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_117
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: marketplaceIdentifier
+                description: 'The Azure Marketplace identifier. Expected formats: {publisher}.{product[-preview]}.{planName}.{version} or {publisher}.{product[-preview]}.{planName} or {publisher}.{product[-preview]} or {publisher}).'
+                serializedName: marketplaceIdentifier
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{scope}/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/{marketplaceIdentifier}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_116
+          - *ref_117
+        responses:
+          - !SchemaResponse 
+            schema: *ref_63
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns the details of the marketplace registration definition.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Definitions:
+              parameters:
+                api-version: 2020-02-01-preview
+                marketplaceIdentifier: publisher.product.planName.version
+                scope: subscription/0afefe50-734e-4610-8a82-a144ahf49dea
+              responses:
+                '200':
+                  body:
+                    name: marketplace-test.test.test-plan.1.0.0
+                    type: Microsoft.ManagedServices/marketplaceRegistrationDefinitions
+                    id: /subscriptions/0afefe50-734e-4610-8a82-a144ahf49dea/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/marketplace-test.test.test-plan.1.0.0
+                    plan:
+                      name: test-plan
+                      product: test
+                      publisher: marketplace-test
+                      version: 1.0.0
+                    properties:
+                      authorizations:
+                        - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                        - delegatedRoleDefinitionIds:
+                            - b24988ac-6180-42a0-ab88-20f7382dd24c
+                          principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: User Access Administrator
+                          roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                      managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                      offerDisplayName: Marketplace Test Offer
+                      planDisplayName: Test Plan
+                      publisherDisplayName: Marketplace Test Publisher
+        language: !Languages 
+          default:
+            name: Get
+            description: Get the marketplace registration definition for the marketplace identifier.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: MarketplaceRegistrationDefinitions
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: MarketplaceRegistrationDefinitionsWithoutScope
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_118
+            schema: *ref_87
+            implementation: Method
+            language: !Languages 
+              default:
+                name: filter
+                description: The filter query parameter to filter marketplace registration definitions by plan identifier, publisher, version etc.
+                serializedName: $filter
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_118
+        responses:
+          - !SchemaResponse 
+            schema: *ref_115
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns a list of the marketplace registration definitions.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Marketplace Registration Definitions At Tenant Scope:
+              parameters:
+                $filter: planIdentifier eq 'publisher.offerIdentifier.planName.version'
+                api-version: 2020-02-01-preview
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: marketplace-test.test.test-plan.1.0.0
+                        type: Microsoft.ManagedServices/marketplaceRegistrationDefinitions
+                        id: /providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/marketplace-test.test.test-plan.1.0.0
+                        plan:
+                          name: test-plan
+                          product: test
+                          publisher: marketplace-test
+                          version: 1.0.0
+                        properties:
+                          authorizations:
+                            - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: Support User
+                              roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                            - delegatedRoleDefinitionIds:
+                                - b24988ac-6180-42a0-ab88-20f7382dd24c
+                              principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                              principalIdDisplayName: User Access Administrator
+                              roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                          eligibleAuthorizations: []
+                          managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                          offerDisplayName: Marketplace Test Offer
+                          planDisplayName: Test Plan
+                          publisherDisplayName: Marketplace Test Publisher
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Gets a list of the marketplace registration definitions for the marketplace identifier.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - !Parameter &ref_119
+            schema: *ref_87
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: marketplaceIdentifier
+                description: 'The Azure Marketplace identifier. Expected formats: {publisher}.{product[-preview]}.{planName}.{version} or {publisher}.{product[-preview]}.{planName} or {publisher}.{product[-preview]} or {publisher}).'
+                serializedName: marketplaceIdentifier
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/{marketplaceIdentifier}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_119
+        responses:
+          - !SchemaResponse 
+            schema: *ref_63
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns the details of the marketplace registration definition.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Marketplace Registration Definition At Tenant Scope:
+              parameters:
+                api-version: 2020-02-01-preview
+                marketplaceIdentifier: publisher.product.planName.version
+              responses:
+                '200':
+                  body:
+                    name: marketplace-test.test.test-plan.1.0.0
+                    type: Microsoft.ManagedServices/marketplaceRegistrationDefinitions
+                    id: /providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/marketplace-test.test.test-plan.1.0.0
+                    plan:
+                      name: test-plan
+                      product: test
+                      publisher: marketplace-test
+                      version: 1.0.0
+                    properties:
+                      authorizations:
+                        - principalId: f98g86a2-4cc4-4e6d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: Support User
+                          roleDefinitionId: acdd72a7-3385-48ef-bd42-f606fba81ae7
+                        - delegatedRoleDefinitionIds:
+                            - b24988ac-6180-42a0-ab88-20f7382dd24c
+                          principalId: f98d86a2-4cc4-4e9d-ad47-b3e80a1bcdfc
+                          principalIdDisplayName: User Access Administrator
+                          roleDefinitionId: 18d7d88d-d35e-4fb5-a5c3-7773c20a72d9
+                      eligibleAuthorizations: []
+                      managedByTenantId: 83ace5cd-bcc3-441a-hd86-e6a75360cecc
+                      offerDisplayName: Marketplace Test Offer
+                      planDisplayName: Test Plan
+                      publisherDisplayName: Marketplace Test Publisher
+        language: !Languages 
+          default:
+            name: Get
+            description: Get the marketplace registration definition for the marketplace identifier.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: MarketplaceRegistrationDefinitionsWithoutScope
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2020-02-01-preview
+        parameters:
+          - *ref_86
+          - *ref_88
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_89
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagedServices/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: OK - Returns a list of operations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_92
+            language: !Languages 
+              default:
+                name: ''
+                description: The error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get Registration Operations:
+              parameters:
+                api-version: 2020-02-01-preview
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: Microsoft.ManagedServices/registrationDefinitions/read
+                        display:
+                          description: Retrieves a list of Managed Services registration definitions.
+                          operation: List Managed Services Registration Definitions
+                          provider: Microsoft Managed Services
+                          resource: Managed Services Registration Definition
+        language: !Languages 
+          default:
+            name: List
+            description: Gets a list of the operations.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: ManagedServicesClient
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
