@@ -1,0 +1,1283 @@
+!CodeModel 
+info: !Info 
+  description: This API describe ACE Provisioning ManagementPartner
+  title: ACE Provisioning ManagementPartner API
+schemas: !Schemas 
+  numbers:
+    - !NumberSchema &ref_1
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      precision: 32
+      language: !Languages 
+        default:
+          name: PartnerResponseEtag
+          description: Type of the partner
+      protocol: !Protocols {}
+    - !NumberSchema &ref_9
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      precision: 32
+      language: !Languages 
+        default:
+          name: PartnerPropertiesVersion
+          description: This is the version.
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_28
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_2
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerResponseId
+          description: Identifier of the partner
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerResponseName
+          description: Name of the partner
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerPropertiesPartnerId
+          description: This is the partner id
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerPropertiesPartnerName
+          description: This is the partner name
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerPropertiesTenantId
+          description: This is the tenant id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_8
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerPropertiesObjectId
+          description: This is the object id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerResponseType
+          description: Type of resource. "Microsoft.ManagementPartner/partners"
+      protocol: !Protocols {}
+    - !StringSchema &ref_14
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: ExtendedErrorInfoMessage
+          description: this is the extended error info message
+      protocol: !Protocols {}
+    - !StringSchema &ref_16
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationResponseName
+          description: this is the operation response name
+      protocol: !Protocols {}
+    - !StringSchema &ref_17
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayProvider
+          description: the is management partner provider
+      protocol: !Protocols {}
+    - !StringSchema &ref_18
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayResource
+          description: the is management partner resource
+      protocol: !Protocols {}
+    - !StringSchema &ref_19
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayOperation
+          description: the is management partner operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_20
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayDescription
+          description: the is management partner operation description
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationResponseOrigin
+          description: the is operation response origin information
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: OperationListNextLink
+          description: Url to get the next page of items.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_12
+      choices:
+        - !ChoiceValue 
+          value: Active
+          language:
+            default:
+              name: Active
+              description: ''
+        - !ChoiceValue 
+          value: Deleted
+          language:
+            default:
+              name: Deleted
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ManagementPartnerState
+          description: 'this is the management partner state: Active or Deleted'
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_13
+      choices:
+        - !ChoiceValue 
+          value: NotFound
+          language:
+            default:
+              name: NotFound
+              description: ''
+        - !ChoiceValue 
+          value: Conflict
+          language:
+            default:
+              name: Conflict
+              description: ''
+        - !ChoiceValue 
+          value: BadRequest
+          language:
+            default:
+              name: BadRequest
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ErrorResponseCode
+          description: this is the error response code that management partner operations may return
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_26
+      type: constant
+      value: !ConstantValue 
+        value: '2018-02-01'
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20180201
+          description: Api Version (2018-02-01)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_30
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+  dateTimes:
+    - !DateTimeSchema &ref_10
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerPropertiesUpdatedTime
+          description: This is the DateTime when the partner was updated.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_11
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      language: !Languages 
+        default:
+          name: PartnerPropertiesCreatedTime
+          description: This is the DateTime when the partner was created.
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_32
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      properties:
+        - !Property 
+          schema: *ref_1
+          serializedName: etag
+          language: !Languages 
+            default:
+              name: etag
+              description: Type of the partner
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_2
+          readOnly: true
+          serializedName: id
+          language: !Languages 
+            default:
+              name: id
+              description: Identifier of the partner
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_3
+          readOnly: true
+          serializedName: name
+          language: !Languages 
+            default:
+              name: name
+              description: Name of the partner
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_4
+          readOnly: true
+          serializedName: type
+          language: !Languages 
+            default:
+              name: type
+              description: Type of resource. "Microsoft.ManagementPartner/partners"
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_5
+          flattenedNames:
+            - properties
+            - partnerId
+          serializedName: partnerId
+          language: !Languages 
+            default:
+              name: partnerId
+              description: This is the partner id
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_6
+          flattenedNames:
+            - properties
+            - partnerName
+          serializedName: partnerName
+          language: !Languages 
+            default:
+              name: partnerName
+              description: This is the partner name
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_7
+          flattenedNames:
+            - properties
+            - tenantId
+          serializedName: tenantId
+          language: !Languages 
+            default:
+              name: tenantId
+              description: This is the tenant id.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_8
+          flattenedNames:
+            - properties
+            - objectId
+          serializedName: objectId
+          language: !Languages 
+            default:
+              name: objectId
+              description: This is the object id.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_9
+          flattenedNames:
+            - properties
+            - version
+          serializedName: version
+          language: !Languages 
+            default:
+              name: version
+              description: This is the version.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_10
+          flattenedNames:
+            - properties
+            - updatedTime
+          serializedName: updatedTime
+          language: !Languages 
+            default:
+              name: updatedTime
+              description: This is the DateTime when the partner was updated.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_11
+          flattenedNames:
+            - properties
+            - createdTime
+          serializedName: createdTime
+          language: !Languages 
+            default:
+              name: createdTime
+              description: This is the DateTime when the partner was created.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_12
+          flattenedNames:
+            - properties
+            - state
+          serializedName: state
+          extensions:
+            x-ms-client-flatten: true
+          language: !Languages 
+            default:
+              name: state
+              description: This is the partner state
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      extensions:
+        x-ms-azure-resource: true
+      language: !Languages 
+        default:
+          name: PartnerResponse
+          description: this is the management partner operations response
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_33
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_15
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2018-02-01'
+            properties:
+              - !Property 
+                schema: *ref_13
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: this is the error response code
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_14
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: this is the extended error info message
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            language: !Languages 
+              default:
+                name: ExtendedErrorInfo
+                description: this is the extended error info
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: this is the ExtendedErrorInfo property
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: Error
+          description: this is the management partner operations error
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_15
+    - !ObjectSchema &ref_37
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2018-02-01'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_25
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2018-02-01'
+            elementType: !ObjectSchema &ref_23
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2018-02-01'
+              properties:
+                - !Property 
+                  schema: *ref_16
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: this is the operation response name
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_24
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2018-02-01'
+                    properties:
+                      - !Property 
+                        schema: *ref_17
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: the is management partner provider
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_18
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: the is management partner resource
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_19
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: the is management partner operation
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_20
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: the is management partner operation description
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    language: !Languages 
+                      default:
+                        name: OperationDisplay
+                        description: this is the management partner operation
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: this is the operation display
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_21
+                  serializedName: origin
+                  language: !Languages 
+                    default:
+                      name: origin
+                      description: the is operation response origin information
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: OperationResponse
+                  description: this is the management partner operations response
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationListValue
+                description: this is the operation response list
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: this is the operation response list
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_22
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Url to get the next page of items.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationList
+          description: this is the management partner operations list
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_23
+    - *ref_24
+  arrays:
+    - *ref_25
+globalParameters:
+  - !Parameter &ref_27
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_29
+    schema: *ref_26
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: Partner
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2018-02-01'
+        parameters:
+          - *ref_27
+          - !Parameter &ref_31
+            schema: *ref_28
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: partnerId
+                description: Id of the Partner
+                serializedName: partnerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_29
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_30
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagementPartner/partners/{partnerId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_31
+        responses:
+          - !SchemaResponse 
+            schema: *ref_32
+            language: !Languages 
+              default:
+                name: ''
+                description: Get the details of the `Partner`.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_33
+            language: !Languages 
+              default:
+                name: ''
+                description: Unexpected error
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetPartnerDetails:
+              parameters:
+                api-version: '2018-02-01'
+                partnerId: '123456'
+              responses:
+                '200':
+                  body:
+                    name: '123456'
+                    type: Microsoft.ManagementPartner/partner
+                    etag: 3
+                    id: /providers/microsoft.managementpartner/partners/123456
+                    properties:
+                      createdTime: '2018-01-20T01:23:40.5280496Z'
+                      objectId: aa67f786-0552-423e-8849-244ed12bf581
+                      partnerId: '123456'
+                      partnerName: Test_jefl
+                      state: Active
+                      tenantId: 1b1121dd-6900-412a-af73-e8d44f81e1c1
+                      updatedTime: '2018-01-20T01:52:57.9126052Z'
+                      version: 3
+        language: !Languages 
+          default:
+            name: Get
+            description: Get the management partner using the partnerId, objectId and tenantId.
+            summary: Get a specific `Partner`.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2018-02-01'
+        parameters:
+          - *ref_27
+          - !Parameter &ref_34
+            schema: *ref_28
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: partnerId
+                description: Id of the Partner
+                serializedName: partnerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_29
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_30
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagementPartner/partners/{partnerId}
+                method: put
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_34
+        responses:
+          - !SchemaResponse 
+            schema: *ref_32
+            language: !Languages 
+              default:
+                name: ''
+                description: Get the details of the `Partner`.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_33
+            language: !Languages 
+              default:
+                name: ''
+                description: Unexpected error
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            PutPartnerDetails:
+              parameters:
+                api-version: '2018-02-01'
+                partnerId: '123456'
+              responses:
+                '200':
+                  body:
+                    name: '123456'
+                    type: Microsoft.ManagementPartner/partner
+                    etag: 3
+                    id: /providers/microsoft.managementpartner/partners/123456
+                    properties:
+                      createdTime: '2018-01-20T01:23:40.5280496Z'
+                      objectId: aa67f786-0552-423e-8849-244ed12bf581
+                      partnerId: '123456'
+                      partnerName: Test_jefl
+                      state: Active
+                      tenantId: 1b1121dd-6900-412a-af73-e8d44f81e1c1
+                      updatedTime: '2018-01-20T01:52:57.9126052Z'
+                      version: 3
+        language: !Languages 
+          default:
+            name: Create
+            description: Create a management partner for the objectId and tenantId.
+            summary: Create a specific `Partner`.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2018-02-01'
+        parameters:
+          - *ref_27
+          - !Parameter &ref_35
+            schema: *ref_28
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: partnerId
+                description: Id of the Partner
+                serializedName: partnerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_29
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_30
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagementPartner/partners/{partnerId}
+                method: patch
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_35
+        responses:
+          - !SchemaResponse 
+            schema: *ref_32
+            language: !Languages 
+              default:
+                name: ''
+                description: Get the details of the `Partner`.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_33
+            language: !Languages 
+              default:
+                name: ''
+                description: Unexpected error
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            PatchPartnerDetails:
+              parameters:
+                api-version: '2018-02-01'
+                partnerId: '123456'
+              responses:
+                '200':
+                  body:
+                    name: '123456'
+                    type: Microsoft.ManagementPartner/partner
+                    etag: 3
+                    id: /providers/microsoft.managementpartner/partners/123456
+                    properties:
+                      createdTime: '2018-01-20T01:23:40.5280496Z'
+                      objectId: aa67f786-0552-423e-8849-244ed12bf581
+                      partnerId: '123456'
+                      partnerName: Test_jefl
+                      state: Active
+                      tenantId: 1b1121dd-6900-412a-af73-e8d44f81e1c1
+                      updatedTime: '2018-01-20T01:52:57.9126052Z'
+                      version: 3
+        language: !Languages 
+          default:
+            name: Update
+            description: Update the management partner for the objectId and tenantId.
+            summary: Update a specific `Partner`.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2018-02-01'
+        parameters:
+          - *ref_27
+          - !Parameter &ref_36
+            schema: *ref_28
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: partnerId
+                description: Id of the Partner
+                serializedName: partnerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_29
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_30
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagementPartner/partners/{partnerId}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_36
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: Deleted the `Partner`.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_33
+            language: !Languages 
+              default:
+                name: ''
+                description: Unexpected error
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            DeletePartnerDetails:
+              parameters:
+                api-version: '2018-02-01'
+                partnerId: '123456'
+              responses:
+                '200': {}
+        language: !Languages 
+          default:
+            name: Delete
+            description: Delete the management partner for the objectId and tenantId.
+            summary: Delete a specific `Partner`.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Partner
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Operation
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2018-02-01'
+        parameters:
+          - *ref_27
+          - *ref_29
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_30
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagementPartner/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_37
+            language: !Languages 
+              default:
+                name: ''
+                description: List all the operations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_33
+            language: !Languages 
+              default:
+                name: ''
+                description: Unexpected error
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetOperations:
+              parameters:
+                api-version: '2018-02-01'
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: Microsoft.ManagementPartner/partners/read
+                        display:
+                          description: Read All ManagementPartner
+                          operation: Get ManagementPartner
+                          provider: Microsoft ManagementPartner
+                          resource: ManagementPartner
+                      - name: Microsoft.ManagementPartner/partners/write
+                        display:
+                          description: Create any ManagementPartner
+                          operation: Create ManagementPartner
+                          provider: Microsoft ManagementPartner
+                          resource: ManagementPartner
+                      - name: Microsoft.ManagementPartner/partners/action
+                        display:
+                          description: Update any ManagementPartner
+                          operation: Update ManagementPartner
+                          provider: Microsoft ManagementPartner
+                          resource: ManagementPartner
+                      - name: Microsoft.ManagementPartner/partners/delete
+                        display:
+                          description: Delete any ManagementPartner
+                          operation: Delete ManagementPartner
+                          provider: Microsoft ManagementPartner
+                          resource: ManagementPartner
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: List all the operations.
+            paging:
+              nextLinkName: nextLink
+            summary: Get operations.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operation
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Partners
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2018-02-01'
+        parameters:
+          - *ref_27
+          - *ref_29
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_30
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.ManagementPartner/partners
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_32
+            language: !Languages 
+              default:
+                name: ''
+                description: Get the details of the `Partner`.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_33
+            language: !Languages 
+              default:
+                name: ''
+                description: Unexpected error
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetPartnerDetails:
+              parameters:
+                api-version: '2018-02-01'
+              responses:
+                '200':
+                  body:
+                    name: '123456'
+                    type: Microsoft.ManagementPartner/partner
+                    etag: 3
+                    id: /providers/microsoft.managementpartner/partners
+                    properties:
+                      createdTime: '2018-01-20T01:23:40.5280496Z'
+                      objectId: aa67f786-0552-423e-8849-244ed12bf581
+                      partnerId: '123456'
+                      partnerName: Test_jefl
+                      state: Active
+                      tenantId: 1b1121dd-6900-412a-af73-e8d44f81e1c1
+                      updatedTime: '2018-01-20T01:52:57.9126052Z'
+                      version: 3
+        language: !Languages 
+          default:
+            name: Get
+            description: Get the management partner using the objectId and tenantId.
+            summary: Get a specific `Partner`.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Partners
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: ACEProvisioningManagementPartnerAPI
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
