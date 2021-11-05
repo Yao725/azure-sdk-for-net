@@ -27,5 +27,5 @@ extends:
     ServiceDirectory: operationalinsights
     ArtifactName: packages
     Artifacts:
-    - name: Microsoft.Azure.OperationalInsights
-      safeName: MicrosoftAzureOperationalInsights
+    - name: Azure.ResourceManager.Operationalinsights
+      safeName: AzureResourceManagerOperationalinsights
