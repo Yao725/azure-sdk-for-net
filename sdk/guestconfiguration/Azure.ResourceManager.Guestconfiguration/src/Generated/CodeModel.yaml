@@ -1,0 +1,4592 @@
+!CodeModel 
+info: !Info 
+  description: Guest Configuration Client
+  title: GuestConfigurationClient
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_20
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: If true - new configurations downloaded from the pull service are allowed to overwrite the old ones on the target node. Otherwise, false
+      protocol: !Protocols {}
+    - !BooleanSchema &ref_23
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: >-
+            Set this to true to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The default value is false. To
+            use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the xPendingReboot module.
+      protocol: !Protocols {}
+  numbers:
+    - !NumberSchema &ref_22
+      type: number
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      defaultValue: 30
+      precision: 32
+      language: !Languages 
+        default:
+          name: ConfigurationSettingRefreshFrequencyMins
+          description: The time interval, in minutes, at which the LCM checks a pull service to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_24
+      type: number
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      defaultValue: 15
+      precision: 32
+      language: !Languages 
+        default:
+          name: ConfigurationSettingConfigurationModeFrequencyMins
+          description: How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15.
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_96
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_93
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_98
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      pattern: ^[-\w\._]+$
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_8
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesTargetResourceId
+          description: VM resource Id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_10
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationNavigationName
+          description: Name of the guest configuration.
+      protocol: !Protocols {}
+    - !StringSchema &ref_11
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationNavigationVersion
+          description: Version of the guest configuration.
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationNavigationContentUri
+          description: Uri of the storage where guest configuration package is uploaded.
+      protocol: !Protocols {}
+    - !StringSchema &ref_13
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationNavigationContentHash
+          description: Combined hash of the guest configuration package and configuration parameters.
+      protocol: !Protocols {}
+    - !StringSchema &ref_15
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationNavigationContentType
+          description: Specifies the content type of the configuration. Possible values could be Builtin or Custom.
+      protocol: !Protocols {}
+    - !StringSchema &ref_16
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: ConfigurationParameterName
+          description: Name of the configuration parameter.
+      protocol: !Protocols {}
+    - !StringSchema &ref_17
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: ConfigurationParameterValue
+          description: Value of the configuration parameter.
+      protocol: !Protocols {}
+    - !StringSchema &ref_27
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesLatestReportId
+          description: 'Id of the latest report for the guest configuration assignment. '
+      protocol: !Protocols {}
+    - !StringSchema &ref_28
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesParameterHash
+          description: 'parameter hash for the guest configuration assignment. '
+      protocol: !Protocols {}
+    - !StringSchema &ref_29
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesResourceType
+          description: Type of the resource - VMSS / VM
+      protocol: !Protocols {}
+    - !StringSchema &ref_30
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: VmssvmInfoVmId
+          description: UUID of the VM.
+      protocol: !Protocols {}
+    - !StringSchema &ref_31
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: VmssvmInfoVmResourceId
+          description: Azure resource Id of the VM.
+      protocol: !Protocols {}
+    - !StringSchema &ref_32
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: VmssvmInfoLatestReportId
+          description: 'Id of the latest report for the guest configuration assignment. '
+      protocol: !Protocols {}
+    - !StringSchema &ref_34
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportId
+          description: ARM resource id of the report for the guest configuration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_35
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportId
+          description: GUID that identifies the guest configuration assignment report under a subscription, resource group.
+      protocol: !Protocols {}
+    - !StringSchema &ref_36
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentInfoName
+          description: Name of the guest configuration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_37
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: ConfigurationInfoName
+          description: Name of the configuration.
+      protocol: !Protocols {}
+    - !StringSchema &ref_38
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: ConfigurationInfoVersion
+          description: Version of the configuration.
+      protocol: !Protocols {}
+    - !StringSchema &ref_39
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: VMInfoId
+          description: Azure resource Id of the VM.
+      protocol: !Protocols {}
+    - !StringSchema &ref_40
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: VMInfoUuid
+          description: UUID(Universally Unique Identifier) of the VM.
+      protocol: !Protocols {}
+    - !StringSchema &ref_44
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportResourceId
+          description: Name of the guest configuration assignment resource setting.
+      protocol: !Protocols {}
+    - !StringSchema &ref_45
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportResourceComplianceReasonPhrase
+          description: Reason for the compliance of the guest configuration assignment resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_46
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportResourceComplianceReasonCode
+          description: Code for the compliance of the guest configuration assignment resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_48
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesContext
+          description: 'The source which initiated the guest configuration assignment. Ex: Azure Policy'
+      protocol: !Protocols {}
+    - !StringSchema &ref_49
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesAssignmentHash
+          description: Combined hash of the configuration package and parameters.
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: ResourceId
+          description: ARM resource id of the guest configuration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: ResourceName
+          description: Name of the guest configuration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: ResourceLocation
+          description: Region where the VM is located.
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: ResourceType
+          description: The type of the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_61
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseErrorCode
+          description: Error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_62
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseErrorMessage
+          description: Detail error message indicating why the operation failed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_64
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportId
+          description: ARM resource id of the report for the guest configuration assignment.
+      protocol: !Protocols {}
+    - !StringSchema &ref_65
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportName
+          description: GUID that identifies the guest configuration assignment report under a subscription, resource group.
+      protocol: !Protocols {}
+    - !StringSchema &ref_66
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportPropertiesReportId
+          description: GUID that identifies the guest configuration assignment report under a subscription, resource group.
+      protocol: !Protocols {}
+    - !StringSchema &ref_71
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportDetailsJobId
+          description: GUID of the report.
+      protocol: !Protocols {}
+    - !StringSchema &ref_72
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportPropertiesVmssResourceId
+          description: Azure resource Id of the VMSS.
+      protocol: !Protocols {}
+    - !StringSchema &ref_76
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: OperationName
+          description: 'Operation name: For ex. providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/write or read'
+      protocol: !Protocols {}
+    - !StringSchema &ref_77
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayProvider
+          description: 'Service provider: Microsoft.GuestConfiguration'
+      protocol: !Protocols {}
+    - !StringSchema &ref_78
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayResource
+          description: 'Resource on which the operation is performed:  For ex. '
+      protocol: !Protocols {}
+    - !StringSchema &ref_79
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayOperation
+          description: 'Operation type: Read, write, delete, etc.'
+      protocol: !Protocols {}
+    - !StringSchema &ref_80
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayDescription
+          description: Description about operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_81
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      language: !Languages 
+        default:
+          name: OperationPropertiesStatusCode
+          description: 'Service provider: Microsoft.GuestConfiguration'
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_9
+      choices:
+        - !ChoiceValue 
+          value: DSC
+          language:
+            default:
+              name: DSC
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Kind
+          description: Kind of the guest configuration. For example:DSC
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_14
+      choices:
+        - !ChoiceValue 
+          value: Audit
+          language:
+            default:
+              name: Audit
+              description: ''
+        - !ChoiceValue 
+          value: DeployAndAutoCorrect
+          language:
+            default:
+              name: DeployAndAutoCorrect
+              description: ''
+        - !ChoiceValue 
+          value: ApplyAndAutoCorrect
+          language:
+            default:
+              name: ApplyAndAutoCorrect
+              description: ''
+        - !ChoiceValue 
+          value: ApplyAndMonitor
+          language:
+            default:
+              name: ApplyAndMonitor
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: AssignmentType
+          description: Specifies the assignment type and execution of the configuration. Possible values are Audit, DeployAndAutoCorrect, ApplyAndAutoCorrect and ApplyAndMonitor.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_19
+      choices:
+        - !ChoiceValue 
+          value: ApplyOnly
+          language:
+            default:
+              name: ApplyOnly
+              description: ''
+        - !ChoiceValue 
+          value: ApplyAndMonitor
+          language:
+            default:
+              name: ApplyAndMonitor
+              description: ''
+        - !ChoiceValue 
+          value: ApplyAndAutoCorrect
+          language:
+            default:
+              name: ApplyAndAutoCorrect
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ConfigurationMode
+          description: Specifies how the LCM(Local Configuration Manager) actually applies the configuration to the target nodes. Possible values are ApplyOnly, ApplyAndMonitor, and ApplyAndAutoCorrect.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_21
+      choices:
+        - !ChoiceValue 
+          value: ContinueConfiguration
+          language:
+            default:
+              name: ContinueConfiguration
+              description: ''
+        - !ChoiceValue 
+          value: StopConfiguration
+          language:
+            default:
+              name: StopConfiguration
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ActionAfterReboot
+          description: Specifies what happens after a reboot during the application of a configuration. The possible values are ContinueConfiguration and StopConfiguration
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_25
+      choices:
+        - !ChoiceValue 
+          value: Compliant
+          language:
+            default:
+              name: Compliant
+              description: ''
+        - !ChoiceValue 
+          value: NonCompliant
+          language:
+            default:
+              name: NonCompliant
+              description: ''
+        - !ChoiceValue 
+          value: Pending
+          language:
+            default:
+              name: Pending
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ComplianceStatus
+          description: A value indicating compliance status of the machine for the assigned guest configuration.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_43
+      choices:
+        - !ChoiceValue 
+          value: Consistency
+          language:
+            default:
+              name: Consistency
+              description: ''
+        - !ChoiceValue 
+          value: Initial
+          language:
+            default:
+              name: Initial
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Type
+          description: Type of report, Consistency or Initial
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_50
+      choices:
+        - !ChoiceValue 
+          value: Succeeded
+          language:
+            default:
+              name: Succeeded
+              description: ''
+        - !ChoiceValue 
+          value: Failed
+          language:
+            default:
+              name: Failed
+              description: ''
+        - !ChoiceValue 
+          value: Canceled
+          language:
+            default:
+              name: Canceled
+              description: ''
+        - !ChoiceValue 
+          value: Created
+          language:
+            default:
+              name: Created
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ProvisioningState
+          description: The provisioning state, which only appears in the response.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_94
+      type: constant
+      value: !ConstantValue 
+        value: '2020-06-25'
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20200625
+          description: Api Version (2020-06-25)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_100
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApplicationJson
+          description: Content Type 'application/json'
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_101
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+  anyObjects:
+    - !AnyObjectSchema &ref_47
+      type: any-object
+      language: !Languages 
+        default:
+          name: AnyObject
+          description: Any object
+      protocol: !Protocols {}
+  dateTimes:
+    - !DateTimeSchema &ref_26
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentPropertiesLastComplianceStatusChecked
+          description: Date and time when last compliance status was checked.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_33
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: VmssvmInfoLastComplianceChecked
+          description: Date and time when last compliance status was checked.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_41
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportStartTime
+          description: Start date and time of the guest configuration assignment compliance status check.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_42
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportEndTime
+          description: End date and time of the guest configuration assignment compliance status check.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_67
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportPropertiesStartTime
+          description: Start date and time of the guest configuration assignment compliance status check.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_68
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportPropertiesEndTime
+          description: End date and time of the guest configuration assignment compliance status check.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_69
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportDetailsStartTime
+          description: Start date and time of the guest configuration assignment compliance status check.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_70
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      language: !Languages 
+        default:
+          name: AssignmentReportDetailsEndTime
+          description: End date and time of the guest configuration assignment compliance status check.
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_1
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      parents: !Relations 
+        all:
+          - !ObjectSchema &ref_2
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2018-06-30-preview
+            children: !Relations 
+              all:
+                - *ref_1
+              immediate:
+                - *ref_1
+            parents: !Relations 
+              all:
+                - !ObjectSchema &ref_7
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2018-06-30-preview
+                  children: !Relations 
+                    all:
+                      - *ref_2
+                      - *ref_1
+                    immediate:
+                      - *ref_2
+                  properties:
+                    - !Property 
+                      schema: *ref_3
+                      readOnly: true
+                      serializedName: id
+                      language: !Languages 
+                        default:
+                          name: id
+                          description: ARM resource id of the guest configuration assignment.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_4
+                      readOnly: false
+                      serializedName: name
+                      language: !Languages 
+                        default:
+                          name: name
+                          description: Name of the guest configuration assignment.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_5
+                      readOnly: false
+                      serializedName: location
+                      language: !Languages 
+                        default:
+                          name: location
+                          description: Region where the VM is located.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_6
+                      readOnly: true
+                      serializedName: type
+                      language: !Languages 
+                        default:
+                          name: type
+                          description: The type of the resource.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  extensions:
+                    x-ms-azure-resource: true
+                  language: !Languages 
+                    default:
+                      name: Resource
+                      description: The core properties of ARM resources
+                      namespace: ''
+                  protocol: !Protocols {}
+              immediate:
+                - *ref_7
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: ProxyResource
+                description: ARM proxy resource.
+                namespace: ''
+            protocol: !Protocols {}
+          - *ref_7
+        immediate:
+          - *ref_2
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_51
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-06-25'
+            properties:
+              - !Property 
+                schema: *ref_8
+                nullable: true
+                readOnly: true
+                serializedName: targetResourceId
+                language: !Languages 
+                  default:
+                    name: targetResourceId
+                    description: VM resource Id.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_52
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: '2020-06-25'
+                  properties:
+                    - !Property 
+                      schema: *ref_9
+                      serializedName: kind
+                      language: !Languages 
+                        default:
+                          name: kind
+                          description: Kind of the guest configuration. For example:DSC
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_10
+                      serializedName: name
+                      language: !Languages 
+                        default:
+                          name: name
+                          description: Name of the guest configuration.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_11
+                      serializedName: version
+                      language: !Languages 
+                        default:
+                          name: version
+                          description: Version of the guest configuration.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_12
+                      serializedName: contentUri
+                      language: !Languages 
+                        default:
+                          name: contentUri
+                          description: Uri of the storage where guest configuration package is uploaded.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_13
+                      serializedName: contentHash
+                      language: !Languages 
+                        default:
+                          name: contentHash
+                          description: Combined hash of the guest configuration package and configuration parameters.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_14
+                      serializedName: assignmentType
+                      language: !Languages 
+                        default:
+                          name: assignmentType
+                          description: Specifies the assignment type and execution of the configuration. Possible values are Audit, DeployAndAutoCorrect, ApplyAndAutoCorrect and ApplyAndMonitor.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_15
+                      nullable: true
+                      readOnly: true
+                      serializedName: contentType
+                      language: !Languages 
+                        default:
+                          name: contentType
+                          description: Specifies the content type of the configuration. Possible values could be Builtin or Custom.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: !ArraySchema &ref_84
+                        type: array
+                        apiVersions:
+                          - !ApiVersion 
+                            version: '2020-06-25'
+                        elementType: !ObjectSchema &ref_18
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: '2020-06-25'
+                          properties:
+                            - !Property 
+                              schema: *ref_16
+                              readOnly: false
+                              serializedName: name
+                              language: !Languages 
+                                default:
+                                  name: name
+                                  description: Name of the configuration parameter.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_17
+                              readOnly: false
+                              serializedName: value
+                              language: !Languages 
+                                default:
+                                  name: value
+                                  description: Value of the configuration parameter.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - input
+                            - output
+                          language: !Languages 
+                            default:
+                              name: ConfigurationParameter
+                              description: Represents a configuration parameter.
+                              namespace: ''
+                          protocol: !Protocols {}
+                        language: !Languages 
+                          default:
+                            name: GuestConfigurationNavigationConfigurationParameter
+                            description: The configuration parameters for the guest configuration.
+                        protocol: !Protocols {}
+                      serializedName: configurationParameter
+                      language: !Languages 
+                        default:
+                          name: configurationParameter
+                          description: The configuration parameters for the guest configuration.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: !ArraySchema &ref_85
+                        type: array
+                        apiVersions:
+                          - !ApiVersion 
+                            version: '2020-06-25'
+                        elementType: *ref_18
+                        language: !Languages 
+                          default:
+                            name: GuestConfigurationNavigationConfigurationProtectedParameter
+                            description: The protected configuration parameters for the guest configuration.
+                        protocol: !Protocols {}
+                      serializedName: configurationProtectedParameter
+                      language: !Languages 
+                        default:
+                          name: configurationProtectedParameter
+                          description: The protected configuration parameters for the guest configuration.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: !ObjectSchema &ref_53
+                        type: object
+                        apiVersions:
+                          - !ApiVersion 
+                            version: '2020-06-25'
+                        properties:
+                          - !Property 
+                            schema: *ref_19
+                            readOnly: false
+                            serializedName: configurationMode
+                            language: !Languages 
+                              default:
+                                name: configurationMode
+                                description: Specifies how the LCM(Local Configuration Manager) actually applies the configuration to the target nodes. Possible values are ApplyOnly, ApplyAndMonitor, and ApplyAndAutoCorrect.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_20
+                            serializedName: allowModuleOverwrite
+                            language: !Languages 
+                              default:
+                                name: allowModuleOverwrite
+                                description: If true - new configurations downloaded from the pull service are allowed to overwrite the old ones on the target node. Otherwise, false
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_21
+                            readOnly: false
+                            serializedName: actionAfterReboot
+                            language: !Languages 
+                              default:
+                                name: actionAfterReboot
+                                description: Specifies what happens after a reboot during the application of a configuration. The possible values are ContinueConfiguration and StopConfiguration
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_22
+                            readOnly: false
+                            serializedName: refreshFrequencyMins
+                            language: !Languages 
+                              default:
+                                name: refreshFrequencyMins
+                                description: The time interval, in minutes, at which the LCM checks a pull service to get updated configurations. This value is ignored if the LCM is not configured in pull mode. The default value is 30.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_23
+                            readOnly: false
+                            serializedName: rebootIfNeeded
+                            language: !Languages 
+                              default:
+                                name: rebootIfNeeded
+                                description: >-
+                                  Set this to true to automatically reboot the node after a configuration that requires reboot is applied. Otherwise, you will have to manually reboot the node for any configuration that requires it. The
+                                  default value is false. To use this setting when a reboot condition is enacted by something other than DSC (such as Windows Installer), combine this setting with the xPendingReboot module.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_24
+                            readOnly: false
+                            serializedName: configurationModeFrequencyMins
+                            language: !Languages 
+                              default:
+                                name: configurationModeFrequencyMins
+                                description: How often, in minutes, the current configuration is checked and applied. This property is ignored if the ConfigurationMode property is set to ApplyOnly. The default value is 15.
+                            protocol: !Protocols {}
+                        serializationFormats:
+                          - json
+                        usage:
+                          - input
+                          - output
+                        language: !Languages 
+                          default:
+                            name: ConfigurationSetting
+                            description: Configuration setting of LCM (Local Configuration Manager).
+                            namespace: ''
+                        protocol: !Protocols {}
+                      serializedName: configurationSetting
+                      language: !Languages 
+                        default:
+                          name: configurationSetting
+                          description: The configuration setting for the guest configuration.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  language: !Languages 
+                    default:
+                      name: GuestConfigurationNavigation
+                      description: >-
+                        Guest configuration is an artifact that encapsulates DSC configuration and its dependencies. The artifact is a zip file containing DSC configuration (as MOF) and dependent resources and other dependencies like
+                        modules.
+                      namespace: ''
+                  protocol: !Protocols {}
+                serializedName: guestConfiguration
+                language: !Languages 
+                  default:
+                    name: guestConfiguration
+                    description: The guest configuration to assign.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_25
+                readOnly: true
+                serializedName: complianceStatus
+                language: !Languages 
+                  default:
+                    name: complianceStatus
+                    description: A value indicating compliance status of the machine for the assigned guest configuration.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_26
+                nullable: true
+                readOnly: true
+                serializedName: lastComplianceStatusChecked
+                language: !Languages 
+                  default:
+                    name: lastComplianceStatusChecked
+                    description: Date and time when last compliance status was checked.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_27
+                nullable: true
+                readOnly: true
+                serializedName: latestReportId
+                language: !Languages 
+                  default:
+                    name: latestReportId
+                    description: 'Id of the latest report for the guest configuration assignment. '
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_28
+                nullable: true
+                readOnly: true
+                serializedName: parameterHash
+                language: !Languages 
+                  default:
+                    name: parameterHash
+                    description: 'parameter hash for the guest configuration assignment. '
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_29
+                nullable: true
+                readOnly: true
+                serializedName: resourceType
+                language: !Languages 
+                  default:
+                    name: resourceType
+                    description: Type of the resource - VMSS / VM
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_86
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: '2020-06-25'
+                  elementType: !ObjectSchema &ref_54
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2020-06-25'
+                    properties:
+                      - !Property 
+                        schema: *ref_30
+                        readOnly: true
+                        serializedName: vmId
+                        language: !Languages 
+                          default:
+                            name: vmId
+                            description: UUID of the VM.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_31
+                        readOnly: true
+                        serializedName: vmResourceId
+                        language: !Languages 
+                          default:
+                            name: vmResourceId
+                            description: Azure resource Id of the VM.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_25
+                        readOnly: true
+                        serializedName: complianceStatus
+                        language: !Languages 
+                          default:
+                            name: complianceStatus
+                            description: A value indicating compliance status of the machine for the assigned guest configuration.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_32
+                        nullable: true
+                        readOnly: true
+                        serializedName: latestReportId
+                        language: !Languages 
+                          default:
+                            name: latestReportId
+                            description: 'Id of the latest report for the guest configuration assignment. '
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_33
+                        nullable: true
+                        readOnly: true
+                        serializedName: lastComplianceChecked
+                        language: !Languages 
+                          default:
+                            name: lastComplianceChecked
+                            description: Date and time when last compliance status was checked.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - input
+                      - output
+                    language: !Languages 
+                      default:
+                        name: VmssvmInfo
+                        description: Information about VMSS VM
+                        namespace: ''
+                    protocol: !Protocols {}
+                  language: !Languages 
+                    default:
+                      name: GuestConfigurationAssignmentPropertiesVmssVMList
+                      description: The list of VM Compliance data for VMSS
+                  protocol: !Protocols {}
+                nullable: true
+                serializedName: vmssVMList
+                language: !Languages 
+                  default:
+                    name: vmssVMList
+                    description: The list of VM Compliance data for VMSS
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_55
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: '2020-06-25'
+                  properties:
+                    - !Property 
+                      schema: *ref_34
+                      readOnly: true
+                      serializedName: id
+                      language: !Languages 
+                        default:
+                          name: id
+                          description: ARM resource id of the report for the guest configuration assignment.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_35
+                      readOnly: true
+                      serializedName: reportId
+                      language: !Languages 
+                        default:
+                          name: reportId
+                          description: GUID that identifies the guest configuration assignment report under a subscription, resource group.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: !ObjectSchema &ref_56
+                        type: object
+                        apiVersions:
+                          - !ApiVersion 
+                            version: '2020-06-25'
+                        properties:
+                          - !Property 
+                            schema: *ref_36
+                            readOnly: true
+                            serializedName: name
+                            language: !Languages 
+                              default:
+                                name: name
+                                description: Name of the guest configuration assignment.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: !ObjectSchema &ref_57
+                              type: object
+                              apiVersions:
+                                - !ApiVersion 
+                                  version: '2020-06-25'
+                              properties:
+                                - !Property 
+                                  schema: *ref_37
+                                  readOnly: true
+                                  serializedName: name
+                                  language: !Languages 
+                                    default:
+                                      name: name
+                                      description: Name of the configuration.
+                                  protocol: !Protocols {}
+                                - !Property 
+                                  schema: *ref_38
+                                  readOnly: true
+                                  serializedName: version
+                                  language: !Languages 
+                                    default:
+                                      name: version
+                                      description: Version of the configuration.
+                                  protocol: !Protocols {}
+                              serializationFormats:
+                                - json
+                              usage:
+                                - input
+                                - output
+                              language: !Languages 
+                                default:
+                                  name: ConfigurationInfo
+                                  description: Information about the configuration.
+                                  namespace: ''
+                              protocol: !Protocols {}
+                            serializedName: configuration
+                            language: !Languages 
+                              default:
+                                name: configuration
+                                description: Information about the configuration.
+                            protocol: !Protocols {}
+                        serializationFormats:
+                          - json
+                        usage:
+                          - input
+                          - output
+                        language: !Languages 
+                          default:
+                            name: AssignmentInfo
+                            description: Information about the guest configuration assignment.
+                            namespace: ''
+                        protocol: !Protocols {}
+                      serializedName: assignment
+                      language: !Languages 
+                        default:
+                          name: assignment
+                          description: Configuration details of the guest configuration assignment.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: !ObjectSchema &ref_58
+                        type: object
+                        apiVersions:
+                          - !ApiVersion 
+                            version: '2020-06-25'
+                        properties:
+                          - !Property 
+                            schema: *ref_39
+                            readOnly: true
+                            serializedName: id
+                            language: !Languages 
+                              default:
+                                name: id
+                                description: Azure resource Id of the VM.
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_40
+                            readOnly: true
+                            serializedName: uuid
+                            language: !Languages 
+                              default:
+                                name: uuid
+                                description: UUID(Universally Unique Identifier) of the VM.
+                            protocol: !Protocols {}
+                        serializationFormats:
+                          - json
+                        usage:
+                          - input
+                          - output
+                        language: !Languages 
+                          default:
+                            name: VMInfo
+                            description: Information about the VM.
+                            namespace: ''
+                        protocol: !Protocols {}
+                      serializedName: vm
+                      language: !Languages 
+                        default:
+                          name: vm
+                          description: Information about the VM.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_41
+                      readOnly: true
+                      serializedName: startTime
+                      language: !Languages 
+                        default:
+                          name: startTime
+                          description: Start date and time of the guest configuration assignment compliance status check.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_42
+                      readOnly: true
+                      serializedName: endTime
+                      language: !Languages 
+                        default:
+                          name: endTime
+                          description: End date and time of the guest configuration assignment compliance status check.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_25
+                      readOnly: true
+                      serializedName: complianceStatus
+                      language: !Languages 
+                        default:
+                          name: complianceStatus
+                          description: A value indicating compliance status of the machine for the assigned guest configuration.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_43
+                      readOnly: true
+                      serializedName: operationType
+                      language: !Languages 
+                        default:
+                          name: operationType
+                          description: Type of report, Consistency or Initial
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: !ArraySchema &ref_88
+                        type: array
+                        apiVersions:
+                          - !ApiVersion 
+                            version: '2020-06-25'
+                        elementType: !ObjectSchema &ref_59
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: '2020-06-25'
+                          properties:
+                            - !Property 
+                              schema: *ref_25
+                              readOnly: true
+                              serializedName: complianceStatus
+                              language: !Languages 
+                                default:
+                                  name: complianceStatus
+                                  description: A value indicating compliance status of the machine for the assigned guest configuration.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_44
+                              readOnly: true
+                              serializedName: resourceId
+                              language: !Languages 
+                                default:
+                                  name: resourceId
+                                  description: Name of the guest configuration assignment resource setting.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ArraySchema &ref_87
+                                type: array
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: '2020-06-25'
+                                elementType: !ObjectSchema &ref_60
+                                  type: object
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: '2020-06-25'
+                                  properties:
+                                    - !Property 
+                                      schema: *ref_45
+                                      readOnly: true
+                                      serializedName: phrase
+                                      language: !Languages 
+                                        default:
+                                          name: phrase
+                                          description: Reason for the compliance of the guest configuration assignment resource.
+                                      protocol: !Protocols {}
+                                    - !Property 
+                                      schema: *ref_46
+                                      readOnly: true
+                                      serializedName: code
+                                      language: !Languages 
+                                        default:
+                                          name: code
+                                          description: Code for the compliance of the guest configuration assignment resource.
+                                      protocol: !Protocols {}
+                                  serializationFormats:
+                                    - json
+                                  usage:
+                                    - input
+                                    - output
+                                  language: !Languages 
+                                    default:
+                                      name: AssignmentReportResourceComplianceReason
+                                      description: Reason and code for the compliance of the guest configuration assignment resource.
+                                      namespace: ''
+                                  protocol: !Protocols {}
+                                language: !Languages 
+                                  default:
+                                    name: AssignmentReportResourceReasons
+                                    description: Compliance reason and reason code for a resource.
+                                protocol: !Protocols {}
+                              serializedName: reasons
+                              language: !Languages 
+                                default:
+                                  name: reasons
+                                  description: Compliance reason and reason code for a resource.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_47
+                              readOnly: true
+                              serializedName: properties
+                              language: !Languages 
+                                default:
+                                  name: properties
+                                  description: Properties of a guest configuration assignment resource.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - input
+                            - output
+                          language: !Languages 
+                            default:
+                              name: AssignmentReportResource
+                              description: The guest configuration assignment resource.
+                              namespace: ''
+                          protocol: !Protocols {}
+                        language: !Languages 
+                          default:
+                            name: AssignmentReportResources
+                            description: The list of resources for which guest configuration assignment compliance is checked.
+                        protocol: !Protocols {}
+                      serializedName: resources
+                      language: !Languages 
+                        default:
+                          name: resources
+                          description: The list of resources for which guest configuration assignment compliance is checked.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  language: !Languages 
+                    default:
+                      name: AssignmentReport
+                      description: ''
+                      namespace: ''
+                  protocol: !Protocols {}
+                serializedName: latestAssignmentReport
+                language: !Languages 
+                  default:
+                    name: latestAssignmentReport
+                    description: Last reported guest configuration assignment report.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_48
+                serializedName: context
+                language: !Languages 
+                  default:
+                    name: context
+                    description: 'The source which initiated the guest configuration assignment. Ex: Azure Policy'
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_49
+                nullable: true
+                readOnly: true
+                serializedName: assignmentHash
+                language: !Languages 
+                  default:
+                    name: assignmentHash
+                    description: Combined hash of the configuration package and parameters.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_50
+                nullable: true
+                readOnly: true
+                serializedName: provisioningState
+                language: !Languages 
+                  default:
+                    name: provisioningState
+                    description: The provisioning state, which only appears in the response.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: GuestConfigurationAssignmentProperties
+                description: Guest configuration assignment properties.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: properties
+          extensions:
+            x-ms-client-flatten: false
+          language: !Languages 
+            default:
+              name: properties
+              description: Properties of the Guest configuration assignment.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - input
+        - output
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignment
+          description: Guest configuration assignment is an association between a machine and guest configuration.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_51
+    - *ref_52
+    - *ref_18
+    - *ref_53
+    - *ref_54
+    - *ref_55
+    - *ref_56
+    - *ref_57
+    - *ref_58
+    - *ref_59
+    - *ref_60
+    - *ref_2
+    - *ref_7
+    - !ObjectSchema &ref_106
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_63
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2018-06-30-preview
+            properties:
+              - !Property 
+                schema: *ref_61
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: Error code.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_62
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: Detail error message indicating why the operation failed.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            extensions:
+              x-internal-autorest-anonymous-schema:
+                anonymous: true
+            language: !Languages 
+              default:
+                name: ErrorResponseError
+                description: ''
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: ''
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ErrorResponse
+          description: Error response of an operation failure
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_63
+    - !ObjectSchema &ref_113
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_89
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-06-25'
+            elementType: *ref_1
+            language: !Languages 
+              default:
+                name: GuestConfigurationAssignmentListValue
+                description: Result of the list guest configuration assignment operation.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Result of the list guest configuration assignment operation.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentList
+          description: The response of the list guest configuration assignment operation.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_120
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2020-06-25'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_91
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2020-06-25'
+            elementType: !ObjectSchema &ref_73
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2020-06-25'
+              properties:
+                - !Property 
+                  schema: *ref_64
+                  readOnly: true
+                  serializedName: id
+                  language: !Languages 
+                    default:
+                      name: id
+                      description: ARM resource id of the report for the guest configuration assignment.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_65
+                  readOnly: true
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: GUID that identifies the guest configuration assignment report under a subscription, resource group.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_74
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2020-06-25'
+                    properties:
+                      - !Property 
+                        schema: *ref_25
+                        readOnly: true
+                        serializedName: complianceStatus
+                        language: !Languages 
+                          default:
+                            name: complianceStatus
+                            description: A value indicating compliance status of the machine for the assigned guest configuration.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_66
+                        readOnly: true
+                        serializedName: reportId
+                        language: !Languages 
+                          default:
+                            name: reportId
+                            description: GUID that identifies the guest configuration assignment report under a subscription, resource group.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_56
+                        serializedName: assignment
+                        language: !Languages 
+                          default:
+                            name: assignment
+                            description: Configuration details of the guest configuration assignment.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_58
+                        serializedName: vm
+                        language: !Languages 
+                          default:
+                            name: vm
+                            description: Information about the VM.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_67
+                        readOnly: true
+                        serializedName: startTime
+                        language: !Languages 
+                          default:
+                            name: startTime
+                            description: Start date and time of the guest configuration assignment compliance status check.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_68
+                        readOnly: true
+                        serializedName: endTime
+                        language: !Languages 
+                          default:
+                            name: endTime
+                            description: End date and time of the guest configuration assignment compliance status check.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ObjectSchema &ref_75
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: '2020-06-25'
+                          properties:
+                            - !Property 
+                              schema: *ref_25
+                              readOnly: true
+                              serializedName: complianceStatus
+                              language: !Languages 
+                                default:
+                                  name: complianceStatus
+                                  description: A value indicating compliance status of the machine for the assigned guest configuration.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_69
+                              readOnly: true
+                              serializedName: startTime
+                              language: !Languages 
+                                default:
+                                  name: startTime
+                                  description: Start date and time of the guest configuration assignment compliance status check.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_70
+                              readOnly: true
+                              serializedName: endTime
+                              language: !Languages 
+                                default:
+                                  name: endTime
+                                  description: End date and time of the guest configuration assignment compliance status check.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_71
+                              readOnly: true
+                              serializedName: jobId
+                              language: !Languages 
+                                default:
+                                  name: jobId
+                                  description: GUID of the report.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_43
+                              readOnly: true
+                              serializedName: operationType
+                              language: !Languages 
+                                default:
+                                  name: operationType
+                                  description: Type of report, Consistency or Initial
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: !ArraySchema &ref_90
+                                type: array
+                                apiVersions:
+                                  - !ApiVersion 
+                                    version: '2020-06-25'
+                                elementType: *ref_59
+                                language: !Languages 
+                                  default:
+                                    name: AssignmentReportDetailsResources
+                                    description: The list of resources for which guest configuration assignment compliance is checked.
+                                protocol: !Protocols {}
+                              serializedName: resources
+                              language: !Languages 
+                                default:
+                                  name: resources
+                                  description: The list of resources for which guest configuration assignment compliance is checked.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - output
+                          language: !Languages 
+                            default:
+                              name: AssignmentReportDetails
+                              description: Details of the guest configuration assignment report.
+                              namespace: ''
+                          protocol: !Protocols {}
+                        nullable: true
+                        serializedName: details
+                        extensions:
+                          x-nullable: true
+                        language: !Languages 
+                          default:
+                            name: details
+                            description: Details of the assignment report.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_72
+                        readOnly: true
+                        serializedName: vmssResourceId
+                        language: !Languages 
+                          default:
+                            name: vmssResourceId
+                            description: Azure resource Id of the VMSS.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    language: !Languages 
+                      default:
+                        name: GuestConfigurationAssignmentReportProperties
+                        description: Report for the guest configuration assignment. Report contains information such as compliance status, reason, and more.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: properties
+                  language: !Languages 
+                    default:
+                      name: properties
+                      description: Properties of the guest configuration report.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: GuestConfigurationAssignmentReport
+                  description: Report for the guest configuration assignment. Report contains information such as compliance status, reason, and more.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: GuestConfigurationAssignmentReportListValue
+                description: List of reports for the guest configuration. Report contains information such as compliance status, reason and more.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: List of reports for the guest configuration. Report contains information such as compliance status, reason and more.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: GuestConfigurationAssignmentReportList
+          description: List of guest configuration assignment reports.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_73
+    - *ref_74
+    - *ref_75
+    - !ObjectSchema &ref_144
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2018-06-30-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_92
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2018-06-30-preview
+            elementType: !ObjectSchema &ref_82
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2018-06-30-preview
+              properties:
+                - !Property 
+                  schema: *ref_76
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: 'Operation name: For ex. providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/write or read'
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_83
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2018-06-30-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_77
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: 'Service provider: Microsoft.GuestConfiguration'
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_78
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: 'Resource on which the operation is performed:  For ex. '
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_79
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: 'Operation type: Read, write, delete, etc.'
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_80
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: Description about operation.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-internal-autorest-anonymous-schema:
+                        anonymous: true
+                    language: !Languages 
+                      default:
+                        name: OperationDisplay
+                        description: Provider, Resource, Operation and description values.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: Provider, Resource, Operation and description values.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_81
+                  flattenedNames:
+                    - properties
+                    - statusCode
+                  serializedName: statusCode
+                  language: !Languages 
+                    default:
+                      name: statusCode
+                      description: 'Service provider: Microsoft.GuestConfiguration'
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: Operation
+                  description: GuestConfiguration REST API operation
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationListValue
+                description: List of Automation operations supported by the Automation resource provider.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: List of Automation operations supported by the Automation resource provider.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationList
+          description: The response model for the list of Automation operations
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_82
+    - *ref_83
+  arrays:
+    - *ref_84
+    - *ref_85
+    - *ref_86
+    - *ref_87
+    - *ref_88
+    - *ref_89
+    - *ref_90
+    - *ref_91
+    - *ref_92
+globalParameters:
+  - !Parameter &ref_97
+    schema: *ref_93
+    implementation: Client
+    required: true
+    extensions:
+      x-ms-priority: 0
+    language: !Languages 
+      default:
+        name: SubscriptionId
+        description: Subscription ID which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+        serializedName: subscriptionId
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: path
+  - !Parameter &ref_95
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_99
+    schema: *ref_94
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: GuestConfigurationAssignments
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_103
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: Name of the guest configuration assignment.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_104
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_105
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: vmName
+                description: The name of the virtual machine.
+                serializedName: vmName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_100
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_102
+                schema: *ref_1
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: parameters
+                    description: Parameters supplied to the create or update guest configuration assignment.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_102
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_103
+          - *ref_104
+          - *ref_105
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The guest configuration assignment for the VM was updated successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: Created. The guest configuration assignment for the VM was created successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '201'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Create or update guest configuration assignment:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: WhitelistedApplication
+                parameters:
+                  name: WhitelistedApplication
+                  location: westcentralus
+                  properties:
+                    context: Azure policy
+                    guestConfiguration:
+                      name: WhitelistedApplication
+                      assignmentType: ApplyAndAutoCorrect
+                      configurationParameter:
+                        - name: '[InstalledApplication]bwhitelistedapp;Name'
+                          value: NotePad,sql
+                      contentHash: 123contenthash
+                      contentUri: https://thisisfake/pacakge
+                      version: 1.*
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+                vmName: myVMName
+              responses:
+                '200':
+                  body:
+                    name: WhitelistedApplication
+                    id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/WhitelistedApplication
+                    location: westcentralus
+                    properties:
+                      assignmentHash: null
+                      complianceStatus: Pending
+                      context: Azure policy
+                      guestConfiguration:
+                        name: WhitelistedApplication
+                        configurationParameter:
+                          - name: '[InstalledApplication]bwhitelistedapp;Name'
+                            value: NotePad,sql
+                        contentHash: null
+                        contentType: null
+                        contentUri: null
+                        kind: null
+                        version: 1.0.0.3
+                      lastComplianceStatusChecked: null
+                      latestReportId: null
+                      provisioningState: Succeeded
+                      resourceType: null
+                      vmssVMList: null
+                  headers: {}
+                '201':
+                  body:
+                    name: WhitelistedApplication
+                    id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/WhitelistedApplication
+                    location: westcentralus
+                    properties:
+                      assignmentHash: null
+                      complianceStatus: Pending
+                      context: Azure policy
+                      guestConfiguration:
+                        name: WhitelistedApplication
+                        configurationParameter:
+                          - name: '[InstalledApplication]bwhitelistedapp;Name'
+                            value: NotePad,sql
+                        contentHash: null
+                        contentType: null
+                        contentUri: null
+                        kind: null
+                        version: 1.0.0.3
+                      lastComplianceStatusChecked: null
+                      latestReportId: null
+                      provisioningState: Succeeded
+                      resourceType: null
+                      vmssVMList: null
+                  headers: {}
+        language: !Languages 
+          default:
+            name: CreateOrUpdate
+            description: Creates an association between a VM and guest configuration
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_107
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_108
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: The guest configuration assignment name.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_109
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: vmName
+                description: The name of the virtual machine.
+                serializedName: vmName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_107
+          - *ref_108
+          - *ref_109
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The guest configuration assignment was returned successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get a guest configuration assignment:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: SecureProtocol
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+                vmName: myVMName
+              responses:
+                '200':
+                  body:
+                    name: AuditSecureProtocol
+                    id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol
+                    location: centraluseuap
+                    properties:
+                      assignmentHash: E0D8941DD713F284284561648C00C18FA76C8602943C7CD38AFD73B56AE4C35F.E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+                      complianceStatus: Compliant
+                      context: null
+                      guestConfiguration:
+                        name: AuditSecureProtocol
+                        configurationParameter: []
+                        configurationSetting: null
+                        contentHash: content hash
+                        contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/AuditSecureProtocol/AuditSecureProtocol_1.0.0.3.zip
+                        kind: null
+                        version: 1.0.0.3
+                      lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                      latestReportId: >-
+                        /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                      provisioningState: Succeeded
+                  headers: {}
+        language: !Languages 
+          default:
+            name: Get
+            description: Get information about a guest configuration assignment
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_110
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_111
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: Name of the guest configuration assignment
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_112
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: vmName
+                description: The name of the virtual machine.
+                serializedName: vmName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_110
+          - *ref_111
+          - *ref_112
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Delete an guest configuration assignment:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: SecureProtocol
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+                vmName: myVMName
+              responses:
+                '200': {}
+        language: !Languages 
+          default:
+            name: Delete
+            description: Delete a guest configuration assignment
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - *ref_97
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_113
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: No Content
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            List all guest configuration assignments for a subscription:
+              parameters:
+                api-version: '2020-06-25'
+                subscriptionId: mySubscriptionId
+              responses:
+                '200':
+                  body:
+                    - name: AuditSecureProtocol2
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: AuditSecureProtocol2
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/AuditSecureProtocol2/AuditSecureProtocol2_1.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                    - name: myAssignment
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: myAssignment
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/myAssignment/myAssignment.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                  headers: {}
+                '204': {}
+          x-ms-pageable:
+            nextLinkName: null
+        language: !Languages 
+          default:
+            name: SubscriptionList
+            description: List all guest configuration assignments for a subscription.
+            paging:
+              nextLinkName: null
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_114
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_114
+        responses:
+          - !SchemaResponse 
+            schema: *ref_113
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: No Content
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            List all guest configuration assignments for a resource group:
+              parameters:
+                api-version: '2020-06-25'
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+              responses:
+                '200':
+                  body:
+                    - name: AuditSecureProtocol2
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: AuditSecureProtocol2
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/AuditSecureProtocol2/AuditSecureProtocol2_1.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                    - name: myAssignment
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: myAssignment
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/myAssignment/myAssignment.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                  headers: {}
+                '204': {}
+          x-ms-pageable:
+            nextLinkName: null
+        language: !Languages 
+          default:
+            name: RGList
+            description: List all guest configuration assignments for a resource group.
+            paging:
+              nextLinkName: null
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_115
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_116
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: vmName
+                description: The name of the virtual machine.
+                serializedName: vmName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_115
+          - *ref_116
+        responses:
+          - !SchemaResponse 
+            schema: *ref_113
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            List all guest configuration assignments for a virtual machine:
+              parameters:
+                api-version: '2020-06-25'
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+                vmName: myVMName
+              responses:
+                '200':
+                  body:
+                    - name: AuditSecureProtocol2
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: AuditSecureProtocol2
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/AuditSecureProtocol2/AuditSecureProtocol2_1.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                    - name: myAssignment
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: myAssignment
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/myAssignment/myAssignment.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                  headers: {}
+          x-ms-pageable:
+            nextLinkName: null
+        language: !Languages 
+          default:
+            name: List
+            description: List all guest configuration assignments for a virtual machine.
+            paging:
+              nextLinkName: null
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: GuestConfigurationAssignments
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: GuestConfigurationAssignmentReports
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_117
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_118
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: The guest configuration assignment name.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_119
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: vmName
+                description: The name of the virtual machine.
+                serializedName: vmName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}/reports
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_117
+          - *ref_118
+          - *ref_119
+        responses:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: 'OK. This response is due one of these two reasons: 1. Reports were returned successfully 2. Guest configuration assignment was found, but VM is not registered yet, hence no reports returned.'
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            List all guest configuration assignments for a virtual machine:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: AuditSecureProtocol
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionid
+                vmName: myVMName
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        id: >-
+                          /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        properties:
+                          assignment:
+                            name: AuditSecureProtocol
+                            configuration:
+                              name: AuditSecureProtocol
+                          complianceStatus: Compliant
+                          endTime: '2018-08-29T22:14:13Z'
+                          reportId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                          startTime: '2018-08-29T22:13:53Z'
+                          vm:
+                            id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm
+                            uuid: vmuuid
+                          details: null
+                      - name: 41ee2caf-48f9-4999-a793-82ec7c6beb2c
+                        id: >-
+                          /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/41ee2caf-48f9-4999-a793-82ec7c6beb2c
+                        properties:
+                          assignment:
+                            name: AuditSecureProtocol
+                            configuration:
+                              name: AuditSecureProtocol
+                          complianceStatus: Compliant
+                          endTime: '2018-08-29T20:14:13Z'
+                          reportId: 41ee2caf-48f9-4999-a793-82ec7c6beb2c
+                          startTime: '2018-08-29T20:13:53Z'
+                          vm:
+                            id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm
+                            uuid: vmuuid
+                          details: null
+                  headers: {}
+        language: !Languages 
+          default:
+            name: List
+            description: List all reports for the guest configuration assignment, latest report first.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_121
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_122
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: The guest configuration assignment name.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_123
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: reportId
+                description: The GUID for the guest configuration assignment report.
+                serializedName: reportId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_124
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: vmName
+                description: The name of the virtual machine.
+                serializedName: vmName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}/reports/{reportId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_121
+          - *ref_122
+          - *ref_123
+          - *ref_124
+        responses:
+          - !SchemaResponse 
+            schema: *ref_73
+            language: !Languages 
+              default:
+                name: ''
+                description: 'OK. This response is due one of these two reasons: 1. Report was returned successfully 2. Guest configuration assignment was found, but VM is not registered yet, hence no report was returned.'
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get a guest configuration assignment report by Id for a virtual machine:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: AuditSecureProtocol
+                reportId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionid
+                vmName: myvm
+              responses:
+                '200':
+                  body:
+                    name: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                    id: >-
+                      /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                    properties:
+                      assignment:
+                        name: AuditSecureProtocol
+                        configuration:
+                          name: AuditSecureProtocol
+                          version: 1.0.0.0
+                      complianceStatus: Compliant
+                      endTime: '2018-08-29T22:14:13Z'
+                      reportId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                      startTime: '2018-08-29T22:13:53Z'
+                      vm:
+                        id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.Compute/virtualMachines/myvm
+                        uuid: vmuuid
+                      details:
+                        complianceStatus: Compliant
+                        endTime: '2018-08-29T22:14:13Z'
+                        jobId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        operationType: Consistency
+                        resources:
+                          - complianceStatus: Compliant
+                            properties:
+                              ConfigurationName: IsWebServerSecure
+                              DependsOn: null
+                              IsSingleInstance: 'Yes'
+                              ModuleName: SecureProtocolWebServer
+                              ModuleVersion: 1.0.0.3
+                              Protocols:
+                                - Ensure: Absent
+                                  Protocol: SSL 2.0
+                                - Ensure: Absent
+                                  Protocol: SSL 3.0
+                                - Ensure: Absent
+                                  Protocol: TLS 1.0
+                                - Ensure: Absent
+                                  Protocol: PCT 1.0
+                                - Ensure: Absent
+                                  Protocol: Multi-Protocol Unified Hello
+                                - Ensure: Absent
+                                  Protocol: TLS 1.1
+                                - Ensure: Absent
+                                  Protocol: TLS 1.2
+                              PsDscRunAsCredential: null
+                              Reasons: null
+                              ResourceId: '[SecureWebServer]s1'
+                              SourceInfo: null
+                            reasons:
+                              - code: DSC::RESOURCE::SUCCESS
+                                phrase: Operation successful.
+                        startTime: '2018-08-29T22:13:53Z'
+                  headers: {}
+        language: !Languages 
+          default:
+            name: Get
+            description: Get a report for the guest configuration assignment, by reportId.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: GuestConfigurationAssignmentReports
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: GuestConfigurationHCRPAssignments
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_126
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: Name of the guest configuration assignment.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_127
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_128
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: machineName
+                description: The name of the ARC machine.
+                serializedName: machineName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_100
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_125
+                schema: *ref_1
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: parameters
+                    description: Parameters supplied to the create or update guest configuration assignment.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_125
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_126
+          - *ref_127
+          - *ref_128
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The guest configuration assignment for the ARC machine was updated successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: Created. The guest configuration assignment for the ARC machine was created successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '201'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Create or update guest configuration assignment:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: WhitelistedApplication
+                machineName: myMachineName
+                parameters:
+                  name: WhitelistedApplication
+                  location: westcentralus
+                  properties:
+                    context: Azure policy
+                    guestConfiguration:
+                      name: WhitelistedApplication
+                      assignmentType: ApplyAndAutoCorrect
+                      configurationParameter:
+                        - name: '[InstalledApplication]bwhitelistedapp;Name'
+                          value: NotePad,sql
+                      contentHash: 123contenthash
+                      contentUri: https://thisisfake/pacakge
+                      version: 1.*
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+              responses:
+                '200':
+                  body:
+                    name: WhitelistedApplication
+                    id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/HybridRP.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/WhitelistedApplication
+                    location: westcentralus
+                    properties:
+                      assignmentHash: abcdr453g
+                      complianceStatus: Pending
+                      context: Azure policy
+                      guestConfiguration:
+                        name: WhitelistedApplication
+                        configurationParameter:
+                          - name: '[InstalledApplication]bwhitelistedapp;Name'
+                            value: NotePad,sql
+                        contentHash: null
+                        contentType: null
+                        contentUri: null
+                        kind: null
+                        version: 1.0.0.3
+                      lastComplianceStatusChecked: null
+                      latestReportId: a2a64e5d-a1a9-4344-a866-fb9e1541f723
+                      provisioningState: Succeeded
+                      resourceType: null
+                      vmssVMList: null
+                  headers: {}
+                '201':
+                  body:
+                    name: WhitelistedApplication
+                    id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/HybridRP.Compute/virtualMachines/myvm/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/WhitelistedApplication
+                    location: westcentralus
+                    properties:
+                      assignmentHash: abcdr453g
+                      complianceStatus: Pending
+                      context: Azure policy
+                      guestConfiguration:
+                        name: WhitelistedApplication
+                        configurationParameter:
+                          - name: '[InstalledApplication]bwhitelistedapp;Name'
+                            value: NotePad,sql
+                        contentHash: null
+                        contentType: null
+                        contentUri: null
+                        kind: null
+                        version: 1.0.0.3
+                      lastComplianceStatusChecked: null
+                      latestReportId: a2a64e5d-a1a9-4344-a866-fb9e1541f723
+                      provisioningState: Succeeded
+                      resourceType: null
+                      vmssVMList: null
+                  headers: {}
+        language: !Languages 
+          default:
+            name: CreateOrUpdate
+            description: Creates an association between a ARC machine and guest configuration
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_129
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_130
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: The guest configuration assignment name.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_131
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: machineName
+                description: The name of the ARC machine.
+                serializedName: machineName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_129
+          - *ref_130
+          - *ref_131
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The guest configuration assignment was returned successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get a guest configuration assignment:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: SecureProtocol
+                machineName: myMachineName
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+              responses:
+                '200':
+                  body:
+                    name: AuditSecureProtocol
+                    id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol
+                    location: centraluseuap
+                    properties:
+                      assignmentHash: E0D8941DD713F284284561648C00C18FA76C8602943C7CD38AFD73B56AE4C35F.E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855
+                      complianceStatus: Compliant
+                      context: null
+                      guestConfiguration:
+                        name: AuditSecureProtocol
+                        configurationParameter: []
+                        configurationSetting: null
+                        contentHash: content hash
+                        contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/AuditSecureProtocol/AuditSecureProtocol_1.0.0.3.zip
+                        kind: null
+                        version: 1.0.0.3
+                      lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                      latestReportId: >-
+                        /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                      provisioningState: Succeeded
+                  headers: {}
+        language: !Languages 
+          default:
+            name: Get
+            description: Get information about a guest configuration assignment
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_132
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_133
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: Name of the guest configuration assignment
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_134
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: machineName
+                description: The name of the ARC machine.
+                serializedName: machineName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_132
+          - *ref_133
+          - *ref_134
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Delete an guest configuration assignment:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: SecureProtocol
+                machineName: myMachineName
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+              responses:
+                '200': {}
+        language: !Languages 
+          default:
+            name: Delete
+            description: Delete a guest configuration assignment
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_135
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_136
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: machineName
+                description: The name of the ARC machine.
+                serializedName: machineName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_135
+          - *ref_136
+        responses:
+          - !SchemaResponse 
+            schema: *ref_113
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            List all guest configuration assignments for a virtual machine:
+              parameters:
+                api-version: '2020-06-25'
+                machineName: myMachineName
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionId
+              responses:
+                '200':
+                  body:
+                    - name: AuditSecureProtocol2
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: AuditSecureProtocol2
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/AuditSecureProtocol2/AuditSecureProtocol2_1.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol2/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                    - name: myAssignment
+                      id: /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment
+                      location: centraluseuap
+                      properties:
+                        assignmentHash: content hash
+                        complianceStatus: Compliant
+                        context: null
+                        guestConfiguration:
+                          name: myAssignment
+                          configurationParameter: []
+                          configurationSetting: null
+                          contentHash: content hash
+                          contentUri: https://mystorageaccount.blob.core.windows.net/builtinconfig/myAssignment/myAssignment.0.0.3.zip
+                          kind: null
+                          version: 1.0.0.3
+                        lastComplianceStatusChecked: '2018-08-29T22:14:13Z'
+                        latestReportId: >-
+                          /subscriptions/subscriptionId/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/myAssignment/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        provisioningState: null
+                  headers: {}
+          x-ms-pageable:
+            nextLinkName: null
+        language: !Languages 
+          default:
+            name: List
+            description: List all guest configuration assignments for an ARC machine.
+            paging:
+              nextLinkName: null
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: GuestConfigurationHcrpAssignments
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: GuestConfigurationHCRPAssignmentReports
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_137
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_138
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: The guest configuration assignment name.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_139
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: machineName
+                description: The name of the ARC machine.
+                serializedName: machineName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}/reports
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_137
+          - *ref_138
+          - *ref_139
+        responses:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: 'OK. This response is due one of these two reasons: 1. Reports were returned successfully 2. Guest configuration assignment was found, but machine is not registered yet, hence no reports returned.'
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            List all guest configuration assignments for a virtual machine:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: AuditSecureProtocol
+                machineName: myMachineName
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionid
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        id: >-
+                          /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        properties:
+                          assignment:
+                            name: AuditSecureProtocol
+                            configuration:
+                              name: AuditSecureProtocol
+                          complianceStatus: Compliant
+                          endTime: '2018-08-29T22:14:13Z'
+                          reportId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                          startTime: '2018-08-29T22:13:53Z'
+                          vm:
+                            id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName
+                            uuid: vmuuid
+                          details: null
+                      - name: 41ee2caf-48f9-4999-a793-82ec7c6beb2c
+                        id: >-
+                          /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/41ee2caf-48f9-4999-a793-82ec7c6beb2c
+                        properties:
+                          assignment:
+                            name: AuditSecureProtocol
+                            configuration:
+                              name: AuditSecureProtocol
+                          complianceStatus: Compliant
+                          endTime: '2018-08-29T20:14:13Z'
+                          reportId: 41ee2caf-48f9-4999-a793-82ec7c6beb2c
+                          startTime: '2018-08-29T20:13:53Z'
+                          vm:
+                            id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName
+                            uuid: vmuuid
+                          details: null
+                  headers: {}
+        language: !Languages 
+          default:
+            name: List
+            description: List all reports for the guest configuration assignment, latest report first.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - !Parameter &ref_140
+            schema: *ref_98
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The resource group name.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_141
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: guestConfigurationAssignmentName
+                description: The guest configuration assignment name.
+                serializedName: guestConfigurationAssignmentName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_142
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: reportId
+                description: The GUID for the guest configuration assignment report.
+                serializedName: reportId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_97
+          - !Parameter &ref_143
+            schema: *ref_93
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: machineName
+                description: The name of the ARC machine.
+                serializedName: machineName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: >-
+                  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{machineName}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{guestConfigurationAssignmentName}/reports/{reportId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_140
+          - *ref_141
+          - *ref_142
+          - *ref_143
+        responses:
+          - !SchemaResponse 
+            schema: *ref_73
+            language: !Languages 
+              default:
+                name: ''
+                description: 'OK. This response is due one of these two reasons: 1. Report was returned successfully 2. Guest configuration assignment was found, but machine is not registered yet, hence no report was returned.'
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get a guest configuration assignment report by Id for a virtual machine:
+              parameters:
+                api-version: '2020-06-25'
+                guestConfigurationAssignmentName: AuditSecureProtocol
+                machineName: myMachineName
+                reportId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                resourceGroupName: myResourceGroupName
+                subscriptionId: mySubscriptionid
+              responses:
+                '200':
+                  body:
+                    name: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                    id: >-
+                      /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/AuditSecureProtocol/reports/7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                    properties:
+                      assignment:
+                        name: AuditSecureProtocol
+                        configuration:
+                          name: AuditSecureProtocol
+                          version: 1.0.0.0
+                      complianceStatus: Compliant
+                      endTime: '2018-08-29T22:14:13Z'
+                      reportId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                      startTime: '2018-08-29T22:13:53Z'
+                      vm:
+                        id: /subscriptions/mysubscriptionid/resourceGroups/myResourceGroupName/providers/Microsoft.HybridCompute/machines/myMachineName
+                        uuid: vmuuid
+                      details:
+                        complianceStatus: Compliant
+                        endTime: '2018-08-29T22:14:13Z'
+                        jobId: 7367cbb8-ae99-47d0-a33b-a283564d2cb1
+                        operationType: Consistency
+                        resources:
+                          - complianceStatus: Compliant
+                            properties:
+                              ConfigurationName: IsWebServerSecure
+                              DependsOn: null
+                              IsSingleInstance: 'Yes'
+                              ModuleName: SecureProtocolWebServer
+                              ModuleVersion: 1.0.0.3
+                              Protocols:
+                                - Ensure: Absent
+                                  Protocol: SSL 2.0
+                                - Ensure: Absent
+                                  Protocol: SSL 3.0
+                                - Ensure: Absent
+                                  Protocol: TLS 1.0
+                                - Ensure: Absent
+                                  Protocol: PCT 1.0
+                                - Ensure: Absent
+                                  Protocol: Multi-Protocol Unified Hello
+                                - Ensure: Absent
+                                  Protocol: TLS 1.1
+                                - Ensure: Absent
+                                  Protocol: TLS 1.2
+                              PsDscRunAsCredential: null
+                              Reasons: null
+                              ResourceId: '[SecureWebServer]s1'
+                              SourceInfo: null
+                            reasons:
+                              - code: DSC::RESOURCE::SUCCESS
+                                phrase: Operation successful.
+                        startTime: '2018-08-29T22:13:53Z'
+                  headers: {}
+        language: !Languages 
+          default:
+            name: Get
+            description: Get a report for the guest configuration assignment, by reportId.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: GuestConfigurationHcrpAssignmentReports
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2020-06-25'
+        parameters:
+          - *ref_95
+          - *ref_99
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_101
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.GuestConfiguration/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_144
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_106
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Lists all of the available GuestConfiguration REST API operations:
+              parameters:
+                api-version: '2020-06-25'
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: Microsoft.GuestConfiguration/guestConfigurationAssignments/write
+                        display:
+                          description: Create new guest configuration assignment.
+                          operation: Microsoft.GuestConfiguration/guestConfigurationAssignments/write
+                          provider: Microsoft Guest Configuration
+                          resource: Microsoft.GuestConfiguration/guestConfigurationAssignments
+                        properties: null
+                      - name: Microsoft.GuestConfiguration/register/action
+                        display:
+                          description: Registers the subscription for the Microsoft.GuestConfiguration resource provider.
+                          operation: Registers the feature for Microsoft.GuestConfiguration.
+                          provider: Microsoft Guest Configuration
+                          resource: Register
+                        properties: null
+                      - name: Microsoft.GuestConfiguration/guestConfigurationAssignments/read
+                        display:
+                          description: Get guest configuration assignment.
+                          operation: Microsoft.GuestConfiguration/guestConfigurationAssignments/read
+                          provider: Microsoft Guest Configuration
+                          resource: Microsoft.GuestConfiguration/guestConfigurationAssignments
+                        properties: null
+                      - name: Microsoft.GuestConfiguration/guestConfigurationAssignments/reports/read
+                        display:
+                          description: Get guest configuration assignment report.
+                          operation: Microsoft.GuestConfiguration/guestConfigurationAssignments/reports/read
+                          provider: Microsoft Guest Configuration
+                          resource: Microsoft.GuestConfiguration/guestConfigurationAssignments
+                        properties: null
+                  headers: {}
+          x-ms-pageable:
+            nextLinkName: null
+        language: !Languages 
+          default:
+            name: List
+            description: Lists all of the available GuestConfiguration REST API operations.
+            paging:
+              nextLinkName: null
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: GuestConfigurationClient
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
