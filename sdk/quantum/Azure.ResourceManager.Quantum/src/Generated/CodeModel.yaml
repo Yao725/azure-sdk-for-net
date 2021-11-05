@@ -1,0 +1,3768 @@
+!CodeModel 
+info: !Info 
+  title: Azure Quantum Management Client
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_86
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: Indicates whether the operation is a data action
+      protocol: !Protocols {}
+    - !BooleanSchema &ref_95
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: Indicator of availability of the Quantum Workspace resource name.
+      protocol: !Protocols {}
+  numbers:
+    - !NumberSchema &ref_65
+      type: number
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      precision: 32
+      language: !Languages 
+        default:
+          name: QuotaDimensionQuota
+          description: The max limit of this dimension.
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_2
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_19
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderId
+          description: Unique id of this provider.
+      protocol: !Protocols {}
+    - !StringSchema &ref_20
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderSku
+          description: The sku associated with pricing information for this provider.
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderInstanceUri
+          description: A Uri identifying the specific instance of this provider.
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderApplicationName
+          description: The provider's marketplace application display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_24
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderResourceUsageId
+          description: Id to track resource usage for the provider.
+      protocol: !Protocols {}
+    - !StringSchema &ref_27
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: WorkspaceResourcePropertiesStorageAccount
+          description: ARM Resource Id of the storage account associated with this workspace.
+      protocol: !Protocols {}
+    - !StringSchema &ref_28
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: WorkspaceResourcePropertiesEndpointUri
+          description: The URI of the workspace endpoint.
+      protocol: !Protocols {}
+    - !StringSchema &ref_11
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuantumWorkspaceIdentityPrincipalId
+          description: The principal ID of resource identity.
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuantumWorkspaceIdentityTenantId
+          description: The tenant ID of resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_14
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataCreatedBy
+          description: The identity that created the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_17
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataLastModifiedBy
+          description: The identity that last modified the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_1
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_10
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      extensions:
+        x-ms-mutability:
+          - read
+          - create
+      language: !Languages 
+        default:
+          name: TrackedResourceLocation
+          description: The geo-location where the resource lives
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ResourceId
+          description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ResourceName
+          description: The name of the resource
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ResourceType
+          description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+      protocol: !Protocols {}
+    - !StringSchema &ref_32
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ErrorDetailCode
+          description: The error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_33
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ErrorDetailMessage
+          description: The error message.
+      protocol: !Protocols {}
+    - !StringSchema &ref_34
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ErrorDetailTarget
+          description: The error target.
+      protocol: !Protocols {}
+    - !StringSchema &ref_36
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: ErrorAdditionalInfoType
+          description: The additional info type.
+      protocol: !Protocols {}
+    - !StringSchema &ref_40
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: WorkspaceListResultNextLink
+          description: Link to the next set of results. Not empty if Value contains incomplete list of Workspaces.
+      protocol: !Protocols {}
+    - !StringSchema &ref_41
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderDescriptionId
+          description: Unique provider's id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_42
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderDescriptionName
+          description: Provider's display name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_43
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesDescription
+          description: A description about this provider.
+      protocol: !Protocols {}
+    - !StringSchema &ref_44
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesProviderType
+          description: Provider type.
+      protocol: !Protocols {}
+    - !StringSchema &ref_45
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesCompany
+          description: Company name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_46
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesDefaultEndpoint
+          description: Provider's default endpoint.
+      protocol: !Protocols {}
+    - !StringSchema &ref_47
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesAadApplicationId
+          description: Provider's application id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_48
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesAadTenantId
+          description: Provider's tenant id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_49
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesManagedApplicationPublisherId
+          description: Provider's publisher id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_50
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: ProviderPropertiesManagedApplicationOfferId
+          description: Provider's offer id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_51
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: TargetDescriptionId
+          description: Unique target id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_52
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: TargetDescriptionName
+          description: Display name of this target.
+      protocol: !Protocols {}
+    - !StringSchema &ref_53
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: TargetDescription
+          description: A description about this target.
+      protocol: !Protocols {}
+    - !StringSchema &ref_54
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: TargetDescriptionAcceptedDataFormatsItem
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_55
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: TargetDescriptionAcceptedContentEncodingsItem
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_56
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: SkuDescriptionId
+          description: Unique sku id.
+      protocol: !Protocols {}
+    - !StringSchema &ref_57
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: SkuDescriptionName
+          description: Display name of this sku.
+      protocol: !Protocols {}
+    - !StringSchema &ref_58
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: SkuDescriptionVersion
+          description: Display name of this sku.
+      protocol: !Protocols {}
+    - !StringSchema &ref_59
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: SkuDescription
+          description: Description about this sku.
+      protocol: !Protocols {}
+    - !StringSchema &ref_60
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: SkuDescriptionRestrictedAccessUri
+          description: Uri to subscribe to the restricted access sku.
+      protocol: !Protocols {}
+    - !StringSchema &ref_61
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: SkuDescriptionTargetsItem
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_62
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionId
+          description: Unique id of this dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_63
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionScope
+          description: The scope of this quota dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_64
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionPeriod
+          description: The reset period of this quota dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_66
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionName
+          description: The display name of this quota dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_67
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionDescription
+          description: A description about this quota dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_68
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionUnit
+          description: The standard unit of measurement used for this quota dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_69
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: QuotaDimensionUnitPlural
+          description: The standard unit of measurement used for this quota dimension in plural form.
+      protocol: !Protocols {}
+    - !StringSchema &ref_70
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: PricingDetailId
+          description: Unique id for this pricing information.
+      protocol: !Protocols {}
+    - !StringSchema &ref_71
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: PricingDetailValue
+          description: The unit cost of this sku.
+      protocol: !Protocols {}
+    - !StringSchema &ref_73
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: PricingDimensionId
+          description: Unique id of this pricing dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_74
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: PricingDimensionName
+          description: The display name of this pricing dimension.
+      protocol: !Protocols {}
+    - !StringSchema &ref_75
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OfferingsListResultNextLink
+          description: Link to the next set of results. Not empty if Value contains incomplete list of Providers.
+      protocol: !Protocols {}
+    - !StringSchema &ref_84
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OperationsListNextLink
+          description: Url to follow for getting next page of operations.
+      protocol: !Protocols {}
+    - !StringSchema &ref_85
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OperationName
+          description: Name of the operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_87
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayProvider
+          description: Provider name
+      protocol: !Protocols {}
+    - !StringSchema &ref_88
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayResource
+          description: Resource name
+      protocol: !Protocols {}
+    - !StringSchema &ref_89
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayOperation
+          description: Operation name
+      protocol: !Protocols {}
+    - !StringSchema &ref_90
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: OperationDisplayDescription
+          description: Description of the operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_93
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: CheckNameAvailabilityParametersName
+          description: Name for checking availability.
+      protocol: !Protocols {}
+    - !StringSchema &ref_94
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      defaultValue: Microsoft.Quantum/Workspaces
+      language: !Languages 
+        default:
+          name: CheckNameAvailabilityParametersType
+          description: The resource type of Quantum Workspace.
+      protocol: !Protocols {}
+    - !StringSchema &ref_96
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: CheckNameAvailabilityResultReason
+          description: The reason of unavailability.
+      protocol: !Protocols {}
+    - !StringSchema &ref_97
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      language: !Languages 
+        default:
+          name: CheckNameAvailabilityResultMessage
+          description: The detailed info regarding the reason associated with the Namespace.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_23
+      choices:
+        - !ChoiceValue 
+          value: Succeeded
+          language:
+            default:
+              name: Succeeded
+              description: ''
+        - !ChoiceValue 
+          value: Launching
+          language:
+            default:
+              name: Launching
+              description: ''
+        - !ChoiceValue 
+          value: Updating
+          language:
+            default:
+              name: Updating
+              description: ''
+        - !ChoiceValue 
+          value: Deleting
+          language:
+            default:
+              name: Deleting
+              description: ''
+        - !ChoiceValue 
+          value: Deleted
+          language:
+            default:
+              name: Deleted
+              description: ''
+        - !ChoiceValue 
+          value: Failed
+          language:
+            default:
+              name: Failed
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Status
+          description: Provisioning status field
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_25
+      choices:
+        - !ChoiceValue 
+          value: 'Yes'
+          language:
+            default:
+              name: 'Yes'
+              description: ''
+        - !ChoiceValue 
+          value: 'No'
+          language:
+            default:
+              name: 'No'
+              description: ''
+        - !ChoiceValue 
+          value: Partial
+          language:
+            default:
+              name: Partial
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: UsableStatus
+          description: Whether the current workspace is ready to accept Jobs.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_26
+      choices:
+        - !ChoiceValue 
+          value: Succeeded
+          language:
+            default:
+              name: Succeeded
+              description: ''
+        - !ChoiceValue 
+          value: ProviderLaunching
+          language:
+            default:
+              name: ProviderLaunching
+              description: ''
+        - !ChoiceValue 
+          value: ProviderUpdating
+          language:
+            default:
+              name: ProviderUpdating
+              description: ''
+        - !ChoiceValue 
+          value: ProviderDeleting
+          language:
+            default:
+              name: ProviderDeleting
+              description: ''
+        - !ChoiceValue 
+          value: ProviderProvisioning
+          language:
+            default:
+              name: ProviderProvisioning
+              description: ''
+        - !ChoiceValue 
+          value: Failed
+          language:
+            default:
+              name: Failed
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ProvisioningStatus
+          description: Provisioning status field
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_13
+      choices:
+        - !ChoiceValue 
+          value: SystemAssigned
+          language:
+            default:
+              name: SystemAssigned
+              description: ''
+        - !ChoiceValue 
+          value: None
+          language:
+            default:
+              name: None
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ResourceIdentityType
+          description: The identity type.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_15
+      choices:
+        - !ChoiceValue 
+          value: User
+          language:
+            default:
+              name: User
+              description: ''
+        - !ChoiceValue 
+          value: Application
+          language:
+            default:
+              name: Application
+              description: ''
+        - !ChoiceValue 
+          value: ManagedIdentity
+          language:
+            default:
+              name: ManagedIdentity
+              description: ''
+        - !ChoiceValue 
+          value: Key
+          language:
+            default:
+              name: Key
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: CreatedByType
+          description: The type of identity that created the resource.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_113
+      type: constant
+      value: !ConstantValue 
+        value: 2019-11-04-preview
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20191104Preview
+          description: Api Version (2019-11-04-preview)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_117
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_121
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApplicationJson
+          description: Content Type 'application/json'
+      protocol: !Protocols {}
+  dictionaries:
+    - !DictionarySchema &ref_9
+      type: dictionary
+      elementType: *ref_1
+      language: !Languages 
+        default:
+          name: TrackedResourceTags
+          description: Resource tags.
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_39
+      type: dictionary
+      elementType: *ref_2
+      language: !Languages 
+        default:
+          name: TagsObjectTags
+          description: Resource tags.
+      protocol: !Protocols {}
+  anyObjects:
+    - !AnyObjectSchema &ref_37
+      type: any-object
+      language: !Languages 
+        default:
+          name: AnyObject
+          description: Any object
+      protocol: !Protocols {}
+  dateTimes:
+    - !DateTimeSchema &ref_16
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataCreatedAt
+          description: The timestamp of resource creation (UTC).
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_18
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataLastModifiedAt
+          description: The timestamp of resource last modification (UTC)
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_3
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      parents: !Relations 
+        all:
+          - !ObjectSchema &ref_4
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2.0'
+            children: !Relations 
+              all:
+                - *ref_3
+              immediate:
+                - *ref_3
+            parents: !Relations 
+              all:
+                - !ObjectSchema &ref_8
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: '2.0'
+                  children: !Relations 
+                    all:
+                      - *ref_4
+                      - *ref_3
+                    immediate:
+                      - *ref_4
+                  properties:
+                    - !Property 
+                      schema: *ref_5
+                      readOnly: true
+                      serializedName: id
+                      language: !Languages 
+                        default:
+                          name: id
+                          description: Fully qualified resource ID for the resource. Ex - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_6
+                      readOnly: true
+                      serializedName: name
+                      language: !Languages 
+                        default:
+                          name: name
+                          description: The name of the resource
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_7
+                      readOnly: true
+                      serializedName: type
+                      language: !Languages 
+                        default:
+                          name: type
+                          description: The type of the resource. E.g. "Microsoft.Compute/virtualMachines" or "Microsoft.Storage/storageAccounts"
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  summary: Resource
+                  usage:
+                    - output
+                    - input
+                  extensions:
+                    x-ms-azure-resource: true
+                  language: !Languages 
+                    default:
+                      name: Resource
+                      description: Common fields that are returned in the response for all Azure Resource Manager resources
+                      namespace: ''
+                      summary: Resource
+                  protocol: !Protocols {}
+              immediate:
+                - *ref_8
+            properties:
+              - !Property 
+                schema: *ref_9
+                required: false
+                serializedName: tags
+                extensions:
+                  x-ms-mutability:
+                    - read
+                    - create
+                    - update
+                language: !Languages 
+                  default:
+                    name: tags
+                    description: Resource tags.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_10
+                required: true
+                serializedName: location
+                extensions:
+                  x-ms-mutability:
+                    - read
+                    - create
+                language: !Languages 
+                  default:
+                    name: location
+                    description: The geo-location where the resource lives
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            summary: Tracked Resource
+            usage:
+              - output
+              - input
+            language: !Languages 
+              default:
+                name: TrackedResource
+                description: The resource model definition for an Azure Resource Manager tracked top level resource which has 'tags' and a 'location'
+                namespace: ''
+                summary: Tracked Resource
+            protocol: !Protocols {}
+          - *ref_8
+        immediate:
+          - *ref_4
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_30
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2019-11-04-preview
+            properties:
+              - !Property 
+                schema: *ref_11
+                readOnly: true
+                serializedName: principalId
+                language: !Languages 
+                  default:
+                    name: principalId
+                    description: The principal ID of resource identity.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_12
+                readOnly: true
+                serializedName: tenantId
+                language: !Languages 
+                  default:
+                    name: tenantId
+                    description: The tenant ID of resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_13
+                serializedName: type
+                language: !Languages 
+                  default:
+                    name: type
+                    description: The identity type.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            extensions:
+              x-internal-autorest-anonymous-schema:
+                anonymous: true
+            language: !Languages 
+              default:
+                name: QuantumWorkspaceIdentity
+                description: Managed Identity information.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: identity
+          language: !Languages 
+            default:
+              name: identity
+              description: Managed Identity information.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_31
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2.0'
+            properties:
+              - !Property 
+                schema: *ref_14
+                serializedName: createdBy
+                language: !Languages 
+                  default:
+                    name: createdBy
+                    description: The identity that created the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_15
+                serializedName: createdByType
+                language: !Languages 
+                  default:
+                    name: createdByType
+                    description: The type of identity that created the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_16
+                serializedName: createdAt
+                language: !Languages 
+                  default:
+                    name: createdAt
+                    description: The timestamp of resource creation (UTC).
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_17
+                serializedName: lastModifiedBy
+                language: !Languages 
+                  default:
+                    name: lastModifiedBy
+                    description: The identity that last modified the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_15
+                serializedName: lastModifiedByType
+                language: !Languages 
+                  default:
+                    name: lastModifiedByType
+                    description: The type of identity that last modified the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_18
+                serializedName: lastModifiedAt
+                language: !Languages 
+                  default:
+                    name: lastModifiedAt
+                    description: The timestamp of resource last modification (UTC)
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            language: !Languages 
+              default:
+                name: SystemData
+                description: Metadata pertaining to creation and last modification of the resource.
+                namespace: ''
+            protocol: !Protocols {}
+          readOnly: true
+          serializedName: systemData
+          language: !Languages 
+            default:
+              name: systemData
+              description: System metadata
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_98
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2019-11-04-preview
+            elementType: !ObjectSchema &ref_29
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2019-11-04-preview
+              properties:
+                - !Property 
+                  schema: *ref_19
+                  serializedName: providerId
+                  language: !Languages 
+                    default:
+                      name: providerId
+                      description: Unique id of this provider.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_20
+                  serializedName: providerSku
+                  language: !Languages 
+                    default:
+                      name: providerSku
+                      description: The sku associated with pricing information for this provider.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_21
+                  serializedName: instanceUri
+                  language: !Languages 
+                    default:
+                      name: instanceUri
+                      description: A Uri identifying the specific instance of this provider.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_22
+                  serializedName: applicationName
+                  language: !Languages 
+                    default:
+                      name: applicationName
+                      description: The provider's marketplace application display name.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_23
+                  serializedName: provisioningState
+                  language: !Languages 
+                    default:
+                      name: provisioningState
+                      description: Provisioning status field
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_24
+                  serializedName: resourceUsageId
+                  language: !Languages 
+                    default:
+                      name: resourceUsageId
+                      description: Id to track resource usage for the provider.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+                - input
+              language: !Languages 
+                default:
+                  name: Provider
+                  description: Information about a Provider. A Provider is an entity that offers Targets to run Azure Quantum Jobs.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: WorkspaceResourcePropertiesProviders
+                description: List of Providers selected for this Workspace
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - providers
+          serializedName: providers
+          language: !Languages 
+            default:
+              name: providers
+              description: List of Providers selected for this Workspace
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_25
+          flattenedNames:
+            - properties
+            - usable
+          readOnly: true
+          serializedName: usable
+          language: !Languages 
+            default:
+              name: usable
+              description: Whether the current workspace is ready to accept Jobs.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_26
+          flattenedNames:
+            - properties
+            - provisioningState
+          readOnly: true
+          serializedName: provisioningState
+          language: !Languages 
+            default:
+              name: provisioningState
+              description: Provisioning status field
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_27
+          flattenedNames:
+            - properties
+            - storageAccount
+          serializedName: storageAccount
+          language: !Languages 
+            default:
+              name: storageAccount
+              description: ARM Resource Id of the storage account associated with this workspace.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_28
+          flattenedNames:
+            - properties
+            - endpointUri
+          readOnly: true
+          serializedName: endpointUri
+          language: !Languages 
+            default:
+              name: endpointUri
+              description: The URI of the workspace endpoint.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+        - input
+      language: !Languages 
+        default:
+          name: QuantumWorkspace
+          description: The resource proxy definition object for quantum workspace.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_29
+    - *ref_30
+    - *ref_31
+    - *ref_4
+    - *ref_8
+    - !ObjectSchema &ref_120
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_35
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2.0'
+            properties:
+              - !Property 
+                schema: *ref_32
+                readOnly: true
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: The error code.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_33
+                readOnly: true
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: The error message.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_34
+                readOnly: true
+                serializedName: target
+                language: !Languages 
+                  default:
+                    name: target
+                    description: The error target.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_99
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: '2.0'
+                  elementType: *ref_35
+                  language: !Languages 
+                    default:
+                      name: ErrorDetailDetails
+                      description: The error details.
+                  protocol: !Protocols {}
+                readOnly: true
+                serializedName: details
+                language: !Languages 
+                  default:
+                    name: details
+                    description: The error details.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_100
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: '2.0'
+                  elementType: !ObjectSchema &ref_38
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2.0'
+                    properties:
+                      - !Property 
+                        schema: *ref_36
+                        readOnly: true
+                        serializedName: type
+                        language: !Languages 
+                          default:
+                            name: type
+                            description: The additional info type.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_37
+                        readOnly: true
+                        serializedName: info
+                        language: !Languages 
+                          default:
+                            name: info
+                            description: The additional info.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - exception
+                    language: !Languages 
+                      default:
+                        name: ErrorAdditionalInfo
+                        description: The resource management error additional info.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  language: !Languages 
+                    default:
+                      name: ErrorDetailAdditionalInfo
+                      description: The error additional info.
+                  protocol: !Protocols {}
+                readOnly: true
+                serializedName: additionalInfo
+                language: !Languages 
+                  default:
+                    name: additionalInfo
+                    description: The error additional info.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            language: !Languages 
+              default:
+                name: ErrorDetail
+                description: The error detail.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: The error object.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      summary: Error response
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ErrorResponse
+          description: Common error response for all Azure Resource Manager APIs to return error details for failed operations. (This also follows the OData error response format.).
+          namespace: ''
+          summary: Error response
+      protocol: !Protocols {}
+    - *ref_35
+    - *ref_38
+    - !ObjectSchema &ref_125
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      properties:
+        - !Property 
+          schema: *ref_39
+          serializedName: tags
+          language: !Languages 
+            default:
+              name: tags
+              description: Resource tags.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - input
+      language: !Languages 
+        default:
+          name: TagsObject
+          description: Tags object for patch operations.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_131
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_101
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2019-11-04-preview
+            elementType: *ref_3
+            language: !Languages 
+              default:
+                name: WorkspaceListResultValue
+                description: Result of a list Workspaces operation.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Result of a list Workspaces operation.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_40
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Link to the next set of results. Not empty if Value contains incomplete list of Workspaces.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: WorkspaceListResult
+          description: The response of a list Workspaces operation.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_134
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_111
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2019-11-04-preview
+            elementType: !ObjectSchema &ref_76
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2019-11-04-preview
+              properties:
+                - !Property 
+                  schema: *ref_41
+                  serializedName: id
+                  language: !Languages 
+                    default:
+                      name: id
+                      description: Unique provider's id.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_42
+                  readOnly: true
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: Provider's display name.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_77
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2019-11-04-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_43
+                        readOnly: true
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: A description about this provider.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_44
+                        readOnly: true
+                        serializedName: providerType
+                        language: !Languages 
+                          default:
+                            name: providerType
+                            description: Provider type.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_45
+                        readOnly: true
+                        serializedName: company
+                        language: !Languages 
+                          default:
+                            name: company
+                            description: Company name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_46
+                        readOnly: true
+                        serializedName: defaultEndpoint
+                        language: !Languages 
+                          default:
+                            name: defaultEndpoint
+                            description: Provider's default endpoint.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ObjectSchema &ref_78
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2019-11-04-preview
+                          properties:
+                            - !Property 
+                              schema: *ref_47
+                              readOnly: true
+                              serializedName: applicationId
+                              language: !Languages 
+                                default:
+                                  name: applicationId
+                                  description: Provider's application id.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_48
+                              readOnly: true
+                              serializedName: tenantId
+                              language: !Languages 
+                                default:
+                                  name: tenantId
+                                  description: Provider's tenant id.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - output
+                          extensions:
+                            x-internal-autorest-anonymous-schema:
+                              anonymous: true
+                          language: !Languages 
+                            default:
+                              name: ProviderPropertiesAad
+                              description: Azure Active Directory info.
+                              namespace: ''
+                          protocol: !Protocols {}
+                        serializedName: aad
+                        language: !Languages 
+                          default:
+                            name: aad
+                            description: Azure Active Directory info.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ObjectSchema &ref_79
+                          type: object
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2019-11-04-preview
+                          properties:
+                            - !Property 
+                              schema: *ref_49
+                              readOnly: true
+                              serializedName: publisherId
+                              language: !Languages 
+                                default:
+                                  name: publisherId
+                                  description: Provider's publisher id.
+                              protocol: !Protocols {}
+                            - !Property 
+                              schema: *ref_50
+                              readOnly: true
+                              serializedName: offerId
+                              language: !Languages 
+                                default:
+                                  name: offerId
+                                  description: Provider's offer id.
+                              protocol: !Protocols {}
+                          serializationFormats:
+                            - json
+                          usage:
+                            - output
+                          extensions:
+                            x-internal-autorest-anonymous-schema:
+                              anonymous: true
+                          language: !Languages 
+                            default:
+                              name: ProviderPropertiesManagedApplication
+                              description: Provider's Managed-Application info
+                              namespace: ''
+                          protocol: !Protocols {}
+                        serializedName: managedApplication
+                        language: !Languages 
+                          default:
+                            name: managedApplication
+                            description: Provider's Managed-Application info
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_104
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2019-11-04-preview
+                          elementType: !ObjectSchema &ref_80
+                            type: object
+                            apiVersions:
+                              - !ApiVersion 
+                                version: 2019-11-04-preview
+                            properties:
+                              - !Property 
+                                schema: *ref_51
+                                serializedName: id
+                                language: !Languages 
+                                  default:
+                                    name: id
+                                    description: Unique target id.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_52
+                                serializedName: name
+                                language: !Languages 
+                                  default:
+                                    name: name
+                                    description: Display name of this target.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_53
+                                serializedName: description
+                                language: !Languages 
+                                  default:
+                                    name: description
+                                    description: A description about this target.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: !ArraySchema &ref_102
+                                  type: array
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: 2019-11-04-preview
+                                  elementType: *ref_54
+                                  language: !Languages 
+                                    default:
+                                      name: TargetDescriptionAcceptedDataFormats
+                                      description: List of data formats accepted by this target.
+                                  protocol: !Protocols {}
+                                serializedName: acceptedDataFormats
+                                language: !Languages 
+                                  default:
+                                    name: acceptedDataFormats
+                                    description: List of data formats accepted by this target.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: !ArraySchema &ref_103
+                                  type: array
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: 2019-11-04-preview
+                                  elementType: *ref_55
+                                  language: !Languages 
+                                    default:
+                                      name: TargetDescriptionAcceptedContentEncodings
+                                      description: List of content encodings accepted by this target.
+                                  protocol: !Protocols {}
+                                serializedName: acceptedContentEncodings
+                                language: !Languages 
+                                  default:
+                                    name: acceptedContentEncodings
+                                    description: List of content encodings accepted by this target.
+                                protocol: !Protocols {}
+                            serializationFormats:
+                              - json
+                            usage:
+                              - output
+                            language: !Languages 
+                              default:
+                                name: TargetDescription
+                                description: Information about a Target. A target is the component that can process a specific type of Job.
+                                namespace: ''
+                            protocol: !Protocols {}
+                          language: !Languages 
+                            default:
+                              name: ProviderPropertiesTargets
+                              description: The list of targets available from this provider.
+                          protocol: !Protocols {}
+                        serializedName: targets
+                        language: !Languages 
+                          default:
+                            name: targets
+                            description: The list of targets available from this provider.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_108
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2019-11-04-preview
+                          elementType: !ObjectSchema &ref_81
+                            type: object
+                            apiVersions:
+                              - !ApiVersion 
+                                version: 2019-11-04-preview
+                            properties:
+                              - !Property 
+                                schema: *ref_56
+                                serializedName: id
+                                language: !Languages 
+                                  default:
+                                    name: id
+                                    description: Unique sku id.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_57
+                                serializedName: name
+                                language: !Languages 
+                                  default:
+                                    name: name
+                                    description: Display name of this sku.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_58
+                                serializedName: version
+                                language: !Languages 
+                                  default:
+                                    name: version
+                                    description: Display name of this sku.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_59
+                                serializedName: description
+                                language: !Languages 
+                                  default:
+                                    name: description
+                                    description: Description about this sku.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_60
+                                serializedName: restrictedAccessUri
+                                language: !Languages 
+                                  default:
+                                    name: restrictedAccessUri
+                                    description: Uri to subscribe to the restricted access sku.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: !ArraySchema &ref_105
+                                  type: array
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: 2019-11-04-preview
+                                  elementType: *ref_61
+                                  language: !Languages 
+                                    default:
+                                      name: SkuDescriptionTargets
+                                      description: The list of targets available for this sku.
+                                  protocol: !Protocols {}
+                                serializedName: targets
+                                language: !Languages 
+                                  default:
+                                    name: targets
+                                    description: The list of targets available for this sku.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: !ArraySchema &ref_106
+                                  type: array
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: 2019-11-04-preview
+                                  elementType: !ObjectSchema &ref_72
+                                    type: object
+                                    apiVersions:
+                                      - !ApiVersion 
+                                        version: 2019-11-04-preview
+                                    properties:
+                                      - !Property 
+                                        schema: *ref_62
+                                        serializedName: id
+                                        language: !Languages 
+                                          default:
+                                            name: id
+                                            description: Unique id of this dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_63
+                                        serializedName: scope
+                                        language: !Languages 
+                                          default:
+                                            name: scope
+                                            description: The scope of this quota dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_64
+                                        serializedName: period
+                                        language: !Languages 
+                                          default:
+                                            name: period
+                                            description: The reset period of this quota dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_65
+                                        serializedName: quota
+                                        language: !Languages 
+                                          default:
+                                            name: quota
+                                            description: The max limit of this dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_66
+                                        serializedName: name
+                                        language: !Languages 
+                                          default:
+                                            name: name
+                                            description: The display name of this quota dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_67
+                                        serializedName: description
+                                        language: !Languages 
+                                          default:
+                                            name: description
+                                            description: A description about this quota dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_68
+                                        serializedName: unit
+                                        language: !Languages 
+                                          default:
+                                            name: unit
+                                            description: The standard unit of measurement used for this quota dimension.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_69
+                                        serializedName: unitPlural
+                                        language: !Languages 
+                                          default:
+                                            name: unitPlural
+                                            description: The standard unit of measurement used for this quota dimension in plural form.
+                                        protocol: !Protocols {}
+                                    serializationFormats:
+                                      - json
+                                    usage:
+                                      - output
+                                    language: !Languages 
+                                      default:
+                                        name: QuotaDimension
+                                        description: Information about a specific quota dimension.
+                                        namespace: ''
+                                    protocol: !Protocols {}
+                                  language: !Languages 
+                                    default:
+                                      name: SkuDescriptionQuotaDimensions
+                                      description: The list of quota dimensions for this sku.
+                                  protocol: !Protocols {}
+                                serializedName: quotaDimensions
+                                language: !Languages 
+                                  default:
+                                    name: quotaDimensions
+                                    description: The list of quota dimensions for this sku.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: !ArraySchema &ref_107
+                                  type: array
+                                  apiVersions:
+                                    - !ApiVersion 
+                                      version: 2019-11-04-preview
+                                  elementType: !ObjectSchema &ref_82
+                                    type: object
+                                    apiVersions:
+                                      - !ApiVersion 
+                                        version: 2019-11-04-preview
+                                    properties:
+                                      - !Property 
+                                        schema: *ref_70
+                                        serializedName: id
+                                        language: !Languages 
+                                          default:
+                                            name: id
+                                            description: Unique id for this pricing information.
+                                        protocol: !Protocols {}
+                                      - !Property 
+                                        schema: *ref_71
+                                        serializedName: value
+                                        language: !Languages 
+                                          default:
+                                            name: value
+                                            description: The unit cost of this sku.
+                                        protocol: !Protocols {}
+                                    serializationFormats:
+                                      - json
+                                    usage:
+                                      - output
+                                    language: !Languages 
+                                      default:
+                                        name: PricingDetail
+                                        description: Detailed pricing information for an sku.
+                                        namespace: ''
+                                    protocol: !Protocols {}
+                                  language: !Languages 
+                                    default:
+                                      name: SkuDescriptionPricingDetails
+                                      description: The list of pricing details for the sku.
+                                  protocol: !Protocols {}
+                                serializedName: pricingDetails
+                                language: !Languages 
+                                  default:
+                                    name: pricingDetails
+                                    description: The list of pricing details for the sku.
+                                protocol: !Protocols {}
+                            serializationFormats:
+                              - json
+                            usage:
+                              - output
+                            language: !Languages 
+                              default:
+                                name: SkuDescription
+                                description: Information about a specific sku.
+                                namespace: ''
+                            protocol: !Protocols {}
+                          language: !Languages 
+                            default:
+                              name: ProviderPropertiesSkus
+                              description: The list of skus available from this provider.
+                          protocol: !Protocols {}
+                        serializedName: skus
+                        language: !Languages 
+                          default:
+                            name: skus
+                            description: The list of skus available from this provider.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_109
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2019-11-04-preview
+                          elementType: *ref_72
+                          language: !Languages 
+                            default:
+                              name: ProviderPropertiesQuotaDimensions
+                              description: The list of quota dimensions from the provider.
+                          protocol: !Protocols {}
+                        serializedName: quotaDimensions
+                        language: !Languages 
+                          default:
+                            name: quotaDimensions
+                            description: The list of quota dimensions from the provider.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_110
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2019-11-04-preview
+                          elementType: !ObjectSchema &ref_83
+                            type: object
+                            apiVersions:
+                              - !ApiVersion 
+                                version: 2019-11-04-preview
+                            properties:
+                              - !Property 
+                                schema: *ref_73
+                                serializedName: id
+                                language: !Languages 
+                                  default:
+                                    name: id
+                                    description: Unique id of this pricing dimension.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_74
+                                serializedName: name
+                                language: !Languages 
+                                  default:
+                                    name: name
+                                    description: The display name of this pricing dimension.
+                                protocol: !Protocols {}
+                            serializationFormats:
+                              - json
+                            usage:
+                              - output
+                            language: !Languages 
+                              default:
+                                name: PricingDimension
+                                description: Information about pricing dimension.
+                                namespace: ''
+                            protocol: !Protocols {}
+                          language: !Languages 
+                            default:
+                              name: ProviderPropertiesPricingDimensions
+                              description: The list of pricing dimensions from the provider.
+                          protocol: !Protocols {}
+                        serializedName: pricingDimensions
+                        language: !Languages 
+                          default:
+                            name: pricingDimensions
+                            description: The list of pricing dimensions from the provider.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    language: !Languages 
+                      default:
+                        name: ProviderProperties
+                        description: Provider properties.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: properties
+                  language: !Languages 
+                    default:
+                      name: properties
+                      description: A list of provider-specific properties.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: ProviderDescription
+                  description: Information about an offering. A provider offering is an entity that offers Targets to run Azure Quantum Jobs.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OfferingsListResultValue
+                description: Result of a list Providers operation.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Result of a list Providers operation.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_75
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Link to the next set of results. Not empty if Value contains incomplete list of Providers.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OfferingsListResult
+          description: The response of a list Providers operation.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_76
+    - *ref_77
+    - *ref_78
+    - *ref_79
+    - *ref_80
+    - *ref_81
+    - *ref_72
+    - *ref_82
+    - *ref_83
+    - !ObjectSchema &ref_135
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      properties:
+        - !Property 
+          schema: *ref_84
+          required: false
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: Url to follow for getting next page of operations.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_112
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2019-11-04-preview
+            elementType: !ObjectSchema &ref_91
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2019-11-04-preview
+              properties:
+                - !Property 
+                  schema: *ref_85
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: Name of the operation
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_86
+                  serializedName: isDataAction
+                  language: !Languages 
+                    default:
+                      name: isDataAction
+                      description: Indicates whether the operation is a data action
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_92
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2019-11-04-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_87
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: Provider name
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_88
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: Resource name
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_89
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: Operation name
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_90
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: Description of the operation
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-internal-autorest-anonymous-schema:
+                        anonymous: true
+                    language: !Languages 
+                      default:
+                        name: OperationDisplay
+                        description: Properties of the operation
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: Properties of the operation
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: Operation
+                  description: Operation provided by provider
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationsListValue
+                description: Array of operations
+            protocol: !Protocols {}
+          required: true
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: Array of operations
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationsList
+          description: Lists the operations available.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_91
+    - *ref_92
+    - !ObjectSchema &ref_136
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      properties:
+        - !Property 
+          schema: *ref_93
+          serializedName: name
+          language: !Languages 
+            default:
+              name: name
+              description: Name for checking availability.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_94
+          serializedName: type
+          language: !Languages 
+            default:
+              name: type
+              description: The resource type of Quantum Workspace.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - input
+      language: !Languages 
+        default:
+          name: CheckNameAvailabilityParameters
+          description: Details of check name availability request body.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_139
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2019-11-04-preview
+      properties:
+        - !Property 
+          schema: *ref_95
+          serializedName: nameAvailable
+          language: !Languages 
+            default:
+              name: nameAvailable
+              description: Indicator of availability of the Quantum Workspace resource name.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_96
+          serializedName: reason
+          language: !Languages 
+            default:
+              name: reason
+              description: The reason of unavailability.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_97
+          readOnly: true
+          serializedName: message
+          language: !Languages 
+            default:
+              name: message
+              description: The detailed info regarding the reason associated with the Namespace.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: CheckNameAvailabilityResult
+          description: Result of check name availability.
+          namespace: ''
+      protocol: !Protocols {}
+  arrays:
+    - *ref_98
+    - *ref_99
+    - *ref_100
+    - *ref_101
+    - *ref_102
+    - *ref_103
+    - *ref_104
+    - *ref_105
+    - *ref_106
+    - *ref_107
+    - *ref_108
+    - *ref_109
+    - *ref_110
+    - *ref_111
+    - *ref_112
+globalParameters:
+  - !Parameter &ref_116
+    schema: *ref_2
+    implementation: Client
+    required: true
+    extensions:
+      x-ms-priority: 0
+    language: !Languages 
+      default:
+        name: SubscriptionId
+        description: The Azure subscription ID.
+        serializedName: subscriptionId
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: path
+  - !Parameter &ref_114
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_115
+    schema: *ref_113
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: Workspaces
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - !Parameter &ref_118
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The name of the resource group.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_115
+          - *ref_116
+          - !Parameter &ref_119
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: workspaceName
+                description: The name of the quantum workspace resource.
+                serializedName: workspaceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces/{workspaceName}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_118
+          - *ref_119
+        responses:
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: Workspace details.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesGet:
+              parameters:
+                api-version: 2019-11-04-preview
+                resourceGroupName: quantumResourcegroup
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+                workspaceName: quantumworkspace1
+              responses:
+                '200':
+                  body:
+                    name: quantumworkspace1
+                    type: Microsoft.Quantum/Workspaces
+                    id: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/quantumResourcegroup/providers/Microsoft.Quantum/Workspaces/quantumworkspace1
+                    identity:
+                      type: SystemAssigned
+                      principalId: 00000000-1111-2222-3333-444444444444
+                      tenantId: 00000000-1111-2222-3333-444444444444
+                    location: West US
+                    properties:
+                      endpointUri: https://quantumworkspace1.westus.quantum.azure.com
+                      providers:
+                        - applicationName: quantumworkspace1-h1
+                          instanceUri: https://h1.endpoint.com
+                          providerId: Honeywell
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444444
+                        - applicationName: quantumworkspace1-i1
+                          instanceUri: https://i1.endpoint.com
+                          providerId: IonQ
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444444
+                        - applicationName: quantumworkspace1-o1
+                          instanceUri: https://o1.endpoint.com
+                          providerId: OneQBit
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444444
+                      provisioningState: Succeeded
+                      storageAccount: /subscriptions/1C4B2828-7D49-494F-933D-061373BE28C2/resourceGroups/quantumResourcegroup/providers/Microsoft.Storage/storageAccounts/testStorageAccount
+                      usable: 'Yes'
+                    systemData:
+                      createdAt: '2020-01-01T17:18:19.1234567Z'
+                      createdBy: user1
+                      createdByType: User
+                      lastModifiedAt: '2020-01-02T17:18:19.1234567Z'
+                      lastModifiedBy: user2
+                      lastModifiedByType: User
+                    tags:
+                      company: Contoso
+                      department: MightyMight
+        language: !Languages 
+          default:
+            name: Get
+            description: Returns the Workspace resource associated with the given name.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - !Parameter &ref_123
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The name of the resource group.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_115
+          - *ref_116
+          - !Parameter &ref_124
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: workspaceName
+                description: The name of the quantum workspace resource.
+                serializedName: workspaceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_121
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_122
+                schema: *ref_3
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: quantumWorkspace
+                    description: Workspace details.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_122
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces/{workspaceName}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_123
+          - *ref_124
+        responses:
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: Successful.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: Workspace create/update request accepted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '201'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesPut:
+              parameters:
+                QuantumWorkspace:
+                  location: West US
+                  properties:
+                    providers:
+                      - providerId: Honeywell
+                        providerSku: Basic
+                      - providerId: IonQ
+                        providerSku: Basic
+                      - providerId: OneQBit
+                        providerSku: Basic
+                    storageAccount: /subscriptions/1C4B2828-7D49-494F-933D-061373BE28C2/resourceGroups/quantumResourcegroup/providers/Microsoft.Storage/storageAccounts/testStorageAccount
+                api-version: 2019-11-04-preview
+                resourceGroupName: quantumResourcegroup
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+                workspaceName: quantumworkspace1
+              responses:
+                '200':
+                  body:
+                    name: quantumworkspace1
+                    type: Microsoft.Quantum/Workspaces
+                    id: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/quantumResourcegroup/providers/Microsoft.Quantum/Workspaces/quantumworkspace1
+                    identity:
+                      type: SystemAssigned
+                      principalId: 00000000-1111-2222-3333-444444444444
+                      tenantId: 00000000-1111-2222-3333-444444444444
+                    location: West US
+                    properties:
+                      endpointUri: https://quantumworkspace1.westus.quantum.azure.com
+                      providers:
+                        - applicationName: quantumworkspace1-h1
+                          instanceUri: https://h1.endpoint.com
+                          providerId: Honeywell
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444444
+                        - applicationName: quantumworkspace1-i1
+                          instanceUri: https://i1.endpoint.com
+                          providerId: IonQ
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444445
+                        - applicationName: quantumworkspace1-o1
+                          instanceUri: https://o1.endpoint.com
+                          providerId: OneQBit
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444446
+                      provisioningState: Succeeded
+                      storageAccount: /subscriptions/1C4B2828-7D49-494F-933D-061373BE28C2/resourceGroups/quantumResourcegroup/providers/Microsoft.Storage/storageAccounts/testStorageAccount
+                      usable: 'Yes'
+                    systemData:
+                      createdAt: '2020-01-01T17:18:19.1234567Z'
+                      createdBy: user1
+                      createdByType: User
+                      lastModifiedAt: '2020-01-02T17:18:19.1234567Z'
+                      lastModifiedBy: user2
+                      lastModifiedByType: User
+                    tags:
+                      company: Contoso
+                      department: MightyMight
+                '201':
+                  body:
+                    name: quantumworkspace1
+                    identity:
+                      type: SystemAssigned
+                      principalId: 00000000-1111-2222-3333-444444444444
+                      tenantId: 00000000-1111-2222-3333-444444444444
+                    location: West US
+                    properties:
+                      providers:
+                        - applicationName: quantumworkspace1-h1
+                          providerId: Honeywell
+                          providerSku: Basic
+                          provisioningState: Launching
+                        - applicationName: quantumworkspace1-i1
+                          providerId: IonQ
+                          providerSku: Basic
+                          provisioningState: Launching
+                        - applicationName: quantumworkspace1-o1
+                          providerId: OneQBit
+                          providerSku: Basic
+                          provisioningState: Launching
+                      provisioningState: ProviderLaunching
+                      usable: 'No'
+                    systemData:
+                      createdAt: '2020-01-01T17:18:19.1234567Z'
+                      createdBy: user1
+                      createdByType: User
+                      lastModifiedAt: '2020-01-02T17:18:19.1234567Z'
+                      lastModifiedBy: user2
+                      lastModifiedByType: User
+                    tags:
+                      company: Contoso
+                      department: MightyMight
+          x-ms-long-running-operation: true
+          x-ms-long-running-operation-options:
+            final-state-via: azure-async-operation
+        language: !Languages 
+          default:
+            name: CreateOrUpdate
+            description: Creates or updates a workspace resource.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - !Parameter &ref_127
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The name of the resource group.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_115
+          - *ref_116
+          - !Parameter &ref_128
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: workspaceName
+                description: The name of the quantum workspace resource.
+                serializedName: workspaceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_121
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_126
+                schema: *ref_125
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: workspaceTags
+                    description: Parameters supplied to update tags.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_126
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces/{workspaceName}
+                method: patch
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_127
+          - *ref_128
+        responses:
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: Successful.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesPatchTags:
+              parameters:
+                api-version: 2019-11-04-preview
+                resourceGroupName: quantumResourcegroup
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+                workspaceName: quantumworkspace1
+                workspaceTags:
+                  tags:
+                    tag1: value1
+                    tag2: value2
+              responses:
+                '200':
+                  body:
+                    name: quantumworkspace1
+                    type: Microsoft.Quantum/Workspaces
+                    id: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/quantumResourcegroup/providers/Microsoft.Quantum/Workspaces/quantumworkspace1
+                    identity:
+                      type: SystemAssigned
+                      principalId: 00000000-1111-2222-3333-444444444444
+                      tenantId: 00000000-1111-2222-3333-444444444444
+                    location: West US
+                    properties:
+                      endpointUri: https://quantumworkspace1.westus.quantum.azure.com
+                      providers:
+                        - applicationName: quantumworkspace1-h1
+                          instanceUri: https://h1.endpoint.com
+                          providerId: Honeywell
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444444
+                        - applicationName: quantumworkspace1-i1
+                          instanceUri: https://i1.endpoint.com
+                          providerId: IonQ
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444445
+                        - applicationName: quantumworkspace1-o1
+                          instanceUri: https://o1.endpoint.com
+                          providerId: OneQBit
+                          providerSku: Basic
+                          provisioningState: Succeeded
+                          resourceUsageId: 00000000-1111-2222-3333-444444444446
+                      provisioningState: Succeeded
+                      storageAccount: /subscriptions/1C4B2828-7D49-494F-933D-061373BE28C2/resourceGroups/quantumResourcegroup/providers/Microsoft.Storage/storageAccounts/testStorageAccount
+                      usable: 'Yes'
+                    systemData:
+                      createdAt: '2020-01-01T17:18:19.1234567Z'
+                      createdBy: user1
+                      createdByType: User
+                      lastModifiedAt: '2020-01-02T17:18:19.1234567Z'
+                      lastModifiedBy: user2
+                      lastModifiedByType: User
+                    tags:
+                      tag1: value1
+                      tag2: value2
+        language: !Languages 
+          default:
+            name: UpdateTags
+            description: Updates an existing workspace's tags.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - !Parameter &ref_129
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The name of the resource group.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_115
+          - *ref_116
+          - !Parameter &ref_130
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: workspaceName
+                description: The name of the quantum workspace resource.
+                serializedName: workspaceName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces/{workspaceName}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_129
+          - *ref_130
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: Successful.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '200'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: Workspace delete request accepted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '202'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: No content - The workspace doesn't exist.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesDelete:
+              parameters:
+                api-version: 2019-11-04-preview
+                resourceGroupName: quantumResourcegroup
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+                workspaceName: quantumworkspace1
+              responses:
+                '200':
+                  description: Successful.
+                '202':
+                  description: Workspace delete request accepted.
+                '204': {}
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: Delete
+            description: Deletes a Workspace resource.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - *ref_115
+          - *ref_116
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Quantum/workspaces
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_131
+            language: !Languages 
+              default:
+                name: ''
+                description: Workspaces successfully returned.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesListBySubscription:
+              parameters:
+                api-version: 2019-11-04-preview
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: quantumworkspace1
+                        type: Microsoft.Quantum/Workspaces
+                        id: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/quantumResourcegroup/providers/Microsoft.Quantum/Workspaces/quantumworkspace1
+                        identity:
+                          type: SystemAssigned
+                          principalId: 00000000-1111-2222-3333-444444444444
+                          tenantId: 00000000-1111-2222-3333-444444444444
+                        location: West US
+                        properties:
+                          endpointUri: https://quantumworkspace1.westus.quantum.azure.com
+                          providers:
+                            - applicationName: quantumworkspace1-h1
+                              instanceUri: https://h1.endpoint.com
+                              providerId: Honeywell
+                              providerSku: Basic
+                              provisioningState: Succeeded
+                              resourceUsageId: 00000000-1111-2222-3333-444444444444
+                          provisioningState: Succeeded
+                          storageAccount: /subscriptions/1C4B2828-7D49-494F-933D-061373BE28C2/resourceGroups/quantumResourcegroup/providers/Microsoft.Storage/storageAccounts/testStorageAccount
+                          usable: 'Yes'
+                        systemData:
+                          createdAt: '2020-01-01T17:18:19.1234567Z'
+                          createdBy: user1
+                          createdByType: User
+                          lastModifiedAt: '2020-01-02T17:18:19.1234567Z'
+                          lastModifiedBy: user2
+                          lastModifiedByType: User
+                        tags:
+                          company: Contoso
+                          department: MightyMight
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: ListBySubscription
+            description: Gets the list of Workspaces within a Subscription.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - !Parameter &ref_132
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: The name of the resource group.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_115
+          - *ref_116
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Quantum/workspaces
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_132
+        responses:
+          - !SchemaResponse 
+            schema: *ref_131
+            language: !Languages 
+              default:
+                name: ''
+                description: Workspaces successfully returned.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesListByResourceGroup:
+              parameters:
+                api-version: 2019-11-04-preview
+                resourceGroupName: quantumResourcegroup
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: quantumworkspace1
+                        type: Microsoft.Quantum/Workspaces
+                        id: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/quantumResourcegroup/providers/Microsoft.Quantum/Workspaces/quantumworkspace1
+                        identity:
+                          type: SystemAssigned
+                          principalId: 00000000-1111-2222-3333-444444444444
+                          tenantId: 00000000-1111-2222-3333-444444444444
+                        location: West US
+                        properties:
+                          endpointUri: https://quantumworkspace1.westus.quantum.azure.com
+                          providers:
+                            - applicationName: quantumworkspace1-h1
+                              instanceUri: https://h1.endpoint.com
+                              providerId: Honeywell
+                              providerSku: Basic
+                              provisioningState: Succeeded
+                              resourceUsageId: 00000000-1111-2222-3333-444444444444
+                          provisioningState: Succeeded
+                          storageAccount: /subscriptions/1C4B2828-7D49-494F-933D-061373BE28C2/resourceGroups/quantumResourcegroup/providers/Microsoft.Storage/storageAccounts/testStorageAccount
+                          usable: 'Yes'
+                        systemData:
+                          createdAt: '2020-01-01T17:18:19.1234567Z'
+                          createdBy: user1
+                          createdByType: User
+                          lastModifiedAt: '2020-01-02T17:18:19.1234567Z'
+                          lastModifiedBy: user2
+                          lastModifiedByType: User
+                        tags:
+                          company: Contoso
+                          department: MightyMight
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: ListByResourceGroup
+            description: Gets the list of Workspaces within a resource group.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Workspaces
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Offerings
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - *ref_116
+          - *ref_115
+          - !Parameter &ref_133
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: locationName
+                description: Location.
+                serializedName: locationName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Quantum/locations/{locationName}/offerings
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_133
+        responses:
+          - !SchemaResponse 
+            schema: *ref_134
+            language: !Languages 
+              default:
+                name: ''
+                description: Offerings details.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            OfferingsList:
+              parameters:
+                api-version: 2019-11-04-preview
+                locationName: westus2
+                subscriptionId: 1C4B2828-7D49-494F-933D-061373BE28C2
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: Quantum Inspired Optimization
+                        id: QIO
+                        properties:
+                          description: Provide Quantum Inspired Optimization solvers
+                          pricingDimensions:
+                            - name: Pricing
+                              id: price
+                            - name: Minimum monthly rate
+                              id: rate
+                          quotaDimensions:
+                            - name: Job count
+                              description: The number of jobs you may submit per month
+                              id: job-count
+                              period: Monthly
+                              quota: 30
+                              scope: Workspace
+                              unit: job
+                              unitPlural: jobs
+                            - name: Job hours
+                              description: The number of hours of solver time you may use per month
+                              id: job-hour
+                              period: Monthly
+                              quota: 1000
+                              scope: Subscription
+                              unit: hour
+                              unitPlural: hours
+                          skus:
+                            - name: Standard
+                              description: Provider CPU and FPGA QIO based solver.
+                              id: Standard
+                              pricingDetails:
+                                - id: price
+                                  value: 200 dollars
+                                - id: rate
+                                  value: 10 hours/month
+                              quotaDimensions:
+                                - id: quota1
+                                  scope: Workspace
+                              restrictedAccessUri: https://endpoint
+                              targets:
+                                - p1
+                              version: '1.0'
+                          targets:
+                            - name: CPU annealer
+                              description: CPU annealer algorithm
+                              id: p1
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Returns the list of all provider offerings available for the given location.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Offerings
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - *ref_115
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.Quantum/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_135
+            language: !Languages 
+              default:
+                name: ''
+                description: Operation details.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Returns list of operations.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Workspace
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2019-11-04-preview
+        parameters:
+          - *ref_114
+          - *ref_116
+          - *ref_115
+          - !Parameter &ref_138
+            schema: *ref_2
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: locationName
+                description: Location.
+                serializedName: locationName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_121
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_137
+                schema: *ref_136
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: checkNameAvailabilityParameters
+                    description: The name and type of the resource.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_117
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_137
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.Quantum/locations/{locationName}/checkNameAvailability
+                method: post
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_138
+        responses:
+          - !SchemaResponse 
+            schema: *ref_139
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request has succeeded.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            QuantumWorkspacesCheckNameAvailability:
+              parameters:
+                api-version: 2019-11-04-preview
+                checkNameAvailabilityParameters:
+                  name: sample-workspace-name
+                  type: Microsoft.Quantum/Workspaces
+                locationName: westus2
+                subscriptionId: 00000000-1111-2222-3333-444444444444
+              responses:
+                '200':
+                  body:
+                    message: Resource name already exists
+                    nameAvailable: false
+                    reason: AlreadyExists
+        language: !Languages 
+          default:
+            name: CheckNameAvailability
+            description: Check the availability of the resource name.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Workspace
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: AzureQuantumManagementClient
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
