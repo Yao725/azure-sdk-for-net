@@ -8,9 +8,7 @@ trigger:
     - release/*
   paths:
     include:
-    - sdk/signalr/ci.yml
-    - sdk/signalr/service.projects
-    - sdk/signalr/Microsoft.Azure.WebJobs.Extensions.SignalRService
+    - sdk/signalr/
 
 pr:
   branches:
@@ -21,16 +19,13 @@ pr:
     - release/*
   paths:
     include:
-    - sdk/signalr/ci.yml
-    - sdk/signalr/service.projects
-    - sdk/signalr/Microsoft.Azure.WebJobs.Extensions.SignalRService
+    - sdk/signalr/
 
 extends:
   template: ../../eng/pipelines/templates/stages/archetype-sdk-client.yml
   parameters:
-    SDKType: client
     ServiceDirectory: signalr
     ArtifactName: packages
     Artifacts:
-    - name: Microsoft.Azure.WebJobs.Extensions.SignalRService
-      safeName: MicrosoftAzureWebJobsExtensionsSignalRService
+    - name: Azure.ResourceManager.Signalr
+      safeName: AzureResourceManagerSignalr
