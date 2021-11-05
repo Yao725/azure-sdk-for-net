@@ -1,0 +1,4065 @@
+!CodeModel 
+info: !Info 
+  description: >-
+    These APIs allow end users to operate on Azure Machine Learning Compute resources. They support the following operations:<ul><li>Create or update a cluster</li><li>Get a cluster</li><li>Patch a cluster</li><li>Delete a
+    cluster</li><li>Get keys for a cluster</li><li>Check if updates are available for system services in a cluster</li><li>Update system services in a cluster</li><li>Get all clusters in a resource group</li><li>Get all clusters in a
+    subscription</li></ul>
+  title: Machine Learning Compute Management Client
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_108
+      type: boolean
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: Boolean
+          description: ''
+      protocol: !Protocols {}
+  numbers:
+    - !NumberSchema &ref_28
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      defaultValue: 1
+      maximum: 5
+      minimum: 1
+      precision: 32
+      language: !Languages 
+        default:
+          name: AcsClusterPropertiesMasterCount
+          description: The number of master nodes in the container service.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_29
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      defaultValue: 2
+      maximum: 100
+      minimum: 1
+      precision: 32
+      language: !Languages 
+        default:
+          name: AcsClusterPropertiesAgentCount
+          description: The number of agent nodes in the Container Service. This can be changed to scale the cluster.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_40
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      defaultValue: 1
+      minimum: 1
+      precision: 32
+      language: !Languages 
+        default:
+          name: AutoScaleConfigurationMinReplicas
+          description: The minimum number of replicas for each service.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_41
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      defaultValue: 100
+      minimum: 1
+      precision: 32
+      language: !Languages 
+        default:
+          name: AutoScaleConfigurationMaxReplicas
+          description: The maximum number of replicas for each service.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_42
+      type: number
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      precision: 32
+      language: !Languages 
+        default:
+          name: AutoScaleConfigurationTargetUtilization
+          description: The target utilization.
+      protocol: !Protocols {}
+    - !NumberSchema &ref_43
+      type: integer
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      precision: 32
+      language: !Languages 
+        default:
+          name: AutoScaleConfigurationRefreshPeriodInSeconds
+          description: Refresh period in seconds.
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_1
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+          header: Location
+      protocol: !Protocols {}
+    - !StringSchema &ref_95
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      maxLength: 90
+      minLength: 1
+      pattern: ^[-\w\._\(\)]+$
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_96
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      maxLength: 90
+      minLength: 1
+      pattern: ^[a-zA-Z][-\w\._\(\)]+[a-zA-Z0-9]$
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_10
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: OperationalizationClusterPropertiesDescription
+          description: The description of the cluster.
+      protocol: !Protocols {}
+    - !StringSchema &ref_14
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseCode
+          description: Error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_15
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseMessage
+          description: Error message.
+      protocol: !Protocols {}
+    - !StringSchema &ref_16
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ErrorDetailCode
+          description: Error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_17
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ErrorDetailMessage
+          description: Error message.
+      protocol: !Protocols {}
+    - !StringSchema &ref_19
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: StorageAccountPropertiesResourceId
+          description: ARM resource ID of the Azure Storage Account to store CLI specific files. If not provided one will be created. This cannot be changed once the cluster is created.
+      protocol: !Protocols {}
+    - !StringSchema &ref_20
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerRegistryPropertiesResourceId
+          description: ARM resource ID of the Azure Container Registry used to store Docker images for web services in the cluster. If not provided one will be created. This cannot be changed once the cluster is created.
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: AcsClusterPropertiesClusterFqdn
+          description: 'The FQDN of the cluster. '
+      protocol: !Protocols {}
+    - !StringSchema &ref_23
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ServicePrincipalPropertiesClientId
+          description: The service principal client ID
+      protocol: !Protocols {}
+    - !StringSchema &ref_24
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ServicePrincipalPropertiesSecret
+          description: The service principal secret. This is not returned in response of GET/PUT on the resource. To see this please call listKeys.
+      protocol: !Protocols {}
+    - !StringSchema &ref_26
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: SystemServicePublicIpAddress
+          description: The public IP address of the system service
+      protocol: !Protocols {}
+    - !StringSchema &ref_27
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: SystemServiceVersion
+          description: The state of the system service
+      protocol: !Protocols {}
+    - !StringSchema &ref_31
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: AppInsightsPropertiesResourceId
+          description: ARM resource ID of the App Insights.
+      protocol: !Protocols {}
+    - !StringSchema &ref_33
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: GlobalServiceConfigurationEtag
+          description: The configuration ETag for updates.
+      protocol: !Protocols {}
+    - !StringSchema &ref_35
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: SslConfigurationCert
+          description: The SSL cert data in PEM format.
+      protocol: !Protocols {}
+    - !StringSchema &ref_36
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: SslConfigurationKey
+          description: The SSL key data in PEM format. This is not returned in response of GET/PUT on the resource. To see this please call listKeys API.
+      protocol: !Protocols {}
+    - !StringSchema &ref_37
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: SslConfigurationCname
+          description: The CName of the certificate.
+      protocol: !Protocols {}
+    - !StringSchema &ref_38
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ServiceAuthConfigurationPrimaryAuthKeyHash
+          description: The primary auth key hash. This is not returned in response of GET/PUT on the resource.. To see this please call listKeys API.
+      protocol: !Protocols {}
+    - !StringSchema &ref_39
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ServiceAuthConfigurationSecondaryAuthKeyHash
+          description: The secondary auth key hash. This is not returned in response of GET/PUT on the resource.. To see this please call listKeys API.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceId
+          description: Specifies the resource ID.
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceName
+          description: Specifies the name of the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      extensions:
+        x-ms-mutability:
+          - create
+          - read
+      language: !Languages 
+        default:
+          name: ResourceLocation
+          description: Specifies the location of the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceType
+          description: Specifies the type of the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_59
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: StorageAccountCredentialsResourceId
+          description: The ARM resource ID of the storage account.
+      protocol: !Protocols {}
+    - !StringSchema &ref_60
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: StorageAccountCredentialsPrimaryKey
+          description: The primary key of the storage account.
+      protocol: !Protocols {}
+    - !StringSchema &ref_61
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: StorageAccountCredentialsSecondaryKey
+          description: The secondary key of the storage account.
+      protocol: !Protocols {}
+    - !StringSchema &ref_62
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerRegistryCredentialsLoginServer
+          description: The ACR login server name. User name is the first part of the FQDN.
+      protocol: !Protocols {}
+    - !StringSchema &ref_63
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerRegistryCredentialsPassword
+          description: The ACR primary password.
+      protocol: !Protocols {}
+    - !StringSchema &ref_64
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerRegistryCredentialsPassword2
+          description: The ACR secondary password.
+      protocol: !Protocols {}
+    - !StringSchema &ref_65
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerRegistryCredentialsUsername
+          description: The ACR login username.
+      protocol: !Protocols {}
+    - !StringSchema &ref_66
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerServiceCredentialsAcsKubeConfig
+          description: The ACS kube config file.
+      protocol: !Protocols {}
+    - !StringSchema &ref_67
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ContainerServiceCredentialsImagePullSecretName
+          description: The ACR image pull secret name which was created in Kubernetes.
+      protocol: !Protocols {}
+    - !StringSchema &ref_68
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: AppInsightsCredentialsAppId
+          description: The AppInsights application ID.
+      protocol: !Protocols {}
+    - !StringSchema &ref_69
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: AppInsightsCredentialsInstrumentationKey
+          description: The AppInsights instrumentation key. This is not returned in response of GET/PUT on the resource. To see this please call listKeys API.
+      protocol: !Protocols {}
+    - !StringSchema &ref_121
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+          header: Location
+      protocol: !Protocols {}
+    - !StringSchema &ref_122
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_77
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: PaginatedOperationalizationClustersListNextLink
+          description: A continuation link (absolute URI) to the next page of results in the list.
+      protocol: !Protocols {}
+    - !StringSchema &ref_78
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceOperationName
+          description: Name of this operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_79
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceOperationDisplayProvider
+          description: The resource provider name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_80
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceOperationDisplayResource
+          description: The resource name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_81
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceOperationDisplayOperation
+          description: The operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_82
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceOperationDisplayDescription
+          description: The description of the operation.
+      protocol: !Protocols {}
+    - !StringSchema &ref_83
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: ResourceOperationOrigin
+          description: The operation origin.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_13
+      choices:
+        - !ChoiceValue 
+          value: Unknown
+          language:
+            default:
+              name: Unknown
+              description: ''
+        - !ChoiceValue 
+          value: Updating
+          language:
+            default:
+              name: Updating
+              description: ''
+        - !ChoiceValue 
+          value: Creating
+          language:
+            default:
+              name: Creating
+              description: ''
+        - !ChoiceValue 
+          value: Deleting
+          language:
+            default:
+              name: Deleting
+              description: ''
+        - !ChoiceValue 
+          value: Succeeded
+          language:
+            default:
+              name: Succeeded
+              description: ''
+        - !ChoiceValue 
+          value: Failed
+          language:
+            default:
+              name: Failed
+              description: ''
+        - !ChoiceValue 
+          value: Canceled
+          language:
+            default:
+              name: Canceled
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: OperationStatus
+          description: The provision state of the cluster. Valid values are Unknown, Updating, Provisioning, Succeeded, and Failed.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_18
+      choices:
+        - !ChoiceValue 
+          value: ACS
+          language:
+            default:
+              name: ACS
+              description: ''
+        - !ChoiceValue 
+          value: Local
+          language:
+            default:
+              name: Local
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: ClusterType
+          description: The cluster type.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_22
+      choices:
+        - !ChoiceValue 
+          value: Kubernetes
+          language:
+            default:
+              name: Kubernetes
+              description: ''
+        - !ChoiceValue 
+          value: None
+          language:
+            default:
+              name: None
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: OrchestratorType
+          description: Type of orchestrator. It cannot be changed once the cluster is created.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_25
+      choices:
+        - !ChoiceValue 
+          value: None
+          language:
+            default:
+              name: None
+              description: ''
+        - !ChoiceValue 
+          value: ScoringFrontEnd
+          language:
+            default:
+              name: ScoringFrontEnd
+              description: ''
+        - !ChoiceValue 
+          value: BatchFrontEnd
+          language:
+            default:
+              name: BatchFrontEnd
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: SystemServiceType
+          description: The system service type
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_30
+      choices:
+        - !ChoiceValue 
+          value: Standard_A0
+          language:
+            default:
+              name: StandardA0
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A1
+          language:
+            default:
+              name: StandardA1
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A2
+          language:
+            default:
+              name: StandardA2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A3
+          language:
+            default:
+              name: StandardA3
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A4
+          language:
+            default:
+              name: StandardA4
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A5
+          language:
+            default:
+              name: StandardA5
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A6
+          language:
+            default:
+              name: StandardA6
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A7
+          language:
+            default:
+              name: StandardA7
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A8
+          language:
+            default:
+              name: StandardA8
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A9
+          language:
+            default:
+              name: StandardA9
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A10
+          language:
+            default:
+              name: StandardA10
+              description: ''
+        - !ChoiceValue 
+          value: Standard_A11
+          language:
+            default:
+              name: StandardA11
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D1
+          language:
+            default:
+              name: StandardD1
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D2
+          language:
+            default:
+              name: StandardD2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D3
+          language:
+            default:
+              name: StandardD3
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D4
+          language:
+            default:
+              name: StandardD4
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D11
+          language:
+            default:
+              name: StandardD11
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D12
+          language:
+            default:
+              name: StandardD12
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D13
+          language:
+            default:
+              name: StandardD13
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D14
+          language:
+            default:
+              name: StandardD14
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D1_v2
+          language:
+            default:
+              name: StandardD1V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D2_v2
+          language:
+            default:
+              name: StandardD2V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D3_v2
+          language:
+            default:
+              name: StandardD3V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D4_v2
+          language:
+            default:
+              name: StandardD4V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D5_v2
+          language:
+            default:
+              name: StandardD5V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D11_v2
+          language:
+            default:
+              name: StandardD11V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D12_v2
+          language:
+            default:
+              name: StandardD12V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D13_v2
+          language:
+            default:
+              name: StandardD13V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_D14_v2
+          language:
+            default:
+              name: StandardD14V2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_G1
+          language:
+            default:
+              name: StandardG1
+              description: ''
+        - !ChoiceValue 
+          value: Standard_G2
+          language:
+            default:
+              name: StandardG2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_G3
+          language:
+            default:
+              name: StandardG3
+              description: ''
+        - !ChoiceValue 
+          value: Standard_G4
+          language:
+            default:
+              name: StandardG4
+              description: ''
+        - !ChoiceValue 
+          value: Standard_G5
+          language:
+            default:
+              name: StandardG5
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS1
+          language:
+            default:
+              name: StandardDS1
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS2
+          language:
+            default:
+              name: StandardDS2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS3
+          language:
+            default:
+              name: StandardDS3
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS4
+          language:
+            default:
+              name: StandardDS4
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS11
+          language:
+            default:
+              name: StandardDS11
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS12
+          language:
+            default:
+              name: StandardDS12
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS13
+          language:
+            default:
+              name: StandardDS13
+              description: ''
+        - !ChoiceValue 
+          value: Standard_DS14
+          language:
+            default:
+              name: StandardDS14
+              description: ''
+        - !ChoiceValue 
+          value: Standard_GS1
+          language:
+            default:
+              name: StandardGS1
+              description: ''
+        - !ChoiceValue 
+          value: Standard_GS2
+          language:
+            default:
+              name: StandardGS2
+              description: ''
+        - !ChoiceValue 
+          value: Standard_GS3
+          language:
+            default:
+              name: StandardGS3
+              description: ''
+        - !ChoiceValue 
+          value: Standard_GS4
+          language:
+            default:
+              name: StandardGS4
+              description: ''
+        - !ChoiceValue 
+          value: Standard_GS5
+          language:
+            default:
+              name: StandardGS5
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      defaultValue: Standard_D3_v2
+      language: !Languages 
+        default:
+          name: AgentVMSizeTypes
+          description: The Azure VM size of the agent VM nodes. This cannot be changed once the cluster is created. This list is non exhaustive; refer to https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes for the possible VM sizes.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_34
+      choices:
+        - !ChoiceValue 
+          value: Enabled
+          language:
+            default:
+              name: Enabled
+              description: ''
+        - !ChoiceValue 
+          value: Disabled
+          language:
+            default:
+              name: Disabled
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: Status
+          description: SSL status. Allowed values are Enabled and Disabled.
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_74
+      choices:
+        - !ChoiceValue 
+          value: 'Yes'
+          language:
+            default:
+              name: 'Yes'
+              description: ''
+        - !ChoiceValue 
+          value: 'No'
+          language:
+            default:
+              name: 'No'
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: UpdatesAvailable
+          description: Yes if updates are available for the system services, No if not.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_91
+      type: constant
+      value: !ConstantValue 
+        value: 2017-08-01-preview
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20170801Preview
+          description: Api Version (2017-08-01-preview)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_97
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApplicationJson
+          description: Content Type 'application/json'
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_98
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+  dictionaries:
+    - !DictionarySchema &ref_32
+      type: dictionary
+      elementType: !AnyObjectSchema &ref_2
+        type: any-object
+        language: !Languages 
+          default:
+            name: AnyObject
+            description: Any object
+        protocol: !Protocols {}
+      language: !Languages 
+        default:
+          name: GlobalServiceConfiguration
+          description: Global configuration for services in the cluster.
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_8
+      type: dictionary
+      elementType: *ref_1
+      language: !Languages 
+        default:
+          name: ResourceTags
+          description: Contains resource tags defined as key/value pairs.
+      protocol: !Protocols {}
+    - !DictionarySchema &ref_58
+      type: dictionary
+      elementType: *ref_1
+      language: !Languages 
+        default:
+          name: OperationalizationClusterUpdateParametersTags
+          description: >-
+            Gets or sets a list of key value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a
+            key no greater in length than 128 characters and a value no greater in length than 256 characters.
+      protocol: !Protocols {}
+  anyObjects:
+    - *ref_2
+  dateTimes:
+    - !DateTimeSchema &ref_11
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: OperationalizationClusterPropertiesCreatedOn
+          description: The date and time when the cluster was created.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_12
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: OperationalizationClusterPropertiesModifiedOn
+          description: The date and time when the cluster was last modified.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_75
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: UpdateSystemServicesResponseUpdateStartedOn
+          description: The date and time when the last system services update was started.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_76
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      language: !Languages 
+        default:
+          name: UpdateSystemServicesResponseUpdateCompletedOn
+          description: The date and time when the last system services update completed.
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_3
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      parents: !Relations 
+        all:
+          - !ObjectSchema &ref_9
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            children: !Relations 
+              all:
+                - *ref_3
+              immediate:
+                - *ref_3
+            properties:
+              - !Property 
+                schema: *ref_4
+                readOnly: true
+                required: false
+                serializedName: id
+                language: !Languages 
+                  default:
+                    name: id
+                    description: Specifies the resource ID.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_5
+                readOnly: true
+                required: false
+                serializedName: name
+                language: !Languages 
+                  default:
+                    name: name
+                    description: Specifies the name of the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_6
+                required: true
+                serializedName: location
+                extensions:
+                  x-ms-mutability:
+                    - create
+                    - read
+                language: !Languages 
+                  default:
+                    name: location
+                    description: Specifies the location of the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_7
+                readOnly: true
+                required: false
+                serializedName: type
+                language: !Languages 
+                  default:
+                    name: type
+                    description: Specifies the type of the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_8
+                required: false
+                serializedName: tags
+                language: !Languages 
+                  default:
+                    name: tags
+                    description: Contains resource tags defined as key/value pairs.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            extensions:
+              x-ms-azure-resource: true
+            language: !Languages 
+              default:
+                name: Resource
+                description: Azure resource
+                namespace: ''
+            protocol: !Protocols {}
+        immediate:
+          - *ref_9
+      properties:
+        - !Property 
+          schema: *ref_10
+          flattenedNames:
+            - properties
+            - description
+          serializedName: description
+          language: !Languages 
+            default:
+              name: description
+              description: The description of the cluster.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_11
+          flattenedNames:
+            - properties
+            - createdOn
+          readOnly: true
+          serializedName: createdOn
+          language: !Languages 
+            default:
+              name: createdOn
+              description: The date and time when the cluster was created.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_12
+          flattenedNames:
+            - properties
+            - modifiedOn
+          readOnly: true
+          serializedName: modifiedOn
+          language: !Languages 
+            default:
+              name: modifiedOn
+              description: The date and time when the cluster was last modified.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_13
+          flattenedNames:
+            - properties
+            - provisioningState
+          readOnly: true
+          serializedName: provisioningState
+          language: !Languages 
+            default:
+              name: provisioningState
+              description: The provision state of the cluster. Valid values are Unknown, Updating, Provisioning, Succeeded, and Failed.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ArraySchema &ref_87
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            elementType: !ObjectSchema &ref_44
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2017-08-01-preview
+              properties:
+                - !Property 
+                  schema: !ObjectSchema &ref_45
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2017-08-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_14
+                        required: true
+                        serializedName: code
+                        language: !Languages 
+                          default:
+                            name: code
+                            description: Error code.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_15
+                        required: true
+                        serializedName: message
+                        language: !Languages 
+                          default:
+                            name: message
+                            description: Error message.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: !ArraySchema &ref_86
+                          type: array
+                          apiVersions:
+                            - !ApiVersion 
+                              version: 2017-08-01-preview
+                          elementType: !ObjectSchema &ref_46
+                            type: object
+                            apiVersions:
+                              - !ApiVersion 
+                                version: 2017-08-01-preview
+                            properties:
+                              - !Property 
+                                schema: *ref_16
+                                required: true
+                                serializedName: code
+                                language: !Languages 
+                                  default:
+                                    name: code
+                                    description: Error code.
+                                protocol: !Protocols {}
+                              - !Property 
+                                schema: *ref_17
+                                required: true
+                                serializedName: message
+                                language: !Languages 
+                                  default:
+                                    name: message
+                                    description: Error message.
+                                protocol: !Protocols {}
+                            serializationFormats:
+                              - json
+                            usage:
+                              - input
+                              - output
+                              - exception
+                            language: !Languages 
+                              default:
+                                name: ErrorDetail
+                                description: Error detail information.
+                                namespace: ''
+                            protocol: !Protocols {}
+                          language: !Languages 
+                            default:
+                              name: ErrorResponseDetails
+                              description: An array of error detail objects.
+                          protocol: !Protocols {}
+                        required: false
+                        serializedName: details
+                        language: !Languages 
+                          default:
+                            name: details
+                            description: An array of error detail objects.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - input
+                      - output
+                      - exception
+                    language: !Languages 
+                      default:
+                        name: ErrorResponse
+                        description: Error response information.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: error
+                  language: !Languages 
+                    default:
+                      name: error
+                      description: The error response.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - exception
+                - input
+                - output
+              language: !Languages 
+                default:
+                  name: ErrorResponseWrapper
+                  description: Wrapper for error response to follow ARM guidelines.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationalizationClusterPropertiesProvisioningErrors
+                description: List of provisioning errors reported by the resource provider.
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - provisioningErrors
+          readOnly: true
+          serializedName: provisioningErrors
+          language: !Languages 
+            default:
+              name: provisioningErrors
+              description: List of provisioning errors reported by the resource provider.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_18
+          flattenedNames:
+            - properties
+            - clusterType
+          serializedName: clusterType
+          language: !Languages 
+            default:
+              name: clusterType
+              description: The cluster type.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_47
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_19
+                serializedName: resourceId
+                language: !Languages 
+                  default:
+                    name: resourceId
+                    description: ARM resource ID of the Azure Storage Account to store CLI specific files. If not provided one will be created. This cannot be changed once the cluster is created.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: StorageAccountProperties
+                description: Properties of Storage Account.
+                namespace: ''
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - storageAccount
+          serializedName: storageAccount
+          language: !Languages 
+            default:
+              name: storageAccount
+              description: Storage Account properties.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_48
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_20
+                serializedName: resourceId
+                language: !Languages 
+                  default:
+                    name: resourceId
+                    description: ARM resource ID of the Azure Container Registry used to store Docker images for web services in the cluster. If not provided one will be created. This cannot be changed once the cluster is created.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: ContainerRegistryProperties
+                description: Properties of Azure Container Registry.
+                namespace: ''
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - containerRegistry
+          serializedName: containerRegistry
+          language: !Languages 
+            default:
+              name: containerRegistry
+              description: Container Registry properties.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_49
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_21
+                readOnly: true
+                required: false
+                serializedName: clusterFqdn
+                language: !Languages 
+                  default:
+                    name: clusterFqdn
+                    description: 'The FQDN of the cluster. '
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_22
+                required: true
+                serializedName: orchestratorType
+                language: !Languages 
+                  default:
+                    name: orchestratorType
+                    description: Type of orchestrator. It cannot be changed once the cluster is created.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_50
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2017-08-01-preview
+                  properties:
+                    - !Property 
+                      schema: !ObjectSchema &ref_51
+                        type: object
+                        apiVersions:
+                          - !ApiVersion 
+                            version: 2017-08-01-preview
+                        properties:
+                          - !Property 
+                            schema: *ref_23
+                            required: true
+                            serializedName: clientId
+                            language: !Languages 
+                              default:
+                                name: clientId
+                                description: The service principal client ID
+                            protocol: !Protocols {}
+                          - !Property 
+                            schema: *ref_24
+                            required: true
+                            serializedName: secret
+                            language: !Languages 
+                              default:
+                                name: secret
+                                description: The service principal secret. This is not returned in response of GET/PUT on the resource. To see this please call listKeys.
+                            protocol: !Protocols {}
+                        serializationFormats:
+                          - json
+                        usage:
+                          - input
+                          - output
+                        language: !Languages 
+                          default:
+                            name: ServicePrincipalProperties
+                            description: The Azure service principal used by Kubernetes for configuring load balancers
+                            namespace: ''
+                        protocol: !Protocols {}
+                      serializedName: servicePrincipal
+                      language: !Languages 
+                        default:
+                          name: servicePrincipal
+                          description: The Azure Service Principal used by Kubernetes
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  extensions:
+                    x-ms-discriminator-value: Kubernetes
+                  language: !Languages 
+                    default:
+                      name: KubernetesClusterProperties
+                      description: Kubernetes cluster specific properties
+                      namespace: ''
+                  protocol: !Protocols {}
+                required: false
+                serializedName: orchestratorProperties
+                language: !Languages 
+                  default:
+                    name: orchestratorProperties
+                    description: Orchestrator specific properties
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ArraySchema &ref_88
+                  type: array
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2017-08-01-preview
+                  elementType: !ObjectSchema &ref_52
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2017-08-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_25
+                        required: true
+                        serializedName: systemServiceType
+                        language: !Languages 
+                          default:
+                            name: systemServiceType
+                            description: The system service type
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_26
+                        readOnly: true
+                        required: false
+                        serializedName: publicIpAddress
+                        language: !Languages 
+                          default:
+                            name: publicIpAddress
+                            description: The public IP address of the system service
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_27
+                        readOnly: true
+                        required: false
+                        serializedName: version
+                        language: !Languages 
+                          default:
+                            name: version
+                            description: The state of the system service
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - input
+                      - output
+                    language: !Languages 
+                      default:
+                        name: SystemService
+                        description: Information about a system service deployed in the cluster
+                        namespace: ''
+                    protocol: !Protocols {}
+                  language: !Languages 
+                    default:
+                      name: AcsClusterPropertiesSystemServices
+                      description: The system services deployed to the cluster
+                  protocol: !Protocols {}
+                required: false
+                serializedName: systemServices
+                language: !Languages 
+                  default:
+                    name: systemServices
+                    description: The system services deployed to the cluster
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_28
+                required: false
+                serializedName: masterCount
+                language: !Languages 
+                  default:
+                    name: masterCount
+                    description: The number of master nodes in the container service.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_29
+                required: false
+                serializedName: agentCount
+                language: !Languages 
+                  default:
+                    name: agentCount
+                    description: The number of agent nodes in the Container Service. This can be changed to scale the cluster.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_30
+                required: false
+                serializedName: agentVmSize
+                language: !Languages 
+                  default:
+                    name: agentVmSize
+                    description: >-
+                      The Azure VM size of the agent VM nodes. This cannot be changed once the cluster is created. This list is non exhaustive; refer to https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes for the possible
+                      VM sizes.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: AcsClusterProperties
+                description: Information about the container service backing the cluster
+                namespace: ''
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - containerService
+          serializedName: containerService
+          language: !Languages 
+            default:
+              name: containerService
+              description: Parameters for the Azure Container Service cluster.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_53
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_31
+                serializedName: resourceId
+                language: !Languages 
+                  default:
+                    name: resourceId
+                    description: ARM resource ID of the App Insights.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: AppInsightsProperties
+                description: Properties of App Insights.
+                namespace: ''
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - appInsights
+          serializedName: appInsights
+          language: !Languages 
+            default:
+              name: appInsights
+              description: AppInsights configuration.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_54
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            parents: !Relations 
+              all:
+                - *ref_32
+              immediate:
+                - *ref_32
+            properties:
+              - !Property 
+                schema: *ref_33
+                serializedName: etag
+                language: !Languages 
+                  default:
+                    name: etag
+                    description: The configuration ETag for updates.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_55
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2017-08-01-preview
+                  properties:
+                    - !Property 
+                      schema: *ref_34
+                      serializedName: status
+                      language: !Languages 
+                        default:
+                          name: status
+                          description: SSL status. Allowed values are Enabled and Disabled.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_35
+                      serializedName: cert
+                      language: !Languages 
+                        default:
+                          name: cert
+                          description: The SSL cert data in PEM format.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_36
+                      serializedName: key
+                      language: !Languages 
+                        default:
+                          name: key
+                          description: The SSL key data in PEM format. This is not returned in response of GET/PUT on the resource. To see this please call listKeys API.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_37
+                      serializedName: cname
+                      language: !Languages 
+                        default:
+                          name: cname
+                          description: The CName of the certificate.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  language: !Languages 
+                    default:
+                      name: SslConfiguration
+                      description: SSL configuration. If configured data-plane calls to user services will be exposed over SSL only.
+                      namespace: ''
+                  protocol: !Protocols {}
+                serializedName: ssl
+                language: !Languages 
+                  default:
+                    name: ssl
+                    description: The SSL configuration properties
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_56
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2017-08-01-preview
+                  properties:
+                    - !Property 
+                      schema: *ref_38
+                      required: true
+                      serializedName: primaryAuthKeyHash
+                      language: !Languages 
+                        default:
+                          name: primaryAuthKeyHash
+                          description: The primary auth key hash. This is not returned in response of GET/PUT on the resource.. To see this please call listKeys API.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_39
+                      required: true
+                      serializedName: secondaryAuthKeyHash
+                      language: !Languages 
+                        default:
+                          name: secondaryAuthKeyHash
+                          description: The secondary auth key hash. This is not returned in response of GET/PUT on the resource.. To see this please call listKeys API.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  language: !Languages 
+                    default:
+                      name: ServiceAuthConfiguration
+                      description: Global service auth configuration properties. These are the data-plane authorization keys and are used if a service doesn't define it's own.
+                      namespace: ''
+                  protocol: !Protocols {}
+                serializedName: serviceAuth
+                language: !Languages 
+                  default:
+                    name: serviceAuth
+                    description: Optional global authorization keys for all user services deployed in cluster. These are used if the service does not have auth keys.
+                protocol: !Protocols {}
+              - !Property 
+                schema: !ObjectSchema &ref_57
+                  type: object
+                  apiVersions:
+                    - !ApiVersion 
+                      version: 2017-08-01-preview
+                  properties:
+                    - !Property 
+                      schema: *ref_34
+                      serializedName: status
+                      language: !Languages 
+                        default:
+                          name: status
+                          description: If auto-scale is enabled for all services. Each service can turn it off individually.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_40
+                      serializedName: minReplicas
+                      language: !Languages 
+                        default:
+                          name: minReplicas
+                          description: The minimum number of replicas for each service.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_41
+                      serializedName: maxReplicas
+                      language: !Languages 
+                        default:
+                          name: maxReplicas
+                          description: The maximum number of replicas for each service.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_42
+                      serializedName: targetUtilization
+                      language: !Languages 
+                        default:
+                          name: targetUtilization
+                          description: The target utilization.
+                      protocol: !Protocols {}
+                    - !Property 
+                      schema: *ref_43
+                      serializedName: refreshPeriodInSeconds
+                      language: !Languages 
+                        default:
+                          name: refreshPeriodInSeconds
+                          description: Refresh period in seconds.
+                      protocol: !Protocols {}
+                  serializationFormats:
+                    - json
+                  usage:
+                    - input
+                    - output
+                  language: !Languages 
+                    default:
+                      name: AutoScaleConfiguration
+                      description: AutoScale configuration properties.
+                      namespace: ''
+                  protocol: !Protocols {}
+                serializedName: autoScale
+                language: !Languages 
+                  default:
+                    name: autoScale
+                    description: The auto-scale configuration
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - input
+              - output
+            language: !Languages 
+              default:
+                name: GlobalServiceConfiguration
+                description: Global configuration for services in the cluster.
+                namespace: ''
+            protocol: !Protocols {}
+          flattenedNames:
+            - properties
+            - globalServiceConfiguration
+          serializedName: globalServiceConfiguration
+          language: !Languages 
+            default:
+              name: globalServiceConfiguration
+              description: Contains global configuration for the web services in the cluster.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - input
+        - output
+      language: !Languages 
+        default:
+          name: OperationalizationCluster
+          description: Instance of an Azure ML Operationalization Cluster resource.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_44
+    - *ref_45
+    - *ref_46
+    - *ref_47
+    - *ref_48
+    - *ref_49
+    - *ref_50
+    - *ref_51
+    - *ref_52
+    - *ref_53
+    - *ref_54
+    - *ref_55
+    - *ref_56
+    - *ref_57
+    - *ref_9
+    - !ObjectSchema &ref_104
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      properties:
+        - !Property 
+          schema: *ref_58
+          serializedName: tags
+          language: !Languages 
+            default:
+              name: tags
+              description: >-
+                Gets or sets a list of key value pairs that describe the resource. These tags can be used in viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must
+                have a key no greater in length than 128 characters and a value no greater in length than 256 characters.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - input
+      language: !Languages 
+        default:
+          name: OperationalizationClusterUpdateParameters
+          description: Parameters for PATCH operation on an operationalization cluster
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_114
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_70
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_59
+                readOnly: true
+                serializedName: resourceId
+                language: !Languages 
+                  default:
+                    name: resourceId
+                    description: The ARM resource ID of the storage account.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_60
+                readOnly: true
+                serializedName: primaryKey
+                language: !Languages 
+                  default:
+                    name: primaryKey
+                    description: The primary key of the storage account.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_61
+                readOnly: true
+                serializedName: secondaryKey
+                language: !Languages 
+                  default:
+                    name: secondaryKey
+                    description: The secondary key of the storage account.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+            language: !Languages 
+              default:
+                name: StorageAccountCredentials
+                description: Access information for the storage account.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: storageAccount
+          language: !Languages 
+            default:
+              name: storageAccount
+              description: Credentials for the Storage Account.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_71
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_62
+                readOnly: true
+                serializedName: loginServer
+                language: !Languages 
+                  default:
+                    name: loginServer
+                    description: The ACR login server name. User name is the first part of the FQDN.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_63
+                readOnly: true
+                serializedName: password
+                language: !Languages 
+                  default:
+                    name: password
+                    description: The ACR primary password.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_64
+                readOnly: true
+                serializedName: password2
+                language: !Languages 
+                  default:
+                    name: password2
+                    description: The ACR secondary password.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_65
+                readOnly: true
+                serializedName: username
+                language: !Languages 
+                  default:
+                    name: username
+                    description: The ACR login username.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+            language: !Languages 
+              default:
+                name: ContainerRegistryCredentials
+                description: Information about the Azure Container Registry which contains the images deployed to the cluster.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: containerRegistry
+          language: !Languages 
+            default:
+              name: containerRegistry
+              description: Credentials for Azure Container Registry.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_72
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_66
+                readOnly: true
+                serializedName: acsKubeConfig
+                language: !Languages 
+                  default:
+                    name: acsKubeConfig
+                    description: The ACS kube config file.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_51
+                readOnly: true
+                serializedName: servicePrincipalConfiguration
+                language: !Languages 
+                  default:
+                    name: servicePrincipalConfiguration
+                    description: Service principal configuration used by Kubernetes.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_67
+                readOnly: true
+                serializedName: imagePullSecretName
+                language: !Languages 
+                  default:
+                    name: imagePullSecretName
+                    description: The ACR image pull secret name which was created in Kubernetes.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+            language: !Languages 
+              default:
+                name: ContainerServiceCredentials
+                description: Information about the Azure Container Registry which contains the images deployed to the cluster.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: containerService
+          language: !Languages 
+            default:
+              name: containerService
+              description: Credentials for Azure Container Service.
+          protocol: !Protocols {}
+        - !Property 
+          schema: !ObjectSchema &ref_73
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            properties:
+              - !Property 
+                schema: *ref_68
+                serializedName: appId
+                language: !Languages 
+                  default:
+                    name: appId
+                    description: The AppInsights application ID.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_69
+                serializedName: instrumentationKey
+                language: !Languages 
+                  default:
+                    name: instrumentationKey
+                    description: The AppInsights instrumentation key. This is not returned in response of GET/PUT on the resource. To see this please call listKeys API.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+            language: !Languages 
+              default:
+                name: AppInsightsCredentials
+                description: AppInsights credentials.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: appInsights
+          language: !Languages 
+            default:
+              name: appInsights
+              description: Credentials for Azure AppInsights.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_56
+          serializedName: serviceAuthConfiguration
+          language: !Languages 
+            default:
+              name: serviceAuthConfiguration
+              description: Global authorization keys for all user services deployed in cluster. These are used if the service does not have auth keys.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_55
+          serializedName: sslConfiguration
+          language: !Languages 
+            default:
+              name: sslConfiguration
+              description: The SSL configuration for the services.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationalizationClusterCredentials
+          description: Credentials to resources in the cluster.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_70
+    - *ref_71
+    - *ref_72
+    - *ref_73
+    - !ObjectSchema &ref_117
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      properties:
+        - !Property 
+          schema: *ref_74
+          readOnly: true
+          serializedName: updatesAvailable
+          language: !Languages 
+            default:
+              name: updatesAvailable
+              description: Yes if updates are available for the system services, No if not.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: CheckSystemServicesUpdatesAvailableResponse
+          description: Information about updates available for system services in a cluster.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_120
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      properties:
+        - !Property 
+          schema: *ref_13
+          readOnly: true
+          serializedName: updateStatus
+          language: !Languages 
+            default:
+              name: updateStatus
+              description: Update status
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_75
+          readOnly: true
+          serializedName: updateStartedOn
+          language: !Languages 
+            default:
+              name: updateStartedOn
+              description: The date and time when the last system services update was started.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_76
+          readOnly: true
+          serializedName: updateCompletedOn
+          language: !Languages 
+            default:
+              name: updateCompletedOn
+              description: The date and time when the last system services update completed.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: UpdateSystemServicesResponse
+          description: Response of the update system services API
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_125
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_89
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            elementType: *ref_3
+            language: !Languages 
+              default:
+                name: PaginatedOperationalizationClustersListValue
+                description: An array of cluster objects.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: An array of cluster objects.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_77
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: A continuation link (absolute URI) to the next page of results in the list.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: PaginatedOperationalizationClustersList
+          description: Paginated list of operationalization clusters.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_127
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2017-08-01-preview
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_90
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: 2017-08-01-preview
+            elementType: !ObjectSchema &ref_84
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: 2017-08-01-preview
+              properties:
+                - !Property 
+                  schema: *ref_78
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: Name of this operation.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_85
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: 2017-08-01-preview
+                    properties:
+                      - !Property 
+                        schema: *ref_79
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: The resource provider name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_80
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: The resource name.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_81
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: The operation.
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_82
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: The description of the operation.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-internal-autorest-anonymous-schema:
+                        anonymous: true
+                    language: !Languages 
+                      default:
+                        name: ResourceOperationDisplay
+                        description: Display of the operation.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: Display of the operation.
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_83
+                  serializedName: origin
+                  language: !Languages 
+                    default:
+                      name: origin
+                      description: The operation origin.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: ResourceOperation
+                  description: Resource operation.
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: AvailableOperationsValue
+                description: An array of available operations.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: An array of available operations.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: AvailableOperations
+          description: Available operation list.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_84
+    - *ref_85
+  arrays:
+    - *ref_86
+    - *ref_87
+    - *ref_88
+    - *ref_89
+    - *ref_90
+globalParameters:
+  - !Parameter &ref_94
+    schema: *ref_1
+    implementation: Client
+    required: true
+    extensions:
+      x-ms-priority: 0
+    language: !Languages 
+      default:
+        name: SubscriptionId
+        description: The Azure subscription ID.
+        serializedName: subscriptionId
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: path
+  - !Parameter &ref_92
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_93
+    schema: *ref_91
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: OperationalizationClusters
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_100
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_101
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_97
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_99
+                schema: *ref_3
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: parameters
+                    description: Parameters supplied to create or update an Operationalization cluster.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_99
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_100
+          - *ref_101
+        responses:
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: The create or update succeeded.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: >-
+                  The request was accepted and will complete asynchronously. To get the progress of the operation, call GET operation on the URL in Azure-AsyncOperation header field. For more information about Asynchronous Operations, see
+                  https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-async-operations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '201'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            PUT Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                parameters:
+                  location: West US
+                  properties:
+                    description: My Operationalization Cluster
+                    clusterType: ACS
+                    containerService:
+                      orchestratorProperties:
+                        servicePrincipal:
+                          clientId: abcdefghijklmnopqrt
+                          secret: <secret>
+                      orchestratorType: Kubernetes
+                    globalServiceConfiguration:
+                      ssl:
+                        cert: afjdklq2131casfakld=
+                        cname: foo.bar.com
+                        key: flksdafkldsajf=
+                        status: Enabled
+                  tags:
+                    key1: alpha
+                    key2: beta
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    name: MyCluster
+                    type: Microsoft.MachineLearningCompute/operationalizationClusters
+                    id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.MachineLearningCompute/operationalizationClusters/MyCluster
+                    location: West US
+                    properties:
+                      description: My Operationalization Cluster
+                      appInsights:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                      clusterType: ACS
+                      containerRegistry:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myregistry123456
+                      containerService:
+                        agentCount: 2
+                        agentVmSize: Standard_D2_v2
+                        clusterFqdn: myclusterabcxyz.westus.cloudapp.azure.com
+                        masterCount: 3
+                        orchestratorProperties:
+                          servicePrincipal:
+                            clientId: abcdefghijklmnopqrt
+                            secret: ''
+                        orchestratorType: Kubernetes
+                        systemServices:
+                          - publicIpAddress: 13.92.143.67
+                            systemServiceType: ScoringFrontEnd
+                            version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                      createdOn: '2017-05-04T07:12:28.191Z'
+                      globalServiceConfiguration:
+                        autoScale:
+                          maxReplicas: 100
+                          minReplicas: 1
+                          status: Enabled
+                        ssl:
+                          cert: afjdklq2131casfakld=
+                          cname: foo.bar.com
+                          key: flksdafkldsajf=
+                          status: Enabled
+                      modifiedOn: '2017-05-04T07:12:28.191Z'
+                      provisioningState: Succeeded
+                      storageAccount:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/mycluster123456
+                    tags:
+                      key1: alpha
+                      key2: beta
+                '201':
+                  body:
+                    name: MyCluster
+                    type: Microsoft.MachineLearningCompute/operationalizationClusters
+                    id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.MachineLearningCompute/operationalizationClusters/MyCluster
+                    location: West US
+                    properties:
+                      description: My Operationalization Cluster
+                      appInsights:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                      clusterType: ACS
+                      containerRegistry:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myregistry123456
+                      containerService:
+                        agentCount: 2
+                        agentVmSize: Standard_D2_v2
+                        clusterFqdn: myclusterabcxyz.westus.cloudapp.azure.com
+                        masterCount: 3
+                        orchestratorProperties:
+                          servicePrincipal:
+                            clientId: abcdefghijklmnopqrt
+                            secret: ''
+                        orchestratorType: Kubernetes
+                        systemServices:
+                          - publicIpAddress: 13.92.143.67
+                            systemServiceType: ScoringFrontEnd
+                            version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                      createdOn: '2017-05-04T07:12:28.191Z'
+                      globalServiceConfiguration:
+                        autoScale:
+                          maxReplicas: 100
+                          minReplicas: 1
+                          status: Enabled
+                        ssl:
+                          cert: afjdklq2131casfakld=
+                          cname: foo.bar.com
+                          key: flksdafkldsajf
+                          status: Enabled
+                      modifiedOn: '2017-05-04T07:12:28.191Z'
+                      provisioningState: Creating
+                      storageAccount:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/mycluster123456
+                    tags:
+                      key1: alpha
+                      key2: beta
+                  headers:
+                    Azure-AsyncOperation: http://azure.async.operation/status
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: CreateOrUpdate
+            description: Create or update an operationalization cluster.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_102
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_103
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_102
+          - *ref_103
+        responses:
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GET Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    name: myCluster
+                    type: Microsoft.MachineLearningCompute/operationalizationClusters
+                    id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.MachineLearningCompute/operationalizationClusters/myCluster
+                    location: West US
+                    properties:
+                      description: My Operationalization Cluster
+                      appInsights:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                      clusterType: ACS
+                      containerRegistry:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myregistry123456
+                      containerService:
+                        agentCount: 2
+                        agentVmSize: Standard_D2_v2
+                        clusterFqdn: myclusterabcxyz.westus.cloudapp.azure.com
+                        masterCount: 3
+                        orchestratorProperties:
+                          servicePrincipal:
+                            clientId: abcdefghijklmnopqrt
+                            secret: ''
+                        orchestratorType: Kubernetes
+                        systemServices:
+                          - publicIpAddress: 13.92.143.67
+                            systemServiceType: ScoringFrontEnd
+                            version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                      createdOn: '2017-05-04T07:12:28.191Z'
+                      globalServiceConfiguration:
+                        autoScale:
+                          maxReplicas: 100
+                          minReplicas: 1
+                          status: Enabled
+                        ssl:
+                          cert: afjdklq2131casfakld=
+                          cname: foo.bar.com
+                          key: flksdafkldsajf
+                          status: Enabled
+                      modifiedOn: '2017-05-04T07:12:28.191Z'
+                      provisioningErrors:
+                        - code: Timeout
+                          message: Timeout waiting for deployment to start.
+                          statusCode: '408'
+                      provisioningState: Failed
+                      storageAccount:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/mycluster123456
+                    tags:
+                      key1: alpha
+                      key2: beta
+        language: !Languages 
+          default:
+            name: Get
+            description: Gets the operationalization cluster resource view. Note that the credentials are not returned by this call. Call ListKeys to get them.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_106
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_107
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_97
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_105
+                schema: *ref_104
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: parameters
+                    description: The parameters supplied to patch the cluster.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_105
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}
+                method: patch
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_106
+          - *ref_107
+        responses:
+          - !SchemaResponse 
+            schema: *ref_3
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The update completed successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            PATCH Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                parameters:
+                  tags:
+                    key1: value1
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    name: MyCluster
+                    type: Microsoft.MachineLearningCompute/operationalizationClusters
+                    id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.MachineLearningCompute/operationalizationClusters/myCluster
+                    location: West US
+                    properties:
+                      description: My Operationalization Cluster
+                      appInsights:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                      clusterType: ACS
+                      containerRegistry:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/mycluster742894
+                      containerService:
+                        agentCount: 2
+                        agentVmSize: Standard_D2_v2
+                        clusterFqdn: myclusterabcxyz.westus.cloudapp.azure.com
+                        masterCount: 3
+                        orchestratorProperties:
+                          servicePrincipal:
+                            clientId: abcdefghijklmnopqrt
+                            secret: ''
+                        orchestratorType: Kubernetes
+                        systemServices:
+                          - publicIpAddress: 13.92.143.67
+                            systemServiceType: ScoringFrontEnd
+                            version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                      createdOn: '2017-05-04T07:12:28.191Z'
+                      globalServiceConfiguration:
+                        autoScale:
+                          maxReplicas: 100
+                          minReplicas: 1
+                          status: Enabled
+                        ssl:
+                          cert: afjdklq2131casfakld=
+                          cname: foo.bar.com
+                          key: flksdafkldsajf
+                          status: Enabled
+                      modifiedOn: '2017-05-04T07:12:28.191Z'
+                      provisioningState: Succeeded
+                      storageAccount:
+                        resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/mycluster123456
+                    tags:
+                      key1: value1
+        language: !Languages 
+          default:
+            name: Update
+            description: The PATCH operation can be used to update only the tags for a cluster. Use PUT operation to update other properties.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_109
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_110
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_111
+            schema: *ref_108
+            implementation: Method
+            language: !Languages 
+              default:
+                name: deleteAll
+                description: If true, deletes all resources associated with this cluster.
+                serializedName: deleteAll
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}
+                method: delete
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_109
+          - *ref_110
+          - *ref_111
+        responses:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: >-
+                  The delete request was accepted and will complete asynchronously. The know the progress of the delete operation do a GET call on the URI in the Location header. For more information about Asynchronous Operations, see
+                  https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-async-operations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                headers:
+                  - !HttpHeader 
+                    schema: *ref_1
+                    header: Location
+                    language:
+                      default:
+                        name: Location
+                        description: URI of the async operation.
+                statusCodes:
+                  - '202'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: No Content. The cluster did not exist but the request was well formed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - '204'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            DELETE Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '202':
+                  headers:
+                    Location: http://async-operation-URI
+                '204': {}
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: Delete
+            description: Deletes the specified cluster.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_112
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_113
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}/listKeys
+                method: post
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_112
+          - *ref_113
+        responses:
+          - !SchemaResponse 
+            schema: *ref_114
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request completed successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        extensions:
+          x-ms-examples:
+            List Keys of an Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    appInsights:
+                      appId: abcdefghijklmnop
+                      instrumentationKey: ppppppppppppppppppTTTTTTTT
+                    containerRegistry:
+                      loginServer: myclusterghijkl.azurecr.io
+                      password: <password>
+                      password2: bddddTTTTTTTTTTT
+                      username: mlcrpacr489402380295
+                    containerService:
+                      acsKubeConfig: AAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAA===
+                      imagePullSecretName: myclusterghijklacrkey
+                    storageAccount:
+                      primaryKey: <primaryKey>
+                      resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/myCluster998989
+                      secondaryKey: <secondaryKey>
+        language: !Languages 
+          default:
+            name: ListKeys
+            description: Gets the credentials for the specified cluster such as Storage, ACR and ACS credentials. This is a long running operation because it fetches keys from dependencies.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_115
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_116
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}/checkSystemServicesUpdatesAvailable
+                method: post
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_115
+          - *ref_116
+        responses:
+          - !SchemaResponse 
+            schema: *ref_117
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request completed successfully.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        extensions:
+          x-ms-examples:
+            Check Update for an Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    updatesAvailable: 'Yes'
+        language: !Languages 
+          default:
+            name: CheckSystemServicesUpdatesAvailable
+            description: Checks if updates are available for system services in the cluster.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_118
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_119
+            schema: *ref_96
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: clusterName
+                description: The name of the cluster.
+                serializedName: clusterName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters/{clusterName}/updateSystemServices
+                method: post
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_118
+          - *ref_119
+        responses:
+          - !SchemaResponse 
+            schema: *ref_120
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request completed successfully. Check the response body for update details.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: >-
+                  The request was accepted and will complete asynchronously. The know the progress of the async operation do a GET call on the URI in the Location header. For more information about Asynchronous Operations, see
+                  https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-async-operations.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                headers:
+                  - !HttpHeader 
+                    schema: *ref_121
+                    header: Location
+                    language:
+                      default:
+                        name: Location
+                        description: URI of the async operation.
+                statusCodes:
+                  - '202'
+        extensions:
+          x-ms-examples:
+            Update System Services in an Operationalization Cluster:
+              parameters:
+                api-version: 2017-08-01-preview
+                clusterName: myCluster
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    updateCompletedOn: '2017-05-04T07:13:28.191Z'
+                    updateStartedOn: '2017-05-04T07:12:28.191Z'
+                    updateStatus: Completed
+                '202':
+                  headers:
+                    Location: http://async-operation-URI
+          x-ms-long-running-operation: true
+        language: !Languages 
+          default:
+            name: UpdateSystemServices
+            description: Updates system services in a cluster.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_123
+            schema: *ref_95
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: resourceGroupName
+                description: Name of the resource group in which the cluster is located.
+                serializedName: resourceGroupName
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_124
+            schema: *ref_122
+            implementation: Method
+            language: !Languages 
+              default:
+                name: skiptoken
+                description: Continuation token for pagination.
+                serializedName: $skiptoken
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningCompute/operationalizationClusters
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_123
+          - *ref_124
+        responses:
+          - !SchemaResponse 
+            schema: *ref_125
+            language: !Languages 
+              default:
+                name: ''
+                description: >-
+                  OK. The response includes a paginated array of cluster objects and a URI to the next set of results, if any. For the more information the limits of the number of items in a resource group, see
+                  https://azure.microsoft.com/en-us/documentation/articles/azure-subscription-service-limits/. Note that the cluster objects are sparsely populated to conserve space in the response content. To get the full cluster object,
+                  call the GET operation on the cluster.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        extensions:
+          x-ms-examples:
+            List Operationalization Clusters by Resource Group:
+              parameters:
+                api-version: 2017-08-01-preview
+                resourceGroupName: myResourceGroup
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    nextLink: https://the.next/link
+                    value:
+                      - name: MyCluster
+                        type: Microsoft.MachineLearningCompute/operationalizationClusters
+                        id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.MachineLearningCompute/operationalizationClusters/MyCluster
+                        location: West US
+                        properties:
+                          description: My Operationalization Cluster
+                          appInsights:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                          clusterType: ACS
+                          containerRegistry:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/mycluster123456
+                          containerService:
+                            agentCount: 2
+                            agentVmSize: Standard_D2_v2
+                            clusterFqdn: myclusterabcxyz.westus.cloudapp.azure.com
+                            masterCount: 3
+                            orchestratorProperties:
+                              servicePrincipal:
+                                clientId: abcdefghijklmnopqrt
+                                secret: ''
+                            orchestratorType: Kubernetes
+                            systemServices:
+                              - publicIpAddress: 13.92.143.67
+                                systemServiceType: ScoringFrontEnd
+                                version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                          createdOn: '2017-05-04T07:12:28.191Z'
+                          globalServiceConfiguration:
+                            autoScale:
+                              maxReplicas: 100
+                              minReplicas: 1
+                              status: Enabled
+                            ssl:
+                              cert: afjdklq2131casfakld=
+                              cname: foo.bar.com
+                              key: flksdafkldsajf
+                              status: Enabled
+                          modifiedOn: '2017-05-04T07:12:28.191Z'
+                          provisioningState: Succeeded
+                          storageAccount:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/mycluster123456
+                        tags:
+                          key1: alpha
+                          key2: beta
+                      - name: MyCluster2
+                        type: Microsoft.MachineLearningCompute/operationalizationClusters
+                        id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.MachineLearningCompute/operationalizationClusters/MyCluster2
+                        location: West US
+                        properties:
+                          description: My Operationalization Cluster 2
+                          appInsights:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                          clusterType: ACS
+                          containerRegistry:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ContainerRegistry/registries/myregistry8923849
+                          containerService:
+                            agentCount: 2
+                            agentVmSize: Standard_D2_v2
+                            clusterFqdn: mycluster2defghi.westus.cloudapp.azure.com
+                            masterCount: 3
+                            orchestratorProperties:
+                              servicePrincipal:
+                                clientId: abcdefghijklmnopqrt
+                                secret: ''
+                            orchestratorType: Kubernetes
+                            systemServices:
+                              - publicIpAddress: 13.92.143.67
+                                systemServiceType: ScoringFrontEnd
+                                version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                          createdOn: '2017-05-04T07:12:28.191Z'
+                          globalServiceConfiguration:
+                            autoScale:
+                              maxReplicas: 100
+                              minReplicas: 1
+                              status: Enabled
+                            ssl:
+                              cert: afjdklq2131casfakld=
+                              cname: foo.bar.com
+                              key: flksdafkldsajf
+                              status: Enabled
+                          modifiedOn: '2017-05-04T07:12:28.191Z'
+                          provisioningState: Succeeded
+                          storageAccount:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/mycluster998989
+                        tags:
+                          key1: alpha
+                          key2: beta
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: ListByResourceGroup
+            description: Gets the clusters in the specified resource group.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+          - *ref_94
+          - !Parameter &ref_126
+            schema: *ref_122
+            implementation: Method
+            language: !Languages 
+              default:
+                name: skiptoken
+                description: Continuation token for pagination.
+                serializedName: $skiptoken
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: query
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MachineLearningCompute/operationalizationClusters
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_126
+        responses:
+          - !SchemaResponse 
+            schema: *ref_125
+            language: !Languages 
+              default:
+                name: ''
+                description: >-
+                  OK. The response includes a paginated array of cluster objects and a URI to the next set of results, if any. Note that the cluster objects are sparsely populated to conserve space in the response content. To get the full
+                  cluster object, call the GET operation on the cluster.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        extensions:
+          x-ms-examples:
+            List Operationalization Clusters by Subscription:
+              parameters:
+                api-version: 2017-08-01-preview
+                subscriptionId: 00000000-0000-0000-0000-000000000000
+              responses:
+                '200':
+                  body:
+                    nextLink: https://the.next/link
+                    value:
+                      - name: MyCluster
+                        type: Microsoft.MachineLearningCompute/operationalizationClusters
+                        id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup1/providers/Microsoft.MachineLearningCompute/operationalizationClusters/MyCluster
+                        location: West US
+                        properties:
+                          description: My Operationalization Cluster
+                          appInsights:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                          clusterType: ACS
+                          containerRegistry:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup1/providers/Microsoft.ContainerRegistry/registries/mycluster1123456
+                          containerService:
+                            agentCount: 2
+                            agentVmSize: Standard_D2_v2
+                            clusterFqdn: myclusterabcxyz.westus.cloudapp.azure.com
+                            masterCount: 3
+                            orchestratorProperties:
+                              servicePrincipal:
+                                clientId: abcdefghijklmnopqrt
+                                secret: ''
+                            orchestratorType: Kubernetes
+                            systemServices:
+                              - publicIpAddress: 13.92.143.67
+                                systemServiceType: ScoringFrontEnd
+                                version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                          createdOn: '2017-05-04T07:12:28.191Z'
+                          globalServiceConfiguration:
+                            autoScale:
+                              maxReplicas: 100
+                              minReplicas: 1
+                              status: Enabled
+                            ssl:
+                              cert: afjdklq2131casfakld=
+                              cname: foo.bar.com
+                              key: flksdafkldsajf
+                              status: Enabled
+                          modifiedOn: '2017-05-04T07:12:28.191Z'
+                          provisioningState: Succeeded
+                          storageAccount:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup1/providers/Microsoft.Storage/storageAccounts/mycluster18787878
+                        tags:
+                          key1: alpha
+                          key2: beta
+                      - name: MyCluster2
+                        type: Microsoft.MachineLearningCompute/operationalizationClusters
+                        id: /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup2/providers/Microsoft.MachineLearningCompute/operationalizationClusters/myCluster2
+                        location: West US
+                        properties:
+                          description: My Operationalization Cluster 2
+                          appInsights:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Insights/components/mlcrpai3d5859117108
+                          clusterType: ACS
+                          containerRegistry:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup2/providers/Microsoft.ContainerRegistry/registries/myCluster28923849
+                          containerService:
+                            agentCount: 2
+                            agentVmSize: Standard_D2_v2
+                            clusterFqdn: mycluster2defghi.westus.cloudapp.azure.com
+                            masterCount: 3
+                            orchestratorProperties:
+                              servicePrincipal:
+                                clientId: abcdefghijklmnopqrt
+                                secret: ''
+                            orchestratorType: Kubernetes
+                            systemServices:
+                              - publicIpAddress: 13.92.143.67
+                                systemServiceType: ScoringFrontEnd
+                                version: prod/20170803.1.5a451c98af3972f7c966b439d471c1ed280314ea
+                          createdOn: '2017-05-04T07:12:28.191Z'
+                          globalServiceConfiguration:
+                            autoScale:
+                              maxReplicas: 100
+                              minReplicas: 1
+                              status: Enabled
+                            ssl:
+                              cert: afjdklq2131casfakld=
+                              cname: foo.bar.com
+                              key: flksdafkldsajf
+                              status: Enabled
+                          modifiedOn: '2017-05-04T07:12:28.191Z'
+                          provisioningState: Succeeded
+                          storageAccount:
+                            resourceId: subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup2/providers/Microsoft.Storage/storageAccounts/myCluster2998989
+                        tags:
+                          key1: alpha
+                          key2: beta
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: ListBySubscriptionId
+            description: Gets the operationalization clusters in the specified subscription.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: OperationalizationClusters
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: MachineLearningCompute
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: 2017-08-01-preview
+        parameters:
+          - *ref_92
+          - *ref_93
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_98
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.MachineLearningCompute/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_127
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        extensions:
+          x-ms-examples:
+            Machine Learning Compute List Available Operations:
+              parameters:
+                api-version: 2017-08-01-preview
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: Microsoft.MachineLearningCompute/register/action
+                        display:
+                          description: Registers the subscription for the Machine Learning Compute resource provider and enables the management of Machine Leaning Compute resources.
+                          operation: Register the provider
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Provider
+                        origin: user,system
+                      - name: Microsoft.MachineLearningCompute/operationalizationClusters/read
+                        display:
+                          description: Read any operationalization cluster
+                          operation: Read the operationalization cluster
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Operationalization Cluster
+                        origin: user,system
+                      - name: Microsoft.MachineLearningCompute/operationalizationClusters/write
+                        display:
+                          description: Create or update any operationalization cluster
+                          operation: Write the operationalization cluster
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Operationalization Cluster
+                        origin: user,system
+                      - name: Microsoft.MachineLearningCompute/operationalizationClusters/delete
+                        display:
+                          description: Delete any operationalization cluster
+                          operation: Delete the operationalization cluster
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Operationalization Cluster
+                        origin: user,system
+                      - name: Microsoft.MachineLearningCompute/operationalizationClusters/listKeys/action
+                        display:
+                          description: List keys for an operationalization cluster
+                          operation: List keys for an operationalization cluster
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Operationalization Cluster
+                        origin: user,system
+                      - name: Microsoft.MachineLearningCompute/operationalizationClusters/checkUpdate/action
+                        display:
+                          description: Check available system updates for an operationalization cluster
+                          operation: Check available system updates for an operationalization cluster
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Operationalization Cluster
+                        origin: user,system
+                      - name: Microsoft.MachineLearningCompute/operationalizationClusters/updateSystem/action
+                        display:
+                          description: Apply available system updates for an operationalization cluster
+                          operation: Apply available system updates for an operationalization cluster
+                          provider: Microsoft Machine Learning Compute Management
+                          resource: Machine Learning Compute Operationalization Cluster
+                        origin: user,system
+        language: !Languages 
+          default:
+            name: ListAvailableOperations
+            description: Gets all available operations.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: MachineLearningCompute
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: MachineLearningComputeManagementClient
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
