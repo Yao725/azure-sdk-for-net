@@ -1,0 +1,1760 @@
+!CodeModel 
+info: !Info 
+  description: REST API for MarketplaceOrdering Agreements.
+  title: MarketplaceOrdering.Agreements
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_19
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: If any version of the terms have been accepted, otherwise false.
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_33
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_11
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesPublisher
+          description: Publisher identifier string of image being deployed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesProduct
+          description: Offer identifier string of image being deployed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_13
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesPlan
+          description: Plan identifier string of image being deployed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_14
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesLicenseTextLink
+          description: Link to HTML with Microsoft and Publisher terms.
+      protocol: !Protocols {}
+    - !StringSchema &ref_15
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesPrivacyPolicyLink
+          description: Link to the privacy policy of the publisher.
+      protocol: !Protocols {}
+    - !StringSchema &ref_16
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesMarketplaceTermsLink
+          description: Link to HTML with Azure Marketplace terms.
+      protocol: !Protocols {}
+    - !StringSchema &ref_18
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesSignature
+          description: Terms signature.
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataCreatedBy
+          description: The identity that created the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_9
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataLastModifiedBy
+          description: The identity that last modified the resource.
+      protocol: !Protocols {}
+    - !StringSchema &ref_2
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: ResourceId
+          description: Resource ID.
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: ResourceName
+          description: Resource name.
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: ResourceType
+          description: Resource type.
+      protocol: !Protocols {}
+    - !StringSchema &ref_21
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: ErrorResponseErrorCode
+          description: Error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: ErrorResponseErrorMessage
+          description: Error message indicating why the operation failed.
+      protocol: !Protocols {}
+    - !StringSchema &ref_24
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: OperationName
+          description: 'Operation name: {provider}/{resource}/{operation}'
+      protocol: !Protocols {}
+    - !StringSchema &ref_25
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayProvider
+          description: 'Service provider: Microsoft.MarketplaceOrdering'
+      protocol: !Protocols {}
+    - !StringSchema &ref_26
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayResource
+          description: 'Resource on which the operation is performed: Agreement, virtualmachine, etc.'
+      protocol: !Protocols {}
+    - !StringSchema &ref_27
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayOperation
+          description: 'Operation type: Get Agreement, Sign Agreement, Cancel Agreement etc.'
+      protocol: !Protocols {}
+    - !StringSchema &ref_28
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: OperationDisplayDescription
+          description: Operation description.
+      protocol: !Protocols {}
+    - !StringSchema &ref_29
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: OperationListResultNextLink
+          description: URL to get the next set of operation list results if there are any.
+      protocol: !Protocols {}
+  choices:
+    - !ChoiceSchema &ref_38
+      choices:
+        - !ChoiceValue 
+          value: virtualmachine
+          language:
+            default:
+              name: Virtualmachine
+              description: ''
+      type: choice
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: OfferType
+          description: ''
+      protocol: !Protocols {}
+    - !ChoiceSchema &ref_7
+      choices:
+        - !ChoiceValue 
+          value: User
+          language:
+            default:
+              name: User
+              description: ''
+        - !ChoiceValue 
+          value: Application
+          language:
+            default:
+              name: Application
+              description: ''
+        - !ChoiceValue 
+          value: ManagedIdentity
+          language:
+            default:
+              name: ManagedIdentity
+              description: ''
+        - !ChoiceValue 
+          value: Key
+          language:
+            default:
+              name: Key
+              description: ''
+      type: choice
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      choiceType: *ref_0
+      language: !Languages 
+        default:
+          name: CreatedByType
+          description: The type of identity that created the resource.
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_34
+      type: constant
+      value: !ConstantValue 
+        value: '2021-01-01'
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion202101
+          description: Api Version (2021-01-01)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_39
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_45
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApplicationJson
+          description: Content Type 'application/json'
+      protocol: !Protocols {}
+  dateTimes:
+    - !DateTimeSchema &ref_17
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      language: !Languages 
+        default:
+          name: AgreementPropertiesRetrieveDatetime
+          description: Date and time in UTC of when the terms were accepted. This is empty if Accepted is false.
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_8
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataCreatedAt
+          description: The timestamp of resource creation (UTC).
+      protocol: !Protocols {}
+    - !DateTimeSchema &ref_10
+      type: date-time
+      format: date-time
+      apiVersions:
+        - !ApiVersion 
+          version: '2.0'
+      language: !Languages 
+        default:
+          name: SystemDataLastModifiedAt
+          description: The timestamp of resource last modification (UTC)
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_1
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      parents: !Relations 
+        all:
+          - !ObjectSchema &ref_5
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2021-01-01'
+            children: !Relations 
+              all:
+                - *ref_1
+              immediate:
+                - *ref_1
+            properties:
+              - !Property 
+                schema: *ref_2
+                readOnly: true
+                serializedName: id
+                language: !Languages 
+                  default:
+                    name: id
+                    description: Resource ID.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_3
+                readOnly: true
+                serializedName: name
+                language: !Languages 
+                  default:
+                    name: name
+                    description: Resource name.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_4
+                readOnly: true
+                serializedName: type
+                language: !Languages 
+                  default:
+                    name: type
+                    description: Resource type.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            extensions:
+              x-ms-azure-resource: true
+            language: !Languages 
+              default:
+                name: Resource
+                description: ARM resource.
+                namespace: ''
+            protocol: !Protocols {}
+        immediate:
+          - *ref_5
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_20
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2.0'
+            properties:
+              - !Property 
+                schema: *ref_6
+                serializedName: createdBy
+                language: !Languages 
+                  default:
+                    name: createdBy
+                    description: The identity that created the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_7
+                serializedName: createdByType
+                language: !Languages 
+                  default:
+                    name: createdByType
+                    description: The type of identity that created the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_8
+                serializedName: createdAt
+                language: !Languages 
+                  default:
+                    name: createdAt
+                    description: The timestamp of resource creation (UTC).
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_9
+                serializedName: lastModifiedBy
+                language: !Languages 
+                  default:
+                    name: lastModifiedBy
+                    description: The identity that last modified the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_7
+                serializedName: lastModifiedByType
+                language: !Languages 
+                  default:
+                    name: lastModifiedByType
+                    description: The type of identity that last modified the resource.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_10
+                serializedName: lastModifiedAt
+                language: !Languages 
+                  default:
+                    name: lastModifiedAt
+                    description: The timestamp of resource last modification (UTC)
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - output
+              - input
+            language: !Languages 
+              default:
+                name: SystemData
+                description: Metadata pertaining to creation and last modification of the resource.
+                namespace: ''
+            protocol: !Protocols {}
+          readOnly: true
+          serializedName: systemData
+          language: !Languages 
+            default:
+              name: systemData
+              description: The system meta data relating to this resource.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_11
+          flattenedNames:
+            - properties
+            - publisher
+          serializedName: publisher
+          language: !Languages 
+            default:
+              name: publisher
+              description: Publisher identifier string of image being deployed.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_12
+          flattenedNames:
+            - properties
+            - product
+          serializedName: product
+          language: !Languages 
+            default:
+              name: product
+              description: Offer identifier string of image being deployed.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_13
+          flattenedNames:
+            - properties
+            - plan
+          serializedName: plan
+          language: !Languages 
+            default:
+              name: plan
+              description: Plan identifier string of image being deployed.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_14
+          flattenedNames:
+            - properties
+            - licenseTextLink
+          serializedName: licenseTextLink
+          language: !Languages 
+            default:
+              name: licenseTextLink
+              description: Link to HTML with Microsoft and Publisher terms.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_15
+          flattenedNames:
+            - properties
+            - privacyPolicyLink
+          serializedName: privacyPolicyLink
+          language: !Languages 
+            default:
+              name: privacyPolicyLink
+              description: Link to the privacy policy of the publisher.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_16
+          flattenedNames:
+            - properties
+            - marketplaceTermsLink
+          serializedName: marketplaceTermsLink
+          language: !Languages 
+            default:
+              name: marketplaceTermsLink
+              description: Link to HTML with Azure Marketplace terms.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_17
+          flattenedNames:
+            - properties
+            - retrieveDatetime
+          serializedName: retrieveDatetime
+          language: !Languages 
+            default:
+              name: retrieveDatetime
+              description: Date and time in UTC of when the terms were accepted. This is empty if Accepted is false.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_18
+          flattenedNames:
+            - properties
+            - signature
+          serializedName: signature
+          language: !Languages 
+            default:
+              name: signature
+              description: Terms signature.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_19
+          flattenedNames:
+            - properties
+            - accepted
+          serializedName: accepted
+          language: !Languages 
+            default:
+              name: accepted
+              description: If any version of the terms have been accepted, otherwise false.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+        - input
+      language: !Languages 
+        default:
+          name: AgreementTerms
+          description: Terms properties for provided Publisher/Offer/Plan tuple
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_20
+    - *ref_5
+    - !ObjectSchema &ref_44
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_23
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: '2021-01-01'
+            properties:
+              - !Property 
+                schema: *ref_21
+                readOnly: true
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: Error code.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_22
+                readOnly: true
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: Error message indicating why the operation failed.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            extensions:
+              x-internal-autorest-anonymous-schema:
+                anonymous: true
+            language: !Languages 
+              default:
+                name: ErrorResponseError
+                description: The details of the error.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: The details of the error.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ErrorResponse
+          description: Error response indicates Microsoft.MarketplaceOrdering service is not able to process the incoming request. The reason is provided in the error message.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_23
+    - !ObjectSchema &ref_61
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_32
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2021-01-01'
+            elementType: !ObjectSchema &ref_30
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2021-01-01'
+              properties:
+                - !Property 
+                  schema: *ref_24
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: 'Operation name: {provider}/{resource}/{operation}'
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_31
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2021-01-01'
+                    properties:
+                      - !Property 
+                        schema: *ref_25
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: 'Service provider: Microsoft.MarketplaceOrdering'
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_26
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: 'Resource on which the operation is performed: Agreement, virtualmachine, etc.'
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_27
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: 'Operation type: Get Agreement, Sign Agreement, Cancel Agreement etc.'
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_28
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: Operation description.
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    extensions:
+                      x-internal-autorest-anonymous-schema:
+                        anonymous: true
+                    language: !Languages 
+                      default:
+                        name: OperationDisplay
+                        description: The object that represents the operation.
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: The object that represents the operation.
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: Operation
+                  description: Microsoft.MarketplaceOrdering REST API operation
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationListResultValue
+                description: List of Microsoft.MarketplaceOrdering operations supported by the Microsoft.MarketplaceOrdering resource provider.
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: List of Microsoft.MarketplaceOrdering operations supported by the Microsoft.MarketplaceOrdering resource provider.
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_29
+          readOnly: true
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: URL to get the next set of operation list results if there are any.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationListResult
+          description: Result of the request to list MarketplaceOrdering operations. It contains a list of operations and a URL link to get the next set of results.
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_30
+    - *ref_31
+  arrays:
+    - *ref_32
+    - !ArraySchema &ref_60
+      type: array
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-01-01'
+      elementType: *ref_1
+      language: !Languages 
+        default:
+          name: ArrayOfAgreementTerms
+          description: Array of AgreementTerms
+      protocol: !Protocols {}
+globalParameters:
+  - !Parameter &ref_37
+    schema: *ref_33
+    implementation: Client
+    required: true
+    extensions:
+      x-ms-priority: 0
+    language: !Languages 
+      default:
+        name: SubscriptionId
+        description: The subscription ID that identifies an Azure subscription.
+        serializedName: subscriptionId
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: path
+  - !Parameter &ref_35
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_36
+    schema: *ref_34
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: MarketplaceAgreements
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+          - *ref_37
+          - !Parameter &ref_40
+            schema: *ref_38
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerType
+                description: Offer Type, currently only virtualmachine type is supported.
+                serializedName: offerType
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_41
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: publisherId
+                description: Publisher identifier string of image being deployed.
+                serializedName: publisherId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_42
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerId
+                description: Offer identifier string of image being deployed.
+                serializedName: offerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_43
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: planId
+                description: Plan identifier string of image being deployed.
+                serializedName: planId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MarketplaceOrdering/offerTypes/{offerType}/publishers/{publisherId}/offers/{offerId}/plans/{planId}/agreements/current
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_40
+          - *ref_41
+          - *ref_42
+          - *ref_43
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: Terms returned successfully
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            GetMarketplaceTerms:
+              parameters:
+                api-version: '2016-04-01'
+                offerId: offid
+                offerType: virtualmachine
+                planId: planid
+                publisherId: pubid
+                subscriptionId: subid
+              responses:
+                '200':
+                  body:
+                    name: planid
+                    type: Microsoft.MarketplaceOrdering/offertypes
+                    id: id
+                    properties:
+                      accepted: true
+                      licenseTextLink: test.licenseLink
+                      marketplaceTermsLink: test.marketplaceTermsLink
+                      plan: planid
+                      privacyPolicyLink: test.privacyPolicyLink
+                      product: offid
+                      publisher: pubid
+                      retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                      signature: ASDFSDAFWEFASDGWERLWER
+        language: !Languages 
+          default:
+            name: Get
+            description: Get marketplace terms.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+          - !Parameter &ref_47
+            schema: *ref_38
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerType
+                description: Offer Type, currently only virtualmachine type is supported.
+                serializedName: offerType
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_37
+          - !Parameter &ref_48
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: publisherId
+                description: Publisher identifier string of image being deployed.
+                serializedName: publisherId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_49
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerId
+                description: Offer identifier string of image being deployed.
+                serializedName: offerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_50
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: planId
+                description: Plan identifier string of image being deployed.
+                serializedName: planId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_45
+                implementation: Method
+                origin: modelerfour:synthesized/content-type
+                required: true
+                language: !Languages 
+                  default:
+                    name: contentType
+                    description: Body Parameter content-type
+                    serializedName: Content-Type
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+              - !Parameter &ref_46
+                schema: *ref_1
+                implementation: Method
+                required: true
+                language: !Languages 
+                  default:
+                    name: parameters
+                    description: Parameters supplied to the Create Marketplace Terms operation.
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: body
+                    style: json
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters:
+              - *ref_46
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpWithBodyRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MarketplaceOrdering/offerTypes/{offerType}/publishers/{publisherId}/offers/{offerId}/plans/{planId}/agreements/current
+                method: put
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_47
+          - *ref_48
+          - *ref_49
+          - *ref_50
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request was successfully processed and the terms were accepted or acceptance revoked as per the request body.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            SetMarketplaceTerms:
+              parameters:
+                api-version: '2016-04-01'
+                offerId: offid
+                offerType: virtualmachine
+                parameters:
+                  properties:
+                    accepted: false
+                    licenseTextLink: test.licenseLink
+                    marketplaceTermsLink: test.marketplaceTermsLink
+                    plan: planid
+                    privacyPolicyLink: test.privacyPolicyLink
+                    product: offid
+                    publisher: pubid
+                    retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                    signature: ASDFSDAFWEFASDGWERLWER
+                planId: planid
+                publisherId: pubid
+                subscriptionId: subid
+              responses:
+                '200':
+                  description: OK. The request was successfully processed and the terms were accepted or acceptance revoked as per the request body.
+                  body:
+                    name: planid
+                    type: Microsoft.MarketplaceOrdering/offertypes
+                    id: id
+                    properties:
+                      accepted: true
+                      licenseTextLink: test.licenseLink
+                      marketplaceTermsLink: test.marketplaceTermsLink
+                      plan: planid
+                      privacyPolicyLink: test.privacyPolicyLink
+                      product: offid
+                      publisher: pubid
+                      retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                      signature: ASDFSDAFWEFASDGWERLWER
+        language: !Languages 
+          default:
+            name: Create
+            description: Save marketplace terms.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+          - *ref_37
+          - !Parameter &ref_51
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: publisherId
+                description: Publisher identifier string of image being deployed.
+                serializedName: publisherId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_52
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerId
+                description: Offer identifier string of image being deployed.
+                serializedName: offerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_53
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: planId
+                description: Plan identifier string of image being deployed.
+                serializedName: planId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MarketplaceOrdering/agreements/{publisherId}/offers/{offerId}/plans/{planId}/sign
+                method: post
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_51
+          - *ref_52
+          - *ref_53
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request was successfully processed and the terms were accepted.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            SetMarketplaceTerms:
+              parameters:
+                api-version: '2016-04-01'
+                offerId: offid
+                planId: planid
+                publisherId: pubid
+                subscriptionId: subid
+              responses:
+                '200':
+                  body:
+                    name: planid
+                    type: Microsoft.MarketplaceOrdering/offertypes
+                    id: id
+                    properties:
+                      accepted: true
+                      licenseTextLink: test.licenseLink
+                      marketplaceTermsLink: test.marketplaceTermsLink
+                      plan: planid
+                      privacyPolicyLink: test.privacyPolicyLink
+                      product: offid
+                      publisher: pubid
+                      retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                      signature: ASDFSDAFWEFASDGWERLWER
+        language: !Languages 
+          default:
+            name: Sign
+            description: Sign marketplace terms.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+          - *ref_37
+          - !Parameter &ref_54
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: publisherId
+                description: Publisher identifier string of image being deployed.
+                serializedName: publisherId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_55
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerId
+                description: Offer identifier string of image being deployed.
+                serializedName: offerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_56
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: planId
+                description: Plan identifier string of image being deployed.
+                serializedName: planId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MarketplaceOrdering/agreements/{publisherId}/offers/{offerId}/plans/{planId}/cancel
+                method: post
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_54
+          - *ref_55
+          - *ref_56
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request was successfully processed and the terms were rejected.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            SetMarketplaceTerms:
+              parameters:
+                api-version: '2016-04-01'
+                offerId: offid
+                planId: planid
+                publisherId: pubid
+                subscriptionId: subid
+              responses:
+                '200':
+                  body:
+                    name: planid
+                    type: Microsoft.MarketplaceOrdering/offertypes
+                    id: id
+                    properties:
+                      accepted: false
+                      licenseTextLink: test.licenseLink
+                      marketplaceTermsLink: test.marketplaceTermsLink
+                      plan: planid
+                      privacyPolicyLink: test.privacyPolicyLink
+                      product: offid
+                      publisher: pubid
+                      retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                      signature: ASDFSDAFWEFASDGWERLWER
+        language: !Languages 
+          default:
+            name: Cancel
+            description: Cancel marketplace terms.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+          - *ref_37
+          - !Parameter &ref_57
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: publisherId
+                description: Publisher identifier string of image being deployed.
+                serializedName: publisherId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_58
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: offerId
+                description: Offer identifier string of image being deployed.
+                serializedName: offerId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - !Parameter &ref_59
+            schema: *ref_33
+            implementation: Method
+            required: true
+            language: !Languages 
+              default:
+                name: planId
+                description: Plan identifier string of image being deployed.
+                serializedName: planId
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MarketplaceOrdering/agreements/{publisherId}/offers/{offerId}/plans/{planId}
+                method: get
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_57
+          - *ref_58
+          - *ref_59
+        responses:
+          - !SchemaResponse 
+            schema: *ref_1
+            language: !Languages 
+              default:
+                name: ''
+                description: Terms returned successfully
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            SetMarketplaceTerms:
+              parameters:
+                api-version: '2016-04-01'
+                offerId: offid
+                planId: planid
+                publisherId: pubid
+                subscriptionId: subid
+              responses:
+                '200':
+                  body:
+                    name: planid
+                    type: Microsoft.MarketplaceOrdering/offertypes
+                    id: id
+                    properties:
+                      accepted: true
+                      licenseTextLink: test.licenseLink
+                      marketplaceTermsLink: test.marketplaceTermsLink
+                      plan: planid
+                      privacyPolicyLink: test.privacyPolicyLink
+                      product: offid
+                      publisher: pubid
+                      retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                      signature: ASDFSDAFWEFASDGWERLWER
+        language: !Languages 
+          default:
+            name: GetAgreement
+            description: Get marketplace agreement.
+        protocol: !Protocols {}
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+          - *ref_37
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /subscriptions/{subscriptionId}/providers/Microsoft.MarketplaceOrdering/agreements
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_60
+            language: !Languages 
+              default:
+                name: ''
+                description: Terms returned successfully
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            SetMarketplaceTerms:
+              parameters:
+                api-version: '2016-04-01'
+                subscriptionId: subid
+              responses:
+                '200':
+                  body:
+                    - name: planid
+                      type: Microsoft.MarketplaceOrdering/offertypes
+                      id: id
+                      properties:
+                        accepted: true
+                        licenseTextLink: test.licenseLink
+                        marketplaceTermsLink: test.marketplaceTermsLink
+                        plan: planid
+                        privacyPolicyLink: test.privacyPolicyLink
+                        product: offid
+                        publisher: pubid
+                        retrieveDatetime: '2017-08-15T11:33:07.12132Z'
+                        signature: ASDFSDAFWEFASDGWERLWER
+        language: !Languages 
+          default:
+            name: List
+            description: List marketplace agreements in the subscription.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: MarketplaceAgreements
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-01-01'
+        parameters:
+          - *ref_35
+          - *ref_36
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_39
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.MarketplaceOrdering/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_61
+            language: !Languages 
+              default:
+                name: ''
+                description: OK. The request has succeeded.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_44
+            language: !Languages 
+              default:
+                name: ''
+                description: Microsoft.MarketplaceOrdering error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: Lists all of the available Microsoft.MarketplaceOrdering REST API operations.
+            paging:
+              nextLinkName: nextLink
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: MarketplaceOrderingAgreements
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
