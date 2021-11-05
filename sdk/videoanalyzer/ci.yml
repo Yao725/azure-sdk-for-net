@@ -3,23 +3,23 @@
 trigger:
   branches:
     include:
-      - main
-      - hotfix/*
-      - release/*
+    - main
+    - hotfix/*
+    - release/*
   paths:
     include:
-      - sdk/videoanalyzer/
+    - sdk/videoanalyzer/
 
 pr:
   branches:
     include:
-      - main
-      - feature/*
-      - hotfix/*
-      - release/*
+    - main
+    - feature/*
+    - hotfix/*
+    - release/*
   paths:
     include:
-      - sdk/videoanalyzer/
+    - sdk/videoanalyzer/
 
 extends:
   template: ../../eng/pipelines/templates/stages/archetype-sdk-client.yml
@@ -27,5 +27,5 @@ extends:
     ServiceDirectory: videoanalyzer
     ArtifactName: packages
     Artifacts:
-      - name: Azure.Media.VideoAnalyzer.Edge
-        safeName: AzureMediaVideoAnalyzerEdge
+    - name: Azure.ResourceManager.Videoanalyzer
+      safeName: AzureResourceManagerVideoanalyzer
