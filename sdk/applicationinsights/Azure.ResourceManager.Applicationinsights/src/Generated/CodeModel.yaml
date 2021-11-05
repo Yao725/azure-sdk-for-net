@@ -1,0 +1,649 @@
+!CodeModel 
+info: !Info 
+  description: Composite Swagger for Application Insights Management Client
+  title: ApplicationInsightsManagementClient
+schemas: !Schemas 
+  booleans:
+    - !BooleanSchema &ref_2
+      type: boolean
+      language: !Languages 
+        default:
+          name: Boolean
+          description: Indicates whether the operation is a data action
+      protocol: !Protocols {}
+  strings:
+    - !StringSchema &ref_0
+      type: string
+      language: !Languages 
+        default:
+          name: String
+          description: simple string
+      protocol: !Protocols {}
+    - !StringSchema &ref_1
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationLiveName
+          description: Name of the operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_3
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationInfoProvider
+          description: Name of the provider
+      protocol: !Protocols {}
+    - !StringSchema &ref_4
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationInfoResource
+          description: Name of the resource type
+      protocol: !Protocols {}
+    - !StringSchema &ref_5
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationInfoOperation
+          description: Name of the operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_6
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationInfoDescription
+          description: Description of the operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_7
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationLiveOrigin
+          description: Origin of the operation
+      protocol: !Protocols {}
+    - !StringSchema &ref_9
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: OperationsListResultNextLink
+          description: URL to get the next set of operation list results if there are any.
+      protocol: !Protocols {}
+    - !StringSchema &ref_22
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+    - !StringSchema &ref_12
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      language: !Languages 
+        default:
+          name: LiveTokenResponseLiveToken
+          description: JWT token for accessing live metrics stream data.
+      protocol: !Protocols {}
+    - !StringSchema &ref_13
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-03-01-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseLinkedStorageErrorCode
+          description: Error code.
+      protocol: !Protocols {}
+    - !StringSchema &ref_14
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-03-01-preview
+      language: !Languages 
+        default:
+          name: ErrorResponseLinkedStorageErrorMessage
+          description: Error message indicating why the operation failed.
+      protocol: !Protocols {}
+    - !StringSchema 
+      type: string
+      apiVersions:
+        - !ApiVersion 
+          version: '1.0'
+      minLength: 1
+      language: !Languages 
+        default:
+          name: String
+          description: ''
+      protocol: !Protocols {}
+  constants:
+    - !ConstantSchema &ref_17
+      type: constant
+      value: !ConstantValue 
+        value: '2021-10-14'
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: ApiVersion20211014
+          description: Api Version (2021-10-14)
+      protocol: !Protocols {}
+    - !ConstantSchema &ref_20
+      type: constant
+      value: !ConstantValue 
+        value: application/json
+      valueType: *ref_0
+      language: !Languages 
+        default:
+          name: Accept
+          description: 'Accept: application/json'
+      protocol: !Protocols {}
+  anyObjects:
+    - !AnyObjectSchema &ref_8
+      type: any-object
+      language: !Languages 
+        default:
+          name: AnyObject
+          description: Any object
+      protocol: !Protocols {}
+  objects:
+    - !ObjectSchema &ref_21
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      properties:
+        - !Property 
+          schema: !ArraySchema &ref_16
+            type: array
+            apiVersions:
+              - !ApiVersion 
+                version: '2021-10-14'
+            elementType: !ObjectSchema &ref_10
+              type: object
+              apiVersions:
+                - !ApiVersion 
+                  version: '2021-10-14'
+              properties:
+                - !Property 
+                  schema: *ref_1
+                  serializedName: name
+                  language: !Languages 
+                    default:
+                      name: name
+                      description: Name of the operation
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_2
+                  serializedName: isDataAction
+                  language: !Languages 
+                    default:
+                      name: isDataAction
+                      description: Indicates whether the operation is a data action
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: !ObjectSchema &ref_11
+                    type: object
+                    apiVersions:
+                      - !ApiVersion 
+                        version: '2021-10-14'
+                    properties:
+                      - !Property 
+                        schema: *ref_3
+                        serializedName: provider
+                        language: !Languages 
+                          default:
+                            name: provider
+                            description: Name of the provider
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_4
+                        serializedName: resource
+                        language: !Languages 
+                          default:
+                            name: resource
+                            description: Name of the resource type
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_5
+                        serializedName: operation
+                        language: !Languages 
+                          default:
+                            name: operation
+                            description: Name of the operation
+                        protocol: !Protocols {}
+                      - !Property 
+                        schema: *ref_6
+                        serializedName: description
+                        language: !Languages 
+                          default:
+                            name: description
+                            description: Description of the operation
+                        protocol: !Protocols {}
+                    serializationFormats:
+                      - json
+                    usage:
+                      - output
+                    language: !Languages 
+                      default:
+                        name: OperationInfo
+                        description: Information about an operation
+                        namespace: ''
+                    protocol: !Protocols {}
+                  serializedName: display
+                  language: !Languages 
+                    default:
+                      name: display
+                      description: Display name of the operation
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_7
+                  serializedName: origin
+                  language: !Languages 
+                    default:
+                      name: origin
+                      description: Origin of the operation
+                  protocol: !Protocols {}
+                - !Property 
+                  schema: *ref_8
+                  serializedName: properties
+                  extensions:
+                    x-ms-client-flatten: true
+                  language: !Languages 
+                    default:
+                      name: properties
+                      description: Properties of the operation
+                  protocol: !Protocols {}
+              serializationFormats:
+                - json
+              usage:
+                - output
+              language: !Languages 
+                default:
+                  name: OperationLive
+                  description: Represents an operation returned by the GetOperations request
+                  namespace: ''
+              protocol: !Protocols {}
+            language: !Languages 
+              default:
+                name: OperationsListResultValue
+                description: A collection of operations
+            protocol: !Protocols {}
+          serializedName: value
+          language: !Languages 
+            default:
+              name: value
+              description: A collection of operations
+          protocol: !Protocols {}
+        - !Property 
+          schema: *ref_9
+          serializedName: nextLink
+          language: !Languages 
+            default:
+              name: nextLink
+              description: URL to get the next set of operation list results if there are any.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: OperationsListResult
+          description: Result of the List Operations operation
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_10
+    - *ref_11
+    - !ObjectSchema &ref_24
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: '2021-10-14'
+      properties:
+        - !Property 
+          schema: *ref_12
+          readOnly: true
+          serializedName: liveToken
+          language: !Languages 
+            default:
+              name: liveToken
+              description: JWT token for accessing live metrics stream data.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - output
+      language: !Languages 
+        default:
+          name: LiveTokenResponse
+          description: The response to a live token query.
+          namespace: ''
+      protocol: !Protocols {}
+    - !ObjectSchema &ref_25
+      type: object
+      apiVersions:
+        - !ApiVersion 
+          version: 2020-03-01-preview
+      properties:
+        - !Property 
+          schema: !ObjectSchema &ref_15
+            type: object
+            apiVersions:
+              - !ApiVersion 
+                version: 2020-03-01-preview
+            properties:
+              - !Property 
+                schema: *ref_13
+                readOnly: true
+                serializedName: code
+                language: !Languages 
+                  default:
+                    name: code
+                    description: Error code.
+                protocol: !Protocols {}
+              - !Property 
+                schema: *ref_14
+                readOnly: true
+                serializedName: message
+                language: !Languages 
+                  default:
+                    name: message
+                    description: Error message indicating why the operation failed.
+                protocol: !Protocols {}
+            serializationFormats:
+              - json
+            usage:
+              - exception
+            extensions:
+              x-internal-autorest-anonymous-schema:
+                anonymous: true
+            language: !Languages 
+              default:
+                name: ErrorResponseLinkedStorageError
+                description: Error response indicates Insights service is not able to process the incoming request. The reason is provided in the error message.
+                namespace: ''
+            protocol: !Protocols {}
+          serializedName: error
+          language: !Languages 
+            default:
+              name: error
+              description: Error response indicates Insights service is not able to process the incoming request. The reason is provided in the error message.
+          protocol: !Protocols {}
+      serializationFormats:
+        - json
+      usage:
+        - exception
+      language: !Languages 
+        default:
+          name: ErrorResponseLinkedStorage
+          description: ''
+          namespace: ''
+      protocol: !Protocols {}
+    - *ref_15
+  arrays:
+    - *ref_16
+globalParameters:
+  - !Parameter &ref_18
+    schema: *ref_0
+    clientDefaultValue: https://management.azure.com
+    implementation: Client
+    origin: modelerfour:synthesized/host
+    required: true
+    extensions:
+      x-ms-skip-url-encoding: true
+    language: !Languages 
+      default:
+        name: $host
+        description: server parameter
+        serializedName: $host
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: uri
+  - !Parameter &ref_19
+    schema: *ref_17
+    implementation: Client
+    origin: modelerfour:synthesized/api-version
+    required: true
+    language: !Languages 
+      default:
+        name: apiVersion
+        description: Api Version
+        serializedName: api-version
+    protocol: !Protocols 
+      http: !HttpParameter 
+        in: query
+operationGroups:
+  - !OperationGroup 
+    $key: Operations
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-10-14'
+        parameters:
+          - *ref_18
+          - *ref_19
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_20
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /providers/Microsoft.Insights/operations
+                method: get
+                uri: '{$host}'
+        signatureParameters: []
+        responses:
+          - !SchemaResponse 
+            schema: *ref_21
+            language: !Languages 
+              default:
+                name: ''
+                description: OK
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !Response 
+            language: !Languages 
+              default:
+                name: ''
+                description: |-
+                  *** Error Responses: ***
+
+                   * 400 Bad Request.
+
+                   * 500 Internal Server Error.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Operations_List:
+              parameters:
+                api-version: '2021-10-14'
+              responses:
+                '200':
+                  body:
+                    value:
+                      - name: microsoft.insights/generatelivetoken
+                        display:
+                          description: Gets an access token for live metrics stream data
+                          operation: Gets an access token for live metrics stream data
+                          provider: Microsoft Container Instance
+                          resource: generatelivetoken
+                        origin: User
+          x-ms-pageable:
+            nextLinkName: nextLink
+        language: !Languages 
+          default:
+            name: List
+            description: List the available operations supported by the resource provider.
+            paging:
+              nextLinkName: nextLink
+            summary: List available operations.
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: Operations
+        description: ''
+    protocol: !Protocols {}
+  - !OperationGroup 
+    $key: LiveToken
+    operations:
+      - !Operation 
+        apiVersions:
+          - !ApiVersion 
+            version: '2021-10-14'
+        parameters:
+          - *ref_18
+          - !Parameter &ref_23
+            schema: *ref_22
+            implementation: Method
+            required: true
+            extensions:
+              x-ms-skip-url-encoding: true
+            language: !Languages 
+              default:
+                name: resourceUri
+                description: The identifier of the resource.
+                serializedName: resourceUri
+            protocol: !Protocols 
+              http: !HttpParameter 
+                in: path
+          - *ref_19
+        requests:
+          - !Request 
+            parameters:
+              - !Parameter 
+                schema: *ref_20
+                implementation: Method
+                origin: modelerfour:synthesized/accept
+                required: true
+                language: !Languages 
+                  default:
+                    name: accept
+                    description: Accept header
+                    serializedName: Accept
+                protocol: !Protocols 
+                  http: !HttpParameter 
+                    in: header
+            signatureParameters: []
+            language: !Languages 
+              default:
+                name: ''
+                description: ''
+            protocol: !Protocols 
+              http: !HttpRequest 
+                path: /{resourceUri}/providers/Microsoft.Insights/generatelivetoken
+                method: post
+                uri: '{$host}'
+        signatureParameters:
+          - *ref_23
+        responses:
+          - !SchemaResponse 
+            schema: *ref_24
+            language: !Languages 
+              default:
+                name: ''
+                description: Successful response containing the live metrics stream token.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - '200'
+        exceptions:
+          - !SchemaResponse 
+            schema: *ref_25
+            language: !Languages 
+              default:
+                name: ''
+                description: Error response describing why the operation failed.
+            protocol: !Protocols 
+              http: !HttpResponse 
+                knownMediaType: json
+                mediaTypes:
+                  - application/json
+                statusCodes:
+                  - default
+        extensions:
+          x-ms-examples:
+            Get live token for resource:
+              parameters:
+                api-version: '2021-10-14'
+                resourceUri: subscriptions/df602c9c-7aa0-407d-a6fb-eb20c8bd1192/resourceGroups/FabrikamFiberApp/providers/microsoft.insights/components/CustomAvailabilityTest/providers/microsoft.insights/generatelivetoken
+              responses:
+                '200':
+                  body:
+                    liveToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        language: !Languages 
+          default:
+            name: Get
+            description: '**Gets an access token for live metrics stream data.**'
+        protocol: !Protocols {}
+    language: !Languages 
+      default:
+        name: LiveToken
+        description: ''
+    protocol: !Protocols {}
+security: !Security 
+  authenticationRequired: true
+  schemes:
+    - !AADTokenSecurityScheme 
+      type: AADToken
+      scopes:
+        - https://management.azure.com/.default
+language: !Languages 
+  default:
+    name: ApplicationInsightsManagementClient
+    description: ''
+protocol: !Protocols 
+  http: !HttpModel {}
