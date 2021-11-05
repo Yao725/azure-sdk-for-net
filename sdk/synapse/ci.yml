@@ -4,7 +4,6 @@ trigger:
   branches:
     include:
     - main
-    - feature/*
     - hotfix/*
     - release/*
   paths:
@@ -28,13 +27,5 @@ extends:
     ServiceDirectory: synapse
     ArtifactName: packages
     Artifacts:
-    - name: Azure.Analytics.Synapse.Spark
-      safeName: AzureAnalyticsSynapseSpark
-    - name: Azure.Analytics.Synapse.AccessControl
-      safeName: AzureAnalyticsSynapseAccessControl
-    - name: Azure.Analytics.Synapse.Artifacts
-      safeName: AzureAnalyticsSynapseArtifacts
-    - name: Azure.Analytics.Synapse.ManagedPrivateEndpoints
-      safeName: AzureAnalyticsSynapseManagedPrivateEndpoints
-    - name: Azure.Analytics.Synapse.Monitoring
-      safeName: AzureAnalyticsSynapseMonitoring
+    - name: Azure.ResourceManager.Synapse
+      safeName: AzureResourceManagerSynapse
