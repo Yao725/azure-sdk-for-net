@@ -3,8 +3,11 @@
 
 #region Snippet:Manage_Deployments_Namespaces
 using System;
-using System.Threading.Tasks;
+using System.IO;
 using System.Collections.Generic;
+using System.Reflection;
+using System.Text.Json;
+using System.Threading.Tasks;
 using Azure.Core;
 using Azure.Identity;
 using Azure.ResourceManager.Resources.Models;
@@ -147,6 +150,37 @@ namespace Azure.ResourceManager.Resources.Tests.Samples
                         }
                     }
                 },
+                Parameters = new JsonObject()
+                {
+                    {"storageAccountType", new JsonObject()
+                        {
+                            {"value", "Standard_GRS" }
+                        }
+                    }
+                }
+            });
+            DeploymentCreateOrUpdateAtScopeOperation lro = await deploymentCollection.CreateOrUpdateAsync(true, deploymentName, input);
+            Deployment deployment = lro.Value;
+            #endregion Snippet:Managing_Deployments_CreateADeploymentUsingJsonObject
+        }
+
+        [Test]
+        [Ignore("Only verifying that the sample builds")]
+        public async Task CreateDeploymentsUsingString()
+        {
+            #region Snippet:Managing_Deployments_CreateADeploymentUsingJsonObject
+            // First we need to get the deployment collection from the resource group
+            DeploymentCollection deploymentCollection = resourceGroup.GetDeployments();
+            // Use the same location as the resource group
+            string deploymentName = "myDeployment";
+            var templateFile = File.ReadAllText(Path.Combine(
+            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+            "Scenario",
+            "DeploymentTemplates",
+            $"storageTemplate.json"));
+            var input = new DeploymentInput(new DeploymentProperties(DeploymentMode.Incremental)
+            {
+                Template = JsonDocument.Parse(templateFile).RootElement,
                 Parameters = new JsonObject()
                 {
                     {"storageAccountType", new JsonObject()
