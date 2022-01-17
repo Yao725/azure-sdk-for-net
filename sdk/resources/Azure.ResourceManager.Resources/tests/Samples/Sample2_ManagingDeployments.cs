@@ -51,7 +51,7 @@ namespace Azure.ResourceManager.Resources.Tests.Samples
         [Ignore("Only verifying that the sample builds")]
         public async Task CreateDeploymentsUsingJsonObject()
         {
-            #region Snippet:Managing_Deployments_CreateADeployment
+            #region Snippet:Managing_Deployments_CreateADeploymentUsingJsonObject
             // First we need to get the deployment collection from the resource group
             DeploymentCollection deploymentCollection = resourceGroup.GetDeployments();
             // Use the same location as the resource group
@@ -158,7 +158,7 @@ namespace Azure.ResourceManager.Resources.Tests.Samples
             });
             DeploymentCreateOrUpdateAtScopeOperation lro = await deploymentCollection.CreateOrUpdateAsync(true, deploymentName, input);
             Deployment deployment = lro.Value;
-            #endregion Snippet:Managing_Deployments_CreateADeployment
+            #endregion Snippet:Managing_Deployments_CreateADeploymentUsingJsonObject
         }
 
         [Test]
