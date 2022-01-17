@@ -10,7 +10,6 @@ using Azure.Identity;
 using Azure.ResourceManager.Resources.Models;
 using NUnit.Framework;
 using JsonObject = System.Collections.Generic.Dictionary<string, object>;
-using Azure.Core.TestFramework;
 #endregion Manage_Deployments_Namespaces
 
 namespace Azure.ResourceManager.Resources.Tests.Samples
