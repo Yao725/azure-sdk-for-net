@@ -44,7 +44,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="primaryUserAssignedIdentityId"> The resource id of a user assigned identity to be used by default. </param>
         /// <param name="federatedClientId"> The Client id used for cross tenant CMK scenario. </param>
         /// <param name="keyId"> A CMK URI of the key to use for encryption. </param>
-        /// <param name="administrators"> The Azure Active Directory identity of the server. </param>
+        /// <param name="administrators"> The Azure Active Directory administrator of the server. This can only be used at server create time. If used for server update, it will be ignored or it will result in an error. For updates individual APIs will need to be used. </param>
         /// <param name="restrictOutboundNetworkAccess"> Whether or not to restrict outbound network access for this server.  Value is optional but if passed in, must be &apos;Enabled&apos; or &apos;Disabled&apos;. </param>
         internal SqlServerData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, IDictionary<string, string> tags, AzureLocation location, ManagedServiceIdentity identity, string kind, string administratorLogin, string administratorLoginPassword, string version, string state, string fullyQualifiedDomainName, IReadOnlyList<SqlServerPrivateEndpointConnection> privateEndpointConnections, string minimalTlsVersion, ServerNetworkAccessFlag? publicNetworkAccess, ServerWorkspaceFeature? workspaceFeature, ResourceIdentifier primaryUserAssignedIdentityId, Guid? federatedClientId, Uri keyId, ServerExternalAdministrator administrators, ServerNetworkAccessFlag? restrictOutboundNetworkAccess) : base(id, name, resourceType, systemData, tags, location)
         {
@@ -94,7 +94,7 @@ namespace Azure.ResourceManager.Sql
         public Guid? FederatedClientId { get; set; }
         /// <summary> A CMK URI of the key to use for encryption. </summary>
         public Uri KeyId { get; set; }
-        /// <summary> The Azure Active Directory identity of the server. </summary>
+        /// <summary> The Azure Active Directory administrator of the server. This can only be used at server create time. If used for server update, it will be ignored or it will result in an error. For updates individual APIs will need to be used. </summary>
         public ServerExternalAdministrator Administrators { get; set; }
         /// <summary> Whether or not to restrict outbound network access for this server.  Value is optional but if passed in, must be &apos;Enabled&apos; or &apos;Disabled&apos;. </summary>
         public ServerNetworkAccessFlag? RestrictOutboundNetworkAccess { get; set; }

@@ -44,6 +44,11 @@ namespace Azure.ResourceManager.Sql
                 writer.WritePropertyName("maxSizeBytes");
                 writer.WriteNumberValue(MaxSizeBytes.Value);
             }
+            if (Optional.IsDefined(MinCapacity))
+            {
+                writer.WritePropertyName("minCapacity");
+                writer.WriteNumberValue(MinCapacity.Value);
+            }
             if (Optional.IsDefined(PerDatabaseSettings))
             {
                 writer.WritePropertyName("perDatabaseSettings");
@@ -86,6 +91,7 @@ namespace Azure.ResourceManager.Sql
             Optional<ElasticPoolState> state = default;
             Optional<DateTimeOffset> creationDate = default;
             Optional<long> maxSizeBytes = default;
+            Optional<double> minCapacity = default;
             Optional<ElasticPoolPerDatabaseSettings> perDatabaseSettings = default;
             Optional<bool> zoneRedundant = default;
             Optional<ElasticPoolLicenseType> licenseType = default;
@@ -192,6 +198,16 @@ namespace Azure.ResourceManager.Sql
                             maxSizeBytes = property0.Value.GetInt64();
                             continue;
                         }
+                        if (property0.NameEquals("minCapacity"))
+                        {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                property0.ThrowNonNullablePropertyIsNull();
+                                continue;
+                            }
+                            minCapacity = property0.Value.GetDouble();
+                            continue;
+                        }
                         if (property0.NameEquals("perDatabaseSettings"))
                         {
                             if (property0.Value.ValueKind == JsonValueKind.Null)
@@ -246,7 +262,7 @@ namespace Azure.ResourceManager.Sql
                     continue;
                 }
             }
-            return new ElasticPoolData(id, name, type, systemData.Value, Optional.ToDictionary(tags), location, sku.Value, kind.Value, Optional.ToNullable(state), Optional.ToNullable(creationDate), Optional.ToNullable(maxSizeBytes), perDatabaseSettings.Value, Optional.ToNullable(zoneRedundant), Optional.ToNullable(licenseType), maintenanceConfigurationId.Value, Optional.ToNullable(highAvailabilityReplicaCount));
+            return new ElasticPoolData(id, name, type, systemData.Value, Optional.ToDictionary(tags), location, sku.Value, kind.Value, Optional.ToNullable(state), Optional.ToNullable(creationDate), Optional.ToNullable(maxSizeBytes), Optional.ToNullable(minCapacity), perDatabaseSettings.Value, Optional.ToNullable(zoneRedundant), Optional.ToNullable(licenseType), maintenanceConfigurationId.Value, Optional.ToNullable(highAvailabilityReplicaCount));
         }
     }
 }

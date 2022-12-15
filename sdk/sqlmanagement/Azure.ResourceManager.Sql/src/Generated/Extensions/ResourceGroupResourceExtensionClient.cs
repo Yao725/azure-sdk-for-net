@@ -62,21 +62,6 @@ namespace Azure.ResourceManager.Sql
             return GetCachedClient(Client => new InstancePoolCollection(Client, Id));
         }
 
-        /// <summary> Gets a collection of SqlServerTrustGroupResources in the ResourceGroupResource. </summary>
-        /// <param name="locationName"> The name of the region where the resource is located. </param>
-        /// <returns> An object representing collection of SqlServerTrustGroupResources and their operations over a SqlServerTrustGroupResource. </returns>
-        public virtual SqlServerTrustGroupCollection GetSqlServerTrustGroups(AzureLocation locationName)
-        {
-            return new SqlServerTrustGroupCollection(Client, Id, locationName);
-        }
-
-        /// <summary> Gets a collection of SqlServerResources in the ResourceGroupResource. </summary>
-        /// <returns> An object representing collection of SqlServerResources and their operations over a SqlServerResource. </returns>
-        public virtual SqlServerCollection GetSqlServers()
-        {
-            return GetCachedClient(Client => new SqlServerCollection(Client, Id));
-        }
-
         /// <summary> Gets a collection of ResourceGroupLongTermRetentionBackupResources in the ResourceGroupResource. </summary>
         /// <param name="locationName"> The location of the database. </param>
         /// <param name="longTermRetentionServerName"> The name of the server. </param>
@@ -97,6 +82,14 @@ namespace Azure.ResourceManager.Sql
             return new ResourceGroupLongTermRetentionManagedInstanceBackupCollection(Client, Id, locationName, managedInstanceName, databaseName);
         }
 
+        /// <summary> Gets a collection of ManagedDatabaseMoveOperationResultResources in the ResourceGroupResource. </summary>
+        /// <param name="locationName"> The String to use. </param>
+        /// <returns> An object representing collection of ManagedDatabaseMoveOperationResultResources and their operations over a ManagedDatabaseMoveOperationResultResource. </returns>
+        public virtual ManagedDatabaseMoveOperationResultCollection GetManagedDatabaseMoveOperationResults(AzureLocation locationName)
+        {
+            return new ManagedDatabaseMoveOperationResultCollection(Client, Id, locationName);
+        }
+
         /// <summary> Gets a collection of ManagedInstanceResources in the ResourceGroupResource. </summary>
         /// <returns> An object representing collection of ManagedInstanceResources and their operations over a ManagedInstanceResource. </returns>
         public virtual ManagedInstanceCollection GetManagedInstances()
@@ -104,12 +97,19 @@ namespace Azure.ResourceManager.Sql
             return GetCachedClient(Client => new ManagedInstanceCollection(Client, Id));
         }
 
-        /// <summary> Gets a collection of ManagedDatabaseMoveOperationResultResources in the ResourceGroupResource. </summary>
-        /// <param name="locationName"> The String to use. </param>
-        /// <returns> An object representing collection of ManagedDatabaseMoveOperationResultResources and their operations over a ManagedDatabaseMoveOperationResultResource. </returns>
-        public virtual ManagedDatabaseMoveOperationResultCollection GetManagedDatabaseMoveOperationResults(AzureLocation locationName)
+        /// <summary> Gets a collection of SqlServerTrustGroupResources in the ResourceGroupResource. </summary>
+        /// <param name="locationName"> The name of the region where the resource is located. </param>
+        /// <returns> An object representing collection of SqlServerTrustGroupResources and their operations over a SqlServerTrustGroupResource. </returns>
+        public virtual SqlServerTrustGroupCollection GetSqlServerTrustGroups(AzureLocation locationName)
         {
-            return new ManagedDatabaseMoveOperationResultCollection(Client, Id, locationName);
+            return new SqlServerTrustGroupCollection(Client, Id, locationName);
+        }
+
+        /// <summary> Gets a collection of SqlServerResources in the ResourceGroupResource. </summary>
+        /// <returns> An object representing collection of SqlServerResources and their operations over a SqlServerResource. </returns>
+        public virtual SqlServerCollection GetSqlServers()
+        {
+            return GetCachedClient(Client => new SqlServerCollection(Client, Id));
         }
 
         /// <summary> Gets a collection of VirtualClusterResources in the ResourceGroupResource. </summary>
@@ -302,6 +302,96 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
+        /// Lists the long term retention backups for managed databases in a given location.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/locations/{locationName}/longTermRetentionManagedInstanceBackups
+        /// Operation Id: LongTermRetentionManagedInstanceBackups_ListByResourceGroupLocation
+        /// </summary>
+        /// <param name="locationName"> The location of the database. </param>
+        /// <param name="onlyLatestPerDatabase"> Whether or not to only get the latest backup for each database. </param>
+        /// <param name="databaseState"> Whether to query against just live databases, just deleted databases, or all databases. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <returns> An async collection of <see cref="ManagedInstanceLongTermRetentionBackupData" /> that may take multiple service requests to iterate over. </returns>
+        public virtual AsyncPageable<ManagedInstanceLongTermRetentionBackupData> GetLongTermRetentionManagedInstanceBackupsWithLocationAsync(AzureLocation locationName, bool? onlyLatestPerDatabase = null, SqlDatabaseState? databaseState = null, CancellationToken cancellationToken = default)
+        {
+            async Task<Page<ManagedInstanceLongTermRetentionBackupData>> FirstPageFunc(int? pageSizeHint)
+            {
+                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
+                scope.Start();
+                try
+                {
+                    var response = await LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocationAsync(Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            async Task<Page<ManagedInstanceLongTermRetentionBackupData>> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
+                scope.Start();
+                try
+                {
+                    var response = await LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocationNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
+        }
+
+        /// <summary>
+        /// Lists the long term retention backups for managed databases in a given location.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/locations/{locationName}/longTermRetentionManagedInstanceBackups
+        /// Operation Id: LongTermRetentionManagedInstanceBackups_ListByResourceGroupLocation
+        /// </summary>
+        /// <param name="locationName"> The location of the database. </param>
+        /// <param name="onlyLatestPerDatabase"> Whether or not to only get the latest backup for each database. </param>
+        /// <param name="databaseState"> Whether to query against just live databases, just deleted databases, or all databases. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <returns> A collection of <see cref="ManagedInstanceLongTermRetentionBackupData" /> that may take multiple service requests to iterate over. </returns>
+        public virtual Pageable<ManagedInstanceLongTermRetentionBackupData> GetLongTermRetentionManagedInstanceBackupsWithLocation(AzureLocation locationName, bool? onlyLatestPerDatabase = null, SqlDatabaseState? databaseState = null, CancellationToken cancellationToken = default)
+        {
+            Page<ManagedInstanceLongTermRetentionBackupData> FirstPageFunc(int? pageSizeHint)
+            {
+                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
+                scope.Start();
+                try
+                {
+                    var response = LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocation(Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            Page<ManagedInstanceLongTermRetentionBackupData> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
+                scope.Start();
+                try
+                {
+                    var response = LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocationNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
+        }
+
+        /// <summary>
         /// Lists the long term retention backups for a given managed instance.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/locations/{locationName}/longTermRetentionManagedInstances/{managedInstanceName}/longTermRetentionManagedInstanceBackups
         /// Operation Id: LongTermRetentionManagedInstanceBackups_ListByResourceGroupInstance
@@ -382,96 +472,6 @@ namespace Azure.ResourceManager.Sql
                 try
                 {
                     var response = LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupInstanceNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, locationName, managedInstanceName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
-        }
-
-        /// <summary>
-        /// Lists the long term retention backups for managed databases in a given location.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/locations/{locationName}/longTermRetentionManagedInstanceBackups
-        /// Operation Id: LongTermRetentionManagedInstanceBackups_ListByResourceGroupLocation
-        /// </summary>
-        /// <param name="locationName"> The location of the database. </param>
-        /// <param name="onlyLatestPerDatabase"> Whether or not to only get the latest backup for each database. </param>
-        /// <param name="databaseState"> Whether to query against just live databases, just deleted databases, or all databases. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <returns> An async collection of <see cref="ManagedInstanceLongTermRetentionBackupData" /> that may take multiple service requests to iterate over. </returns>
-        public virtual AsyncPageable<ManagedInstanceLongTermRetentionBackupData> GetLongTermRetentionManagedInstanceBackupsWithLocationAsync(AzureLocation locationName, bool? onlyLatestPerDatabase = null, SqlDatabaseState? databaseState = null, CancellationToken cancellationToken = default)
-        {
-            async Task<Page<ManagedInstanceLongTermRetentionBackupData>> FirstPageFunc(int? pageSizeHint)
-            {
-                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
-                scope.Start();
-                try
-                {
-                    var response = await LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocationAsync(Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken).ConfigureAwait(false);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            async Task<Page<ManagedInstanceLongTermRetentionBackupData>> NextPageFunc(string nextLink, int? pageSizeHint)
-            {
-                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
-                scope.Start();
-                try
-                {
-                    var response = await LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocationNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken).ConfigureAwait(false);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
-        }
-
-        /// <summary>
-        /// Lists the long term retention backups for managed databases in a given location.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/locations/{locationName}/longTermRetentionManagedInstanceBackups
-        /// Operation Id: LongTermRetentionManagedInstanceBackups_ListByResourceGroupLocation
-        /// </summary>
-        /// <param name="locationName"> The location of the database. </param>
-        /// <param name="onlyLatestPerDatabase"> Whether or not to only get the latest backup for each database. </param>
-        /// <param name="databaseState"> Whether to query against just live databases, just deleted databases, or all databases. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <returns> A collection of <see cref="ManagedInstanceLongTermRetentionBackupData" /> that may take multiple service requests to iterate over. </returns>
-        public virtual Pageable<ManagedInstanceLongTermRetentionBackupData> GetLongTermRetentionManagedInstanceBackupsWithLocation(AzureLocation locationName, bool? onlyLatestPerDatabase = null, SqlDatabaseState? databaseState = null, CancellationToken cancellationToken = default)
-        {
-            Page<ManagedInstanceLongTermRetentionBackupData> FirstPageFunc(int? pageSizeHint)
-            {
-                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
-                scope.Start();
-                try
-                {
-                    var response = LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocation(Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            Page<ManagedInstanceLongTermRetentionBackupData> NextPageFunc(string nextLink, int? pageSizeHint)
-            {
-                using var scope = LongTermRetentionManagedInstanceBackupsClientDiagnostics.CreateScope("ResourceGroupResourceExtensionClient.GetLongTermRetentionManagedInstanceBackupsWithLocation");
-                scope.Start();
-                try
-                {
-                    var response = LongTermRetentionManagedInstanceBackupsRestClient.ListByResourceGroupLocationNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, locationName, onlyLatestPerDatabase, databaseState, cancellationToken: cancellationToken);
                     return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
                 }
                 catch (Exception e)

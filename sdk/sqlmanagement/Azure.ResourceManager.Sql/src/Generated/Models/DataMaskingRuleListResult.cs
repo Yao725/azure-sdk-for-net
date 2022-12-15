@@ -10,7 +10,7 @@ using Azure.Core;
 
 namespace Azure.ResourceManager.Sql.Models
 {
-    /// <summary> The response to a list data masking rules request. </summary>
+    /// <summary> The list of database data masking rules. </summary>
     internal partial class DataMaskingRuleListResult
     {
         /// <summary> Initializes a new instance of DataMaskingRuleListResult. </summary>
@@ -20,13 +20,17 @@ namespace Azure.ResourceManager.Sql.Models
         }
 
         /// <summary> Initializes a new instance of DataMaskingRuleListResult. </summary>
-        /// <param name="value"> The list of database data masking rules. </param>
-        internal DataMaskingRuleListResult(IReadOnlyList<DataMaskingRule> value)
+        /// <param name="value"> Array of results. </param>
+        /// <param name="nextLink"> Link to retrieve next page of results. </param>
+        internal DataMaskingRuleListResult(IReadOnlyList<DataMaskingRule> value, string nextLink)
         {
             Value = value;
+            NextLink = nextLink;
         }
 
-        /// <summary> The list of database data masking rules. </summary>
+        /// <summary> Array of results. </summary>
         public IReadOnlyList<DataMaskingRule> Value { get; }
+        /// <summary> Link to retrieve next page of results. </summary>
+        public string NextLink { get; }
     }
 }

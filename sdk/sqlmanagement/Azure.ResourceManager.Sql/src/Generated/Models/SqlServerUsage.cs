@@ -5,50 +5,43 @@
 
 #nullable disable
 
-using System;
+using Azure.Core;
+using Azure.ResourceManager.Models;
 
 namespace Azure.ResourceManager.Sql.Models
 {
-    /// <summary> Represents server metrics. </summary>
-    public partial class SqlServerUsage
+    /// <summary> Usage metric of a server. </summary>
+    public partial class SqlServerUsage : ResourceData
     {
         /// <summary> Initializes a new instance of SqlServerUsage. </summary>
-        internal SqlServerUsage()
+        public SqlServerUsage()
         {
         }
 
         /// <summary> Initializes a new instance of SqlServerUsage. </summary>
-        /// <param name="name"> Name of the server usage metric. </param>
-        /// <param name="resourceName"> The name of the resource. </param>
-        /// <param name="displayName"> The metric display name. </param>
-        /// <param name="currentValue"> The current value of the metric. </param>
-        /// <param name="limit"> The current limit of the metric. </param>
-        /// <param name="unit"> The units of the metric. </param>
-        /// <param name="nextResetOn"> The next reset time for the metric (ISO8601 format). </param>
-        internal SqlServerUsage(string name, string resourceName, string displayName, double? currentValue, double? limit, string unit, DateTimeOffset? nextResetOn)
+        /// <param name="id"> The id. </param>
+        /// <param name="name"> The name. </param>
+        /// <param name="resourceType"> The resourceType. </param>
+        /// <param name="systemData"> The systemData. </param>
+        /// <param name="displayName"> User-readable name of the metric. </param>
+        /// <param name="currentValue"> Current value of the metric. </param>
+        /// <param name="limit"> Boundary value of the metric. </param>
+        /// <param name="unit"> Unit of the metric. </param>
+        internal SqlServerUsage(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, string displayName, double? currentValue, double? limit, string unit) : base(id, name, resourceType, systemData)
         {
-            Name = name;
-            ResourceName = resourceName;
             DisplayName = displayName;
             CurrentValue = currentValue;
             Limit = limit;
             Unit = unit;
-            NextResetOn = nextResetOn;
         }
 
-        /// <summary> Name of the server usage metric. </summary>
-        public string Name { get; }
-        /// <summary> The name of the resource. </summary>
-        public string ResourceName { get; }
-        /// <summary> The metric display name. </summary>
+        /// <summary> User-readable name of the metric. </summary>
         public string DisplayName { get; }
-        /// <summary> The current value of the metric. </summary>
+        /// <summary> Current value of the metric. </summary>
         public double? CurrentValue { get; }
-        /// <summary> The current limit of the metric. </summary>
+        /// <summary> Boundary value of the metric. </summary>
         public double? Limit { get; }
-        /// <summary> The units of the metric. </summary>
+        /// <summary> Unit of the metric. </summary>
         public string Unit { get; }
-        /// <summary> The next reset time for the metric (ISO8601 format). </summary>
-        public DateTimeOffset? NextResetOn { get; }
     }
 }

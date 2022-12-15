@@ -19,29 +19,27 @@ namespace Azure.ResourceManager.Sql
             writer.WriteStartObject();
             writer.WritePropertyName("properties");
             writer.WriteStartObject();
-            writer.WritePropertyName("state");
-            writer.WriteStringValue(State.ToSerialString());
+            if (Optional.IsDefined(State))
+            {
+                writer.WritePropertyName("state");
+                writer.WriteStringValue(State.Value.ToSerialString());
+            }
             writer.WriteEndObject();
             writer.WriteEndObject();
         }
 
         internal static GeoBackupPolicyData DeserializeGeoBackupPolicyData(JsonElement element)
         {
-            Optional<string> kind = default;
             Optional<AzureLocation> location = default;
+            Optional<string> kind = default;
             ResourceIdentifier id = default;
             string name = default;
             ResourceType type = default;
             Optional<SystemData> systemData = default;
-            GeoBackupPolicyState state = default;
+            Optional<GeoBackupPolicyState> state = default;
             Optional<string> storageType = default;
             foreach (var property in element.EnumerateObject())
             {
-                if (property.NameEquals("kind"))
-                {
-                    kind = property.Value.GetString();
-                    continue;
-                }
                 if (property.NameEquals("location"))
                 {
                     if (property.Value.ValueKind == JsonValueKind.Null)
@@ -50,6 +48,11 @@ namespace Azure.ResourceManager.Sql
                         continue;
                     }
                     location = new AzureLocation(property.Value.GetString());
+                    continue;
+                }
+                if (property.NameEquals("kind"))
+                {
+                    kind = property.Value.GetString();
                     continue;
                 }
                 if (property.NameEquals("id"))
@@ -88,6 +91,11 @@ namespace Azure.ResourceManager.Sql
                     {
                         if (property0.NameEquals("state"))
                         {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                property0.ThrowNonNullablePropertyIsNull();
+                                continue;
+                            }
                             state = property0.Value.GetString().ToGeoBackupPolicyState();
                             continue;
                         }
@@ -100,7 +108,7 @@ namespace Azure.ResourceManager.Sql
                     continue;
                 }
             }
-            return new GeoBackupPolicyData(id, name, type, systemData.Value, kind.Value, Optional.ToNullable(location), state, storageType.Value);
+            return new GeoBackupPolicyData(id, name, type, systemData.Value, Optional.ToNullable(location), kind.Value, Optional.ToNullable(state), storageType.Value);
         }
     }
 }

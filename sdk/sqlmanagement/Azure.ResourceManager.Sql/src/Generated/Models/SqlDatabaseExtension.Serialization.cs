@@ -39,6 +39,41 @@ namespace Azure.ResourceManager.Sql.Models
                 writer.WritePropertyName("storageUri");
                 writer.WriteStringValue(StorageUri.AbsoluteUri);
             }
+            if (Optional.IsDefined(AdministratorLogin))
+            {
+                writer.WritePropertyName("administratorLogin");
+                writer.WriteStringValue(AdministratorLogin);
+            }
+            if (Optional.IsDefined(AdministratorLoginPassword))
+            {
+                writer.WritePropertyName("administratorLoginPassword");
+                writer.WriteStringValue(AdministratorLoginPassword);
+            }
+            if (Optional.IsDefined(AuthenticationType))
+            {
+                writer.WritePropertyName("authenticationType");
+                writer.WriteStringValue(AuthenticationType);
+            }
+            if (Optional.IsDefined(DatabaseEdition))
+            {
+                writer.WritePropertyName("databaseEdition");
+                writer.WriteStringValue(DatabaseEdition);
+            }
+            if (Optional.IsDefined(ServiceObjectiveName))
+            {
+                writer.WritePropertyName("serviceObjectiveName");
+                writer.WriteStringValue(ServiceObjectiveName);
+            }
+            if (Optional.IsDefined(MaxSizeBytes))
+            {
+                writer.WritePropertyName("maxSizeBytes");
+                writer.WriteStringValue(MaxSizeBytes);
+            }
+            if (Optional.IsDefined(NetworkIsolation))
+            {
+                writer.WritePropertyName("networkIsolation");
+                writer.WriteObjectValue(NetworkIsolation);
+            }
             writer.WriteEndObject();
             writer.WriteEndObject();
         }
@@ -53,6 +88,13 @@ namespace Azure.ResourceManager.Sql.Models
             Optional<StorageKeyType> storageKeyType = default;
             Optional<string> storageKey = default;
             Optional<Uri> storageUri = default;
+            Optional<string> administratorLogin = default;
+            Optional<string> administratorLoginPassword = default;
+            Optional<string> authenticationType = default;
+            Optional<string> databaseEdition = default;
+            Optional<string> serviceObjectiveName = default;
+            Optional<string> maxSizeBytes = default;
+            Optional<NetworkIsolationSettings> networkIsolation = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("id"))
@@ -124,11 +166,51 @@ namespace Azure.ResourceManager.Sql.Models
                             storageUri = new Uri(property0.Value.GetString());
                             continue;
                         }
+                        if (property0.NameEquals("administratorLogin"))
+                        {
+                            administratorLogin = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("administratorLoginPassword"))
+                        {
+                            administratorLoginPassword = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("authenticationType"))
+                        {
+                            authenticationType = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("databaseEdition"))
+                        {
+                            databaseEdition = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("serviceObjectiveName"))
+                        {
+                            serviceObjectiveName = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("maxSizeBytes"))
+                        {
+                            maxSizeBytes = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("networkIsolation"))
+                        {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                property0.ThrowNonNullablePropertyIsNull();
+                                continue;
+                            }
+                            networkIsolation = NetworkIsolationSettings.DeserializeNetworkIsolationSettings(property0.Value);
+                            continue;
+                        }
                     }
                     continue;
                 }
             }
-            return new SqlDatabaseExtension(id, name, type, systemData.Value, Optional.ToNullable(operationMode), Optional.ToNullable(storageKeyType), storageKey.Value, storageUri.Value);
+            return new SqlDatabaseExtension(id, name, type, systemData.Value, Optional.ToNullable(operationMode), Optional.ToNullable(storageKeyType), storageKey.Value, storageUri.Value, administratorLogin.Value, administratorLoginPassword.Value, authenticationType.Value, databaseEdition.Value, serviceObjectiveName.Value, maxSizeBytes.Value, networkIsolation.Value);
         }
     }
 }

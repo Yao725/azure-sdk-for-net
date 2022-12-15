@@ -27,7 +27,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="edition"> The edition of the database. </param>
         /// <param name="serviceLevelObjective"> The service level objective name of the database. </param>
         /// <param name="elasticPoolName"> The elastic pool name of the database. </param>
-        /// <param name="lastAvailableBackupOn"> The last available backup date of the database (ISO8601 format). </param>
+        /// <param name="lastAvailableBackupOn"> The last available backup date. </param>
         internal RecoverableDatabaseData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, string edition, string serviceLevelObjective, string elasticPoolName, DateTimeOffset? lastAvailableBackupOn) : base(id, name, resourceType, systemData)
         {
             Edition = edition;
@@ -42,7 +42,7 @@ namespace Azure.ResourceManager.Sql
         public string ServiceLevelObjective { get; }
         /// <summary> The elastic pool name of the database. </summary>
         public string ElasticPoolName { get; }
-        /// <summary> The last available backup date of the database (ISO8601 format). </summary>
+        /// <summary> The last available backup date. </summary>
         public DateTimeOffset? LastAvailableBackupOn { get; }
     }
 }

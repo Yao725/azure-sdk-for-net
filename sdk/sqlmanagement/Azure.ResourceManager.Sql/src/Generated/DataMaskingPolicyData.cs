@@ -25,7 +25,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
         /// <param name="location"> The location of the data masking policy. </param>
-        /// <param name="kind"> The kind of data masking policy. Metadata, used for Azure portal. </param>
+        /// <param name="kind"> The kind of Data Masking Policy. Metadata, used for Azure portal. </param>
         /// <param name="dataMaskingState"> The state of the data masking policy. </param>
         /// <param name="exemptPrincipals"> The list of the exempt principals. Specifies the semicolon-separated list of database users for which the data masking policy does not apply. The specified users receive data results without masking for all of the database queries. </param>
         /// <param name="applicationPrincipals"> The list of the application principals. This is a legacy parameter and is no longer used. </param>
@@ -42,7 +42,7 @@ namespace Azure.ResourceManager.Sql
 
         /// <summary> The location of the data masking policy. </summary>
         public AzureLocation? Location { get; }
-        /// <summary> The kind of data masking policy. Metadata, used for Azure portal. </summary>
+        /// <summary> The kind of Data Masking Policy. Metadata, used for Azure portal. </summary>
         public string Kind { get; }
         /// <summary> The state of the data masking policy. </summary>
         public DataMaskingState? DataMaskingState { get; set; }

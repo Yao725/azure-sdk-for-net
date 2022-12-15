@@ -25,6 +25,8 @@ namespace Azure.ResourceManager.Sql.Models
         public IDictionary<string, string> Tags { get; }
         /// <summary> The storage limit for the database elastic pool in bytes. </summary>
         public long? MaxSizeBytes { get; set; }
+        /// <summary> Minimal capacity that serverless pool will not shrink below, if not paused. </summary>
+        public double? MinCapacity { get; set; }
         /// <summary> The per database settings for the elastic pool. </summary>
         public ElasticPoolPerDatabaseSettings PerDatabaseSettings { get; set; }
         /// <summary> Whether or not this elastic pool is zone redundant, which means the replicas of this elastic pool will be spread across multiple availability zones. </summary>

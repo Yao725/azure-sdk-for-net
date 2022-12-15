@@ -131,43 +131,6 @@ namespace Azure.ResourceManager.Sql
             return GetSqlServerJobCredentials().Get(credentialName, cancellationToken);
         }
 
-        /// <summary> Gets a collection of SqlServerJobResources in the SqlServerJobAgent. </summary>
-        /// <returns> An object representing collection of SqlServerJobResources and their operations over a SqlServerJobResource. </returns>
-        public virtual SqlServerJobCollection GetSqlServerJobs()
-        {
-            return GetCachedClient(Client => new SqlServerJobCollection(Client, Id));
-        }
-
-        /// <summary>
-        /// Gets a job.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAgents/{jobAgentName}/jobs/{jobName}
-        /// Operation Id: Jobs_Get
-        /// </summary>
-        /// <param name="jobName"> The name of the job to get. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentException"> <paramref name="jobName"/> is an empty string, and was expected to be non-empty. </exception>
-        /// <exception cref="ArgumentNullException"> <paramref name="jobName"/> is null. </exception>
-        [ForwardsClientCalls]
-        public virtual async Task<Response<SqlServerJobResource>> GetSqlServerJobAsync(string jobName, CancellationToken cancellationToken = default)
-        {
-            return await GetSqlServerJobs().GetAsync(jobName, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets a job.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAgents/{jobAgentName}/jobs/{jobName}
-        /// Operation Id: Jobs_Get
-        /// </summary>
-        /// <param name="jobName"> The name of the job to get. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <exception cref="ArgumentException"> <paramref name="jobName"/> is an empty string, and was expected to be non-empty. </exception>
-        /// <exception cref="ArgumentNullException"> <paramref name="jobName"/> is null. </exception>
-        [ForwardsClientCalls]
-        public virtual Response<SqlServerJobResource> GetSqlServerJob(string jobName, CancellationToken cancellationToken = default)
-        {
-            return GetSqlServerJobs().Get(jobName, cancellationToken);
-        }
-
         /// <summary> Gets a collection of SqlServerJobTargetGroupResources in the SqlServerJobAgent. </summary>
         /// <returns> An object representing collection of SqlServerJobTargetGroupResources and their operations over a SqlServerJobTargetGroupResource. </returns>
         public virtual SqlServerJobTargetGroupCollection GetSqlServerJobTargetGroups()
@@ -203,6 +166,43 @@ namespace Azure.ResourceManager.Sql
         public virtual Response<SqlServerJobTargetGroupResource> GetSqlServerJobTargetGroup(string targetGroupName, CancellationToken cancellationToken = default)
         {
             return GetSqlServerJobTargetGroups().Get(targetGroupName, cancellationToken);
+        }
+
+        /// <summary> Gets a collection of SqlServerJobResources in the SqlServerJobAgent. </summary>
+        /// <returns> An object representing collection of SqlServerJobResources and their operations over a SqlServerJobResource. </returns>
+        public virtual SqlServerJobCollection GetSqlServerJobs()
+        {
+            return GetCachedClient(Client => new SqlServerJobCollection(Client, Id));
+        }
+
+        /// <summary>
+        /// Gets a job.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAgents/{jobAgentName}/jobs/{jobName}
+        /// Operation Id: Jobs_Get
+        /// </summary>
+        /// <param name="jobName"> The name of the job to get. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentException"> <paramref name="jobName"/> is an empty string, and was expected to be non-empty. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="jobName"/> is null. </exception>
+        [ForwardsClientCalls]
+        public virtual async Task<Response<SqlServerJobResource>> GetSqlServerJobAsync(string jobName, CancellationToken cancellationToken = default)
+        {
+            return await GetSqlServerJobs().GetAsync(jobName, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Gets a job.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/jobAgents/{jobAgentName}/jobs/{jobName}
+        /// Operation Id: Jobs_Get
+        /// </summary>
+        /// <param name="jobName"> The name of the job to get. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <exception cref="ArgumentException"> <paramref name="jobName"/> is an empty string, and was expected to be non-empty. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="jobName"/> is null. </exception>
+        [ForwardsClientCalls]
+        public virtual Response<SqlServerJobResource> GetSqlServerJob(string jobName, CancellationToken cancellationToken = default)
+        {
+            return GetSqlServerJobs().Get(jobName, cancellationToken);
         }
 
         /// <summary>
@@ -379,7 +379,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="top"> The number of elements to return from the collection. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> An async collection of <see cref="SqlServerJobExecutionResource" /> that may take multiple service requests to iterate over. </returns>
-        public virtual AsyncPageable<SqlServerJobExecutionResource> GetJobExecutionsByAgentAsync(DateTimeOffset? createTimeMin = null, DateTimeOffset? createTimeMax = null, DateTimeOffset? endTimeMin = null, DateTimeOffset? endTimeMax = null, bool? isActive = null, int? skip = null, int? top = null, CancellationToken cancellationToken = default)
+        public virtual AsyncPageable<SqlServerJobExecutionResource> GetJobExecutionsByAgentAsync(DateTimeOffset? createTimeMin = null, DateTimeOffset? createTimeMax = null, DateTimeOffset? endTimeMin = null, DateTimeOffset? endTimeMax = null, bool? isActive = null, long? skip = null, long? top = null, CancellationToken cancellationToken = default)
         {
             async Task<Page<SqlServerJobExecutionResource>> FirstPageFunc(int? pageSizeHint)
             {
@@ -428,7 +428,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="top"> The number of elements to return from the collection. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="SqlServerJobExecutionResource" /> that may take multiple service requests to iterate over. </returns>
-        public virtual Pageable<SqlServerJobExecutionResource> GetJobExecutionsByAgent(DateTimeOffset? createTimeMin = null, DateTimeOffset? createTimeMax = null, DateTimeOffset? endTimeMin = null, DateTimeOffset? endTimeMax = null, bool? isActive = null, int? skip = null, int? top = null, CancellationToken cancellationToken = default)
+        public virtual Pageable<SqlServerJobExecutionResource> GetJobExecutionsByAgent(DateTimeOffset? createTimeMin = null, DateTimeOffset? createTimeMax = null, DateTimeOffset? endTimeMin = null, DateTimeOffset? endTimeMax = null, bool? isActive = null, long? skip = null, long? top = null, CancellationToken cancellationToken = default)
         {
             Page<SqlServerJobExecutionResource> FirstPageFunc(int? pageSizeHint)
             {

@@ -64,10 +64,20 @@ namespace Azure.ResourceManager.Sql
                 writer.WritePropertyName("sourceDatabaseId");
                 writer.WriteStringValue(SourceDatabaseId);
             }
+            if (Optional.IsDefined(CrossSubscriptionSourceDatabaseId))
+            {
+                writer.WritePropertyName("crossSubscriptionSourceDatabaseId");
+                writer.WriteStringValue(CrossSubscriptionSourceDatabaseId);
+            }
             if (Optional.IsDefined(RestorableDroppedDatabaseId))
             {
                 writer.WritePropertyName("restorableDroppedDatabaseId");
                 writer.WriteStringValue(RestorableDroppedDatabaseId);
+            }
+            if (Optional.IsDefined(CrossSubscriptionRestorableDroppedDatabaseId))
+            {
+                writer.WritePropertyName("crossSubscriptionRestorableDroppedDatabaseId");
+                writer.WriteStringValue(CrossSubscriptionRestorableDroppedDatabaseId);
             }
             if (Optional.IsDefined(StorageContainerIdentity))
             {
@@ -99,6 +109,11 @@ namespace Azure.ResourceManager.Sql
                 writer.WritePropertyName("lastBackupName");
                 writer.WriteStringValue(LastBackupName);
             }
+            if (Optional.IsDefined(CrossSubscriptionTargetManagedInstanceId))
+            {
+                writer.WritePropertyName("crossSubscriptionTargetManagedInstanceId");
+                writer.WriteStringValue(CrossSubscriptionTargetManagedInstanceId);
+            }
             writer.WriteEndObject();
             writer.WriteEndObject();
         }
@@ -121,7 +136,9 @@ namespace Azure.ResourceManager.Sql
             Optional<ManagedDatabaseCreateMode> createMode = default;
             Optional<Uri> storageContainerUri = default;
             Optional<ResourceIdentifier> sourceDatabaseId = default;
+            Optional<string> crossSubscriptionSourceDatabaseId = default;
             Optional<ResourceIdentifier> restorableDroppedDatabaseId = default;
+            Optional<string> crossSubscriptionRestorableDroppedDatabaseId = default;
             Optional<string> storageContainerIdentity = default;
             Optional<string> storageContainerSasToken = default;
             Optional<ResourceIdentifier> failoverGroupId = default;
@@ -129,6 +146,7 @@ namespace Azure.ResourceManager.Sql
             Optional<ResourceIdentifier> longTermRetentionBackupResourceId = default;
             Optional<bool> autoCompleteRestore = default;
             Optional<string> lastBackupName = default;
+            Optional<ResourceIdentifier> crossSubscriptionTargetManagedInstanceId = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("tags"))
@@ -280,6 +298,11 @@ namespace Azure.ResourceManager.Sql
                             sourceDatabaseId = new ResourceIdentifier(property0.Value.GetString());
                             continue;
                         }
+                        if (property0.NameEquals("crossSubscriptionSourceDatabaseId"))
+                        {
+                            crossSubscriptionSourceDatabaseId = property0.Value.GetString();
+                            continue;
+                        }
                         if (property0.NameEquals("restorableDroppedDatabaseId"))
                         {
                             if (property0.Value.ValueKind == JsonValueKind.Null)
@@ -288,6 +311,11 @@ namespace Azure.ResourceManager.Sql
                                 continue;
                             }
                             restorableDroppedDatabaseId = new ResourceIdentifier(property0.Value.GetString());
+                            continue;
+                        }
+                        if (property0.NameEquals("crossSubscriptionRestorableDroppedDatabaseId"))
+                        {
+                            crossSubscriptionRestorableDroppedDatabaseId = property0.Value.GetString();
                             continue;
                         }
                         if (property0.NameEquals("storageContainerIdentity"))
@@ -345,11 +373,21 @@ namespace Azure.ResourceManager.Sql
                             lastBackupName = property0.Value.GetString();
                             continue;
                         }
+                        if (property0.NameEquals("crossSubscriptionTargetManagedInstanceId"))
+                        {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                property0.ThrowNonNullablePropertyIsNull();
+                                continue;
+                            }
+                            crossSubscriptionTargetManagedInstanceId = new ResourceIdentifier(property0.Value.GetString());
+                            continue;
+                        }
                     }
                     continue;
                 }
             }
-            return new ManagedDatabaseData(id, name, type, systemData.Value, Optional.ToDictionary(tags), location, collation.Value, Optional.ToNullable(status), Optional.ToNullable(creationDate), Optional.ToNullable(earliestRestorePoint), Optional.ToNullable(restorePointInTime), Optional.ToNullable(defaultSecondaryLocation), Optional.ToNullable(catalogCollation), Optional.ToNullable(createMode), storageContainerUri.Value, sourceDatabaseId.Value, restorableDroppedDatabaseId.Value, storageContainerIdentity.Value, storageContainerSasToken.Value, failoverGroupId.Value, recoverableDatabaseId.Value, longTermRetentionBackupResourceId.Value, Optional.ToNullable(autoCompleteRestore), lastBackupName.Value);
+            return new ManagedDatabaseData(id, name, type, systemData.Value, Optional.ToDictionary(tags), location, collation.Value, Optional.ToNullable(status), Optional.ToNullable(creationDate), Optional.ToNullable(earliestRestorePoint), Optional.ToNullable(restorePointInTime), Optional.ToNullable(defaultSecondaryLocation), Optional.ToNullable(catalogCollation), Optional.ToNullable(createMode), storageContainerUri.Value, sourceDatabaseId.Value, crossSubscriptionSourceDatabaseId.Value, restorableDroppedDatabaseId.Value, crossSubscriptionRestorableDroppedDatabaseId.Value, storageContainerIdentity.Value, storageContainerSasToken.Value, failoverGroupId.Value, recoverableDatabaseId.Value, longTermRetentionBackupResourceId.Value, Optional.ToNullable(autoCompleteRestore), lastBackupName.Value, crossSubscriptionTargetManagedInstanceId.Value);
         }
     }
 }

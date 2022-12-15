@@ -210,6 +210,72 @@ namespace Azure.ResourceManager.Sql
             return GetManagedBackupShortTermRetentionPolicies().Get(policyName, cancellationToken);
         }
 
+        /// <summary> Gets a collection of ManagedDatabaseAdvancedThreatProtectionResources in the ManagedDatabase. </summary>
+        /// <returns> An object representing collection of ManagedDatabaseAdvancedThreatProtectionResources and their operations over a ManagedDatabaseAdvancedThreatProtectionResource. </returns>
+        public virtual ManagedDatabaseAdvancedThreatProtectionCollection GetManagedDatabaseAdvancedThreatProtections()
+        {
+            return GetCachedClient(Client => new ManagedDatabaseAdvancedThreatProtectionCollection(Client, Id));
+        }
+
+        /// <summary>
+        /// Gets a managed database&apos;s Advanced Threat Protection state.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/advancedThreatProtectionSettings/{advancedThreatProtectionName}
+        /// Operation Id: ManagedDatabaseAdvancedThreatProtectionSettings_Get
+        /// </summary>
+        /// <param name="advancedThreatProtectionName"> The name of the Advanced Threat Protection state. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        [ForwardsClientCalls]
+        public virtual async Task<Response<ManagedDatabaseAdvancedThreatProtectionResource>> GetManagedDatabaseAdvancedThreatProtectionAsync(AdvancedThreatProtectionName advancedThreatProtectionName, CancellationToken cancellationToken = default)
+        {
+            return await GetManagedDatabaseAdvancedThreatProtections().GetAsync(advancedThreatProtectionName, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Gets a managed database&apos;s Advanced Threat Protection state.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/advancedThreatProtectionSettings/{advancedThreatProtectionName}
+        /// Operation Id: ManagedDatabaseAdvancedThreatProtectionSettings_Get
+        /// </summary>
+        /// <param name="advancedThreatProtectionName"> The name of the Advanced Threat Protection state. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        [ForwardsClientCalls]
+        public virtual Response<ManagedDatabaseAdvancedThreatProtectionResource> GetManagedDatabaseAdvancedThreatProtection(AdvancedThreatProtectionName advancedThreatProtectionName, CancellationToken cancellationToken = default)
+        {
+            return GetManagedDatabaseAdvancedThreatProtections().Get(advancedThreatProtectionName, cancellationToken);
+        }
+
+        /// <summary> Gets a collection of ManagedDatabaseRestoreDetailResources in the ManagedDatabase. </summary>
+        /// <returns> An object representing collection of ManagedDatabaseRestoreDetailResources and their operations over a ManagedDatabaseRestoreDetailResource. </returns>
+        public virtual ManagedDatabaseRestoreDetailCollection GetManagedDatabaseRestoreDetails()
+        {
+            return GetCachedClient(Client => new ManagedDatabaseRestoreDetailCollection(Client, Id));
+        }
+
+        /// <summary>
+        /// Gets managed database restore details.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/restoreDetails/{restoreDetailsName}
+        /// Operation Id: ManagedDatabaseRestoreDetails_Get
+        /// </summary>
+        /// <param name="restoreDetailsName"> The name of the restore details to retrieve. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        [ForwardsClientCalls]
+        public virtual async Task<Response<ManagedDatabaseRestoreDetailResource>> GetManagedDatabaseRestoreDetailAsync(RestoreDetailsName restoreDetailsName, CancellationToken cancellationToken = default)
+        {
+            return await GetManagedDatabaseRestoreDetails().GetAsync(restoreDetailsName, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Gets managed database restore details.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/restoreDetails/{restoreDetailsName}
+        /// Operation Id: ManagedDatabaseRestoreDetails_Get
+        /// </summary>
+        /// <param name="restoreDetailsName"> The name of the restore details to retrieve. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        [ForwardsClientCalls]
+        public virtual Response<ManagedDatabaseRestoreDetailResource> GetManagedDatabaseRestoreDetail(RestoreDetailsName restoreDetailsName, CancellationToken cancellationToken = default)
+        {
+            return GetManagedDatabaseRestoreDetails().Get(restoreDetailsName, cancellationToken);
+        }
+
         /// <summary> Gets a collection of ManagedDatabaseSecurityAlertPolicyResources in the ManagedDatabase. </summary>
         /// <returns> An object representing collection of ManagedDatabaseSecurityAlertPolicyResources and their operations over a ManagedDatabaseSecurityAlertPolicyResource. </returns>
         public virtual ManagedDatabaseSecurityAlertPolicyCollection GetManagedDatabaseSecurityAlertPolicies()
@@ -307,72 +373,6 @@ namespace Azure.ResourceManager.Sql
         public virtual Response<ManagedInstanceLongTermRetentionPolicyResource> GetManagedInstanceLongTermRetentionPolicy(ManagedInstanceLongTermRetentionPolicyName policyName, CancellationToken cancellationToken = default)
         {
             return GetManagedInstanceLongTermRetentionPolicies().Get(policyName, cancellationToken);
-        }
-
-        /// <summary> Gets a collection of ManagedDatabaseAdvancedThreatProtectionResources in the ManagedDatabase. </summary>
-        /// <returns> An object representing collection of ManagedDatabaseAdvancedThreatProtectionResources and their operations over a ManagedDatabaseAdvancedThreatProtectionResource. </returns>
-        public virtual ManagedDatabaseAdvancedThreatProtectionCollection GetManagedDatabaseAdvancedThreatProtections()
-        {
-            return GetCachedClient(Client => new ManagedDatabaseAdvancedThreatProtectionCollection(Client, Id));
-        }
-
-        /// <summary>
-        /// Gets a managed database&apos;s Advanced Threat Protection state.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/advancedThreatProtectionSettings/{advancedThreatProtectionName}
-        /// Operation Id: ManagedDatabaseAdvancedThreatProtectionSettings_Get
-        /// </summary>
-        /// <param name="advancedThreatProtectionName"> The name of the Advanced Threat Protection state. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        [ForwardsClientCalls]
-        public virtual async Task<Response<ManagedDatabaseAdvancedThreatProtectionResource>> GetManagedDatabaseAdvancedThreatProtectionAsync(AdvancedThreatProtectionName advancedThreatProtectionName, CancellationToken cancellationToken = default)
-        {
-            return await GetManagedDatabaseAdvancedThreatProtections().GetAsync(advancedThreatProtectionName, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets a managed database&apos;s Advanced Threat Protection state.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/advancedThreatProtectionSettings/{advancedThreatProtectionName}
-        /// Operation Id: ManagedDatabaseAdvancedThreatProtectionSettings_Get
-        /// </summary>
-        /// <param name="advancedThreatProtectionName"> The name of the Advanced Threat Protection state. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        [ForwardsClientCalls]
-        public virtual Response<ManagedDatabaseAdvancedThreatProtectionResource> GetManagedDatabaseAdvancedThreatProtection(AdvancedThreatProtectionName advancedThreatProtectionName, CancellationToken cancellationToken = default)
-        {
-            return GetManagedDatabaseAdvancedThreatProtections().Get(advancedThreatProtectionName, cancellationToken);
-        }
-
-        /// <summary> Gets a collection of ManagedDatabaseRestoreDetailResources in the ManagedDatabase. </summary>
-        /// <returns> An object representing collection of ManagedDatabaseRestoreDetailResources and their operations over a ManagedDatabaseRestoreDetailResource. </returns>
-        public virtual ManagedDatabaseRestoreDetailCollection GetManagedDatabaseRestoreDetails()
-        {
-            return GetCachedClient(Client => new ManagedDatabaseRestoreDetailCollection(Client, Id));
-        }
-
-        /// <summary>
-        /// Gets managed database restore details.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/restoreDetails/{restoreDetailsName}
-        /// Operation Id: ManagedDatabaseRestoreDetails_Get
-        /// </summary>
-        /// <param name="restoreDetailsName"> The name of the restore details to retrieve. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        [ForwardsClientCalls]
-        public virtual async Task<Response<ManagedDatabaseRestoreDetailResource>> GetManagedDatabaseRestoreDetailAsync(RestoreDetailsName restoreDetailsName, CancellationToken cancellationToken = default)
-        {
-            return await GetManagedDatabaseRestoreDetails().GetAsync(restoreDetailsName, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Gets managed database restore details.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/restoreDetails/{restoreDetailsName}
-        /// Operation Id: ManagedDatabaseRestoreDetails_Get
-        /// </summary>
-        /// <param name="restoreDetailsName"> The name of the restore details to retrieve. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        [ForwardsClientCalls]
-        public virtual Response<ManagedDatabaseRestoreDetailResource> GetManagedDatabaseRestoreDetail(RestoreDetailsName restoreDetailsName, CancellationToken cancellationToken = default)
-        {
-            return GetManagedDatabaseRestoreDetails().Get(restoreDetailsName, cancellationToken);
         }
 
         /// <summary>
@@ -794,7 +794,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="skiptoken"> An opaque token that identifies a starting point in the collection. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> An async collection of <see cref="SecurityEvent" /> that may take multiple service requests to iterate over. </returns>
-        public virtual AsyncPageable<SecurityEvent> GetManagedDatabaseSecurityEventsByDatabaseAsync(string filter = null, int? skip = null, int? top = null, string skiptoken = null, CancellationToken cancellationToken = default)
+        public virtual AsyncPageable<SecurityEvent> GetManagedDatabaseSecurityEventsByDatabaseAsync(string filter = null, long? skip = null, long? top = null, string skiptoken = null, CancellationToken cancellationToken = default)
         {
             async Task<Page<SecurityEvent>> FirstPageFunc(int? pageSizeHint)
             {
@@ -840,7 +840,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="skiptoken"> An opaque token that identifies a starting point in the collection. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="SecurityEvent" /> that may take multiple service requests to iterate over. </returns>
-        public virtual Pageable<SecurityEvent> GetManagedDatabaseSecurityEventsByDatabase(string filter = null, int? skip = null, int? top = null, string skiptoken = null, CancellationToken cancellationToken = default)
+        public virtual Pageable<SecurityEvent> GetManagedDatabaseSecurityEventsByDatabase(string filter = null, long? skip = null, long? top = null, string skiptoken = null, CancellationToken cancellationToken = default)
         {
             Page<SecurityEvent> FirstPageFunc(int? pageSizeHint)
             {
@@ -1157,6 +1157,92 @@ namespace Azure.ResourceManager.Sql
                 scope.Failed(e);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Gets the sensitivity labels of a given database
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/sensitivityLabels
+        /// Operation Id: ManagedDatabaseSensitivityLabels_ListByDatabase
+        /// </summary>
+        /// <param name="filter"> An OData filter expression that filters elements in the collection. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <returns> An async collection of <see cref="ManagedDatabaseSensitivityLabelResource" /> that may take multiple service requests to iterate over. </returns>
+        public virtual AsyncPageable<ManagedDatabaseSensitivityLabelResource> GetManagedDatabaseSensitivityLabelsByDatabaseAsync(string filter = null, CancellationToken cancellationToken = default)
+        {
+            async Task<Page<ManagedDatabaseSensitivityLabelResource>> FirstPageFunc(int? pageSizeHint)
+            {
+                using var scope = _managedDatabaseSensitivityLabelClientDiagnostics.CreateScope("ManagedDatabaseResource.GetManagedDatabaseSensitivityLabelsByDatabase");
+                scope.Start();
+                try
+                {
+                    var response = await _managedDatabaseSensitivityLabelRestClient.ListByDatabaseAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, filter, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value.Select(value => new ManagedDatabaseSensitivityLabelResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            async Task<Page<ManagedDatabaseSensitivityLabelResource>> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _managedDatabaseSensitivityLabelClientDiagnostics.CreateScope("ManagedDatabaseResource.GetManagedDatabaseSensitivityLabelsByDatabase");
+                scope.Start();
+                try
+                {
+                    var response = await _managedDatabaseSensitivityLabelRestClient.ListByDatabaseNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, filter, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value.Select(value => new ManagedDatabaseSensitivityLabelResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
+        }
+
+        /// <summary>
+        /// Gets the sensitivity labels of a given database
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/sensitivityLabels
+        /// Operation Id: ManagedDatabaseSensitivityLabels_ListByDatabase
+        /// </summary>
+        /// <param name="filter"> An OData filter expression that filters elements in the collection. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <returns> A collection of <see cref="ManagedDatabaseSensitivityLabelResource" /> that may take multiple service requests to iterate over. </returns>
+        public virtual Pageable<ManagedDatabaseSensitivityLabelResource> GetManagedDatabaseSensitivityLabelsByDatabase(string filter = null, CancellationToken cancellationToken = default)
+        {
+            Page<ManagedDatabaseSensitivityLabelResource> FirstPageFunc(int? pageSizeHint)
+            {
+                using var scope = _managedDatabaseSensitivityLabelClientDiagnostics.CreateScope("ManagedDatabaseResource.GetManagedDatabaseSensitivityLabelsByDatabase");
+                scope.Start();
+                try
+                {
+                    var response = _managedDatabaseSensitivityLabelRestClient.ListByDatabase(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, filter, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value.Select(value => new ManagedDatabaseSensitivityLabelResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            Page<ManagedDatabaseSensitivityLabelResource> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _managedDatabaseSensitivityLabelClientDiagnostics.CreateScope("ManagedDatabaseResource.GetManagedDatabaseSensitivityLabelsByDatabase");
+                scope.Start();
+                try
+                {
+                    var response = _managedDatabaseSensitivityLabelRestClient.ListByDatabaseNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, filter, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value.Select(value => new ManagedDatabaseSensitivityLabelResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
         }
 
         /// <summary>

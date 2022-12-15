@@ -29,7 +29,7 @@ namespace Azure.ResourceManager.Sql
         /// <param name="location"> Resource location. </param>
         /// <param name="subregion"> Subregion of the server key. </param>
         /// <param name="serverKeyType"> The server key type like &apos;ServiceManaged&apos;, &apos;AzureKeyVault&apos;. </param>
-        /// <param name="uri"> The URI of the server key. If the ServerKeyType is AzureKeyVault, then the URI is required. </param>
+        /// <param name="uri"> The URI of the server key. If the ServerKeyType is AzureKeyVault, then the URI is required. The AKV URI is required to be in this format: &apos;https://YourVaultName.vault.azure.net/keys/YourKeyName/YourKeyVersion&apos;. </param>
         /// <param name="thumbprint"> Thumbprint of the server key. </param>
         /// <param name="createdOn"> The server key creation date. </param>
         /// <param name="isAutoRotationEnabled"> Key auto rotation opt-in flag. Either true or false. </param>
@@ -53,7 +53,7 @@ namespace Azure.ResourceManager.Sql
         public string Subregion { get; }
         /// <summary> The server key type like &apos;ServiceManaged&apos;, &apos;AzureKeyVault&apos;. </summary>
         public SqlServerKeyType? ServerKeyType { get; set; }
-        /// <summary> The URI of the server key. If the ServerKeyType is AzureKeyVault, then the URI is required. </summary>
+        /// <summary> The URI of the server key. If the ServerKeyType is AzureKeyVault, then the URI is required. The AKV URI is required to be in this format: &apos;https://YourVaultName.vault.azure.net/keys/YourKeyName/YourKeyVersion&apos;. </summary>
         public Uri Uri { get; set; }
         /// <summary> Thumbprint of the server key. </summary>
         public string Thumbprint { get; }

@@ -65,6 +65,7 @@ namespace Azure.ResourceManager.Sql
             Optional<Guid> targetReplicaId = default;
             Optional<string> linkState = default;
             Optional<string> lastHardenedLsn = default;
+            Optional<string> instanceRole = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("id"))
@@ -171,11 +172,16 @@ namespace Azure.ResourceManager.Sql
                             lastHardenedLsn = property0.Value.GetString();
                             continue;
                         }
+                        if (property0.NameEquals("instanceRole"))
+                        {
+                            instanceRole = property0.Value.GetString();
+                            continue;
+                        }
                     }
                     continue;
                 }
             }
-            return new DistributedAvailabilityGroupData(id, name, type, systemData.Value, targetDatabase.Value, sourceEndpoint.Value, primaryAvailabilityGroupName.Value, secondaryAvailabilityGroupName.Value, Optional.ToNullable(replicationMode), Optional.ToNullable(distributedAvailabilityGroupId), Optional.ToNullable(sourceReplicaId), Optional.ToNullable(targetReplicaId), linkState.Value, lastHardenedLsn.Value);
+            return new DistributedAvailabilityGroupData(id, name, type, systemData.Value, targetDatabase.Value, sourceEndpoint.Value, primaryAvailabilityGroupName.Value, secondaryAvailabilityGroupName.Value, Optional.ToNullable(replicationMode), Optional.ToNullable(distributedAvailabilityGroupId), Optional.ToNullable(sourceReplicaId), Optional.ToNullable(targetReplicaId), linkState.Value, lastHardenedLsn.Value, instanceRole.Value);
         }
     }
 }

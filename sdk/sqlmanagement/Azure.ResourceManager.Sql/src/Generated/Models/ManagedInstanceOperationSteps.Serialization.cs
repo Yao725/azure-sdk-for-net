@@ -17,7 +17,7 @@ namespace Azure.ResourceManager.Sql.Models
         {
             Optional<string> totalSteps = default;
             Optional<int> currentStep = default;
-            Optional<IReadOnlyList<UpsertManagedServerOperationStep>> stepsList = default;
+            Optional<IReadOnlyList<UpsertManagedServerOperationStepWithEstimatesAndDuration>> stepsList = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("totalSteps"))
@@ -42,10 +42,10 @@ namespace Azure.ResourceManager.Sql.Models
                         property.ThrowNonNullablePropertyIsNull();
                         continue;
                     }
-                    List<UpsertManagedServerOperationStep> array = new List<UpsertManagedServerOperationStep>();
+                    List<UpsertManagedServerOperationStepWithEstimatesAndDuration> array = new List<UpsertManagedServerOperationStepWithEstimatesAndDuration>();
                     foreach (var item in property.Value.EnumerateArray())
                     {
-                        array.Add(UpsertManagedServerOperationStep.DeserializeUpsertManagedServerOperationStep(item));
+                        array.Add(UpsertManagedServerOperationStepWithEstimatesAndDuration.DeserializeUpsertManagedServerOperationStepWithEstimatesAndDuration(item));
                     }
                     stepsList = array;
                     continue;

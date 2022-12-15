@@ -285,23 +285,19 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Refreshes a hub database schema.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/refreshHubSchema
-        /// Operation Id: SyncGroups_RefreshHubSchema
+        /// Cancels a sync group synchronization.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/cancelSync
+        /// Operation Id: SyncGroups_CancelSync
         /// </summary>
-        /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        public virtual async Task<ArmOperation> RefreshHubSchemaAsync(WaitUntil waitUntil, CancellationToken cancellationToken = default)
+        public virtual async Task<Response> CancelSyncAsync(CancellationToken cancellationToken = default)
         {
-            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.RefreshHubSchema");
+            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.CancelSync");
             scope.Start();
             try
             {
-                var response = await _syncGroupRestClient.RefreshHubSchemaAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken).ConfigureAwait(false);
-                var operation = new SqlArmOperation(_syncGroupClientDiagnostics, Pipeline, _syncGroupRestClient.CreateRefreshHubSchemaRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name).Request, response, OperationFinalStateVia.Location);
-                if (waitUntil == WaitUntil.Completed)
-                    await operation.WaitForCompletionResponseAsync(cancellationToken).ConfigureAwait(false);
-                return operation;
+                var response = await _syncGroupRestClient.CancelSyncAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken).ConfigureAwait(false);
+                return response;
             }
             catch (Exception e)
             {
@@ -311,23 +307,19 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Refreshes a hub database schema.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/refreshHubSchema
-        /// Operation Id: SyncGroups_RefreshHubSchema
+        /// Cancels a sync group synchronization.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/cancelSync
+        /// Operation Id: SyncGroups_CancelSync
         /// </summary>
-        /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        public virtual ArmOperation RefreshHubSchema(WaitUntil waitUntil, CancellationToken cancellationToken = default)
+        public virtual Response CancelSync(CancellationToken cancellationToken = default)
         {
-            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.RefreshHubSchema");
+            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.CancelSync");
             scope.Start();
             try
             {
-                var response = _syncGroupRestClient.RefreshHubSchema(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken);
-                var operation = new SqlArmOperation(_syncGroupClientDiagnostics, Pipeline, _syncGroupRestClient.CreateRefreshHubSchemaRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name).Request, response, OperationFinalStateVia.Location);
-                if (waitUntil == WaitUntil.Completed)
-                    operation.WaitForCompletionResponse(cancellationToken);
-                return operation;
+                var response = _syncGroupRestClient.CancelSync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken);
+                return response;
             }
             catch (Exception e)
             {
@@ -521,19 +513,23 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Cancels a sync group synchronization.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/cancelSync
-        /// Operation Id: SyncGroups_CancelSync
+        /// Refreshes a hub database schema.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/refreshHubSchema
+        /// Operation Id: SyncGroups_RefreshHubSchema
         /// </summary>
+        /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        public virtual async Task<Response> CancelSyncAsync(CancellationToken cancellationToken = default)
+        public virtual async Task<ArmOperation> RefreshHubSchemaAsync(WaitUntil waitUntil, CancellationToken cancellationToken = default)
         {
-            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.CancelSync");
+            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.RefreshHubSchema");
             scope.Start();
             try
             {
-                var response = await _syncGroupRestClient.CancelSyncAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken).ConfigureAwait(false);
-                return response;
+                var response = await _syncGroupRestClient.RefreshHubSchemaAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken).ConfigureAwait(false);
+                var operation = new SqlArmOperation(_syncGroupClientDiagnostics, Pipeline, _syncGroupRestClient.CreateRefreshHubSchemaRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name).Request, response, OperationFinalStateVia.Location);
+                if (waitUntil == WaitUntil.Completed)
+                    await operation.WaitForCompletionResponseAsync(cancellationToken).ConfigureAwait(false);
+                return operation;
             }
             catch (Exception e)
             {
@@ -543,19 +539,23 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Cancels a sync group synchronization.
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/cancelSync
-        /// Operation Id: SyncGroups_CancelSync
+        /// Refreshes a hub database schema.
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/syncGroups/{syncGroupName}/refreshHubSchema
+        /// Operation Id: SyncGroups_RefreshHubSchema
         /// </summary>
+        /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
-        public virtual Response CancelSync(CancellationToken cancellationToken = default)
+        public virtual ArmOperation RefreshHubSchema(WaitUntil waitUntil, CancellationToken cancellationToken = default)
         {
-            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.CancelSync");
+            using var scope = _syncGroupClientDiagnostics.CreateScope("SyncGroupResource.RefreshHubSchema");
             scope.Start();
             try
             {
-                var response = _syncGroupRestClient.CancelSync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken);
-                return response;
+                var response = _syncGroupRestClient.RefreshHubSchema(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name, cancellationToken);
+                var operation = new SqlArmOperation(_syncGroupClientDiagnostics, Pipeline, _syncGroupRestClient.CreateRefreshHubSchemaRequest(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Parent.Name, Id.Parent.Name, Id.Name).Request, response, OperationFinalStateVia.Location);
+                if (waitUntil == WaitUntil.Completed)
+                    operation.WaitForCompletionResponse(cancellationToken);
+                return operation;
             }
             catch (Exception e)
             {

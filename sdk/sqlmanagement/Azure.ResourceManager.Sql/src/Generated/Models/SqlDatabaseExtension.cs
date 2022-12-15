@@ -11,7 +11,7 @@ using Azure.ResourceManager.Models;
 
 namespace Azure.ResourceManager.Sql.Models
 {
-    /// <summary> An export managed database operation result resource. </summary>
+    /// <summary> An Import, Export, or PolybaseImport resource. </summary>
     public partial class SqlDatabaseExtension : ResourceData
     {
         /// <summary> Initializes a new instance of SqlDatabaseExtension. </summary>
@@ -24,25 +24,53 @@ namespace Azure.ResourceManager.Sql.Models
         /// <param name="name"> The name. </param>
         /// <param name="resourceType"> The resourceType. </param>
         /// <param name="systemData"> The systemData. </param>
-        /// <param name="operationMode"> Operation Mode. </param>
-        /// <param name="storageKeyType"> Storage key type. </param>
-        /// <param name="storageKey"> Storage key. </param>
-        /// <param name="storageUri"> Storage Uri. </param>
-        internal SqlDatabaseExtension(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, DatabaseExtensionOperationMode? operationMode, StorageKeyType? storageKeyType, string storageKey, Uri storageUri) : base(id, name, resourceType, systemData)
+        /// <param name="operationMode"> Operation mode of the operation: Import, Export, or PolybaseImport. </param>
+        /// <param name="storageKeyType"> Storage key type: StorageAccessKey or SharedAccessKey. </param>
+        /// <param name="storageKey"> Storage key for the storage account. </param>
+        /// <param name="storageUri"> Storage Uri for the storage account. </param>
+        /// <param name="administratorLogin"> Administrator login name. </param>
+        /// <param name="administratorLoginPassword"> Administrator login password. </param>
+        /// <param name="authenticationType"> Authentication type: SQL authentication or AD password. </param>
+        /// <param name="databaseEdition"> Database edition for the newly created database in the case of an import operation. </param>
+        /// <param name="serviceObjectiveName"> Database service level objective for the newly created database in the case of an import operation. </param>
+        /// <param name="maxSizeBytes"> Database max size in bytes for the newly created database in the case of an import operation. </param>
+        /// <param name="networkIsolation"> Optional resource information to enable network isolation for request. </param>
+        internal SqlDatabaseExtension(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, DatabaseExtensionOperationMode? operationMode, StorageKeyType? storageKeyType, string storageKey, Uri storageUri, string administratorLogin, string administratorLoginPassword, string authenticationType, string databaseEdition, string serviceObjectiveName, string maxSizeBytes, NetworkIsolationSettings networkIsolation) : base(id, name, resourceType, systemData)
         {
             OperationMode = operationMode;
             StorageKeyType = storageKeyType;
             StorageKey = storageKey;
             StorageUri = storageUri;
+            AdministratorLogin = administratorLogin;
+            AdministratorLoginPassword = administratorLoginPassword;
+            AuthenticationType = authenticationType;
+            DatabaseEdition = databaseEdition;
+            ServiceObjectiveName = serviceObjectiveName;
+            MaxSizeBytes = maxSizeBytes;
+            NetworkIsolation = networkIsolation;
         }
 
-        /// <summary> Operation Mode. </summary>
+        /// <summary> Operation mode of the operation: Import, Export, or PolybaseImport. </summary>
         public DatabaseExtensionOperationMode? OperationMode { get; set; }
-        /// <summary> Storage key type. </summary>
+        /// <summary> Storage key type: StorageAccessKey or SharedAccessKey. </summary>
         public StorageKeyType? StorageKeyType { get; set; }
-        /// <summary> Storage key. </summary>
+        /// <summary> Storage key for the storage account. </summary>
         public string StorageKey { get; set; }
-        /// <summary> Storage Uri. </summary>
+        /// <summary> Storage Uri for the storage account. </summary>
         public Uri StorageUri { get; set; }
+        /// <summary> Administrator login name. </summary>
+        public string AdministratorLogin { get; set; }
+        /// <summary> Administrator login password. </summary>
+        public string AdministratorLoginPassword { get; set; }
+        /// <summary> Authentication type: SQL authentication or AD password. </summary>
+        public string AuthenticationType { get; set; }
+        /// <summary> Database edition for the newly created database in the case of an import operation. </summary>
+        public string DatabaseEdition { get; set; }
+        /// <summary> Database service level objective for the newly created database in the case of an import operation. </summary>
+        public string ServiceObjectiveName { get; set; }
+        /// <summary> Database max size in bytes for the newly created database in the case of an import operation. </summary>
+        public string MaxSizeBytes { get; set; }
+        /// <summary> Optional resource information to enable network isolation for request. </summary>
+        public NetworkIsolationSettings NetworkIsolation { get; set; }
     }
 }

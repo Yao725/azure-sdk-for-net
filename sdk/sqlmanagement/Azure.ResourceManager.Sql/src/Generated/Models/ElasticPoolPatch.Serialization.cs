@@ -38,6 +38,11 @@ namespace Azure.ResourceManager.Sql.Models
                 writer.WritePropertyName("maxSizeBytes");
                 writer.WriteNumberValue(MaxSizeBytes.Value);
             }
+            if (Optional.IsDefined(MinCapacity))
+            {
+                writer.WritePropertyName("minCapacity");
+                writer.WriteNumberValue(MinCapacity.Value);
+            }
             if (Optional.IsDefined(PerDatabaseSettings))
             {
                 writer.WritePropertyName("perDatabaseSettings");

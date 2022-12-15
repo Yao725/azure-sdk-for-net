@@ -55,12 +55,12 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Updates a database geo backup policy.
+        /// Create or update a database default Geo backup policy.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_CreateOrUpdate
         /// </summary>
         /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        /// <param name="geoBackupPolicyName"> The name of the geo backup policy. </param>
+        /// <param name="geoBackupPolicyName"> The name of the Geo backup policy. This should always be &apos;Default&apos;. </param>
         /// <param name="data"> The required parameters for creating or updating the geo backup policy. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="data"/> is null. </exception>
@@ -86,12 +86,12 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Updates a database geo backup policy.
+        /// Create or update a database default Geo backup policy.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_CreateOrUpdate
         /// </summary>
         /// <param name="waitUntil"> <see cref="WaitUntil.Completed"/> if the method should wait to return until the long-running operation has completed on the service; <see cref="WaitUntil.Started"/> if it should return after starting the operation. For more information on long-running operations, please see <see href="https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/core/Azure.Core/samples/LongRunningOperations.md"> Azure.Core Long-Running Operation samples</see>. </param>
-        /// <param name="geoBackupPolicyName"> The name of the geo backup policy. </param>
+        /// <param name="geoBackupPolicyName"> The name of the Geo backup policy. This should always be &apos;Default&apos;. </param>
         /// <param name="data"> The required parameters for creating or updating the geo backup policy. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="data"/> is null. </exception>
@@ -117,11 +117,11 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a geo backup policy.
+        /// Gets a Geo backup policy for the given database resource.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_Get
         /// </summary>
-        /// <param name="geoBackupPolicyName"> The name of the geo backup policy. </param>
+        /// <param name="geoBackupPolicyName"> The name of the Geo backup policy. This should always be &apos;Default&apos;. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         public virtual async Task<Response<GeoBackupPolicyResource>> GetAsync(GeoBackupPolicyName geoBackupPolicyName, CancellationToken cancellationToken = default)
         {
@@ -142,11 +142,11 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a geo backup policy.
+        /// Gets a Geo backup policy for the given database resource.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_Get
         /// </summary>
-        /// <param name="geoBackupPolicyName"> The name of the geo backup policy. </param>
+        /// <param name="geoBackupPolicyName"> The name of the Geo backup policy. This should always be &apos;Default&apos;. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         public virtual Response<GeoBackupPolicyResource> Get(GeoBackupPolicyName geoBackupPolicyName, CancellationToken cancellationToken = default)
         {
@@ -167,9 +167,9 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Returns a list of geo backup policies.
+        /// Gets a list of Geo backup policies for the given database resource.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies
-        /// Operation Id: GeoBackupPolicies_ListByDatabase
+        /// Operation Id: GeoBackupPolicies_List
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> An async collection of <see cref="GeoBackupPolicyResource" /> that may take multiple service requests to iterate over. </returns>
@@ -181,8 +181,8 @@ namespace Azure.ResourceManager.Sql
                 scope.Start();
                 try
                 {
-                    var response = await _geoBackupPolicyRestClient.ListByDatabaseAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, cancellationToken: cancellationToken).ConfigureAwait(false);
-                    return Page.FromValues(response.Value.Value.Select(value => new GeoBackupPolicyResource(Client, value)), null, response.GetRawResponse());
+                    var response = await _geoBackupPolicyRestClient.ListAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value.Select(value => new GeoBackupPolicyResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
                 }
                 catch (Exception e)
                 {
@@ -190,13 +190,28 @@ namespace Azure.ResourceManager.Sql
                     throw;
                 }
             }
-            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, null);
+            async Task<Page<GeoBackupPolicyResource>> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _geoBackupPolicyClientDiagnostics.CreateScope("GeoBackupPolicyCollection.GetAll");
+                scope.Start();
+                try
+                {
+                    var response = await _geoBackupPolicyRestClient.ListNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value.Select(value => new GeoBackupPolicyResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
         }
 
         /// <summary>
-        /// Returns a list of geo backup policies.
+        /// Gets a list of Geo backup policies for the given database resource.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies
-        /// Operation Id: GeoBackupPolicies_ListByDatabase
+        /// Operation Id: GeoBackupPolicies_List
         /// </summary>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         /// <returns> A collection of <see cref="GeoBackupPolicyResource" /> that may take multiple service requests to iterate over. </returns>
@@ -208,8 +223,8 @@ namespace Azure.ResourceManager.Sql
                 scope.Start();
                 try
                 {
-                    var response = _geoBackupPolicyRestClient.ListByDatabase(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, cancellationToken: cancellationToken);
-                    return Page.FromValues(response.Value.Value.Select(value => new GeoBackupPolicyResource(Client, value)), null, response.GetRawResponse());
+                    var response = _geoBackupPolicyRestClient.List(Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value.Select(value => new GeoBackupPolicyResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
                 }
                 catch (Exception e)
                 {
@@ -217,7 +232,22 @@ namespace Azure.ResourceManager.Sql
                     throw;
                 }
             }
-            return PageableHelpers.CreateEnumerable(FirstPageFunc, null);
+            Page<GeoBackupPolicyResource> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _geoBackupPolicyClientDiagnostics.CreateScope("GeoBackupPolicyCollection.GetAll");
+                scope.Start();
+                try
+                {
+                    var response = _geoBackupPolicyRestClient.ListNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Parent.Name, Id.Name, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value.Select(value => new GeoBackupPolicyResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
         }
 
         /// <summary>
@@ -225,7 +255,7 @@ namespace Azure.ResourceManager.Sql
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_Get
         /// </summary>
-        /// <param name="geoBackupPolicyName"> The name of the geo backup policy. </param>
+        /// <param name="geoBackupPolicyName"> The name of the Geo backup policy. This should always be &apos;Default&apos;. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         public virtual async Task<Response<bool>> ExistsAsync(GeoBackupPolicyName geoBackupPolicyName, CancellationToken cancellationToken = default)
         {
@@ -248,7 +278,7 @@ namespace Azure.ResourceManager.Sql
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_Get
         /// </summary>
-        /// <param name="geoBackupPolicyName"> The name of the geo backup policy. </param>
+        /// <param name="geoBackupPolicyName"> The name of the Geo backup policy. This should always be &apos;Default&apos;. </param>
         /// <param name="cancellationToken"> The cancellation token to use. </param>
         public virtual Response<bool> Exists(GeoBackupPolicyName geoBackupPolicyName, CancellationToken cancellationToken = default)
         {

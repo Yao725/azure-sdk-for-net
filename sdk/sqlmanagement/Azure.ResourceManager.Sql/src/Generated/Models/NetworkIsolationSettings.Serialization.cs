@@ -27,5 +27,35 @@ namespace Azure.ResourceManager.Sql.Models
             }
             writer.WriteEndObject();
         }
+
+        internal static NetworkIsolationSettings DeserializeNetworkIsolationSettings(JsonElement element)
+        {
+            Optional<ResourceIdentifier> storageAccountResourceId = default;
+            Optional<ResourceIdentifier> sqlServerResourceId = default;
+            foreach (var property in element.EnumerateObject())
+            {
+                if (property.NameEquals("storageAccountResourceId"))
+                {
+                    if (property.Value.ValueKind == JsonValueKind.Null)
+                    {
+                        property.ThrowNonNullablePropertyIsNull();
+                        continue;
+                    }
+                    storageAccountResourceId = new ResourceIdentifier(property.Value.GetString());
+                    continue;
+                }
+                if (property.NameEquals("sqlServerResourceId"))
+                {
+                    if (property.Value.ValueKind == JsonValueKind.Null)
+                    {
+                        property.ThrowNonNullablePropertyIsNull();
+                        continue;
+                    }
+                    sqlServerResourceId = new ResourceIdentifier(property.Value.GetString());
+                    continue;
+                }
+            }
+            return new NetworkIsolationSettings(storageAccountResourceId.Value, sqlServerResourceId.Value);
+        }
     }
 }

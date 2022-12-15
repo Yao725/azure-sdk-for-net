@@ -6,6 +6,7 @@
 #nullable disable
 
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 using Azure.Core;
 using Azure.ResourceManager.Models;
@@ -36,6 +37,9 @@ namespace Azure.ResourceManager.Sql.Models
             Optional<string> databaseName = default;
             Optional<string> status = default;
             Optional<string> errorMessage = default;
+            Optional<string> queuedTime = default;
+            Optional<Uri> blobUri = default;
+            Optional<IReadOnlyList<PrivateEndpointConnectionRequestStatus>> privateEndpointConnections = default;
             foreach (var property in element.EnumerateObject())
             {
                 if (property.NameEquals("id"))
@@ -112,11 +116,41 @@ namespace Azure.ResourceManager.Sql.Models
                             errorMessage = property0.Value.GetString();
                             continue;
                         }
+                        if (property0.NameEquals("queuedTime"))
+                        {
+                            queuedTime = property0.Value.GetString();
+                            continue;
+                        }
+                        if (property0.NameEquals("blobUri"))
+                        {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                blobUri = null;
+                                continue;
+                            }
+                            blobUri = new Uri(property0.Value.GetString());
+                            continue;
+                        }
+                        if (property0.NameEquals("privateEndpointConnections"))
+                        {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                property0.ThrowNonNullablePropertyIsNull();
+                                continue;
+                            }
+                            List<PrivateEndpointConnectionRequestStatus> array = new List<PrivateEndpointConnectionRequestStatus>();
+                            foreach (var item in property0.Value.EnumerateArray())
+                            {
+                                array.Add(PrivateEndpointConnectionRequestStatus.DeserializePrivateEndpointConnectionRequestStatus(item));
+                            }
+                            privateEndpointConnections = array;
+                            continue;
+                        }
                     }
                     continue;
                 }
             }
-            return new ImportExportExtensionsOperationResult(id, name, type, systemData.Value, Optional.ToNullable(requestId), requestType.Value, lastModifiedTime.Value, serverName.Value, databaseName.Value, status.Value, errorMessage.Value);
+            return new ImportExportExtensionsOperationResult(id, name, type, systemData.Value, Optional.ToNullable(requestId), requestType.Value, lastModifiedTime.Value, serverName.Value, databaseName.Value, status.Value, errorMessage.Value, queuedTime.Value, blobUri.Value, Optional.ToList(privateEndpointConnections));
         }
     }
 }

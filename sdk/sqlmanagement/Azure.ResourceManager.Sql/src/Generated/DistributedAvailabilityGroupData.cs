@@ -35,7 +35,8 @@ namespace Azure.ResourceManager.Sql
         /// <param name="targetReplicaId"> The target replica id. </param>
         /// <param name="linkState"> The link state. </param>
         /// <param name="lastHardenedLsn"> The last hardened lsn. </param>
-        internal DistributedAvailabilityGroupData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, string targetDatabase, string sourceEndpoint, string primaryAvailabilityGroupName, string secondaryAvailabilityGroupName, DistributedAvailabilityGroupReplicationMode? replicationMode, Guid? distributedAvailabilityGroupId, Guid? sourceReplicaId, Guid? targetReplicaId, string linkState, string lastHardenedLsn) : base(id, name, resourceType, systemData)
+        /// <param name="instanceRole"> Role of managed instance. </param>
+        internal DistributedAvailabilityGroupData(ResourceIdentifier id, string name, ResourceType resourceType, SystemData systemData, string targetDatabase, string sourceEndpoint, string primaryAvailabilityGroupName, string secondaryAvailabilityGroupName, DistributedAvailabilityGroupReplicationMode? replicationMode, Guid? distributedAvailabilityGroupId, Guid? sourceReplicaId, Guid? targetReplicaId, string linkState, string lastHardenedLsn, string instanceRole) : base(id, name, resourceType, systemData)
         {
             TargetDatabase = targetDatabase;
             SourceEndpoint = sourceEndpoint;
@@ -47,6 +48,7 @@ namespace Azure.ResourceManager.Sql
             TargetReplicaId = targetReplicaId;
             LinkState = linkState;
             LastHardenedLsn = lastHardenedLsn;
+            InstanceRole = instanceRole;
         }
 
         /// <summary> The name of the target database. </summary>
@@ -69,5 +71,7 @@ namespace Azure.ResourceManager.Sql
         public string LinkState { get; }
         /// <summary> The last hardened lsn. </summary>
         public string LastHardenedLsn { get; }
+        /// <summary> Role of managed instance. </summary>
+        public string InstanceRole { get; }
     }
 }

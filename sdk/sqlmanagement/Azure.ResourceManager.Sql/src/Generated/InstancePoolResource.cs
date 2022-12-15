@@ -37,10 +37,10 @@ namespace Azure.ResourceManager.Sql
 
         private readonly ClientDiagnostics _instancePoolClientDiagnostics;
         private readonly InstancePoolsRestOperations _instancePoolRestClient;
-        private readonly ClientDiagnostics _usagesClientDiagnostics;
-        private readonly UsagesRestOperations _usagesRestClient;
         private readonly ClientDiagnostics _managedInstanceClientDiagnostics;
         private readonly ManagedInstancesRestOperations _managedInstanceRestClient;
+        private readonly ClientDiagnostics _usagesClientDiagnostics;
+        private readonly UsagesRestOperations _usagesRestClient;
         private readonly InstancePoolData _data;
 
         /// <summary> Initializes a new instance of the <see cref="InstancePoolResource"/> class for mocking. </summary>
@@ -65,11 +65,11 @@ namespace Azure.ResourceManager.Sql
             _instancePoolClientDiagnostics = new ClientDiagnostics("Azure.ResourceManager.Sql", ResourceType.Namespace, Diagnostics);
             TryGetApiVersion(ResourceType, out string instancePoolApiVersion);
             _instancePoolRestClient = new InstancePoolsRestOperations(Pipeline, Diagnostics.ApplicationId, Endpoint, instancePoolApiVersion);
-            _usagesClientDiagnostics = new ClientDiagnostics("Azure.ResourceManager.Sql", ProviderConstants.DefaultProviderNamespace, Diagnostics);
-            _usagesRestClient = new UsagesRestOperations(Pipeline, Diagnostics.ApplicationId, Endpoint);
             _managedInstanceClientDiagnostics = new ClientDiagnostics("Azure.ResourceManager.Sql", ManagedInstanceResource.ResourceType.Namespace, Diagnostics);
             TryGetApiVersion(ManagedInstanceResource.ResourceType, out string managedInstanceApiVersion);
             _managedInstanceRestClient = new ManagedInstancesRestOperations(Pipeline, Diagnostics.ApplicationId, Endpoint, managedInstanceApiVersion);
+            _usagesClientDiagnostics = new ClientDiagnostics("Azure.ResourceManager.Sql", ProviderConstants.DefaultProviderNamespace, Diagnostics);
+            _usagesRestClient = new UsagesRestOperations(Pipeline, Diagnostics.ApplicationId, Endpoint);
 #if DEBUG
 			ValidateResourceId(Id);
 #endif
@@ -260,92 +260,6 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets all instance pool usage metrics
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/instancePools/{instancePoolName}/usages
-        /// Operation Id: Usages_ListByInstancePool
-        /// </summary>
-        /// <param name="expandChildren"> Optional request parameter to include managed instance usages within the instance pool. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <returns> An async collection of <see cref="InstancePoolUsage" /> that may take multiple service requests to iterate over. </returns>
-        public virtual AsyncPageable<InstancePoolUsage> GetUsagesAsync(bool? expandChildren = null, CancellationToken cancellationToken = default)
-        {
-            async Task<Page<InstancePoolUsage>> FirstPageFunc(int? pageSizeHint)
-            {
-                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
-                scope.Start();
-                try
-                {
-                    var response = await _usagesRestClient.ListByInstancePoolAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken).ConfigureAwait(false);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            async Task<Page<InstancePoolUsage>> NextPageFunc(string nextLink, int? pageSizeHint)
-            {
-                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
-                scope.Start();
-                try
-                {
-                    var response = await _usagesRestClient.ListByInstancePoolNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken).ConfigureAwait(false);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
-        }
-
-        /// <summary>
-        /// Gets all instance pool usage metrics
-        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/instancePools/{instancePoolName}/usages
-        /// Operation Id: Usages_ListByInstancePool
-        /// </summary>
-        /// <param name="expandChildren"> Optional request parameter to include managed instance usages within the instance pool. </param>
-        /// <param name="cancellationToken"> The cancellation token to use. </param>
-        /// <returns> A collection of <see cref="InstancePoolUsage" /> that may take multiple service requests to iterate over. </returns>
-        public virtual Pageable<InstancePoolUsage> GetUsages(bool? expandChildren = null, CancellationToken cancellationToken = default)
-        {
-            Page<InstancePoolUsage> FirstPageFunc(int? pageSizeHint)
-            {
-                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
-                scope.Start();
-                try
-                {
-                    var response = _usagesRestClient.ListByInstancePool(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            Page<InstancePoolUsage> NextPageFunc(string nextLink, int? pageSizeHint)
-            {
-                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
-                scope.Start();
-                try
-                {
-                    var response = _usagesRestClient.ListByInstancePoolNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken);
-                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
-                }
-                catch (Exception e)
-                {
-                    scope.Failed(e);
-                    throw;
-                }
-            }
-            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
-        }
-
-        /// <summary>
         /// Gets a list of all managed instances in an instance pool.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/instancePools/{instancePoolName}/managedInstances
         /// Operation Id: ManagedInstances_ListByInstancePool
@@ -421,6 +335,92 @@ namespace Azure.ResourceManager.Sql
                 {
                     var response = _managedInstanceRestClient.ListByInstancePoolNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expand, cancellationToken: cancellationToken);
                     return Page.FromValues(response.Value.Value.Select(value => new ManagedInstanceResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
+        }
+
+        /// <summary>
+        /// Gets all instance pool usage metrics
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/instancePools/{instancePoolName}/usages
+        /// Operation Id: Usages_ListByInstancePool
+        /// </summary>
+        /// <param name="expandChildren"> Optional request parameter to include managed instance usages within the instance pool. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <returns> An async collection of <see cref="InstancePoolUsage" /> that may take multiple service requests to iterate over. </returns>
+        public virtual AsyncPageable<InstancePoolUsage> GetUsagesAsync(bool? expandChildren = null, CancellationToken cancellationToken = default)
+        {
+            async Task<Page<InstancePoolUsage>> FirstPageFunc(int? pageSizeHint)
+            {
+                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
+                scope.Start();
+                try
+                {
+                    var response = await _usagesRestClient.ListByInstancePoolAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            async Task<Page<InstancePoolUsage>> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
+                scope.Start();
+                try
+                {
+                    var response = await _usagesRestClient.ListByInstancePoolNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
+        }
+
+        /// <summary>
+        /// Gets all instance pool usage metrics
+        /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/instancePools/{instancePoolName}/usages
+        /// Operation Id: Usages_ListByInstancePool
+        /// </summary>
+        /// <param name="expandChildren"> Optional request parameter to include managed instance usages within the instance pool. </param>
+        /// <param name="cancellationToken"> The cancellation token to use. </param>
+        /// <returns> A collection of <see cref="InstancePoolUsage" /> that may take multiple service requests to iterate over. </returns>
+        public virtual Pageable<InstancePoolUsage> GetUsages(bool? expandChildren = null, CancellationToken cancellationToken = default)
+        {
+            Page<InstancePoolUsage> FirstPageFunc(int? pageSizeHint)
+            {
+                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
+                scope.Start();
+                try
+                {
+                    var response = _usagesRestClient.ListByInstancePool(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            Page<InstancePoolUsage> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _usagesClientDiagnostics.CreateScope("InstancePoolResource.GetUsages");
+                scope.Start();
+                try
+                {
+                    var response = _usagesRestClient.ListByInstancePoolNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, expandChildren, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value, response.Value.NextLink, response.GetRawResponse());
                 }
                 catch (Exception e)
                 {

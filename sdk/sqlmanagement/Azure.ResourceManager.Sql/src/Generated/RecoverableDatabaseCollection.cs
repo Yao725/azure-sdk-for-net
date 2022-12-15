@@ -54,7 +54,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a recoverable database, which is a resource representing a database&apos;s geo backup
+        /// Gets a recoverable database.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases/{databaseName}
         /// Operation Id: RecoverableDatabases_Get
         /// </summary>
@@ -83,7 +83,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a recoverable database, which is a resource representing a database&apos;s geo backup
+        /// Gets a recoverable database.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases/{databaseName}
         /// Operation Id: RecoverableDatabases_Get
         /// </summary>
@@ -112,7 +112,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a list of recoverable databases
+        /// Gets a list of recoverable databases.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases
         /// Operation Id: RecoverableDatabases_ListByServer
         /// </summary>
@@ -127,7 +127,7 @@ namespace Azure.ResourceManager.Sql
                 try
                 {
                     var response = await _recoverableDatabaseRestClient.ListByServerAsync(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, cancellationToken: cancellationToken).ConfigureAwait(false);
-                    return Page.FromValues(response.Value.Value.Select(value => new RecoverableDatabaseResource(Client, value)), null, response.GetRawResponse());
+                    return Page.FromValues(response.Value.Value.Select(value => new RecoverableDatabaseResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
                 }
                 catch (Exception e)
                 {
@@ -135,11 +135,26 @@ namespace Azure.ResourceManager.Sql
                     throw;
                 }
             }
-            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, null);
+            async Task<Page<RecoverableDatabaseResource>> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _recoverableDatabaseClientDiagnostics.CreateScope("RecoverableDatabaseCollection.GetAll");
+                scope.Start();
+                try
+                {
+                    var response = await _recoverableDatabaseRestClient.ListByServerNextPageAsync(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, cancellationToken: cancellationToken).ConfigureAwait(false);
+                    return Page.FromValues(response.Value.Value.Select(value => new RecoverableDatabaseResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateAsyncEnumerable(FirstPageFunc, NextPageFunc);
         }
 
         /// <summary>
-        /// Gets a list of recoverable databases
+        /// Gets a list of recoverable databases.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases
         /// Operation Id: RecoverableDatabases_ListByServer
         /// </summary>
@@ -154,7 +169,7 @@ namespace Azure.ResourceManager.Sql
                 try
                 {
                     var response = _recoverableDatabaseRestClient.ListByServer(Id.SubscriptionId, Id.ResourceGroupName, Id.Name, cancellationToken: cancellationToken);
-                    return Page.FromValues(response.Value.Value.Select(value => new RecoverableDatabaseResource(Client, value)), null, response.GetRawResponse());
+                    return Page.FromValues(response.Value.Value.Select(value => new RecoverableDatabaseResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
                 }
                 catch (Exception e)
                 {
@@ -162,7 +177,22 @@ namespace Azure.ResourceManager.Sql
                     throw;
                 }
             }
-            return PageableHelpers.CreateEnumerable(FirstPageFunc, null);
+            Page<RecoverableDatabaseResource> NextPageFunc(string nextLink, int? pageSizeHint)
+            {
+                using var scope = _recoverableDatabaseClientDiagnostics.CreateScope("RecoverableDatabaseCollection.GetAll");
+                scope.Start();
+                try
+                {
+                    var response = _recoverableDatabaseRestClient.ListByServerNextPage(nextLink, Id.SubscriptionId, Id.ResourceGroupName, Id.Name, cancellationToken: cancellationToken);
+                    return Page.FromValues(response.Value.Value.Select(value => new RecoverableDatabaseResource(Client, value)), response.Value.NextLink, response.GetRawResponse());
+                }
+                catch (Exception e)
+                {
+                    scope.Failed(e);
+                    throw;
+                }
+            }
+            return PageableHelpers.CreateEnumerable(FirstPageFunc, NextPageFunc);
         }
 
         /// <summary>

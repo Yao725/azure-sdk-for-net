@@ -88,7 +88,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a geo backup policy.
+        /// Gets a Geo backup policy for the given database resource.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_Get
         /// </summary>
@@ -112,7 +112,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a geo backup policy.
+        /// Gets a Geo backup policy for the given database resource.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_Get
         /// </summary>
@@ -136,7 +136,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Updates a database geo backup policy.
+        /// Create or update a database default Geo backup policy.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_CreateOrUpdate
         /// </summary>
@@ -166,7 +166,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Updates a database geo backup policy.
+        /// Create or update a database default Geo backup policy.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/geoBackupPolicies/{geoBackupPolicyName}
         /// Operation Id: GeoBackupPolicies_CreateOrUpdate
         /// </summary>

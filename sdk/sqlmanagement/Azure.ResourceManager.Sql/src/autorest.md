@@ -3,8 +3,10 @@
 Run `dotnet build /t:GenerateCode` to generate code.
 
 ``` yaml
+save-inputs: true
 azure-arm: true
-require: https://github.com/Azure/azure-rest-api-specs/blob/9842de8f8f11c09511fc00e903eb947f76cba0e6/specification/sql/resource-manager/readme.md
+require: https://github.com/Azure/azure-rest-api-specs/blob/f5a5c4331869641fb5fa86f2e1e78ecd8e456483/specification/sql/resource-manager/readme.md
+tag: package-preview-2022-05
 namespace: Azure.ResourceManager.Sql
 output-folder: $(this-folder)/Generated
 clear-output-folder: true
@@ -132,6 +134,7 @@ list-exception:
 - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/columns/{columnName}/sensitivityLabels/{sensitivityLabelSource}
 - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/columns/{columnName}/sensitivityLabels/{sensitivityLabelSource}
 - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/managedInstances/{managedInstanceName}/databases/{databaseName}/vulnerabilityAssessments/{vulnerabilityAssessmentName}/rules/{ruleId}/baselines/{baselineName}
+- /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/dataMaskingPolicies/{dataMaskingPolicyName}
 
 no-property-type-replacement: ResourceMoveDefinition
 
@@ -444,3 +447,8 @@ directive:
         $.ManagedDatabaseRestoreDetailsProperties.properties.numberOfFilesDetected['x-ms-client-name'] = 'NumberOfFilesFound';
         $.ManagedDatabaseRestoreDetailsProperties.properties.unrestorableFiles['x-ms-client-name'] = 'UnrestorableFileList';
       reason: address breaking changes when upgrading ManagedDatabaseRestoreDetail API version from 2020-11-01-preview to 2022-02-01-preview
+    - from: swagger-document
+      where: $.paths..parameters[?(@.name === 'securityAlertPolicyName' && @.enum[0] === 'Default')]
+      transform: >
+        $['x-ms-enum']['name'] = 'SqlServerSecurityAlertPolicyName';
+      reason: resolve duplicated schema problem

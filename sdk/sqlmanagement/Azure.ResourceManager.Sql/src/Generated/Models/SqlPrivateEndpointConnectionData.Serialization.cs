@@ -5,6 +5,7 @@
 
 #nullable disable
 
+using System.Collections.Generic;
 using System.Text.Json;
 using Azure.Core;
 using Azure.ResourceManager.Models;
@@ -41,6 +42,7 @@ namespace Azure.ResourceManager.Sql
             ResourceType type = default;
             Optional<SystemData> systemData = default;
             Optional<WritableSubResource> privateEndpoint = default;
+            Optional<IReadOnlyList<string>> groupIds = default;
             Optional<SqlPrivateLinkServiceConnectionStateProperty> privateLinkServiceConnectionState = default;
             Optional<SqlPrivateEndpointProvisioningState> provisioningState = default;
             foreach (var property in element.EnumerateObject())
@@ -89,6 +91,21 @@ namespace Azure.ResourceManager.Sql
                             privateEndpoint = JsonSerializer.Deserialize<WritableSubResource>(property0.Value.GetRawText());
                             continue;
                         }
+                        if (property0.NameEquals("groupIds"))
+                        {
+                            if (property0.Value.ValueKind == JsonValueKind.Null)
+                            {
+                                property0.ThrowNonNullablePropertyIsNull();
+                                continue;
+                            }
+                            List<string> array = new List<string>();
+                            foreach (var item in property0.Value.EnumerateArray())
+                            {
+                                array.Add(item.GetString());
+                            }
+                            groupIds = array;
+                            continue;
+                        }
                         if (property0.NameEquals("privateLinkServiceConnectionState"))
                         {
                             if (property0.Value.ValueKind == JsonValueKind.Null)
@@ -113,7 +130,7 @@ namespace Azure.ResourceManager.Sql
                     continue;
                 }
             }
-            return new SqlPrivateEndpointConnectionData(id, name, type, systemData.Value, privateEndpoint, privateLinkServiceConnectionState.Value, Optional.ToNullable(provisioningState));
+            return new SqlPrivateEndpointConnectionData(id, name, type, systemData.Value, privateEndpoint, Optional.ToList(groupIds), privateLinkServiceConnectionState.Value, Optional.ToNullable(provisioningState));
         }
     }
 }

@@ -87,7 +87,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a recoverable database, which is a resource representing a database&apos;s geo backup
+        /// Gets a recoverable database.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases/{databaseName}
         /// Operation Id: RecoverableDatabases_Get
         /// </summary>
@@ -111,7 +111,7 @@ namespace Azure.ResourceManager.Sql
         }
 
         /// <summary>
-        /// Gets a recoverable database, which is a resource representing a database&apos;s geo backup
+        /// Gets a recoverable database.
         /// Request Path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/recoverableDatabases/{databaseName}
         /// Operation Id: RecoverableDatabases_Get
         /// </summary>
